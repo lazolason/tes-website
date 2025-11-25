@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -12,8 +15,10 @@ const navItems = [
 ];
 
 export default function Navbar() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
   return (
-    <header className="border-b bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
         {/* Brand */}
         <Link href="/" className="flex items-center">
@@ -22,24 +27,61 @@ export default function Navbar() {
             alt="Mexel Energy Sustain"
             width={120}
             height={40}
-            className="h-10 w-auto"
+            className="h-9 w-auto sm:h-10"
           />
           <span className="sr-only">Mexel Energy Sustain</span>
         </Link>
 
-        {/* Nav links */}
-        <nav className="hidden items-center gap-4 text-xs font-semibold text-gray-700 sm:flex">
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-1 text-[13px] font-medium text-gray-700 md:flex">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="rounded px-2 py-1 hover:bg-sky-50 hover:text-sky-800"
+              className="rounded-md px-3 py-2 transition-colors hover:bg-sky-50 hover:text-sky-800"
             >
               {item.label}
             </Link>
           ))}
         </nav>
+
+        {/* Mobile menu button */}
+        <button
+          type="button"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="inline-flex items-center justify-center rounded-md p-2 text-gray-600 hover:bg-gray-100 hover:text-gray-900 md:hidden"
+          aria-expanded={mobileOpen}
+          aria-label="Toggle navigation"
+        >
+          {mobileOpen ? (
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
       </div>
+
+      {/* Mobile nav drawer */}
+      {mobileOpen && (
+        <nav className="border-t bg-white px-4 pb-4 pt-2 md:hidden">
+          <div className="flex flex-col gap-1">
+            {navItems.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setMobileOpen(false)}
+                className="rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </nav>
+      )}
     </header>
   );
 }

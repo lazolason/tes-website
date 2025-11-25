@@ -23,17 +23,17 @@ export default function IndustriesPage() {
             This page summarises the main sectors we work in and the types of
             cooling-water problems TES is built to address.
           </p>
-          <div className="mt-5 flex flex-wrap gap-2 text-[11px]">
-            <span className="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-800">
+          <div className="mt-6 flex flex-wrap gap-2 text-xs sm:text-[11px]">
+            <span className="rounded-full bg-sky-100 px-3 py-1.5 font-semibold text-sky-800 sm:py-1">
               Wet-cooled coal stations
             </span>
-            <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
+            <span className="rounded-full bg-emerald-50 px-3 py-1.5 font-semibold text-emerald-800 sm:py-1">
               Mining & minerals processing
             </span>
-            <span className="rounded-full bg-amber-50 px-3 py-1 font-semibold text-amber-800">
+            <span className="rounded-full bg-amber-50 px-3 py-1.5 font-semibold text-amber-800 sm:py-1">
               Refineries & petrochemical
             </span>
-            <span className="rounded-full bg-violet-50 px-3 py-1 font-semibold text-violet-800">
+            <span className="rounded-full bg-violet-50 px-3 py-1.5 font-semibold text-violet-800 sm:py-1">
               Food & beverage, laundries
             </span>
           </div>

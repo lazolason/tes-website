@@ -3,7 +3,7 @@
 
 export default function CoolingSchematic() {
   return (
-    <div className="relative h-40 w-full overflow-hidden rounded-lg border bg-white">
+    <div className="relative h-44 w-full overflow-hidden rounded-lg border bg-white sm:h-48 md:h-40">
       <svg
         viewBox="0 0 260 120"
         className="h-full w-full text-gray-700"
