@@ -1,3 +1,4 @@
+// components/CoolingSchematic.tsx
 "use client";
 
 export default function CoolingSchematic() {
@@ -10,10 +11,10 @@ export default function CoolingSchematic() {
         aria-labelledby="cooling-diagram-title"
       >
         <title id="cooling-diagram-title">
-          Simplified wet-cooled unit cooling-water schematic
+          Simplified wet-cooled unit cooling-water schematic with TES dosing point
         </title>
 
-        {/* Background labels */}
+        {/* Section labels */}
         <text x="10" y="15" fontSize="8" fill="#4b5563">
           Cooling tower
         </text>
@@ -69,7 +70,7 @@ export default function CoolingSchematic() {
           Turbine
         </text>
 
-        {/* Cooling-water loop arrows */}
+        {/* Cooling-water loop */}
         {/* Tower → condenser (cold) */}
         <path
           d="M 50 55 H 95"
@@ -103,8 +104,59 @@ export default function CoolingSchematic() {
         <text x="75" y="44" fontSize="7" textAnchor="middle" fill="#0ea5e9">
           TES
         </text>
-        <text x="75" y="92" fontSize="7" textAnchor="middle" fill="#4b5563">
-          Mexel®432 dosing
+
+        {/* Legend */}
+        <g transform="translate(10,90)">
+          {/* Cold leg */}
+          <line
+            x1="0"
+            y1="0"
+            x2="18"
+            y2="0"
+            stroke="#0ea5e9"
+            strokeWidth="2"
+          />
+          <text x="22" y="3" fontSize="7" fill="#4b5563">
+            Cold return to condenser
+          </text>
+
+          {/* Hot leg */}
+          <line
+            x1="0"
+            y1="12"
+            x2="18"
+            y2="12"
+            stroke="#f97316"
+            strokeWidth="2"
+          />
+          <text x="22" y="15" fontSize="7" fill="#4b5563">
+            Hot back to tower
+          </text>
+
+          {/* Steam */}
+          <line
+            x1="0"
+            y1="24"
+            x2="18"
+            y2="24"
+            stroke="#9ca3af"
+            strokeWidth="1.4"
+            strokeDasharray="3 3"
+          />
+          <text x="22" y="27" fontSize="7" fill="#4b5563">
+            Steam to condenser
+          </text>
+        </g>
+
+        {/* TES label under diagram */}
+        <text
+          x="190"
+          y="104"
+          fontSize="7"
+          textAnchor="middle"
+          fill="#0ea5e9"
+        >
+          TES = Mexel®432 + dosing + data
         </text>
 
         {/* Arrow markers */}
