@@ -91,13 +91,13 @@ export default function AboutPage() {
 
       {/* Eskom context */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             Our work with Eskom and large energy users
           </h2>
-          <div className="mt-4 grid gap-8 md:grid-cols-2">
+          <div className="mt-5 grid gap-8 md:grid-cols-2">
             <div>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-600 leading-relaxed">
                 Mexel®432 has been through Eskom&apos;s RT&amp;D processes, including
                 application at Kriel and a formal testing protocol for Tutuka. We
                 understand the realities of working on live stations: water-quality
@@ -106,9 +106,9 @@ export default function AboutPage() {
               </p>
             </div>
             <div>
-              <p className="text-sm text-gray-700 leading-relaxed">
+              <p className="text-base text-gray-600 leading-relaxed">
                 Our goal is straightforward:{" "}
-                <span className="font-semibold">
+                <span className="font-semibold text-gray-900">
                   help stations stabilise condenser performance, not replace maintenance
                   or plant disciplines.
                 </span>{" "}
@@ -117,6 +117,86 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Evidence & Timeline */}
+      <section className="border-b bg-sky-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+            Evidence and verification timeline
+          </h2>
+          <p className="mt-3 max-w-3xl text-base text-gray-600">
+            TES is built on documented work with Eskom RT&amp;D, independent referees and
+            structured verification. Key milestones:
+          </p>
+
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {/* Kriel */}
+            <div className="rounded-lg border bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Kriel Power Station</p>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">Initial Mexel®432 application</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                First Eskom site where Mexel®432 was applied in cooling-water service.
+                Station data indicated improved condenser performance during treatment period.
+              </p>
+            </div>
+
+            {/* Tutuka Protocol */}
+            <div className="rounded-lg border bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Tutuka Protocol</p>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">RT&amp;D Testing Protocol Rev08</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                Eskom RT&amp;D issued the Tutuka Surfactant (FFA) Testing Protocol Rev08,
+                defining baseline → intervention → post-intervention methodology for TES verification.
+              </p>
+            </div>
+
+            {/* WRC */}
+            <div className="rounded-lg border bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Independent Referee</p>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">Water Research Commission</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                The WRC can act as an independent referee for TES pilots, reviewing methodology
+                and results under their established frameworks for water-treatment research.
+              </p>
+            </div>
+
+            {/* IoT Dosing */}
+            <div className="rounded-lg border bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">IoT Infrastructure</p>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">Thingy:91X dosing skids</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                TES dosing skids based on Nordic&apos;s Thingy:91X platform installed at Tutuka,
+                providing traceable dosing records linked to condenser performance data.
+              </p>
+            </div>
+
+            {/* Carbon potential */}
+            <div className="rounded-lg border bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Future Potential</p>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">Emissions-intensity verification</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                Once cooling-water improvements are measured and repeatable, they can support
+                future carbon-credit methodologies through bodies such as Brundtland.
+              </p>
+            </div>
+
+            {/* JET correspondence */}
+            <div className="rounded-lg border bg-white p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Strategic Engagement</p>
+              <h3 className="mt-2 text-sm font-semibold text-gray-900">JET &amp; transition context</h3>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                TES is positioned within the Just Energy Transition context as a practical
+                efficiency intervention that can extend asset life and reduce emissions intensity.
+              </p>
+            </div>
+          </div>
+
+          <p className="mt-6 text-xs text-gray-500">
+            Documentation including the TES Master Evidence Pack, RT&amp;D protocol and JET correspondence
+            is available for qualified enquiries.
+          </p>
         </div>
       </section>
 

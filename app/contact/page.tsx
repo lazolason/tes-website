@@ -77,34 +77,44 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Simple enquiry form (placeholder) */}
+            {/* Enquiry form that opens email */}
             <div className="rounded-lg border bg-white p-6 shadow-sm">
               <h2 className="text-lg font-semibold text-gray-900">
                 Send an enquiry
               </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                This form is a starting point. It does not submit to any backend yet,
-                but can be wired to email or an API when you are ready. For now, you
-                can also copy these details into an email to{" "}
-                <span className="font-semibold">lazola@mexelenergysustain.com</span>.
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                Fill in the details below. When you click send, your email client will
+                open with a pre-filled message ready to send.
               </p>
 
               <form
-                className="mt-4 space-y-4"
+                className="mt-5 space-y-4"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  alert(
-                    "This form is a placeholder. Please email lazola@mexelenergysustain.com directly."
+                  const form = e.target as HTMLFormElement;
+                  const name = (form.elements.namedItem('name') as HTMLInputElement)?.value || '';
+                  const org = (form.elements.namedItem('organisation') as HTMLInputElement)?.value || '';
+                  const email = (form.elements.namedItem('email') as HTMLInputElement)?.value || '';
+                  const interest = (form.elements.namedItem('interest') as HTMLSelectElement)?.value || '';
+                  const description = (form.elements.namedItem('description') as HTMLTextAreaElement)?.value || '';
+                  
+                  const subject = encodeURIComponent(`TES Enquiry: ${interest || 'General'}`);
+                  const body = encodeURIComponent(
+                    `Name: ${name}\nOrganisation / Site: ${org}\nEmail: ${email}\nArea of interest: ${interest}\n\nDescription:\n${description}`
                   );
+                  
+                  window.location.href = `mailto:lazola@mexelenergysustain.com?subject=${subject}&body=${body}`;
                 }}
               >
                 <div>
                   <label className="block text-xs font-semibold text-gray-800">
-                    Name
+                    Name <span className="text-gray-400">*</span>
                   </label>
                   <input
                     type="text"
-                    className="mt-1 w-full rounded-md border px-3 py-2 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                    name="name"
+                    required
+                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
                     placeholder="Your name"
                   />
                 </div>
@@ -114,17 +124,20 @@ export default function ContactPage() {
                   </label>
                   <input
                     type="text"
-                    className="mt-1 w-full rounded-md border px-3 py-2 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                    name="organisation"
+                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
                     placeholder="e.g. Matla Power Station, Kriel, mine, refinery"
                   />
                 </div>
                 <div>
                   <label className="block text-xs font-semibold text-gray-800">
-                    Email
+                    Your email <span className="text-gray-400">*</span>
                   </label>
                   <input
                     type="email"
-                    className="mt-1 w-full rounded-md border px-3 py-2 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                    name="email"
+                    required
+                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -132,21 +145,24 @@ export default function ContactPage() {
                   <label className="block text-xs font-semibold text-gray-800">
                     Area of interest
                   </label>
-                  <select className="mt-1 w-full rounded-md border bg-white px-3 py-2 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500">
+                  <select 
+                    name="interest"
+                    className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                  >
                     <option value="">Select one…</option>
-                    <option value="tes-eskom">
+                    <option value="TES pilot at Eskom wet-cooled station">
                       TES pilot at Eskom wet-cooled station
                     </option>
-                    <option value="tes-industry">
+                    <option value="TES pilot at industrial cooling-water site">
                       TES pilot at industrial cooling-water site
                     </option>
-                    <option value="mexel432">
+                    <option value="Mexel®432 for cooling-water">
                       Mexel®432 for cooling-water
                     </option>
-                    <option value="mexsteam100">
+                    <option value="MexSteam 100 for boiler / steam-side">
                       MexSteam 100 for boiler / steam-side
                     </option>
-                    <option value="other">Other / not sure yet</option>
+                    <option value="Other / general enquiry">Other / not sure yet</option>
                   </select>
                 </div>
                 <div>
@@ -154,24 +170,35 @@ export default function ContactPage() {
                     Brief description
                   </label>
                   <textarea
-                    className="mt-1 w-full rounded-md border px-3 py-2 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                    name="description"
+                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
                     rows={4}
                     placeholder="Brief description of your cooling-water or boiler context, constraints and what you would like to explore."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="inline-flex w-full items-center justify-center rounded-md bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
                 >
-                  Placeholder – email instead for now
+                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  Open in email client
                 </button>
               </form>
 
-              <p className="mt-3 text-[11px] text-gray-500">
-                When you are ready, this form can be wired to send enquiries directly
-                to your email or CRM. For now, it serves as a structured prompt for
-                the information that helps us respond intelligently.
-              </p>
+              <div className="mt-4 rounded-md bg-sky-50 p-3">
+                <p className="text-xs text-sky-800">
+                  <span className="font-semibold">Prefer to email directly?</span>{" "}
+                  Send to{" "}
+                  <a
+                    href="mailto:lazola@mexelenergysustain.com"
+                    className="font-semibold underline hover:text-sky-900"
+                  >
+                    lazola@mexelenergysustain.com
+                  </a>
+                </p>
+              </div>
             </div>
           </div>
 
