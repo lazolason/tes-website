@@ -40,7 +40,7 @@ export default function ApplicationsPage() {
             {/* Eskom wet-cooled applications */}
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
-              <div className="relative h-40 w-full overflow-hidden rounded-lg border bg-gray-100">
+              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
                 <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
                   Image placeholder: Wet-cooled station / cooling tower / condenser view
                 </div>
@@ -69,7 +69,7 @@ export default function ApplicationsPage() {
             {/* Industrial applications */}
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
-              <div className="relative h-40 w-full overflow-hidden rounded-lg border bg-gray-100">
+              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
                 <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
                   Image placeholder: Industrial cooling system / mine / refinery / brewery
                 </div>

@@ -119,7 +119,7 @@ export default function IndustriesPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
-              <div className="relative h-40 w-full overflow-hidden rounded-lg border bg-gray-100">
+              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
                 <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
                   Image placeholder: Mine / processing plant / cooling circuit
                 </div>
@@ -175,7 +175,7 @@ export default function IndustriesPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
-              <div className="relative h-40 w-full overflow-hidden rounded-lg border bg-gray-100">
+              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
                 <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
                   Image placeholder: Refinery / petrochemical / steel plant
                 </div>
@@ -226,7 +226,7 @@ export default function IndustriesPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
-              <div className="relative h-40 w-full overflow-hidden rounded-lg border bg-gray-100">
+              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
                 <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
                   Image placeholder: Brewery / food plant / laundry / chiller plant
                 </div>
