@@ -37,16 +37,39 @@ export default function TesPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center rounded-md bg-sky-700 px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+              className="inline-flex items-center rounded-md bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
             >
               Discuss a TES pilot
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center text-xs font-semibold text-sky-700 hover:text-sky-900"
+              className="inline-flex items-center text-sm font-semibold text-sky-700 hover:text-sky-900"
             >
               Mexel®432 technical information →
             </Link>
+          </div>
+
+          {/* Credibility strip */}
+          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-gray-200 pt-6 text-xs text-gray-500">
+            <span className="font-medium text-gray-700">Anchored in:</span>
+            <span className="flex items-center gap-1.5">
+              <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Eskom RT&amp;D protocol
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              WRC independent referee
+            </span>
+            <span className="flex items-center gap-1.5">
+              <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              Mexel international references
+            </span>
           </div>
         </div>
       </section>
