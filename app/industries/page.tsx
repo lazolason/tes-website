@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CoolingSchematic from "../../components/CoolingSchematic";
 
 export default function IndustriesPage() {
   return (
@@ -44,12 +45,8 @@ export default function IndustriesPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border border-dashed border-sky-100 bg-white">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Wet-cooled coal station / cooling tower
-                </div>
-              </div>
+              {/* Cooling-water system schematic */}
+              <CoolingSchematic />
 
               <div>
                 <h2 className="text-xl font-semibold text-gray-900">
