@@ -1,4 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "TES Cooling-Water Efficiency System",
+  description:
+    "TES combines Mexel®432 chemistry, IoT dosing and cooling-water data to improve condenser performance on wet-cooled power stations and industrial plants. Reduce cold-end losses with a structured, verifiable approach.",
+  openGraph: {
+    title: "TES Cooling-Water Efficiency System | Mexel Energy Sustain",
+    description:
+      "Improve condenser performance on wet-cooled units with Mexel®432 chemistry, IoT dosing and structured verification.",
+  },
+};
 
 export default function TesPage() {
   return (

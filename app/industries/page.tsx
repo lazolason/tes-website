@@ -1,5 +1,17 @@
 import Link from "next/link";
 import CoolingSchematic from "../../components/CoolingSchematic";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Industries",
+  description:
+    "TES and Mexel®432 applications across industries: wet-cooled power stations, mining, refineries, petrochemical, food & beverage, and commercial cooling-water systems.",
+  openGraph: {
+    title: "Industries Served | Mexel Energy Sustain",
+    description:
+      "Cooling-water efficiency for power generation, mining, refineries and industrial plants.",
+  },
+};
 
 export default function IndustriesPage() {
   return (

@@ -1,4 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Products – Mexel®432 & MexSteam 100",
+  description:
+    "Mexel®432 for cooling-water treatment: film-forming amine chemistry that controls biofouling, corrosion and scaling. MexSteam 100 for boiler and steam-side protection.",
+  openGraph: {
+    title: "Mexel®432 & MexSteam 100 | Mexel Energy Sustain",
+    description:
+      "Film-forming amine chemistry for cooling-water and steam systems.",
+  },
+};
 
 export default function ProductsPage() {
   return (

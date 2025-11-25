@@ -1,4 +1,16 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "TES Applications",
+  description:
+    "TES applications at Eskom wet-cooled power stations (Tutuka, Kriel, Matla, Kendal) and industrial cooling-water systems. Structured pilots with baseline, intervention and verification.",
+  openGraph: {
+    title: "TES Applications | Mexel Energy Sustain",
+    description:
+      "Where TES fits: Eskom stations and industrial cooling-water users.",
+  },
+};
 
 export default function ApplicationsPage() {
   return (

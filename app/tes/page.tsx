@@ -1,3 +1,16 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "TES System Overview",
+  description:
+    "Detailed overview of the Thermal Efficiency Solution (TES): Mexel®432 chemistry, IoT-enabled dosing, cooling-water performance data and the RT&D verification framework for wet-cooled units.",
+  openGraph: {
+    title: "TES System Overview | Mexel Energy Sustain",
+    description:
+      "How TES works: chemistry, dosing, data and verification for cooling-water efficiency.",
+  },
+};
+
 export default function TesPage() {
   return (
     <article className="prose dark:prose-invert mx-auto py-10">
