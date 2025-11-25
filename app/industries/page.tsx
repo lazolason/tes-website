@@ -6,14 +6,14 @@ export default function IndustriesPage() {
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
             Industries
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
             Where TES and Mexel chemistry are applied.
           </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
             TES and Mexel®432 are designed for cooling-water systems wherever
             energy, reliability and water use matter. The same principles apply
             across wet-cooled power stations, mines, refineries, process plants,
@@ -42,17 +42,17 @@ export default function IndustriesPage() {
 
       {/* Power & energy */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Cooling-water system schematic */}
               <CoolingSchematic />
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
                   Wet-cooled coal units (power generation)
                 </h2>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-base text-gray-600 leading-relaxed">
                   TES is primarily designed for wet-cooled coal-fired units where
                   the condenser and cooling-water system are a significant source
                   of efficiency loss. These are typically large stations using
@@ -103,7 +103,7 @@ export default function IndustriesPage() {
 
       {/* Mining & minerals processing */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
@@ -114,10 +114,10 @@ export default function IndustriesPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
                   Mining and minerals processing
                 </h2>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-base text-gray-600 leading-relaxed">
                   Mines and concentrators often run large open cooling circuits,
                   with water quality influenced by process streams, tailings and
                   recycled mine water. Fouling, corrosion and solids build-up are
@@ -159,7 +159,7 @@ export default function IndustriesPage() {
 
       {/* Petrochemical, refineries, metals */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
@@ -170,10 +170,10 @@ export default function IndustriesPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
                   Refineries, petrochemical and metals
                 </h2>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-base text-gray-600 leading-relaxed">
                   Refineries, petrochemical plants and steel mills run networks of
                   critical heat exchangers and cooling-water loops. Fouling or
                   corrosion here quickly becomes a production and safety issue, not
@@ -210,7 +210,7 @@ export default function IndustriesPage() {
 
       {/* Food & beverage, laundries, commercial */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Image placeholder */}
@@ -221,10 +221,10 @@ export default function IndustriesPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
                   Food &amp; beverage, breweries and laundries
                 </h2>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-3 text-base text-gray-600 leading-relaxed">
                   These operations run almost continuously and depend on stable cooling
                   for process, refrigeration and HVAC. Fouling and biofilm drive up
                   energy usage and risk unplanned downtime.
@@ -256,8 +256,8 @@ export default function IndustriesPage() {
 
       {/* Boiler-side note */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             Boiler and steam-side (MexSteam 100)
           </h2>
           <div className="mt-4 grid gap-8 md:grid-cols-2">
@@ -286,7 +286,7 @@ export default function IndustriesPage() {
 
       {/* CTA */}
       <section>
-        <div className="mx-auto max-w-6xl px-4 py-10 lg:py-12">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="flex flex-col gap-4 rounded-lg border bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-sm font-semibold text-gray-900">

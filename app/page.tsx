@@ -5,14 +5,14 @@ export default function TesPage() {
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
             Thermal Efficiency Solution (TES)
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            TES: A cooling-water efficiency system, not a generic chemical.
+          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+            TES: A cooling-water efficiency system,<br className="hidden lg:block" /> not a generic chemical.
           </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
+          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
             TES is our focused approach to improving condenser and
             cooling-water performance on wet-cooled units. It combines
             Mexel®432 chemistry, IoT-enabled dosing, a cooling-water
@@ -41,8 +41,8 @@ export default function TesPage() {
 
       {/* What TES is / is not */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             What TES is – and what it is not
           </h2>
           <div className="mt-6 grid gap-8 md:grid-cols-2">
@@ -103,11 +103,11 @@ export default function TesPage() {
 
       {/* Four building blocks */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             TES in four building blocks
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gray-700">
+          <p className="mt-3 max-w-3xl text-base text-gray-600">
             TES has four components that work together. Each one is simple on
             its own; the value is in the way they combine to give a clear
             picture of cooling-water performance.
@@ -172,8 +172,8 @@ export default function TesPage() {
 
       {/* Evidence & Eskom context */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             Evidence and Eskom context
           </h2>
           <div className="mt-6 grid gap-8 md:grid-cols-3">
@@ -220,8 +220,8 @@ export default function TesPage() {
 
       {/* TES for Eskom vs Industry */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             Where TES fits: Eskom and industry
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
@@ -265,8 +265,8 @@ export default function TesPage() {
 
       {/* How a pilot works */}
       <section>
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             How a TES pilot works in practice
           </h2>
           <div className="mt-4 grid gap-6 md:grid-cols-3">
