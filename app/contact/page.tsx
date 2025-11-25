@@ -1,8 +1,94 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  general?: string;
+}
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
 export default function ContactPage() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    organisation: "",
+    interest: "",
+    description: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [status, setStatus] = useState<FormStatus>("idle");
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setStatus("submitting");
+    setErrors({});
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setStatus("success");
+        setFormData({
+          name: "",
+          email: "",
+          organisation: "",
+          interest: "",
+          description: "",
+        });
+      } else {
+        setStatus("error");
+        setErrors({ general: result.errors?.[0] || "Something went wrong" });
+      }
+    } catch {
+      setStatus("error");
+      setErrors({ general: "Failed to send. Please try emailing us directly." });
+    }
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+  };
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
@@ -77,128 +163,218 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Enquiry form that opens email */}
+            {/* Enquiry form */}
             <div className="rounded-lg border bg-white p-6 shadow-sm">
-              <h2 className="text-lg font-semibold text-gray-900">
-                Send an enquiry
-              </h2>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                Fill in the details below. When you click send, your email client will
-                open with a pre-filled message ready to send.
-              </p>
-
-              <form
-                className="mt-5 space-y-4"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  const form = e.target as HTMLFormElement;
-                  const name = (form.elements.namedItem('name') as HTMLInputElement)?.value || '';
-                  const org = (form.elements.namedItem('organisation') as HTMLInputElement)?.value || '';
-                  const email = (form.elements.namedItem('email') as HTMLInputElement)?.value || '';
-                  const interest = (form.elements.namedItem('interest') as HTMLSelectElement)?.value || '';
-                  const description = (form.elements.namedItem('description') as HTMLTextAreaElement)?.value || '';
-                  
-                  const subject = encodeURIComponent(`TES Enquiry: ${interest || 'General'}`);
-                  const body = encodeURIComponent(
-                    `Name: ${name}\nOrganisation / Site: ${org}\nEmail: ${email}\nArea of interest: ${interest}\n\nDescription:\n${description}`
-                  );
-                  
-                  window.location.href = `mailto:lazola@mexelenergysustain.com?subject=${subject}&body=${body}`;
-                }}
-              >
-                <div>
-                  <label className="block text-xs font-semibold text-gray-800">
-                    Name <span className="text-gray-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    name="name"
-                    required
-                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-800">
-                    Organisation / Site
-                  </label>
-                  <input
-                    type="text"
-                    name="organisation"
-                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                    placeholder="e.g. Matla Power Station, Kriel, mine, refinery"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-800">
-                    Your email <span className="text-gray-400">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    required
-                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-800">
-                    Area of interest
-                  </label>
-                  <select 
-                    name="interest"
-                    className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+              {status === "success" ? (
+                <div className="py-8 text-center">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                    <svg
+                      className="h-6 w-6 text-green-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <h3 className="mt-4 text-lg font-semibold text-gray-900">
+                    Message sent successfully
+                  </h3>
+                  <p className="mt-2 text-sm text-gray-600">
+                    Thank you for your enquiry. We typically respond within 1-2
+                    business days.
+                  </p>
+                  <button
+                    onClick={() => setStatus("idle")}
+                    className="mt-6 text-sm font-semibold text-sky-700 hover:text-sky-800"
                   >
-                    <option value="">Select one…</option>
-                    <option value="TES pilot at Eskom wet-cooled station">
-                      TES pilot at Eskom wet-cooled station
-                    </option>
-                    <option value="TES pilot at industrial cooling-water site">
-                      TES pilot at industrial cooling-water site
-                    </option>
-                    <option value="Mexel®432 for cooling-water">
-                      Mexel®432 for cooling-water
-                    </option>
-                    <option value="MexSteam 100 for boiler / steam-side">
-                      MexSteam 100 for boiler / steam-side
-                    </option>
-                    <option value="Other / general enquiry">Other / not sure yet</option>
-                  </select>
+                    Send another message
+                  </button>
                 </div>
-                <div>
-                  <label className="block text-xs font-semibold text-gray-800">
-                    Brief description
-                  </label>
-                  <textarea
-                    name="description"
-                    className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
-                    rows={4}
-                    placeholder="Brief description of your cooling-water or boiler context, constraints and what you would like to explore."
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-                >
-                  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Open in email client
-                </button>
-              </form>
+              ) : (
+                <>
+                  <h2 className="text-lg font-semibold text-gray-900">
+                    Send an enquiry
+                  </h2>
+                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                    Fill in the details below and we&apos;ll get back to you within
+                    1-2 business days.
+                  </p>
 
-              <div className="mt-4 rounded-md bg-sky-50 p-3">
-                <p className="text-xs text-sky-800">
-                  <span className="font-semibold">Prefer to email directly?</span>{" "}
-                  Send to{" "}
-                  <a
-                    href="mailto:lazola@mexelenergysustain.com"
-                    className="font-semibold underline hover:text-sky-900"
-                  >
-                    lazola@mexelenergysustain.com
-                  </a>
-                </p>
-              </div>
+                  {errors.general && (
+                    <div className="mt-4 rounded-md bg-red-50 p-3">
+                      <p className="text-sm text-red-700">{errors.general}</p>
+                    </div>
+                  )}
+
+                  <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-800">
+                        Name <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                          errors.name
+                            ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                            : "border-gray-300 focus:border-sky-500 focus:ring-sky-500"
+                        }`}
+                        placeholder="Your name"
+                      />
+                      {errors.name && (
+                        <p className="mt-1 text-xs text-red-600">{errors.name}</p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-800">
+                        Organisation / Site
+                      </label>
+                      <input
+                        type="text"
+                        name="organisation"
+                        value={formData.organisation}
+                        onChange={handleChange}
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                        placeholder="e.g. Matla Power Station, Kriel, mine, refinery"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-800">
+                        Your email <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                          errors.email
+                            ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                            : "border-gray-300 focus:border-sky-500 focus:ring-sky-500"
+                        }`}
+                        placeholder="you@example.com"
+                      />
+                      {errors.email && (
+                        <p className="mt-1 text-xs text-red-600">{errors.email}</p>
+                      )}
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-800">
+                        Area of interest
+                      </label>
+                      <select
+                        name="interest"
+                        value={formData.interest}
+                        onChange={handleChange}
+                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                      >
+                        <option value="">Select one…</option>
+                        <option value="TES pilot at Eskom wet-cooled station">
+                          TES pilot at Eskom wet-cooled station
+                        </option>
+                        <option value="TES pilot at industrial cooling-water site">
+                          TES pilot at industrial cooling-water site
+                        </option>
+                        <option value="Mexel®432 for cooling-water">
+                          Mexel®432 for cooling-water
+                        </option>
+                        <option value="MexSteam 100 for boiler / steam-side">
+                          MexSteam 100 for boiler / steam-side
+                        </option>
+                        <option value="Other / general enquiry">
+                          Other / not sure yet
+                        </option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-gray-800">
+                        Brief description
+                      </label>
+                      <textarea
+                        name="description"
+                        value={formData.description}
+                        onChange={handleChange}
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                        rows={4}
+                        placeholder="Brief description of your cooling-water or boiler context, constraints and what you would like to explore."
+                      />
+                    </div>
+
+                    <button
+                      type="submit"
+                      disabled={status === "submitting"}
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                    >
+                      {status === "submitting" ? (
+                        <>
+                          <svg
+                            className="h-4 w-4 animate-spin"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            />
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            />
+                          </svg>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          <svg
+                            className="h-4 w-4"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                            />
+                          </svg>
+                          Send message
+                        </>
+                      )}
+                    </button>
+                  </form>
+
+                  <div className="mt-4 rounded-md bg-sky-50 p-3">
+                    <p className="text-xs text-sky-800">
+                      <span className="font-semibold">Prefer to email directly?</span>{" "}
+                      Send to{" "}
+                      <a
+                        href="mailto:lazola@mexelenergysustain.com"
+                        className="font-semibold underline hover:text-sky-900"
+                      >
+                        lazola@mexelenergysustain.com
+                      </a>
+                    </p>
+                  </div>
+                </>
+              )}
             </div>
           </div>
 

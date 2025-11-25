@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
 import type { Metadata } from "next";
 
@@ -38,6 +39,16 @@ export default function ProductsPage() {
       {/* Mexel 432 – primary TES product */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+          {/* Product image */}
+          <div className="relative mb-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
+            <Image
+              src="/dosing-skid.png"
+              alt="TES dosing system for Mexel®432"
+              fill
+              className="object-cover"
+            />
+          </div>
+
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <FadeIn>
               <div className="max-w-xl">

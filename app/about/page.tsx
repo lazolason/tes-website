@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
 import type { Metadata } from "next";
 
@@ -19,24 +20,35 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
-            About
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            About Mexel Energy Sustain.
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
-            Mexel Energy Sustain (Pty) Ltd is a South African company focused on{" "}
-            <span className="font-semibold">cooling-water and thermal efficiency</span>.
-            We combine Mexel chemistry with IoT dosing, data and verification to help
-            large energy and industrial users reduce cold-end losses in a disciplined,
-            engineering-led way.
-          </p>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-700">
-            Our work sits at the intersection of energy efficiency, water treatment and
-            system performance. TES is our practical framework for applying this at
-            wet-cooled coal units and industrial cooling-water systems.
-          </p>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
+                About
+              </p>
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                About Mexel Energy Sustain.
+              </h1>
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">00">
+                Mexel Energy Sustain (Pty) Ltd is a South African company focused on{" "}
+                <span className="font-semibold">cooling-water and thermal efficiency</span>.
+                We combine Mexel chemistry with IoT dosing, data and verification to help
+                large energy and industrial users reduce cold-end losses in a disciplined,
+                engineering-led way.
+              </p>00">
+                Our work sits at the intersection of energy efficiency, water treatment and
+                system performance. TES is our practical framework for applying this at
+                wet-cooled coal units and industrial cooling-water systems.
+              </p>
+            </div>
+            <div className="relative h-56 overflow-hidden rounded-xl shadow-lg lg:h-64">
+              <Image
+                src="/control-room.png"
+                alt="Power station control room"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

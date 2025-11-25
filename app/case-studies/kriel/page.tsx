@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import FadeIn from "../../../components/FadeIn";
 import type { Metadata } from "next";
 
@@ -37,6 +38,16 @@ export default function KrielCaseStudyPage() {
             cooling-water treatment. Station data showed improved condenser
             performance during the treatment period.
           </p>
+
+          {/* Hero image */}
+          <div className="relative mt-8 h-48 overflow-hidden rounded-xl shadow-lg lg:h-64">
+            <Image
+              src="/cooling-tower.png"
+              alt="Kriel Power Station cooling towers"
+              fill
+              className="object-cover"
+            />
+          </div>
 
           {/* Key facts */}
           <div className="mt-8 grid gap-4 sm:grid-cols-4">
