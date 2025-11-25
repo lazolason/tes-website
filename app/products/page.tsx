@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeIn from "../../components/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -38,7 +39,8 @@ export default function ProductsPage() {
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <div className="max-w-xl">
+            <FadeIn>
+              <div className="max-w-xl">
               <h2 className="text-xl font-semibold text-gray-900">
                 Mexel®432 – Cooling-water film-forming amine/surfactant
               </h2>
@@ -67,9 +69,11 @@ export default function ProductsPage() {
                   Multi-function chemistry
                 </span>
               </div>
-            </div>
+              </div>
+            </FadeIn>
 
-            <div className="max-w-md rounded-lg border bg-white p-5 shadow-sm">
+            <FadeIn delay={150}>
+              <div className="max-w-md rounded-lg border bg-white p-5 shadow-sm">
               <h3 className="text-sm font-semibold text-gray-900">
                 Key functions in cooling-water systems
               </h3>
@@ -111,11 +115,12 @@ export default function ProductsPage() {
                   separation behaviour in certain mining and industrial circuits.
                 </li>
               </ul>
-            </div>
+              </div>
+            </FadeIn>
           </div>
 
           {/* Role in TES */}
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">\
             <div className="rounded-lg border bg-gray-50 p-5">
               <h3 className="text-sm font-semibold text-gray-900">
                 Role within TES

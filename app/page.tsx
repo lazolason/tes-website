@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
+import FadeIn from "../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "TES Cooling-Water Efficiency System",
@@ -18,58 +20,73 @@ export default function TesPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
-            Thermal Efficiency Solution (TES)
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            TES: A cooling-water efficiency system,<br className="hidden lg:block" /> not a generic chemical.
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-            TES is our focused approach to improving condenser and
-            cooling-water performance on wet-cooled units. It combines
-            Mexel®432 chemistry, IoT-enabled dosing, a cooling-water
-            performance view and a verification framework based on Eskom
-            RT&amp;D&apos;s Tutuka protocol. TES does not claim to optimise
-            the whole plant; it concentrates on the cold end, where fouling
-            and corrosion quietly erode efficiency.
-          </p>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+                Thermal Efficiency Solution (TES)
+              </p>
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                TES: A cooling-water efficiency system,<br className="hidden lg:block" /> not a generic chemical.
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+                TES is our focused approach to improving condenser and
+                cooling-water performance on wet-cooled units. It combines
+                Mexel®432 chemistry, IoT-enabled dosing, a cooling-water
+                performance view and a verification framework based on Eskom
+                RT&amp;D&apos;s Tutuka protocol. TES does not claim to optimise
+                the whole plant; it concentrates on the cold end, where fouling
+                and corrosion quietly erode efficiency.
+              </p>
 
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-md bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-            >
-              Discuss a TES pilot
-            </Link>
-            <Link
-              href="/products"
-              className="inline-flex items-center text-sm font-semibold text-sky-700 hover:text-sky-900"
-            >
-              Mexel®432 technical information →
-            </Link>
-          </div>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center rounded-md bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                >
+                  Discuss a TES pilot
+                </Link>
+                <Link
+                  href="/products"
+                  className="inline-flex items-center text-sm font-semibold text-sky-700 hover:text-sky-900"
+                >
+                  Mexel®432 technical information →
+                </Link>
+              </div>
 
-          {/* Credibility strip */}
-          <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-gray-200 pt-6 text-xs text-gray-500">
-            <span className="font-medium text-gray-700">Anchored in:</span>
-            <span className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Eskom RT&amp;D protocol
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              WRC independent referee
-            </span>
-            <span className="flex items-center gap-1.5">
-              <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-              Mexel international references
-            </span>
+              {/* Credibility strip */}
+              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-gray-200 pt-6 text-xs text-gray-500">
+                <span className="font-medium text-gray-700">Anchored in:</span>
+                <span className="flex items-center gap-1.5">
+                  <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Eskom RT&amp;D protocol
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  WRC independent referee
+                </span>
+                <span className="flex items-center gap-1.5">
+                  <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  Mexel international references
+                </span>
+              </div>
+            </div>
+
+            {/* Hero image */}
+            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
+              <Image
+                src="/hero-image.png"
+                alt="Industrial cooling water system"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -77,11 +94,13 @@ export default function TesPage() {
       {/* What TES is / is not */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            What TES is – and what it is not
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              What TES is – and what it is not
+            </h2>
+          </FadeIn>
           <div className="mt-6 grid gap-8 md:grid-cols-2">
-            <div>
+            <FadeIn delay={100}>
               <h3 className="text-sm font-semibold text-gray-900">
                 TES is…
               </h3>
@@ -103,8 +122,8 @@ export default function TesPage() {
                   independent review where required.
                 </li>
               </ul>
-            </div>
-            <div>
+            </FadeIn>
+            <FadeIn delay={200}>
               <h3 className="text-sm font-semibold text-gray-900">
                 TES is not…
               </h3>
@@ -131,7 +150,7 @@ export default function TesPage() {
                 product. It is deliberately not included under TES&apos;s
                 cooling-water verification claims.
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -139,17 +158,20 @@ export default function TesPage() {
       {/* Four building blocks */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            TES in four building blocks
-          </h2>
-          <p className="mt-3 max-w-3xl text-base text-gray-600">
-            TES has four components that work together. Each one is simple on
-            its own; the value is in the way they combine to give a clear
-            picture of cooling-water performance.
-          </p>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              TES in four building blocks
+            </h2>
+            <p className="mt-3 max-w-3xl text-base text-gray-600">
+              TES has four components that work together. Each one is simple on
+              its own; the value is in the way they combine to give a clear
+              picture of cooling-water performance.
+            </p>
+          </FadeIn>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="rounded-lg border bg-white p-4 shadow-sm">
+            <FadeIn delay={100}>
+              <div className="rounded-lg border bg-white p-4 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 1. Chemistry: Mexel®432
               </h3>
@@ -161,8 +183,10 @@ export default function TesPage() {
                 (biocides, anti-scalants, dispersants and corrosion
                 inhibitors) with a single, surface-active treatment.
               </p>
-            </div>
-            <div className="rounded-lg border bg-white p-4 shadow-sm">
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border bg-white p-4 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 2. IoT dosing: Thingy:91X
               </h3>
@@ -173,8 +197,10 @@ export default function TesPage() {
                 when, for how long – that can be correlated with condenser
                 performance data.
               </p>
-            </div>
-            <div className="rounded-lg border bg-white p-4 shadow-sm">
+              </div>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="rounded-lg border bg-white p-4 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 3. Data: cooling-water view
               </h3>
@@ -186,8 +212,10 @@ export default function TesPage() {
                 is to make condenser fouling visible as a managed variable,
                 not a hidden loss.
               </p>
-            </div>
-            <div className="rounded-lg border bg-white p-4 shadow-sm">
+              </div>
+            </FadeIn>
+            <FadeIn delay={400}>
+              <div className="rounded-lg border bg-white p-4 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 4. Verification: RT&amp;D protocol
               </h3>
@@ -200,7 +228,8 @@ export default function TesPage() {
                 Brundtland) can be engaged where emissions intensity is in
                 scope.
               </p>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -208,11 +237,14 @@ export default function TesPage() {
       {/* Evidence & Eskom context */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            Evidence and Eskom context
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              Evidence and Eskom context
+            </h2>
+          </FadeIn>
           <div className="mt-6 grid gap-8 md:grid-cols-3">
-            <div>
+            <FadeIn delay={100}>
+              <div>
               <h3 className="text-sm font-semibold text-gray-900">
                 RT&amp;D and Kriel experience
               </h3>
@@ -223,8 +255,10 @@ export default function TesPage() {
                 Tutuka Testing Protocol Rev08 provides a clear framework for
                 baseline and intervention assessment.
               </p>
-            </div>
-            <div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div>
               <h3 className="text-sm font-semibold text-gray-900">
                 Tutuka readiness and delays
               </h3>
@@ -235,8 +269,10 @@ export default function TesPage() {
                 configuration and induction scheduling, rather than by any
                 limitation of the chemistry or hardware.
               </p>
-            </div>
-            <div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div>
               <h3 className="text-sm font-semibold text-gray-900">
                 International references
               </h3>
@@ -248,7 +284,8 @@ export default function TesPage() {
                 to overall heat-rate improvement where the cooling system was
                 a known bottleneck.
               </p>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -256,11 +293,14 @@ export default function TesPage() {
       {/* TES for Eskom vs Industry */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            Where TES fits: Eskom and industry
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              Where TES fits: Eskom and industry
+            </h2>
+          </FadeIn>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <div className="rounded-lg border bg-white p-6 shadow-sm">
+            <FadeIn delay={100}>
+              <div className="rounded-lg border bg-white p-6 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 Wet-cooled Eskom stations
               </h3>
@@ -277,8 +317,10 @@ export default function TesPage() {
                 to run a structured pilot on one or more units and let the
                 data speak.
               </p>
-            </div>
-            <div className="rounded-lg border bg-white p-6 shadow-sm">
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border bg-white p-6 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 Industrial cooling-water users
               </h3>
@@ -293,7 +335,8 @@ export default function TesPage() {
                 dosing and data – to improve reliability, reduce cleaning
                 interventions and extend equipment life in these environments.
               </p>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

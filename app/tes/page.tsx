@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import FadeIn from "../../components/FadeIn";
 
 export const metadata: Metadata = {
   title: "TES System Overview",
@@ -18,35 +20,49 @@ export default function TesPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
-            TES System
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            Thermal Efficiency Solution (TES)
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-            TES is Mexel Energy Sustain&apos;s focused approach to improving
-            cooling-water and condenser performance on wet-cooled units. It
-            combines Mexel®432 chemistry, IoT-enabled dosing, cooling-water data
-            and a clear verification framework to reduce cold-end losses,
-            stabilise operation and extend asset life.
-          </p>
-          <p className="mt-3 max-w-3xl text-base leading-relaxed text-gray-600">
-            TES does not claim to optimise the whole plant — it concentrates on
-            the cold end, where fouling, biofilm and corrosion quietly erode
-            efficiency.
-          </p>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+                TES System
+              </p>
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Thermal Efficiency Solution (TES)
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+                TES is Mexel Energy Sustain&apos;s focused approach to improving
+                cooling-water and condenser performance on wet-cooled units. It
+                combines Mexel®432 chemistry, IoT-enabled dosing, cooling-water data
+                and a clear verification framework to reduce cold-end losses,
+                stabilise operation and extend asset life.
+              </p>
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-gray-600">
+                TES does not claim to optimise the whole plant — it concentrates on
+                the cold end, where fouling, biofilm and corrosion quietly erode
+                efficiency.
+              </p>
+            </div>
+            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-72">
+              <Image
+                src="/plant-overview.png"
+                alt="Industrial cooling system overview"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Chemistry */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            Chemistry: Mexel®432 in cooling-water service
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              Chemistry: Mexel®432 in cooling-water service
+            </h2>
+          </FadeIn>
           <div className="mt-5 grid gap-8 md:grid-cols-2">
-            <div>
+            <FadeIn delay={100}>
               <p className="text-base text-gray-600 leading-relaxed">
                 Mexel®432 is a film-forming amine emulsion with a specialised
                 surfactant system. It forms a protective molecular layer on wetted
@@ -58,8 +74,9 @@ export default function TesPage() {
                 less scaling and corrosion, and more stable heat transfer — without
                 relying on aggressive oxidising biocides.
               </p>
-            </div>
-            <div className="rounded-lg border bg-gray-50 p-5">
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border bg-gray-50 p-5">
               <h3 className="text-sm font-semibold text-gray-900">
                 What Mexel®432 replaces or reduces
               </h3>
@@ -72,7 +89,8 @@ export default function TesPage() {
               <p className="mt-3 text-xs text-gray-500">
                 A single, surface-active treatment focused on the cold end.
               </p>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -151,11 +169,14 @@ export default function TesPage() {
       {/* Reference frameworks & governance */}
       <section className="border-b bg-sky-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            Reference frameworks and governance
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              Reference frameworks and governance
+            </h2>
+          </FadeIn>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border border-sky-100 bg-white p-5 shadow-sm">
+            <FadeIn delay={100}>
+              <div className="rounded-lg border border-sky-100 bg-white p-5 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 Eskom RT&amp;D alignment
               </h3>
@@ -165,8 +186,10 @@ export default function TesPage() {
                 Protocol Rev08. This gives station teams, RT&amp;D and governance
                 bodies a shared, documented way to assess performance.
               </p>
-            </div>
-            <div className="rounded-lg border border-sky-100 bg-white p-5 shadow-sm">
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border border-sky-100 bg-white p-5 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 Independent technical review
               </h3>
@@ -176,8 +199,10 @@ export default function TesPage() {
                 verify that the agreed protocol and data handling have been followed,
                 not to market the solution.
               </p>
-            </div>
-            <div className="rounded-lg border border-sky-100 bg-white p-5 shadow-sm">
+              </div>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="rounded-lg border border-sky-100 bg-white p-5 shadow-sm h-full">
               <h3 className="text-sm font-semibold text-gray-900">
                 International Mexel track record
               </h3>
@@ -187,7 +212,8 @@ export default function TesPage() {
                 but is tailored to South African station and industrial conditions,
                 with a clear efficiency and governance focus.
               </p>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

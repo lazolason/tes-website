@@ -1,4 +1,5 @@
 import Link from "next/link";
+import FadeIn from "../../components/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -42,9 +43,11 @@ export default function AboutPage() {
       {/* Our approach */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">Our technical approach</h2>
+          <FadeIn>
+            <h2 className="text-xl font-semibold text-gray-900">Our technical approach</h2>
+          </FadeIn>
           <div className="mt-4 grid gap-8 md:grid-cols-2">
-            <div>
+            <FadeIn delay={100}>
               <p className="text-sm text-gray-700 leading-relaxed">
                 We do not start with a catalogue of products. We start with{" "}
                 <span className="font-semibold">how energy and water are being used</span>{" "}
@@ -60,8 +63,9 @@ export default function AboutPage() {
                 clear <span className="font-semibold">verification framework</span>. Each
                 element is simple; the value is in how they work together.
               </p>
-            </div>
-            <div className="space-y-3">
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="space-y-3">
               <h3 className="text-sm font-semibold text-gray-900">Principles</h3>
               <ul className="space-y-2 text-sm text-gray-700">
                 <li>• Transparent, data-driven, engineering-first.</li>
@@ -69,7 +73,8 @@ export default function AboutPage() {
                 <li>• Scope tightly; avoid overpromising or overselling.</li>
                 <li>• Let measured results, not claims, drive decisions.</li>
               </ul>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

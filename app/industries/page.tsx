@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import CoolingSchematic from "../../components/CoolingSchematic";
+import FadeIn from "../../components/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -56,7 +58,8 @@ export default function IndustriesPage() {
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
-            <div className="flex flex-col gap-4">
+            <FadeIn>
+              <div className="flex flex-col gap-4">
               {/* Cooling-water system schematic */}
               <CoolingSchematic />
 
@@ -83,14 +86,19 @@ export default function IndustriesPage() {
                   view to restore and maintain condenser cleanliness on these units.
                 </p>
               </div>
-            </div>
+              </div>
+            </FadeIn>
 
-            <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border border-dashed border-sky-100 bg-white">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Control room / condenser performance screens
-                </div>
+            <FadeIn delay={150}>
+              <div className="flex flex-col gap-4">
+              {/* Condenser image */}
+              <div className="relative h-32 w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/condenser.png"
+                  alt="Industrial condenser system"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div>
@@ -108,7 +116,8 @@ export default function IndustriesPage() {
                   and reduce cold-end losses in a way that station teams can see and verify.
                 </p>
               </div>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -118,11 +127,14 @@ export default function IndustriesPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Mine / processing plant / cooling circuit
-                </div>
+              {/* Mining plant image */}
+              <div className="relative h-32 w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/mining-plant.png"
+                  alt="Mining and minerals processing plant"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div>
@@ -174,11 +186,14 @@ export default function IndustriesPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Refinery / petrochemical / steel plant
-                </div>
+              {/* Refinery image */}
+              <div className="relative h-32 w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/refinery.png"
+                  alt="Refinery and petrochemical plant"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div>
@@ -225,11 +240,14 @@ export default function IndustriesPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Brewery / food plant / laundry / chiller plant
-                </div>
+              {/* Food & beverage image */}
+              <div className="relative h-32 w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/food-beverage.png"
+                  alt="Food and beverage processing facility"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div>

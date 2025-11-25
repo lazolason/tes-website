@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -39,11 +40,14 @@ export default function ApplicationsPage() {
           <div className="grid gap-8 md:grid-cols-2">
             {/* Eskom wet-cooled applications */}
             <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Wet-cooled station / cooling tower / condenser view
-                </div>
+              {/* Cooling tower image */}
+              <div className="relative h-32 w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/cooling-tower.png"
+                  alt="Wet-cooled power station cooling tower"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div>
@@ -68,11 +72,14 @@ export default function ApplicationsPage() {
 
             {/* Industrial applications */}
             <div className="flex flex-col gap-4">
-              {/* Image placeholder */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg border bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-xs font-semibold text-gray-400">
-                  Image placeholder: Industrial cooling system / mine / refinery / brewery
-                </div>
+              {/* Industrial plant image */}
+              <div className="relative h-32 w-full overflow-hidden rounded-lg">
+                <Image
+                  src="/industrial-plant.png"
+                  alt="Industrial cooling water system"
+                  fill
+                  className="object-cover"
+                />
               </div>
 
               <div>
@@ -110,12 +117,15 @@ export default function ApplicationsPage() {
           </p>
 
           <div className="mt-6 grid gap-6 md:grid-cols-4">
-            {/* 432 image placeholder */}
+            {/* 432 image */}
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
-              <div className="relative h-24 w-full overflow-hidden rounded bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-[10px] font-semibold text-gray-400">
-                  Image placeholder: Mexel®432 drums / product
-                </div>
+              <div className="relative h-24 w-full overflow-hidden rounded">
+                <Image
+                  src="/dosing-skid.png"
+                  alt="Mexel®432 dosing equipment"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-sm font-semibold text-gray-900">
                 Mexel®432 chemistry
@@ -127,12 +137,15 @@ export default function ApplicationsPage() {
               </p>
             </div>
 
-            {/* IoT skid placeholder */}
+            {/* IoT skid */}
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
-              <div className="relative h-24 w-full overflow-hidden rounded bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-[10px] font-semibold text-gray-400">
-                  Image placeholder: TES dosing skid / Thingy:91X hardware
-                </div>
+              <div className="relative h-24 w-full overflow-hidden rounded">
+                <Image
+                  src="/iot-dashboard.png"
+                  alt="IoT dosing dashboard"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-sm font-semibold text-gray-900">
                 TES dosing skid (Thingy:91X)
@@ -144,12 +157,15 @@ export default function ApplicationsPage() {
               </p>
             </div>
 
-            {/* Data view placeholder */}
+            {/* Data view */}
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
-              <div className="relative h-24 w-full overflow-hidden rounded bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-[10px] font-semibold text-gray-400">
-                  Image placeholder: Cooling-water / TR-TTD chart or dashboard
-                </div>
+              <div className="relative h-24 w-full overflow-hidden rounded">
+                <Image
+                  src="/control-room.png"
+                  alt="Cooling water data view"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-sm font-semibold text-gray-900">
                 Cooling-water data view
@@ -160,12 +176,15 @@ export default function ApplicationsPage() {
               </p>
             </div>
 
-            {/* Verification placeholder */}
+            {/* Verification */}
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
-              <div className="relative h-24 w-full overflow-hidden rounded bg-gray-100">
-                <div className="flex h-full w-full items-center justify-center text-[10px] font-semibold text-gray-400">
-                  Image placeholder: Protocol / test plan / verification diagram
-                </div>
+              <div className="relative h-24 w-full overflow-hidden rounded">
+                <Image
+                  src="/verification.png"
+                  alt="Verification framework"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <h3 className="text-sm font-semibold text-gray-900">
                 Verification framework
