@@ -1,10 +1,13 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/tes", label: "TES System" },
   { href: "/products", label: "Products" },
   { href: "/applications", label: "Applications" },
+  { href: "/industries", label: "Industries" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -13,19 +16,15 @@ export default function Navbar() {
     <header className="border-b bg-white/80 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-2">
-          {/* Logo placeholder – replace with <Image> if you want actual logo here */}
-          <div className="flex h-8 w-8 items-center justify-center rounded-full bg-sky-700 text-xs font-bold text-white">
-            M
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm font-semibold text-gray-900">
-              Mexel Energy Sustain
-            </span>
-            <span className="text-[11px] text-gray-500">
-              Thermal Efficiency Solution (TES)
-            </span>
-          </div>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="Mexel Energy Sustain"
+            width={120}
+            height={40}
+            className="h-10 w-auto"
+          />
+          <span className="sr-only">Mexel Energy Sustain</span>
         </Link>
 
         {/* Nav links */}
