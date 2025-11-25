@@ -1,1 +1,8 @@
+# Next.js
+.next/
+out/
+*.log
+
+# macOS
+.DS_Store
 .DS_Store
