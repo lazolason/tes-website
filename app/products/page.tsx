@@ -19,35 +19,72 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-brand-500">
-            Products
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Mexel chemistry for cooling-water and steam systems.
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
-            Mexel Energy Sustain supplies proven film-forming amine/surfactant
-            technologies for industrial water systems. TES is built around{" "}
-            <span className="font-semibold">Mexel®432</span> in cooling-water
-            service, with <span className="font-semibold">MexSteam 100</span>{" "}
-            retained as a separate, boiler-side strategic product.
-          </p>
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+                Products
+              </p>
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Mexel®432: Film-forming chemistry that works.
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+                Mexel®432 is a film-forming amine/surfactant technology proven across
+                cooling-water systems worldwide. It controls biofouling, corrosion and
+                scaling with minimal environmental impact. TES is built around Mexel®432
+                for cooling-water service.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <Link
+                  href="/mexel432"
+                  className="inline-flex items-center rounded-md bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
+                >
+                  Mexel®432 Deep Dive →
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-900"
+                >
+                  Request Technical Data
+                </Link>
+              </div>
+            </div>
+            <div className="relative h-64 lg:h-80">
+              <Image
+                src="/dosing-skid.png"
+                alt="Mexel®432 dosing system with IoT monitoring"
+                fill
+                className="rounded-xl object-cover shadow-lg"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Mexel 432 – primary TES product */}
       <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          {/* Product image */}
-          <div className="relative mb-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
-            <Image
-              src="/dosing-skid.png"
-              alt="TES dosing system for Mexel®432"
-              fill
-              className="object-cover"
-            />
-          </div>
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              How Mexel®432 Works
+            </h2>
+            <p className="mt-3 max-w-3xl text-base text-gray-600">
+              Film-forming chemistry that replaces biofilm with a protective molecular layer.
+            </p>
+          </FadeIn>
+          
+          {/* Dosing system image */}
+          <FadeIn delay={200}>
+            <div className="relative mt-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
+              <Image
+                src="/dosing-skid.png"
+                alt="TES IoT-enabled dosing system for Mexel®432"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
 
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <FadeIn>
