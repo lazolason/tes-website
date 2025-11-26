@@ -80,7 +80,7 @@ export default function DataCentresPage() {
                   data centre operators hit PUE and sustainability targets.
                 </p>
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  TES's IoT dosing and performance tracking provide visibility into
+                  TES&apos;s IoT dosing and performance tracking provide visibility into
                   cooling-water treatment effectiveness, making it easier to identify
                   efficiency drift before it affects critical IT infrastructure.
                 </p>

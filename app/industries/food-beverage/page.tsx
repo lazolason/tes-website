@@ -103,7 +103,7 @@ export default function FoodBeveragePage() {
                 Improve cooling efficiency in your facility
               </h2>
               <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                Let's discuss how TES can reduce energy costs and downtime.
+                Let&apos;s discuss how TES can reduce energy costs and downtime.
               </p>
             </div>
             <div className="flex flex-col gap-2 text-xs">

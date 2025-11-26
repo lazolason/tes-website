@@ -74,7 +74,7 @@ export default function MiningPage() {
                     <li>• Interactions between process water and cooling water</li>
                   </ul>
                   <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                    Mexel®432's film-forming and dispersant properties keep surfaces cleaner 
+                    Mexel®432&apos;s film-forming and dispersant properties keep surfaces cleaner 
                     and solids mobile, improving cooling performance and reducing unscheduled cleaning.
                   </p>
                 </div>

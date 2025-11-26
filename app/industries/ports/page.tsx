@@ -74,7 +74,7 @@ export default function PortsPage() {
                   How TES works in marine environments
                 </h3>
                 <p className="mt-4 text-sm text-gray-600 leading-relaxed">
-                  Mexel®432's film-forming properties create a protective layer that
+                  Mexel®432&apos;s film-forming properties create a protective layer that
                   discourages biofouling attachment and reduces corrosion on heat-transfer
                   surfaces. This is particularly valuable in once-through seawater cooling
                   systems or where environmental discharge standards limit traditional
@@ -146,7 +146,7 @@ export default function PortsPage() {
                 Discuss marine cooling-water solutions
               </h2>
               <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                Let's explore how TES can work in your coastal or maritime operation.
+                Let&apos;s explore how TES can work in your coastal or maritime operation.
               </p>
             </div>
             <div className="flex flex-col gap-2 text-xs">

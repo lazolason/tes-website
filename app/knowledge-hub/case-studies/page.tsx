@@ -34,7 +34,7 @@ export default function CaseStudiesPage() {
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-700">
             Each case study follows a consistent structure: baseline conditions,
             intervention approach, observed results and lessons learned. Where
-            independent verification was conducted, we include the referee's
+            independent verification was conducted, we include the referee&apos;s
             conclusions.
           </p>
         </div>
@@ -45,7 +45,7 @@ export default function CaseStudiesPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <FadeIn>
             <h2 className="text-xl font-semibold text-gray-900">
-              What you'll find in these case studies
+              What you&apos;ll find in these case studies
             </h2>
           </FadeIn>
           <div className="mt-6 grid gap-5 md:grid-cols-4">
@@ -234,7 +234,7 @@ export default function CaseStudiesPage() {
                     Established protocols
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
-                    RT&D's Testing Protocol Rev08 provides a rigorous,
+                    RT&amp;D&apos;s Testing Protocol Rev08 provides a rigorous,
                     transparent framework for baseline → intervention → review
                     assessment.
                   </p>
@@ -266,7 +266,7 @@ export default function CaseStudiesPage() {
           <p className="mt-3 max-w-2xl text-sm text-gray-600 leading-relaxed">
             Mexel®432 has a 30+ year track record across power generation, refining,
             petrochemical, desalination and marine industries worldwide. These
-            reference cases demonstrate the product's proven performance in diverse
+            reference cases demonstrate the product&apos;s proven performance in diverse
             cooling-water environments and validate the chemistry underlying the TES
             approach.
           </p>

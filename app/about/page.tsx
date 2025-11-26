@@ -153,7 +153,7 @@ export default function AboutPage() {
                   Under his leadership, Mexel Energy Sustain has worked with Eskom RT&D to develop structured verification protocols for cooling-water efficiency interventions at wet-cooled power stations, including documented work at Kriel and the formal testing protocol for Tutuka.
                 </p>
                 <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-                  Lazola's approach is rooted in engineering discipline, transparent data and alignment with existing plant protocols. He focuses on measurable results, structured verification and building long-term partnerships with energy and industrial clients who value technical integrity over marketing claims.
+                  Lazola&apos;s approach is rooted in engineering discipline, transparent data and alignment with existing plant protocols. He focuses on measurable results, structured verification and building long-term partnerships with energy and industrial clients who value technical integrity over marketing claims.
                 </p>
               </div>
             </FadeIn>

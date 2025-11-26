@@ -74,7 +74,7 @@ export default function AgriculturePage() {
                   How TES applies in agriculture
                 </h3>
                 <p className="mt-4 text-sm text-gray-600 leading-relaxed">
-                  Mexel®432's film-forming and dispersant properties help keep 
+                  Mexel®432&apos;s film-forming and dispersant properties help keep 
                   heat exchangers, cooling towers and irrigation lines cleaner, 
                   reducing biofilm build-up and scaling. In cooling-water circuits, 
                   this translates to lower energy use for refrigeration and more 
