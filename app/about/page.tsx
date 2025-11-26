@@ -119,6 +119,48 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Leadership */}
+      <section className="border-b">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              Leadership
+            </h2>
+          </FadeIn>
+          <div className="mt-8 grid gap-8 md:grid-cols-3 lg:grid-cols-4">
+            <FadeIn delay={100}>
+              <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-lg">
+                <Image
+                  src="/lazola-sonqishe.png"
+                  alt="Lazola Sonqishe, Managing Director"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="md:col-span-2 lg:col-span-3">
+                <h3 className="text-xl font-semibold text-gray-900">
+                  Lazola Sonqishe
+                </h3>
+                <p className="mt-1 text-sm font-medium text-brand-500">
+                  Managing Director
+                </p>
+                <p className="mt-4 text-sm text-gray-700 leading-relaxed">
+                  Lazola Sonqishe is the Managing Director of Mexel Energy Sustain (Pty) Ltd. With a background in energy systems and industrial efficiency, Lazola leads the technical and commercial development of the TES (Thermal Efficiency Solution) framework and Mexel®432 cooling-water applications across South Africa.
+                </p>
+                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                  Under his leadership, Mexel Energy Sustain has worked with Eskom RT&D to develop structured verification protocols for cooling-water efficiency interventions at wet-cooled power stations, including documented work at Kriel and the formal testing protocol for Tutuka.
+                </p>
+                <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+                  Lazola's approach is rooted in engineering discipline, transparent data and alignment with existing plant protocols. He focuses on measurable results, structured verification and building long-term partnerships with energy and industrial clients who value technical integrity over marketing claims.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Eskom context */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">

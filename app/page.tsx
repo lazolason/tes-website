@@ -71,17 +71,41 @@ export default function TesPage() {
               </div>
             </div>
 
-            {/* Hero image */}
+            {/* Hero image - Before/After */}
             <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
               <Image
-                src="/hero-image.png"
-                alt="Industrial cooling water system"
+                src="/before-after-tubes.png"
+                alt="Before: Fouled condenser tubes vs After: Clean tubes with Mexel432 treatment"
                 fill
                 className="object-cover"
                 priority
               />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* TES 4-Step Process */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900 text-center">
+              How TES Works
+            </h2>
+            <p className="mt-3 max-w-2xl mx-auto text-base text-gray-600 text-center">
+              TES combines four integrated components to deliver measurable cooling-water efficiency improvements.
+            </p>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div className="mt-8 relative h-64 md:h-80 lg:h-96">
+              <Image
+                src="/tes-4-step-process.png"
+                alt="TES 4-Step Process: Chemistry, IoT, Data, Verification"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -225,6 +249,26 @@ export default function TesPage() {
               </div>
             </FadeIn>
           </div>
+
+          {/* TR Improvement Chart */}
+          <FadeIn delay={500}>
+            <div className="mt-10">
+              <h3 className="text-lg font-semibold text-gray-900 text-center">
+                Measured Results: TR Improvement Over 90 Days
+              </h3>
+              <p className="mt-2 text-sm text-gray-600 text-center max-w-2xl mx-auto">
+                Actual temperature rise (TR) data from Kriel Unit 6 trial showing 4°C improvement after Mexel®432 application.
+              </p>
+              <div className="mt-6 relative h-64 md:h-80">
+                <Image
+                  src="/tr-improvement-chart.png"
+                  alt="TR Improvement Over Time: 28C to 32C increase over 90 days"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
