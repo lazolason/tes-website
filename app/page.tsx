@@ -109,6 +109,110 @@ export default function TesPage() {
         </div>
       </section>
 
+      {/* TES Benefits Grid */}
+      <section className="border-b bg-gray-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900 text-center">
+              Why TES Delivers Results
+            </h2>
+            <p className="mt-3 max-w-2xl mx-auto text-base text-gray-600 text-center">
+              Eight core capabilities working together to transform cooling-water performance.
+            </p>
+          </FadeIn>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <FadeIn delay={100}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">Efficiency Gains</h3>
+                <p className="mt-2 text-sm text-gray-600">Improved heat transfer, reduced energy consumption, better output per unit of fuel.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={150}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">Corrosion Protection</h3>
+                <p className="mt-2 text-sm text-gray-600">Active corrosion inhibition protects heat exchangers, extending asset life and reliability.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">Biofouling Control</h3>
+                <p className="mt-2 text-sm text-gray-600">Prevents biofilm formation, keeping tubes clean and heat transfer optimal.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={250}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">Cost Savings</h3>
+                <p className="mt-2 text-sm text-gray-600">Lower chemical costs, reduced shutdowns, and measurable OPEX reduction.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">Environmental Benefits</h3>
+                <p className="mt-2 text-sm text-gray-600">Reduced emissions, lower water consumption, and gentler environmental footprint.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={350}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">IoT Monitoring</h3>
+                <p className="mt-2 text-sm text-gray-600">Real-time data collection, cloud dashboards, and automated alerts for proactive control.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={400}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">Independent Verification</h3>
+                <p className="mt-2 text-sm text-gray-600">Third-party validated results, transparent baselines, and credible performance claims.</p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={450}>
+              <div className="group rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-500/50">
+                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-500/10">
+                  <svg className="h-6 w-6 text-brand-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="mt-4 text-sm font-semibold text-gray-900">RT&D Foundation</h3>
+                <p className="mt-2 text-sm text-gray-600">Developed with Eskom Research, Testing & Development for South African conditions.</p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* What TES is / is not */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
