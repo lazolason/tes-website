@@ -1,4 +1,5 @@
 "use client";
+// Navbar v2 - Logo only, no text
 
 import { useState } from "react";
 import Link from "next/link";
