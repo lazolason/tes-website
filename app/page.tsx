@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import FadeIn from "../components/FadeIn";
+import TrustedBy from "../components/TrustedBy";
+import AnimatedStats from "../components/AnimatedStats";
+import Testimonials from "../components/Testimonials";
 
 export const metadata: Metadata = {
   title: "TES Cooling-Water Efficiency System",
@@ -84,6 +87,9 @@ export default function TesPage() {
           </div>
         </div>
       </section>
+
+      {/* Trusted By Strip */}
+      <TrustedBy />
 
       {/* TES 4-Step Process */}
       <section className="border-b bg-white">
@@ -535,6 +541,12 @@ export default function TesPage() {
           </div>
         </div>
       </section>
+
+      {/* Animated Stats Section */}
+      <AnimatedStats />
+
+      {/* Testimonials Section */}
+      <Testimonials />
     </main>
   );
 }

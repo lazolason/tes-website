@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import FloatingCTA from '../components/FloatingCTA'
 import type { Metadata } from 'next'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mexelenergysustain.com';
@@ -81,6 +82,7 @@ export default function RootLayout({
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />
+        <FloatingCTA />
       </body>
     </html>
   )
