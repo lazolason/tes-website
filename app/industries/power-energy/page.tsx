@@ -21,19 +21,32 @@ export default function PowerEnergyPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
-            Industries / Power & Energy
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            Wet-cooled power generation
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-            TES is primarily designed for wet-cooled coal-fired units where
-            the condenser and cooling-water system are a significant source
-            of efficiency loss. These are typically large stations using
-            river, dam or mine water, with complex chemistry and high raw-water
-            demand.
-          </p>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+                Industries / Power & Energy
+              </p>
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Wet-cooled power generation
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+                TES is primarily designed for wet-cooled coal-fired units where
+                the condenser and cooling-water system are a significant source
+                of efficiency loss. These are typically large stations using
+                river, dam or mine water, with complex chemistry and high raw-water
+                demand.
+              </p>
+            </div>
+            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
+              <Image
+                src="/industry-power.png"
+                alt="Power generation facility with cooling towers"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
