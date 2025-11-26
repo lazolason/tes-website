@@ -28,13 +28,14 @@ export default function AboutPage() {
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 About Mexel Energy Sustain.
               </h1>
-              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">00">
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
                 Mexel Energy Sustain (Pty) Ltd is a South African company focused on{" "}
                 <span className="font-semibold">cooling-water and thermal efficiency</span>.
                 We combine Mexel chemistry with IoT dosing, data and verification to help
                 large energy and industrial users reduce cold-end losses in a disciplined,
                 engineering-led way.
-              </p>00">
+              </p>
+              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-700">
                 Our work sits at the intersection of energy efficiency, water treatment and
                 system performance. TES is our practical framework for applying this at
                 wet-cooled coal units and industrial cooling-water systems.
