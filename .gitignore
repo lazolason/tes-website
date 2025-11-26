@@ -12,3 +12,4 @@ package-lock.json
 
 # Archives
 *.zip
+.vercel
