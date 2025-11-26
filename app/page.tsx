@@ -40,12 +40,6 @@ export default function TesPage() {
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/contact"
-                  className="inline-flex items-center rounded-md bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-                >
-                  Discuss a TES pilot
-                </Link>
-                <Link
                   href="/products"
                   className="inline-flex items-center text-sm font-semibold text-sky-700 hover:text-sky-900"
                 >
@@ -384,12 +378,6 @@ export default function TesPage() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
-            <Link
-              href="/contact"
-              className="inline-flex items-center rounded-md bg-sky-700 px-5 py-2.5 text-xs font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
-            >
-              Start a TES pilot discussion
-            </Link>
             <Link
               href="/applications"
               className="inline-flex items-center text-xs font-semibold text-sky-700 hover:text-sky-900"

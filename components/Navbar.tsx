@@ -13,15 +13,24 @@ const navItems = [
     href: "/industries", 
     label: "Industries",
     dropdown: [
-      { href: "/industries#power", label: "Power & Energy" },
-      { href: "/industries#mining", label: "Mining & Minerals" },
-      { href: "/industries#refineries", label: "Refineries & Petrochemical" },
-      { href: "/industries#food-beverage", label: "Food & Beverage" },
-      { href: "/industries#agriculture", label: "Agriculture & Irrigation" },
+      { href: "/industries/power-energy", label: "Power & Energy" },
+      { href: "/industries/mining", label: "Mining & Minerals" },
+      { href: "/industries/refineries", label: "Refineries & Petrochemical" },
+      { href: "/industries/food-beverage", label: "Food & Beverage" },
+      { href: "/industries/agriculture", label: "Agriculture & Irrigation" },
+      { href: "/industries/data-centres", label: "Data Centres" },
+      { href: "/industries/ports", label: "Sea / Harbours / Ports" },
     ]
   },
-  { href: "/case-studies", label: "Case Studies" },
-  { href: "/resources", label: "Resources" },
+  { 
+    href: "/knowledge-hub", 
+    label: "Knowledge Hub",
+    dropdown: [
+      { href: "/knowledge-hub", label: "Methodology & FAQ" },
+      { href: "/knowledge-hub/case-studies", label: "Case Studies" },
+      { href: "/knowledge-hub/resources", label: "Resources" },
+    ]
+  },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
