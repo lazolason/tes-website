@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries",
     "/case-studies",
     "/case-studies/kriel",
+    "/resources",
     "/about",
     "/contact",
   ];

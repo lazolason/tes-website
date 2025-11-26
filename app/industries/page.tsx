@@ -50,12 +50,15 @@ export default function IndustriesPage() {
             <span className="rounded-full bg-violet-50 px-3 py-1.5 font-semibold text-violet-800 sm:py-1">
               Food & beverage, laundries
             </span>
+            <span className="rounded-full bg-green-50 px-3 py-1.5 font-semibold text-green-800 sm:py-1">
+              Agriculture & irrigation
+            </span>
           </div>
         </div>
       </section>
 
       {/* Power & energy */}
-      <section className="border-b">
+      <section id="power" className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <FadeIn>
@@ -123,7 +126,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Mining & minerals processing */}
-      <section className="border-b bg-gray-50">
+      <section id="mining" className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
@@ -182,7 +185,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Petrochemical, refineries, metals */}
-      <section className="border-b">
+      <section id="refineries" className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
@@ -236,7 +239,7 @@ export default function IndustriesPage() {
       </section>
 
       {/* Food & beverage, laundries, commercial */}
-      <section className="border-b bg-gray-50">
+      <section id="food-beverage" className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex flex-col gap-4">
@@ -278,6 +281,55 @@ export default function IndustriesPage() {
                 biofouling and corrosion. TES concepts can be scaled down to fit the
                 size and data-availability of each site, while keeping the same
                 discipline around baselines and measurable impact.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Agriculture & irrigation */}
+      <section id="agriculture" className="border-b">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="flex flex-col gap-4">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+                  Agriculture and irrigation
+                </h2>
+                <p className="mt-3 text-base text-gray-600 leading-relaxed">
+                  Large-scale farming operations, greenhouses, aquaculture and 
+                  irrigation networks rely on cooling-water systems for climate 
+                  control, refrigeration and process water. Biofilm, scaling and 
+                  corrosion in cooling loops, evaporative coolers and irrigation 
+                  lines reduce efficiency and increase maintenance.
+                </p>
+                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                  <li>• Cooling systems for cold storage and packhouses.</li>
+                  <li>• Evaporative coolers in greenhouses and livestock facilities.</li>
+                  <li>• Irrigation system fouling from biological growth and particulates.</li>
+                  <li>• Water quality variability in rural or dam-fed systems.</li>
+                  <li>• Corrosion in galvanized and mixed-metal irrigation infrastructure.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-4">
+              <h3 className="text-sm font-semibold text-gray-900">
+                How TES applies in agriculture
+              </h3>
+              <p className="text-sm text-gray-700 leading-relaxed">
+                Mexel®432&apos;s film-forming and dispersant properties help keep 
+                heat exchangers, cooling towers and irrigation lines cleaner, 
+                reducing biofilm build-up and scaling. In cooling-water circuits, 
+                this translates to lower energy use for refrigeration and more 
+                stable operating temperatures.
+              </p>
+              <p className="mt-3 text-xs text-gray-700 leading-relaxed">
+                For irrigation systems, improved water flow and reduced fouling 
+                can extend maintenance intervals and improve uniformity. TES 
+                monitoring concepts can be adapted to smaller agricultural 
+                operations where cooling-water performance directly impacts 
+                product quality and energy costs.
               </p>
             </div>
           </div>

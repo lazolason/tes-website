@@ -98,33 +98,39 @@ export default function TesPage() {
       {/* IoT & Data */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            IoT dosing and cooling-water data
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              IoT dosing and cooling-water data
+            </h2>
+          </FadeIn>
           <div className="mt-5 grid gap-8 md:grid-cols-2">
-            <div>
-              <p className="text-base text-gray-600 leading-relaxed">
-                TES uses IoT-enabled dosing skids (based on the Nordic Thingy:91X
-                platform) to create a traceable record of what was dosed, where and
-                when. Level sensing and event logging mean dosing history is no
-                longer guesswork.
-              </p>
-              <p className="mt-3 text-base text-gray-600 leading-relaxed">
-                This dosing record is then linked to cooling-water and condenser
-                metrics — such as TR, TTD and vacuum stability — to build a simple
-                performance view.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-900">
-                The goal
-              </h3>
-              <p className="mt-2 text-base text-gray-600 leading-relaxed">
-                Make condenser fouling a visible, managed variable — not a hidden
-                loss buried in the heat-rate. Station teams can see the correlation
-                between dosing and performance, and adjust with confidence.
-              </p>
-            </div>
+            <FadeIn delay={100}>
+              <div>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  TES uses IoT-enabled dosing skids (based on the Nordic Thingy:91X
+                  platform) to create a traceable record of what was dosed, where and
+                  when. Level sensing and event logging mean dosing history is no
+                  longer guesswork.
+                </p>
+                <p className="mt-3 text-base text-gray-600 leading-relaxed">
+                  This dosing record is then linked to cooling-water and condenser
+                  metrics — such as TR, TTD and vacuum stability — to build a simple
+                  performance view.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border bg-white p-5 shadow-sm">
+                <h3 className="text-sm font-semibold text-gray-900">
+                  The goal
+                </h3>
+                <p className="mt-2 text-base text-gray-600 leading-relaxed">
+                  Make condenser fouling a visible, managed variable — not a hidden
+                  loss buried in the heat-rate. Station teams can see the correlation
+                  between dosing and performance, and adjust with confidence.
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -132,36 +138,45 @@ export default function TesPage() {
       {/* Verification */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            Verification and future carbon-credit potential
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              Verification and future carbon-credit potential
+            </h2>
+          </FadeIn>
           <div className="mt-5 grid gap-8 md:grid-cols-2">
-            <div>
-              <p className="text-base text-gray-600 leading-relaxed">
-                Verification follows the baseline → intervention → post-intervention
-                structure in Eskom RT&amp;D&apos;s Tutuka Surfactant (FFA) Testing
-                Protocol Rev08. The same logic can be adapted for other stations or
-                industrial plants.
-              </p>
-              <p className="mt-3 text-base text-gray-600 leading-relaxed">
-                An independent referee such as the Water Research Commission (WRC)
-                can review the methodology and results where required.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-gray-900">
-                Carbon-credit potential
-              </h3>
-              <p className="mt-2 text-base text-gray-600 leading-relaxed">
-                Once cooling-water improvements are measured and repeatable, they can
-                support future work on emissions-intensity and carbon-credit
-                methodologies (e.g. through bodies such as Brundtland).
-              </p>
-              <p className="mt-3 text-sm text-gray-500">
-                TES is presented first as a technical efficiency solution, not a
-                carbon-trading scheme.
-              </p>
-            </div>
+            <FadeIn delay={100}>
+              <div className="rounded-lg border bg-gray-50 p-5">
+                <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                  RT&D Protocol alignment
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Verification follows the baseline → intervention → post-intervention
+                  structure in Eskom RT&amp;D&apos;s Tutuka Surfactant (FFA) Testing
+                  Protocol Rev08. The same logic can be adapted for other stations or
+                  industrial plants.
+                </p>
+                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                  An independent referee such as the Water Research Commission (WRC)
+                  can review the methodology and results where required.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border bg-sky-50 p-5 border-sky-100">
+                <h3 className="text-sm font-semibold text-gray-900 mb-3">
+                  Carbon-credit potential
+                </h3>
+                <p className="text-base text-gray-600 leading-relaxed">
+                  Once cooling-water improvements are measured and repeatable, they can
+                  support future work on emissions-intensity and carbon-credit
+                  methodologies (e.g. through bodies such as Brundtland).
+                </p>
+                <p className="mt-3 text-sm text-gray-500">
+                  TES is presented first as a technical efficiency solution, not a
+                  carbon-trading scheme.
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -221,49 +236,57 @@ export default function TesPage() {
       {/* How a pilot works */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
-            How a TES pilot works
-          </h2>
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+              How a TES pilot works
+            </h2>
+          </FadeIn>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border bg-gray-50 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
-                Step 1
-              </p>
-              <h3 className="mt-2 text-sm font-semibold text-gray-900">
-                Scoping and baseline
-              </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                Agree on the unit(s), circuits and KPIs. Confirm how TR, TTD,
-                condenser vacuum and water quality are currently measured. Collect a
-                baseline dataset over an agreed period.
-              </p>
-            </div>
-            <div className="rounded-lg border bg-gray-50 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
-                Step 2
-              </p>
-              <h3 className="mt-2 text-sm font-semibold text-gray-900">
-                Dosing and monitoring
-              </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                Install the TES dosing skid, configure Mexel®432 treatment and begin
-                dosing. Monitor cooling-water and condenser performance against the
-                baseline.
-              </p>
-            </div>
-            <div className="rounded-lg border bg-gray-50 p-5">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
-                Step 3
-              </p>
-              <h3 className="mt-2 text-sm font-semibold text-gray-900">
-                Review and decision
-              </h3>
-              <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                Compare intervention results with the baseline, using the same KPIs
-                and the RT&amp;D protocol. Decide whether to extend TES to more units
-                or stations.
-              </p>
-            </div>
+            <FadeIn delay={100}>
+              <div className="rounded-lg border bg-gray-50 p-5 h-full">
+                <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  Step 1
+                </p>
+                <h3 className="mt-2 text-sm font-semibold text-gray-900">
+                  Scoping and baseline
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  Agree on the unit(s), circuits and KPIs. Confirm how TR, TTD,
+                  condenser vacuum and water quality are currently measured. Collect a
+                  baseline dataset over an agreed period.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-lg border bg-gray-50 p-5 h-full">
+                <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  Step 2
+                </p>
+                <h3 className="mt-2 text-sm font-semibold text-gray-900">
+                  Dosing and monitoring
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  Install the TES dosing skid, configure Mexel®432 treatment and begin
+                  dosing. Monitor cooling-water and condenser performance against the
+                  baseline.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="rounded-lg border bg-gray-50 p-5 h-full">
+                <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  Step 3
+                </p>
+                <h3 className="mt-2 text-sm font-semibold text-gray-900">
+                  Review and decision
+                </h3>
+                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  Compare intervention results with the baseline, using the same KPIs
+                  and the RT&amp;D protocol. Decide whether to extend TES to more units
+                  or stations.
+                </p>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

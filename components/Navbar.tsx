@@ -9,14 +9,26 @@ const navItems = [
   { href: "/tes", label: "TES System" },
   { href: "/products", label: "Products" },
   { href: "/applications", label: "Applications" },
-  { href: "/industries", label: "Industries" },
+  { 
+    href: "/industries", 
+    label: "Industries",
+    dropdown: [
+      { href: "/industries#power", label: "Power & Energy" },
+      { href: "/industries#mining", label: "Mining & Minerals" },
+      { href: "/industries#refineries", label: "Refineries & Petrochemical" },
+      { href: "/industries#food-beverage", label: "Food & Beverage" },
+      { href: "/industries#agriculture", label: "Agriculture & Irrigation" },
+    ]
+  },
   { href: "/case-studies", label: "Case Studies" },
+  { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
 
   return (
     <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
@@ -45,13 +57,45 @@ export default function Navbar() {
         {/* Desktop nav */}
         <nav className="hidden items-center gap-1 text-[13px] font-medium text-gray-700 md:flex">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="rounded-md px-3 py-2 transition-colors hover:bg-sky-50 hover:text-sky-800"
-            >
-              {item.label}
-            </Link>
+            item.dropdown ? (
+              <div 
+                key={item.href}
+                className="relative"
+                onMouseEnter={() => setDropdownOpen(item.label)}
+                onMouseLeave={() => setDropdownOpen(null)}
+              >
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 rounded-md px-3 py-2 transition-colors hover:bg-sky-50 hover:text-sky-800"
+                >
+                  {item.label}
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </Link>
+                {dropdownOpen === item.label && (
+                  <div className="absolute left-0 top-full mt-1 w-56 rounded-md border bg-white py-2 shadow-lg">
+                    {item.dropdown.map((subItem) => (
+                      <Link
+                        key={subItem.href}
+                        href={subItem.href}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-md px-3 py-2 transition-colors hover:bg-sky-50 hover:text-sky-800"
+              >
+                {item.label}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -80,14 +124,38 @@ export default function Navbar() {
         <nav className="border-t bg-white px-4 pb-4 pt-2 md:hidden">
           <div className="flex flex-col gap-1">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-800"
-              >
-                {item.label}
-              </Link>
+              item.dropdown ? (
+                <div key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+                  >
+                    {item.label}
+                  </Link>
+                  <div className="ml-4 mt-1 flex flex-col gap-1">
+                    {item.dropdown.map((subItem) => (
+                      <Link
+                        key={subItem.href}
+                        href={subItem.href}
+                        onClick={() => setMobileOpen(false)}
+                        className="rounded-md px-3 py-2 text-xs text-gray-600 hover:bg-sky-50 hover:text-sky-800"
+                      >
+                        {subItem.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+                >
+                  {item.label}
+                </Link>
+              )
             ))}
           </div>
         </nav>
