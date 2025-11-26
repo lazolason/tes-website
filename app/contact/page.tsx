@@ -94,7 +94,7 @@ export default function ContactPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-500">
             Contact
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -129,7 +129,7 @@ export default function ContactPage() {
                   <span className="font-semibold">Email:</span>{" "}
                   <a
                     href="mailto:lazola@mexelenergysustain.com"
-                    className="text-sky-700 hover:text-sky-900"
+                    className="text-brand-500 hover:text-brand-900"
                   >
                     lazola@mexelenergysustain.com
                   </a>
@@ -138,7 +138,7 @@ export default function ContactPage() {
                   <span className="font-semibold">Mobile:</span>{" "}
                   <a
                     href="tel:+27794648298"
-                    className="text-sky-700 hover:text-sky-900"
+                    className="text-brand-500 hover:text-brand-900"
                   >
                     +27 79 464 8298
                   </a>
@@ -147,7 +147,7 @@ export default function ContactPage() {
                   <span className="font-semibold">General enquiries:</span>{" "}
                   <a
                     href="mailto:info@mexelenergysustain.com"
-                    className="text-sky-700 hover:text-sky-900"
+                    className="text-brand-500 hover:text-brand-900"
                   >
                     info@mexelenergysustain.com
                   </a>
@@ -191,7 +191,7 @@ export default function ContactPage() {
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="mt-6 text-sm font-semibold text-sky-700 hover:text-sky-800"
+                    className="mt-6 text-sm font-semibold text-brand-500 hover:text-brand-800"
                   >
                     Send another message
                   </button>
@@ -225,7 +225,7 @@ export default function ContactPage() {
                         className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
                           errors.name
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                            : "border-gray-300 focus:border-sky-500 focus:ring-sky-500"
+                            : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
                         }`}
                         placeholder="Your name"
                       />
@@ -243,7 +243,7 @@ export default function ContactPage() {
                         name="organisation"
                         value={formData.organisation}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                         placeholder="e.g. Matla Power Station, Kriel, mine, refinery"
                       />
                     </div>
@@ -260,7 +260,7 @@ export default function ContactPage() {
                         className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
                           errors.email
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                            : "border-gray-300 focus:border-sky-500 focus:ring-sky-500"
+                            : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
                         }`}
                         placeholder="you@example.com"
                       />
@@ -277,7 +277,7 @@ export default function ContactPage() {
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       >
                         <option value="">Select one…</option>
                         <option value="TES pilot at Eskom wet-cooled station">
@@ -306,7 +306,7 @@ export default function ContactPage() {
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-sky-500 focus:outline-none focus:ring-1 focus:ring-sky-500"
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                         rows={4}
                         placeholder="Brief description of your cooling-water or boiler context, constraints and what you would like to explore."
                       />
@@ -315,7 +315,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-sky-700 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {status === "submitting" ? (
                         <>
@@ -361,13 +361,13 @@ export default function ContactPage() {
                     </button>
                   </form>
 
-                  <div className="mt-4 rounded-md bg-sky-50 p-3">
-                    <p className="text-xs text-sky-800">
+                  <div className="mt-4 rounded-md bg-brand-50 p-3">
+                    <p className="text-xs text-brand-800">
                       <span className="font-semibold">Prefer to email directly?</span>{" "}
                       Send to{" "}
                       <a
                         href="mailto:lazola@mexelenergysustain.com"
-                        className="font-semibold underline hover:text-sky-900"
+                        className="font-semibold underline hover:text-brand-900"
                       >
                         lazola@mexelenergysustain.com
                       </a>

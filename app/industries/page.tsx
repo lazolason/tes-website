@@ -18,7 +18,7 @@ export default function IndustriesPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             Industries
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
@@ -37,9 +37,9 @@ export default function IndustriesPage() {
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Link
               href="/industries/power-energy"
-              className="group rounded-lg border bg-white p-4 shadow-sm transition-all hover:border-sky-300 hover:shadow-md"
+              className="group rounded-lg border bg-white p-4 shadow-sm transition-all hover:border-brand-300 hover:shadow-md"
             >
-              <h3 className="text-sm font-semibold text-gray-900 group-hover:text-sky-700">
+              <h3 className="text-sm font-semibold text-gray-900 group-hover:text-brand-500">
                 Power & Energy
               </h3>
               <p className="mt-1 text-xs text-gray-600">
@@ -131,13 +131,13 @@ export default function IndustriesPage() {
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-sky-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-800"
+                className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-brand-700"
               >
                 Contact Us
               </Link>
               <Link
                 href="/knowledge-hub"
-                className="inline-flex items-center justify-center font-semibold text-sky-700 hover:text-sky-900"
+                className="inline-flex items-center justify-center font-semibold text-brand-500 hover:text-brand-900"
               >
                 Explore Knowledge Hub →
               </Link>

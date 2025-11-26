@@ -75,7 +75,7 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 rounded-md px-3 py-2 transition-colors hover:bg-sky-50 hover:text-sky-800"
+                  className="flex items-center gap-1 rounded-md px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-800"
                 >
                   {item.label}
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,7 +88,7 @@ export default function Navbar() {
                       <Link
                         key={subItem.href}
                         href={subItem.href}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-50 hover:text-brand-800"
                       >
                         {subItem.label}
                       </Link>
@@ -100,7 +100,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-2 transition-colors hover:bg-sky-50 hover:text-sky-800"
+                className="rounded-md px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-800"
               >
                 {item.label}
               </Link>
@@ -138,7 +138,7 @@ export default function Navbar() {
                   <Link
                     href={item.href}
                     onClick={() => setMobileOpen(false)}
-                    className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+                    className="flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-800"
                   >
                     {item.label}
                   </Link>
@@ -148,7 +148,7 @@ export default function Navbar() {
                         key={subItem.href}
                         href={subItem.href}
                         onClick={() => setMobileOpen(false)}
-                        className="rounded-md px-3 py-2 text-xs text-gray-600 hover:bg-sky-50 hover:text-sky-800"
+                        className="rounded-md px-3 py-2 text-xs text-gray-600 hover:bg-brand-50 hover:text-brand-800"
                       >
                         {subItem.label}
                       </Link>
@@ -160,7 +160,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
-                  className="rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-sky-50 hover:text-sky-800"
+                  className="rounded-md px-3 py-2.5 text-sm font-medium text-gray-700 hover:bg-brand-50 hover:text-brand-800"
                 >
                   {item.label}
                 </Link>

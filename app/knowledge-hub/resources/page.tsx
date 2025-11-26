@@ -19,7 +19,7 @@ export default function ResourcesPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             Resources
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
@@ -49,9 +49,9 @@ export default function ResourcesPage() {
                 className="group block rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex items-start justify-between">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-sky-100">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand-100">
                     <svg
-                      className="h-6 w-6 text-sky-700"
+                      className="h-6 w-6 text-brand-500"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -65,7 +65,7 @@ export default function ResourcesPage() {
                     </svg>
                   </div>
                   <svg
-                    className="h-5 w-5 text-gray-400 transition-colors group-hover:text-sky-700"
+                    className="h-5 w-5 text-gray-400 transition-colors group-hover:text-brand-500"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -78,7 +78,7 @@ export default function ResourcesPage() {
                     />
                   </svg>
                 </div>
-                <h3 className="mt-4 text-base font-semibold text-gray-900 group-hover:text-sky-700">
+                <h3 className="mt-4 text-base font-semibold text-gray-900 group-hover:text-brand-500">
                   Lost Megawatts Restored
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
@@ -122,7 +122,7 @@ export default function ResourcesPage() {
                 <div className="mt-4">
                   <Link
                     href="/contact"
-                    className="text-xs font-semibold text-sky-700 hover:text-sky-900"
+                    className="text-xs font-semibold text-brand-500 hover:text-brand-900"
                   >
                     Request document →
                   </Link>
@@ -158,7 +158,7 @@ export default function ResourcesPage() {
                 <div className="mt-4">
                   <Link
                     href="/contact"
-                    className="text-xs font-semibold text-sky-700 hover:text-sky-900"
+                    className="text-xs font-semibold text-brand-500 hover:text-brand-900"
                   >
                     Request document →
                   </Link>
@@ -207,7 +207,7 @@ export default function ResourcesPage() {
               <div className="mt-4">
                 <Link
                   href="/contact"
-                  className="text-xs font-semibold text-sky-700 hover:text-sky-900"
+                  className="text-xs font-semibold text-brand-500 hover:text-brand-900"
                 >
                   Request report →
                 </Link>
@@ -241,7 +241,7 @@ export default function ResourcesPage() {
               <div className="mt-4">
                 <Link
                   href="/contact"
-                  className="text-xs font-semibold text-sky-700 hover:text-sky-900"
+                  className="text-xs font-semibold text-brand-500 hover:text-brand-900"
                 >
                   Request reports →
                 </Link>
@@ -269,7 +269,7 @@ export default function ResourcesPage() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
               >
                 Contact us
               </Link>

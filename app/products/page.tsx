@@ -20,7 +20,7 @@ export default function ProductsPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-wide text-brand-500">
             Products
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -70,7 +70,7 @@ export default function ProductsPage() {
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3 text-xs">
-                <span className="rounded-full bg-sky-100 px-3 py-1 font-semibold text-sky-800">
+                <span className="rounded-full bg-brand-100 px-3 py-1 font-semibold text-brand-800">
                   Cooling-water TES core product
                 </span>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
@@ -176,13 +176,13 @@ export default function ProductsPage() {
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
             <Link
               href="/tes"
-              className="inline-flex items-center text-xs font-semibold text-sky-700 hover:text-sky-900"
+              className="inline-flex items-center text-xs font-semibold text-brand-500 hover:text-brand-900"
             >
               See how Mexel®432 fits into TES →
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center text-xs font-semibold text-sky-700 hover:text-sky-900"
+              className="inline-flex items-center text-xs font-semibold text-brand-500 hover:text-brand-900"
             >
               Request Mexel®432 technical data sheets →
             </Link>
@@ -248,13 +248,13 @@ export default function ProductsPage() {
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-sky-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
               >
                 Contact Mexel Energy Sustain
               </Link>
               <Link
                 href="/applications"
-                className="inline-flex items-center justify-center font-semibold text-sky-700 hover:text-sky-900"
+                className="inline-flex items-center justify-center font-semibold text-brand-500 hover:text-brand-900"
               >
                 View typical TES applications →
               </Link>

@@ -24,12 +24,20 @@ const config: Config = {
       },
       colors: {
         brand: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
+          50: '#f0fef4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#6CFF47',  // Mexel lime green
+          600: '#5ce632',
+          700: '#4bc925',
+          800: '#3aa820',
+          900: '#2F2F2F',  // Mexel charcoal gray
+        },
+        mexel: {
+          green: '#6CFF47',
+          charcoal: '#2F2F2F',
         },
       },
     },

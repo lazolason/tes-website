@@ -19,7 +19,7 @@ export default function CaseStudiesPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             Case Studies
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
@@ -51,8 +51,8 @@ export default function CaseStudiesPage() {
           <div className="mt-6 grid gap-5 md:grid-cols-4">
             <FadeIn delay={100}>
               <div className="rounded-lg border bg-white p-4 shadow-sm">
-                <div className="flex h-9 w-9 items-center justify-center rounded-md bg-sky-100">
-                  <svg className="h-5 w-5 text-sky-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <div className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-100">
+                  <svg className="h-5 w-5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                   </svg>
                 </div>
@@ -120,7 +120,7 @@ export default function CaseStudiesPage() {
       {/* South Africa case studies */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             South Africa
           </p>
           <h2 className="mt-2 text-2xl font-bold text-gray-900">
@@ -138,14 +138,14 @@ export default function CaseStudiesPage() {
             <FadeIn>
               <Link
                 href="/knowledge-hub/case-studies/kriel"
-                className="group block rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-sky-300"
+                className="group block rounded-lg border bg-white p-6 shadow-sm transition-all hover:shadow-md hover:border-brand-300"
               >
                 <div className="flex items-start justify-between">
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                    <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                       Eskom • Wet-cooled coal
                     </p>
-                    <h3 className="mt-2 text-lg font-semibold text-gray-900 group-hover:text-sky-700">
+                    <h3 className="mt-2 text-lg font-semibold text-gray-900 group-hover:text-brand-500">
                       Kriel Power Station
                     </h3>
                   </div>
@@ -170,7 +170,7 @@ export default function CaseStudiesPage() {
                     Biofouling control
                   </span>
                 </div>
-                <p className="mt-4 text-xs font-semibold text-sky-700 group-hover:underline">
+                <p className="mt-4 text-xs font-semibold text-brand-500 group-hover:underline">
                   Read full case study →
                 </p>
               </Link>
@@ -220,7 +220,7 @@ export default function CaseStudiesPage() {
               </h3>
               <div className="mt-3 grid gap-4 md:grid-cols-3">
                 <div>
-                  <p className="text-xs font-medium text-sky-700">
+                  <p className="text-xs font-medium text-brand-500">
                     Complex water chemistry
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
@@ -230,7 +230,7 @@ export default function CaseStudiesPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-sky-700">
+                  <p className="text-xs font-medium text-brand-500">
                     Established protocols
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
@@ -240,7 +240,7 @@ export default function CaseStudiesPage() {
                   </p>
                 </div>
                 <div>
-                  <p className="text-xs font-medium text-sky-700">
+                  <p className="text-xs font-medium text-brand-500">
                     Independent verification
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
@@ -257,7 +257,7 @@ export default function CaseStudiesPage() {
       {/* International case studies */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             International
           </p>
           <h2 className="mt-2 text-2xl font-bold text-gray-900">
@@ -276,7 +276,7 @@ export default function CaseStudiesPage() {
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🇫🇷</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                     France
                   </p>
                 </div>
@@ -320,7 +320,7 @@ export default function CaseStudiesPage() {
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🇺🇸</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                     United States
                   </p>
                 </div>
@@ -364,7 +364,7 @@ export default function CaseStudiesPage() {
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🇦🇪</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                     Middle East
                   </p>
                 </div>
@@ -408,7 +408,7 @@ export default function CaseStudiesPage() {
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🇯🇵</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                     Japan
                   </p>
                 </div>
@@ -452,7 +452,7 @@ export default function CaseStudiesPage() {
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🇧🇷</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                     Brazil
                   </p>
                 </div>
@@ -496,7 +496,7 @@ export default function CaseStudiesPage() {
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-2">
                   <span className="text-lg">🇮🇳</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
                     India
                   </p>
                 </div>
@@ -538,7 +538,7 @@ export default function CaseStudiesPage() {
           </div>
 
           <FadeIn delay={600}>
-            <div className="mt-8 rounded-lg border-l-4 border-sky-700 bg-sky-50 p-5">
+            <div className="mt-8 rounded-lg border-l-4 border-sky-700 bg-brand-50 p-5">
               <h3 className="text-sm font-semibold text-gray-900">
                 About international references
               </h3>
@@ -578,19 +578,19 @@ export default function CaseStudiesPage() {
                   </p>
                   <div className="mt-4 space-y-2 text-xs text-gray-700">
                     <p className="flex items-center gap-2">
-                      <svg className="h-4 w-4 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                       </svg>
                       Technical site reports and performance summaries
                     </p>
                     <p className="flex items-center gap-2">
-                      <svg className="h-4 w-4 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                       </svg>
                       Baseline vs. intervention data comparisons
                     </p>
                     <p className="flex items-center gap-2">
-                      <svg className="h-4 w-4 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg className="h-4 w-4 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                       </svg>
                       Industry-specific application guidance
@@ -600,13 +600,13 @@ export default function CaseStudiesPage() {
                 <div className="flex flex-col gap-3">
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center rounded-md bg-sky-700 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                    className="inline-flex items-center justify-center rounded-md bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
                   >
                     Request case study details
                   </Link>
                   <Link
                     href="/knowledge-hub/resources"
-                    className="inline-flex items-center justify-center text-sm font-semibold text-sky-700 hover:text-sky-900"
+                    className="inline-flex items-center justify-center text-sm font-semibold text-brand-500 hover:text-brand-900"
                   >
                     Browse resources →
                   </Link>

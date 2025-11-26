@@ -32,7 +32,7 @@ export default function Footer() {
               <p>
                 <a
                   href="mailto:lazola@mexelenergysustain.com"
-                  className="font-semibold text-sky-700 hover:text-sky-900"
+                  className="font-semibold text-brand-500 hover:text-brand-900"
                 >
                   lazola@mexelenergysustain.com
                 </a>
@@ -40,7 +40,7 @@ export default function Footer() {
               <p>
                 <a
                   href="tel:+27794648298"
-                  className="font-semibold text-sky-700 hover:text-sky-900"
+                  className="font-semibold text-brand-500 hover:text-brand-900"
                 >
                   +27 79 464 8298
                 </a>

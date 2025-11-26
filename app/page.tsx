@@ -22,7 +22,7 @@ export default function TesPage() {
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-sky-700">
+              <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
                 Thermal Efficiency Solution (TES)
               </p>
               <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
@@ -41,7 +41,7 @@ export default function TesPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="/products"
-                  className="inline-flex items-center text-sm font-semibold text-sky-700 hover:text-sky-900"
+                  className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-900"
                 >
                   Mexel®432 technical information →
                 </Link>
@@ -51,19 +51,19 @@ export default function TesPage() {
               <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-gray-200 pt-6 text-xs text-gray-500">
                 <span className="font-medium text-gray-700">Anchored in:</span>
                 <span className="flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-3.5 w-3.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   Eskom RT&amp;D protocol
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-3.5 w-3.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   WRC independent referee
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="h-3.5 w-3.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   Mexel international references
@@ -380,7 +380,7 @@ export default function TesPage() {
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
             <Link
               href="/applications"
-              className="inline-flex items-center text-xs font-semibold text-sky-700 hover:text-sky-900"
+              className="inline-flex items-center text-xs font-semibold text-brand-500 hover:text-brand-900"
             >
               See typical TES applications →
             </Link>

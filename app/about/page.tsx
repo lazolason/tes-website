@@ -22,7 +22,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-sky-700">
+              <p className="text-xs font-semibold uppercase tracking-wide text-brand-500">
                 About
               </p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
@@ -151,7 +151,7 @@ export default function AboutPage() {
       </section>
 
       {/* Evidence & Timeline */}
-      <section className="border-b bg-sky-50">
+      <section className="border-b bg-brand-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
             Evidence and verification timeline
@@ -164,7 +164,7 @@ export default function AboutPage() {
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {/* Kriel */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Kriel Power Station</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">Kriel Power Station</p>
               <h3 className="mt-2 text-sm font-semibold text-gray-900">Initial Mexel®432 application</h3>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                 First Eskom site where Mexel®432 was applied in cooling-water service.
@@ -174,7 +174,7 @@ export default function AboutPage() {
 
             {/* Tutuka Protocol */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Tutuka Protocol</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">Tutuka Protocol</p>
               <h3 className="mt-2 text-sm font-semibold text-gray-900">RT&amp;D Testing Protocol Rev08</h3>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                 Eskom RT&amp;D issued the Tutuka Surfactant (FFA) Testing Protocol Rev08,
@@ -184,7 +184,7 @@ export default function AboutPage() {
 
             {/* WRC */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Independent Referee</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">Independent Referee</p>
               <h3 className="mt-2 text-sm font-semibold text-gray-900">Water Research Commission</h3>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                 The WRC can act as an independent referee for TES pilots, reviewing methodology
@@ -194,7 +194,7 @@ export default function AboutPage() {
 
             {/* IoT Dosing */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">IoT Infrastructure</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">IoT Infrastructure</p>
               <h3 className="mt-2 text-sm font-semibold text-gray-900">Thingy:91X dosing skids</h3>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                 TES dosing skids based on Nordic&apos;s Thingy:91X platform installed at Tutuka,
@@ -204,7 +204,7 @@ export default function AboutPage() {
 
             {/* Carbon potential */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Future Potential</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">Future Potential</p>
               <h3 className="mt-2 text-sm font-semibold text-gray-900">Emissions-intensity verification</h3>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                 Once cooling-water improvements are measured and repeatable, they can support
@@ -214,7 +214,7 @@ export default function AboutPage() {
 
             {/* JET correspondence */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-sky-700">Strategic Engagement</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">Strategic Engagement</p>
               <h3 className="mt-2 text-sm font-semibold text-gray-900">JET &amp; transition context</h3>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                 TES is positioned within the Just Energy Transition context as a practical
@@ -276,13 +276,13 @@ export default function AboutPage() {
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-sky-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-sky-800 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
               >
                 Contact Mexel Energy Sustain
               </Link>
               <Link
                 href="/tes"
-                className="inline-flex items-center justify-center font-semibold text-sky-700 hover:text-sky-900"
+                className="inline-flex items-center justify-center font-semibold text-brand-500 hover:text-brand-900"
               >
                 Revisit the TES system overview →
               </Link>
