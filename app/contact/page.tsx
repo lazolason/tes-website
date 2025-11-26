@@ -98,13 +98,12 @@ export default function ContactPage() {
             Contact
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            Contact Mexel Energy Sustain.
+            Contact us
           </h1>
           <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
             We prefer focused technical conversations over generic marketing. If you are
-            responsible for cooling-water or boiler systems at an Eskom station or
-            industrial plant, we are happy to discuss whether TES, Mexel®432 or
-            MexSteam 100 make sense for your site.
+            responsible for an industrial plant, we are happy to discuss whether TES
+            would make sense for your site.
           </p>
         </div>
       </section>
@@ -112,57 +111,7 @@ export default function ContactPage() {
       {/* Contact details + form */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <div className="grid gap-8 md:grid-cols-2 md:items-start">
-            {/* Direct contact */}
-            <div className="space-y-4">
-              <h2 className="text-lg font-semibold text-gray-900">
-                Direct contact
-              </h2>
-              <p className="text-sm text-gray-700 leading-relaxed">
-                For technical discussions, pilot concepts or documentation requests,
-                please contact Lazola Sonqishe directly.
-              </p>
-              <div className="rounded-lg border bg-gray-50 p-4 text-sm text-gray-800">
-                <p className="font-semibold text-gray-900">Mexel Energy Sustain (Pty) Ltd</p>
-                <p className="mt-1">Managing Director: Lazola Sonqishe</p>
-                <p className="mt-2">
-                  <span className="font-semibold">Email:</span>{" "}
-                  <a
-                    href="mailto:lazola@mexelenergysustain.com"
-                    className="text-brand-500 hover:text-brand-900"
-                  >
-                    lazola@mexelenergysustain.com
-                  </a>
-                </p>
-                <p>
-                  <span className="font-semibold">Mobile:</span>{" "}
-                  <a
-                    href="tel:+27794648298"
-                    className="text-brand-500 hover:text-brand-900"
-                  >
-                    +27 79 464 8298
-                  </a>
-                </p>
-                <p className="mt-2">
-                  <span className="font-semibold">General enquiries:</span>{" "}
-                  <a
-                    href="mailto:info@mexelenergysustain.com"
-                    className="text-brand-500 hover:text-brand-900"
-                  >
-                    info@mexelenergysustain.com
-                  </a>
-                </p>
-              </div>
-
-              <div className="text-xs text-gray-600">
-                <p>
-                  If you would like us to align with an internal protocol (RT&amp;D,
-                  WRC, corporate engineering, etc.), please mention that in your
-                  message so we can prepare appropriately.
-                </p>
-              </div>
-            </div>
-
+          <div className="grid gap-16 md:grid-cols-2">
             {/* Enquiry form */}
             <div className="rounded-lg border bg-white p-6 shadow-sm">
               {status === "success" ? (
@@ -199,11 +148,10 @@ export default function ContactPage() {
               ) : (
                 <>
                   <h2 className="text-lg font-semibold text-gray-900">
-                    Send an enquiry
+                    Send a message
                   </h2>
                   <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                    Fill in the details below and we&apos;ll get back to you within
-                    1-2 business days.
+                    Please fill in the details below and we will get back to you as soon as possible.
                   </p>
 
                   {errors.general && (
@@ -244,7 +192,7 @@ export default function ContactPage() {
                         value={formData.organisation}
                         onChange={handleChange}
                         className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
-                        placeholder="e.g. Matla Power Station, Kriel, mine, refinery"
+                        placeholder="e.g. Eskom Power Station, mine, refinery, etc."
                       />
                     </div>
 
@@ -280,20 +228,20 @@ export default function ContactPage() {
                         className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                       >
                         <option value="">Select one…</option>
-                        <option value="TES pilot at Eskom wet-cooled station">
-                          TES pilot at Eskom wet-cooled station
+                        <option value="TES for Eskom wet-cooled power stations">
+                          TES for Eskom wet-cooled power stations
                         </option>
-                        <option value="TES pilot at industrial cooling-water site">
-                          TES pilot at industrial cooling-water site
+                        <option value="TES for industrial cooling-water systems">
+                          TES for industrial cooling-water systems
                         </option>
-                        <option value="Mexel®432 for cooling-water">
-                          Mexel®432 for cooling-water
+                        <option value="TES for cooling-water">
+                          TES for cooling-water
                         </option>
-                        <option value="MexSteam 100 for boiler / steam-side">
-                          MexSteam 100 for boiler / steam-side
+                        <option value="TES for boiler / steam-side">
+                          TES for boiler / steam-side
                         </option>
-                        <option value="Other / general enquiry">
-                          Other / not sure yet
+                        <option value="Other / not sure yet">
+                          Other
                         </option>
                       </select>
                     </div>
@@ -308,7 +256,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                         rows={4}
-                        placeholder="Brief description of your cooling-water or boiler context, constraints and what you would like to explore."
+                        placeholder="Please provide a brief description of your operational context and what you would like to explore."
                       />
                     </div>
 
@@ -361,30 +309,62 @@ export default function ContactPage() {
                     </button>
                   </form>
 
-                  <div className="mt-4 rounded-md bg-brand-50 p-3">
-                    <p className="text-xs text-brand-800">
-                      <span className="font-semibold">Prefer to email directly?</span>{" "}
-                      Send to{" "}
-                      <a
-                        href="mailto:lazola@mexelenergysustain.com"
-                        className="font-semibold underline hover:text-brand-900"
-                      >
-                        lazola@mexelenergysustain.com
-                      </a>
-                    </p>
-                  </div>
+
                 </>
               )}
             </div>
-          </div>
+            {/* Direct contact */}
+            <div className="space-y-4 order-first">
+              <h2 className="text-lg font-semibold text-gray-900">
+                Direct contact
+              </h2>
 
-          <div className="mt-10 text-xs text-gray-600">
-            <p>
-              If you have already received documentation (TES Master Evidence Pack,
-              RT&amp;D protocol, JET correspondence, etc.), you can reference those
-              documents by name in your message so we keep the conversation aligned.
+              <div className="rounded-lg border bg-gray-50 p-4 text-sm text-gray-800">
+
+                <p className="font-semibold text-gray-900">TES</p>
+                <p>B-BBEE Level 1 Contributor</p>
+                <p className="mt-1">Technical Director: Lazola Sonqishe</p>
+                <p className="mt-2">
+                  <span className="font-semibold">Email:</span>{" "}
+                  <a
+                    href="mailto:lazola@tes.net"
+                    className="text-brand-500 hover:text-brand-900"
+                  >
+                    lazola@tes.net
+                  </a>
+                </p>
+                <p>
+                  <span className="font-semibold">Mobile:</span>{" "}
+                  <a
+                    href="tel:+27794648298"
+                    className="text-brand-500 hover:text-brand-900"
+                  >
+                    +27 79 464 8298
+                  </a>
+                </p>
+                <p className="mt-2">
+                  <span className="font-semibold">General enquiries:</span>{" "}
+                  <a
+                    href="mailto:info@tes.net"
+                    className="text-brand-500 hover:text-brand-900"
+                  >
+                    info@tes.net
+                  </a>
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+          <div className="mt-12">
+            <h2 className="text-lg font-semibold text-gray-900">Additional note</h2>
+            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+              For any technical questions, please contact Lazola Sonqishe directly
+              using the details above.
             </p>
           </div>
+
+
         </div>
       </section>
     </main>
