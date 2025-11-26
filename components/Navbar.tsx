@@ -42,10 +42,10 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 lg:py-5">
         {/* Brand - Logo only */}
         <Link href="/" className="flex items-center">
-          <div className="relative h-10 w-10 flex-shrink-0">
+          <div className="relative h-12 w-12 flex-shrink-0">
             <Image
               src="/logo.png"
               alt="Mexel Energy Sustain logo"
@@ -57,7 +57,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 text-[13px] font-medium text-gray-700 md:flex">
+        <nav className="hidden items-center gap-2 text-[14px] font-medium text-gray-700 md:flex">
           {navItems.map((item) => (
             item.dropdown ? (
               <div 
@@ -68,7 +68,7 @@ export default function Navbar() {
               >
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 rounded-md px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-800"
+                  className="flex items-center gap-1 rounded-md px-3.5 py-2.5 transition-colors hover:bg-brand-50 hover:text-brand-800"
                 >
                   {item.label}
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -93,7 +93,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-md px-3 py-2 transition-colors hover:bg-brand-50 hover:text-brand-800"
+                className="rounded-md px-3.5 py-2.5 transition-colors hover:bg-brand-50 hover:text-brand-800"
               >
                 {item.label}
               </Link>
