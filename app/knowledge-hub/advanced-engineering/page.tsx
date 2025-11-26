@@ -444,7 +444,7 @@ export default function AdvancedEngineeringPage() {
             <FadeIn delay={100}>
               <div className="rounded-lg border border-amber-200 bg-amber-50 p-6">
                 <h3 className="text-lg font-semibold text-amber-900 mb-3">
-                  A TES pilot can "fail" when:
+                  A TES pilot can &quot;fail&quot; when:
                 </h3>
                 <ul className="text-sm text-amber-800 space-y-2 list-disc pl-5">
                   <li>Baseline conditions were unstable</li>

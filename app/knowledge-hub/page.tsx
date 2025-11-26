@@ -236,14 +236,14 @@ export default function KnowledgeHubPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <div className="rounded-lg border bg-gray-50 p-8 shadow-sm">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="flex-1">
                   <h2 className="text-xl font-semibold text-gray-900">
                     Ready to explore TES for your operation?
                   </h2>
                   <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                    Whether you're evaluating TES for a power station unit, industrial cooling system, 
-                    or process application, we're here to answer your questions and discuss pilot readiness.
+                    Whether you&apos;re evaluating TES for a power station unit, industrial cooling system,
+                    or process application, we&apos;re here to answer your questions and discuss pilot readiness.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3">
