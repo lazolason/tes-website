@@ -1,5 +1,5 @@
 import Link from "next/link";
-import FadeIn from "../../components/FadeIn";
+import FadeIn from "../../../components/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
