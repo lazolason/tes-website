@@ -74,12 +74,12 @@ export default function ProductsPage() {
             </p>
           </FadeIn>
           
-          {/* Dosing system image */}
+          {/* Condenser system image */}
           <FadeIn delay={200}>
             <div className="relative mt-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
               <Image
-                src="/dosing-skid.png"
-                alt="TES IoT-enabled dosing system for Mexel®432"
+                src="/condenser.png"
+                alt="Condenser heat exchanger system"
                 fill
                 className="object-cover"
               />

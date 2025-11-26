@@ -66,7 +66,7 @@ export default function ApplicationsPage() {
           <div className="grid gap-8 md:grid-cols-2">
             {/* Eskom wet-cooled applications */}
             <div className="flex flex-col gap-4">
-              {/* Cooling tower image */}
+              {/* Power station image */}
               <div className="relative h-32 w-full overflow-hidden rounded-lg">
                 <Image
                   src="/cooling-tower.png"
