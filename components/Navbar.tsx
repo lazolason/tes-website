@@ -42,8 +42,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
-        {/* Brand with logo + name + tagline */}
-        <Link href="/" className="flex items-center gap-3">
+        {/* Brand - Logo only */}
+        <Link href="/" className="flex items-center">
           <div className="relative h-10 w-10 flex-shrink-0">
             <Image
               src="/logo.png"
@@ -52,14 +52,6 @@ export default function Navbar() {
               className="object-contain"
               priority
             />
-          </div>
-          <div className="hidden flex-col sm:flex">
-            <span className="text-sm font-semibold tracking-tight text-gray-900">
-              Mexel Energy Sustain
-            </span>
-            <span className="text-[11px] text-gray-500">
-              Thermal Efficiency Solution (TES)
-            </span>
           </div>
         </Link>
 
