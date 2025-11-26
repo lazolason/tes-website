@@ -20,18 +20,31 @@ export default function RefineriesPage() {
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-amber-700">
-            Industries / Refineries & Petrochemical
-          </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            Refineries, petrochemical and metals
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-            Refineries, petrochemical plants and steel mills run networks of
-            critical heat exchangers and cooling-water loops. Fouling or
-            corrosion here quickly becomes a production and safety issue, not
-            just an efficiency problem.
-          </p>
+          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-amber-700">
+                Industries / Refineries & Petrochemical
+              </p>
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+                Refineries, petrochemical and metals
+              </h1>
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+                Refineries, petrochemical plants and steel mills run networks of
+                critical heat exchangers and cooling-water loops. Fouling or
+                corrosion here quickly becomes a production and safety issue, not
+                just an efficiency problem.
+              </p>
+            </div>
+            <div className="relative h-64 lg:h-80">
+              <Image
+                src="/industry-refinery.png"
+                alt="Refinery cooling infrastructure"
+                fill
+                className="rounded-xl object-cover shadow-lg"
+                priority
+              />
+            </div>
+          </div>
         </div>
       </section>
 
