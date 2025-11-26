@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "../../../components/FadeIn";
+import FadeIn from "../../../../components/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
