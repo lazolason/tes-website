@@ -10,9 +10,9 @@ export default function ProblemSolutionTabs() {
   const [activeTab, setActiveTab] = useState<TabType>("problem");
 
   const tabs = [
-    { id: "problem", label: "The Problem", color: "rose" },
-    { id: "solution", label: "The Solution", color: "emerald" },
-    { id: "approach", label: "Our Approach", color: "blue" },
+    { id: "problem", label: "The Problem", activeClass: "bg-rose-500 ring-rose-500" },
+    { id: "solution", label: "The Solution", activeClass: "bg-emerald-500 ring-emerald-500" },
+    { id: "approach", label: "Our Approach", activeClass: "bg-blue-500 ring-blue-500" },
   ];
 
   return (
@@ -31,14 +31,19 @@ export default function ProblemSolutionTabs() {
         </FadeIn>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-12" role="tablist" aria-label="TES overview tabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as TabType)}
+              id={`tab-${tab.id}`}
+              type="button"
+              role="tab"
+              aria-selected={activeTab === tab.id}
+              aria-controls={`panel-${tab.id}`}
               className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
                 activeTab === tab.id
-                  ? `bg-${tab.color}-500 text-white shadow-lg scale-105 ring-2 ring-${tab.color}-500 ring-offset-2`
+                  ? `${tab.activeClass} text-white shadow-lg scale-105 ring-2 ring-offset-2`
                   : "bg-white text-slate-600 hover:bg-slate-100 shadow-sm hover:shadow"
               }`}
             >
@@ -52,6 +57,9 @@ export default function ProblemSolutionTabs() {
           
           {/* PROBLEM CONTENT */}
           <div
+            role="tabpanel"
+            id="panel-problem"
+            aria-labelledby="tab-problem"
             className={`transition-all duration-500 absolute inset-0 ${
               activeTab === "problem"
                 ? "opacity-100 translate-x-0 z-10 relative"
@@ -100,6 +108,9 @@ export default function ProblemSolutionTabs() {
 
           {/* SOLUTION CONTENT */}
           <div
+            role="tabpanel"
+            id="panel-solution"
+            aria-labelledby="tab-solution"
             className={`transition-all duration-500 absolute inset-0 ${
               activeTab === "solution"
                 ? "opacity-100 translate-x-0 z-10 relative"
@@ -146,7 +157,10 @@ export default function ProblemSolutionTabs() {
           </div>
 
           {/* APPROACH CONTENT */}
-           <div
+          <div
+            role="tabpanel"
+            id="panel-approach"
+            aria-labelledby="tab-approach"
             className={`transition-all duration-500 absolute inset-0 ${
               activeTab === "approach"
                 ? "opacity-100 translate-x-0 z-10 relative"
