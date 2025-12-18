@@ -27,10 +27,10 @@ export default function TesPage() {
         {/* Immersive Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1565514020125-635905d21a24?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1487875961445-47a00398c267?auto=format&fit=crop&q=80"
             alt="Industrial Power Plant Background"
             fill
-            className="object-cover opacity-40"
+            className="object-cover opacity-50"
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />

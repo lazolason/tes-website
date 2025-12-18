@@ -97,7 +97,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
         {/* Brand */}
         <Link href="/" className="flex items-center pl-2 lg:pl-0">
-          <div className="relative h-14 w-48 flex-shrink-0">
+          <div className="relative h-16 w-56 flex-shrink-0">
              {/* Using object-contain and left alignment to keep it tidy */}
             <Image
               src="/logo.png"
