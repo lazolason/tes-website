@@ -96,8 +96,8 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
         {/* Brand */}
-        <Link href="/" className="flex items-center">
-          <div className="relative h-10 w-32 md:h-12 md:w-40 flex-shrink-0">
+        <Link href="/" className="flex items-center pl-2 lg:pl-0">
+          <div className="relative h-14 w-48 flex-shrink-0">
              {/* Using object-contain and left alignment to keep it tidy */}
             <Image
               src="/logo.png"

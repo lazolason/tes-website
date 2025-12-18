@@ -23,70 +23,89 @@ export default function TesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative border-b bg-mesh-gradient overflow-hidden">
-        {/* Technical Grid Overlay */}
-        <div className="absolute inset-0 bg-grid-pattern [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none" />
-        
-        <div className="relative mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-gray-900">
+        {/* Immersive Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1565514020125-635905d21a24?q=80&w=2070&auto=format&fit=crop"
+            alt="Industrial Power Plant Background"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-7xl px-4 py-20 lg:py-32">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            {/* Text Content */}
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center rounded-full bg-brand-500/10 px-3 py-1 text-xs font-medium text-brand-400 ring-1 ring-inset ring-brand-500/20 mb-6">
                 Thermal Efficiency Solution (TES)
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                TES: A cooling-water efficiency system,<br className="hidden lg:block" /> not a generic chemical.
+              </div>
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-7xl lg:leading-[1.1]">
+                Stop hidden losses in your <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-emerald-400">cooling water.</span>
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-                TES is our focused approach to improving condenser and
-                cooling-water performance on wet-cooled units. It combines
-                Mexel®432 chemistry, IoT-enabled dosing, a cooling-water
-                performance view and a verification framework based on Eskom
-                RT&amp;D&apos;s Tutuka protocol. TES does not claim to optimise
-                the whole plant; it concentrates on the cold end, where fouling
-                and corrosion quietly erode efficiency.
+              <p className="mt-6 text-lg leading-8 text-gray-300">
+                TES isn't just a chemical—it's a verifiable system. We combine 
+                <span className="text-white font-semibold"> Mexel®432 chemistry</span>, 
+                <span className="text-white font-semibold"> IoT dosing</span>, and 
+                <span className="text-white font-semibold"> rigorous data</span> to 
+                restore condenser performance on wet-cooled units.
               </p>
 
-              <div className="mt-6 flex flex-wrap gap-3">
+              <div className="mt-10 flex flex-wrap gap-4">
+                <Link
+                  href="/contact"
+                  className="rounded-md bg-brand-500 px-6 py-3.5 text-sm font-bold text-gray-900 shadow-sm hover:bg-brand-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 transition-all"
+                >
+                  Request a Pilot Study
+                </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-900"
+                  className="rounded-md bg-white/10 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/20 ring-1 ring-white/20 transition-all"
                 >
-                  Mexel®432 technical information →
+                  Technical Specs →
                 </Link>
               </div>
 
-              {/* Credibility strip */}
-              <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-gray-200 pt-6 text-xs text-gray-500">
-                <span className="font-medium text-gray-700">Anchored in:</span>
-                <span className="flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Eskom RT&amp;D protocol
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  WRC independent referee
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-brand-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  Mexel international references
-                </span>
+              {/* Credibility Labels */}
+              <div className="mt-12 flex flex-wrap gap-x-8 gap-y-4 border-t border-white/10 pt-8">
+                 <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
+                      <svg className="h-4 w-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-300">Eskom RT&D Protocol</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 ring-1 ring-white/10">
+                      <svg className="h-4 w-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                      </svg>
+                    </div>
+                    <span className="text-sm font-medium text-gray-300">Mexel®432 Technology</span>
+                 </div>
               </div>
             </div>
 
-            {/* Hero image - Before/After Slider */}
-            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80 border-4 border-white ring-1 ring-gray-900/5">
-              <BeforeAfterSlider
-                beforeImage="/industrial-plant.png"
-                afterImage="/before-after-tubes.png"
-                beforeAlt="Plant Overview (Before)"
-                afterAlt="Clean Tubes (After)"
-              />
+            {/* Slider Interaction */}
+            <div className="relative mx-auto w-full max-w-lg lg:max-w-none">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-2xl ring-1 ring-white/10 bg-gray-800">
+                <BeforeAfterSlider
+                  beforeImage="https://images.unsplash.com/photo-1621905251189-fc015e877473?q=80&w=2070&auto=format&fit=crop"
+                  afterImage="https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?q=80&w=2070&auto=format&fit=crop"
+                  beforeAlt="Fouled / Corroded Surface"
+                  afterAlt="Clean / Protected Surface"
+                />
+                {/* Floating Badge */}
+                <div className="absolute bottom-6 left-6 right-6 bg-black/60 backdrop-blur-md p-4 rounded-xl border border-white/10">
+                   <p className="text-xs text-brand-300 font-bold uppercase tracking-wider mb-1">Live Result</p>
+                   <p className="text-sm text-white">Drag slider to see how Mexel®432 cleans and protects surfaces against fouling.</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
