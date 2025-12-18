@@ -5,6 +5,8 @@ import FadeIn from "../components/FadeIn";
 import TrustedBy from "../components/TrustedBy";
 import AnimatedStats from "../components/AnimatedStats";
 import Testimonials from "../components/Testimonials";
+import BeforeAfterSlider from "../components/BeforeAfterSlider";
+import ProcessSteps from "../components/ProcessSteps";
 
 export const metadata: Metadata = {
   title: "TES Cooling-Water Efficiency System",
@@ -21,8 +23,11 @@ export default function TesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+      <section className="relative border-b bg-mesh-gradient overflow-hidden">
+        {/* Technical Grid Overlay */}
+        <div className="absolute inset-0 bg-grid-pattern [mask-image:linear-gradient(to_bottom,white,transparent)] pointer-events-none" />
+        
+        <div className="relative mx-auto max-w-6xl px-4 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
@@ -74,14 +79,13 @@ export default function TesPage() {
               </div>
             </div>
 
-            {/* Hero image - Before/After */}
-            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
-              <Image
-                src="/before-after-tubes.png"
-                alt="Before: Fouled condenser tubes vs After: Clean tubes with Mexel432 treatment"
-                fill
-                className="object-cover"
-                priority
+            {/* Hero image - Before/After Slider */}
+            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80 border-4 border-white ring-1 ring-gray-900/5">
+              <BeforeAfterSlider
+                beforeImage="/industrial-plant.png"
+                afterImage="/before-after-tubes.png"
+                beforeAlt="Plant Overview (Before)"
+                afterAlt="Clean Tubes (After)"
               />
             </div>
           </div>
@@ -102,16 +106,9 @@ export default function TesPage() {
               TES combines four integrated components to deliver measurable cooling-water efficiency improvements.
             </p>
           </FadeIn>
-          <FadeIn delay={200}>
-            <div className="mt-8 relative h-64 md:h-80 lg:h-96">
-              <Image
-                src="/tes-4-step-process.png"
-                alt="TES 4-Step Process: Chemistry, IoT, Data, Verification"
-                fill
-                className="object-contain"
-              />
-            </div>
-          </FadeIn>
+          <div className="mt-12">
+            <ProcessSteps />
+          </div>
         </div>
       </section>
 
