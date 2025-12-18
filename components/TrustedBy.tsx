@@ -34,7 +34,7 @@ export default function TrustedBy() {
   return (
     <section ref={ref} className="border-b bg-white py-8 lg:py-10">
       <div className="mx-auto max-w-6xl px-4">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400">
+        <p className="text-center text-xs font-semibold uppercase tracking-widest text-slate-400">
           Trusted by industry leaders
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
@@ -48,13 +48,13 @@ export default function TrustedBy() {
               }`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className="group relative flex items-center gap-2 rounded-lg border border-gray-200 bg-gray-50 px-4 py-2 transition-all hover:border-brand-500/30 hover:bg-brand-50">
-                <div className="flex h-6 w-6 items-center justify-center rounded bg-brand-500/10">
-                  <span className="text-[10px] font-bold text-brand-600">
+              <div className="group relative flex items-center gap-2 rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 transition-all hover:border-emerald-500/30 hover:bg-emerald-50">
+                <div className="flex h-6 w-6 items-center justify-center rounded bg-emerald-500/10">
+                  <span className="text-[10px] font-bold text-emerald-600">
                     {partner.abbr.charAt(0)}
                   </span>
                 </div>
-                <span className="text-xs font-medium text-gray-600 group-hover:text-gray-900">
+                <span className="text-xs font-medium text-slate-600 group-hover:text-slate-900">
                   {partner.name}
                 </span>
               </div>
