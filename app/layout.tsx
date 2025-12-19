@@ -81,7 +81,7 @@ export default function RootLayout({
   
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
+      <body className="bg-white text-gray-900 antialiased">
         {/* Plausible Analytics - Privacy-friendly, GDPR compliant */}
         <Script
           defer
@@ -89,8 +89,6 @@ export default function RootLayout({
           src="https://plausible.io/js/script.js"
           strategy="afterInteractive"
         />
-      </head>
-      <body className="bg-white text-gray-900 antialiased">
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />
