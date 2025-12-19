@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 interface StatItem {
@@ -16,7 +17,7 @@ const stats: StatItem[] = [
     suffix: "%",
     prefix: "↑",
     label: "TR Improvement",
-    description: "Temperature Rise improvement measured at Kriel Unit 6",
+    description: "Temperature rise recovery measured in trial conditions",
   },
   {
     value: 4,
@@ -29,13 +30,13 @@ const stats: StatItem[] = [
     value: 90,
     suffix: "+",
     label: "Days Trial",
-    description: "Extended trial period with consistent results",
+    description: "Extended trial period with stable monitoring",
   },
   {
     value: 15,
     suffix: "+",
     label: "Years Experience",
-    description: "Mexel International global deployment track record",
+    description: "Mexel International deployment track record",
   },
 ];
 
@@ -55,7 +56,7 @@ function AnimatedNumber({
   useEffect(() => {
     if (!isVisible) return;
 
-    const duration = 2000; // 2 seconds
+    const duration = 2000;
     const steps = 60;
     const increment = value / steps;
     let current = 0;
@@ -104,46 +105,53 @@ export default function AnimatedStats() {
   }, []);
 
   return (
-    <section ref={ref} className="border-b bg-gradient-to-br from-slate-900 to-slate-800 py-16 lg:py-20">
+    <section ref={ref} className="border-t border-slate-200 bg-slate-50 py-16 lg:py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-300">
-            Proven Results
-          </p>
-          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
-            Measurable Impact, Verified Performance
-          </h2>
-          <p className="mt-3 text-sm text-slate-300">
-            Real data from our TES deployments at Eskom power stations
-          </p>
+        <div className="grid items-center gap-10 lg:grid-cols-2">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
+              Outcomes
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold text-slate-900 sm:text-3xl">
+              Measured outcomes, not marketing claims.
+            </h2>
+            <p className="mt-4 text-sm text-slate-600 sm:text-base">
+              Results are reported against baselines and operating context, with
+              data available for independent review when required.
+            </p>
+          </div>
+          <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+            {/* Image brief: /public/images/home-outcomes-cooling-water.jpg — Cooling water in motion near condenser outflow, high shutter detail, industrial realism. */}
+            <Image
+              src="/images/home-outcomes-cooling-water.jpg"
+              alt="Cooling water discharge with visible flow texture"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`group relative overflow-hidden rounded-xl bg-white/5 p-6 backdrop-blur transition-all duration-700 hover:bg-white/10 ${
-                isVisible
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-8 opacity-0"
+              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-700 ${
+                isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              style={{ transitionDelay: `${index * 120}ms` }}
             >
-              <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-emerald-500/10 transition-transform group-hover:scale-150" />
-              <div className="relative">
-                <p className="text-4xl font-bold text-emerald-300 lg:text-5xl">
-                  <AnimatedNumber
-                    value={stat.value}
-                    suffix={stat.suffix}
-                    prefix={stat.prefix}
-                    isVisible={isVisible}
-                  />
-                </p>
-                <p className="mt-2 text-sm font-semibold text-white">
-                  {stat.label}
-                </p>
-                <p className="mt-1 text-xs text-slate-300">{stat.description}</p>
-              </div>
+              <p className="text-3xl font-semibold text-emerald-700 lg:text-4xl">
+                <AnimatedNumber
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  prefix={stat.prefix}
+                  isVisible={isVisible}
+                />
+              </p>
+              <p className="mt-2 text-sm font-semibold text-slate-900">
+                {stat.label}
+              </p>
+              <p className="mt-1 text-xs text-slate-600">{stat.description}</p>
             </div>
           ))}
         </div>

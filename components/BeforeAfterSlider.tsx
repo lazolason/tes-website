@@ -3,11 +3,16 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 
+// Image requirement: use matched pairs (same angle, lighting, geometry); only surface condition changes.
 interface BeforeAfterSliderProps {
   beforeImage: string;
   afterImage: string;
   beforeAlt?: string;
   afterAlt?: string;
+  beforeLabel?: string;
+  afterLabel?: string;
+  captionTitle?: string;
+  caption?: string;
   className?: string;
 }
 
@@ -16,22 +21,23 @@ export default function BeforeAfterSlider({
   afterImage,
   beforeAlt = "Before",
   afterAlt = "After",
+  beforeLabel = "BEFORE",
+  afterLabel = "AFTER",
+  captionTitle,
+  caption,
   className = "",
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const handleMove = useCallback(
-    (clientX: number) => {
-      if (!containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
-      const percentage = (x / rect.width) * 100;
-      setSliderPosition(percentage);
-    },
-    []
-  );
+  const handleMove = useCallback((clientX: number) => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percentage = (x / rect.width) * 100;
+    setSliderPosition(percentage);
+  }, []);
 
   const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) return;
@@ -66,56 +72,60 @@ export default function BeforeAfterSlider({
   return (
     <div
       ref={containerRef}
-      className={`relative w-full h-full overflow-hidden select-none cursor-ew-resize group ${className}`}
+      className={`relative h-full w-full select-none overflow-hidden cursor-ew-resize group ${className}`}
       onMouseMove={onMouseMove}
       onTouchMove={onTouchMove}
       onMouseDown={onMouseDown}
       onTouchStart={onTouchStart}
     >
       {/* After Image (Background - Visible on the RIGHT side) */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-          src={afterImage}
-          alt={afterAlt}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute top-4 right-4 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm z-10">
-          AFTER
+      <div className="absolute inset-0 h-full w-full">
+        <Image src={afterImage} alt={afterAlt} fill className="object-cover" priority />
+        <div className="absolute top-4 right-4 rounded bg-slate-950/60 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+          {afterLabel}
         </div>
       </div>
 
       {/* Before Image (Foreground - Visible on the LEFT side, clipped) */}
-      <div 
-        className="absolute inset-0 w-full h-full"
+      <div
+        className="absolute inset-0 h-full w-full"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <Image
-          src={beforeImage}
-          alt={beforeAlt}
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute top-4 left-4 bg-black/50 text-white text-xs font-bold px-2 py-1 rounded backdrop-blur-sm z-10">
-          BEFORE
+        <Image src={beforeImage} alt={beforeAlt} fill className="object-cover" priority />
+        <div className="absolute top-4 left-4 rounded bg-slate-950/60 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
+          {beforeLabel}
         </div>
       </div>
 
+      {caption && (
+        <div className="absolute bottom-9 left-4 max-w-xs rounded-lg bg-slate-950/60 px-3 py-2 text-xs text-white backdrop-blur-sm">
+          {captionTitle && (
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-emerald-200">
+              {captionTitle}
+            </p>
+          )}
+          <p className={captionTitle ? "mt-1 text-white/90" : "text-white/90"}>
+            {caption}
+          </p>
+          <p className="mt-1 text-[10px] text-white/60">
+            Indicators tracked: TR, TTD, condenser vacuum.
+          </p>
+        </div>
+      )}
+
       {/* Slider Handle */}
       <div
-        className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize z-20 shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+        className="absolute top-0 bottom-0 z-20 w-1 cursor-ew-resize bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)]"
         style={{ left: `${sliderPosition}%` }}
       >
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full flex items-center justify-center shadow-lg text-emerald-600">
+        <div className="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-emerald-600 shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={2.5}
             stroke="currentColor"
-            className="w-4 h-4"
+            className="h-4 w-4"
           >
             <path
               strokeLinecap="round"

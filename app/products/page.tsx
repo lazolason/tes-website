@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
+import SystemHeader from "../../components/SystemHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -17,50 +18,14 @@ export const metadata: Metadata = {
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
-                Products
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Mexel®432: Film-forming chemistry that works.
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-                Mexel®432 is a film-forming amine/surfactant technology proven across
-                cooling-water systems worldwide. It controls biofouling, corrosion and
-                scaling with minimal environmental impact. TES is built around Mexel®432
-                for cooling-water service.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/mexel432"
-                  className="inline-flex items-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
-                >
-                  Mexel®432 Deep Dive →
-                </Link>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800"
-                >
-                  Request Technical Data
-                </Link>
-              </div>
-            </div>
-            <div className="relative h-64 lg:h-80">
-              <Image
-                src="/dosing-skid.png"
-                alt="Mexel®432 dosing system with IoT monitoring"
-                fill
-                className="rounded-xl object-cover shadow-lg"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <SystemHeader
+        tag="TES COMPONENTS"
+        title="Components within the TES architecture."
+        description="These components enable traceable dosing and measured condenser performance (TR, TTD, vacuum) within the TES system boundary."
+        continuity="These are the components used in the TES architecture."
+        currentLabel="Components"
+        activeSteps={[0, 1]}
+      />
 
       {/* Mexel 432 – primary TES product */}
       <section className="border-b">
@@ -113,7 +78,7 @@ export default function ProductsPage() {
                 <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
                   Film-forming amine (FFA)
                 </span>
-                <span className="rounded-full bg-violet-50 px-3 py-1 font-semibold text-violet-800">
+                <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
                   Multi-function chemistry
                 </span>
               </div>
@@ -249,7 +214,7 @@ export default function ProductsPage() {
             </p>
 
             <div className="mt-5 flex flex-wrap gap-3 text-xs">
-              <span className="rounded-full bg-amber-50 px-3 py-1 font-semibold text-amber-800">
+              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
                 Boiler / steam-side
               </span>
               <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
@@ -287,7 +252,7 @@ export default function ProductsPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
-                Contact Mexel Energy Sustain
+                Request a Pilot Study
               </Link>
               <Link
                 href="/applications"

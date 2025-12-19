@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import SystemHeader from "../../components/SystemHeader";
 
 export const metadata: Metadata = {
   title: "TES Applications",
@@ -16,49 +17,14 @@ export const metadata: Metadata = {
 export default function ApplicationsPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
-                TES Applications
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Where TES delivers results: Power stations and industrial plants.
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-                TES is proven on Eskom wet-cooled power stations and industrial cooling-water
-                systems. Whether you run a coal-fired unit, refinery, mine or data centre,
-                the same principles apply: clean heat exchangers, stable chemistry, verifiable results.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  href="/knowledge-hub/case-studies"
-                  className="inline-flex items-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
-                >
-                  View Case Studies →
-                </Link>
-                <Link
-                  href="/industries"
-                  className="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800"
-                >
-                  Explore Industries
-                </Link>
-              </div>
-            </div>
-            <div className="relative h-64 lg:h-80">
-              <Image
-                src="/cooling-tower.png"
-                alt="Wet-cooled power station cooling tower"
-                fill
-                className="rounded-xl object-cover shadow-lg"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <SystemHeader
+        tag="TES APPLICATIONS"
+        title="Application pathways for TES pilots."
+        description="TES pilots follow baseline → intervention → review using condenser indicators (TR, TTD, vacuum) with traceable dosing records."
+        continuity="This is how the TES system is applied in practice."
+        currentLabel="Pilots"
+        activeSteps={[2, 3]}
+      />
 
       {/* Two main tracks: Eskom vs Industry */}
       <section className="border-b">
@@ -280,7 +246,7 @@ export default function ApplicationsPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
-                Start a TES application discussion
+                Request a Pilot Study
               </Link>
               <Link
                 href="/tes"

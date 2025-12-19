@@ -1,322 +1,208 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
+import ProcessSteps from "../../components/ProcessSteps";
+import SystemHeader from "../../components/SystemHeader";
+import CoolingSchematic from "../../components/CoolingSchematic";
 
 export const metadata: Metadata = {
   title: "TES System Overview",
   description:
-    "Detailed overview of the Thermal Efficiency Solution (TES): Mexel®432 chemistry, IoT-enabled dosing, cooling-water performance data and the RT&D verification framework for wet-cooled units.",
+    "TES is a verifiable cooling-water efficiency system combining Mexel®432 chemistry, controlled dosing, monitoring and RT&D-aligned verification for wet-cooled units.",
   openGraph: {
     title: "TES System Overview | Mexel Energy Sustain",
     description:
-      "How TES works: chemistry, dosing, data and verification for cooling-water efficiency.",
+      "Chemistry, dosing, monitoring and verification tied to measurable condenser indicators.",
   },
 };
 
 export default function TesPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
-                TES System
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Thermal Efficiency Solution (TES)
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-                TES is Mexel Energy Sustain&apos;s focused approach to improving
-                cooling-water and condenser performance on wet-cooled units. It
-                combines Mexel®432 chemistry, IoT-enabled dosing, cooling-water data
-                and a clear verification framework to reduce cold-end losses,
-                stabilise operation and extend asset life.
-              </p>
-              <p className="mt-3 max-w-3xl text-base leading-relaxed text-slate-600">
-                TES does not claim to optimise the whole plant — it concentrates on
-                the cold end, where fouling, biofilm and corrosion quietly erode
-                efficiency.
-              </p>
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-72">
-              <Image
-                src="/plant-overview.png"
-                alt="Industrial cooling system overview"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <SystemHeader
+        tag="TES SYSTEM"
+        title="System architecture for verifiable cooling-water efficiency."
+        description="TES combines Mexel®432 chemistry, controlled dosing, and monitoring tied to condenser indicators (TR, TTD, vacuum). Structured baseline → intervention → review keeps results measurable and audit-ready, designed to stabilise condenser performance — not a replacement for maintenance."
+        continuity="This is the system architecture behind the Home overview."
+        currentLabel="Architecture"
+      />
 
-      {/* Chemistry */}
-      <section className="border-b">
+      {/* What TES is / is not */}
+      <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Chemistry: Mexel®432 in cooling-water service
+              What TES is — and what it is not
             </h2>
           </FadeIn>
-          <div className="mt-5 grid gap-8 md:grid-cols-2">
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
             <FadeIn delay={100}>
-              <p className="text-base text-slate-600 leading-relaxed">
-                Mexel®432 is a film-forming amine emulsion with a specialised
-                surfactant system. It forms a protective molecular layer on wetted
-                surfaces, detaches existing biofilm and sludge, limits new deposits
-                and provides corrosion inhibition.
-              </p>
-              <p className="mt-3 text-base text-slate-600 leading-relaxed">
-                In cooling-water systems this means cleaner condenser tube inlets,
-                less scaling and corrosion, and more stable heat transfer — without
-                relying on aggressive oxidising biocides.
-              </p>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-lg border bg-slate-50 p-5">
-              <h3 className="text-sm font-semibold text-slate-900">
-                What Mexel®432 replaces or reduces
-              </h3>
+              <h3 className="text-sm font-semibold text-slate-900">TES is…</h3>
               <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>• Traditional biocides (oxidising and non-oxidising)</li>
-                <li>• Anti-scalants and scale inhibitors</li>
-                <li>• Dispersants and sludge conditioners</li>
-                <li>• Corrosion inhibitors</li>
+                <li>• A cooling-water stabilisation and verification layer.</li>
+                <li>• Focused on condenser cleanliness and water-side control.</li>
+                <li>• Built for traceable dosing and measurable outcomes.</li>
               </ul>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <h3 className="text-sm font-semibold text-slate-900">TES is not…</h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                <li>• Not a replacement for maintenance or asset upgrades.</li>
+                <li>• Not a boiler programme or combustion optimisation.</li>
+                <li>• Not implemented without baseline definition and agreed KPIs.</li>
+              </ul>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Architecture */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              TES architecture
+            </h2>
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
+              A four-stage system designed for traceability and measured efficiency
+              gains in wet-cooled environments.
+            </p>
+          </FadeIn>
+          <div className="mt-10">
+            <ProcessSteps variant="tes-system" />
+          </div>
+        </div>
+      </section>
+
+      {/* Measured Indicators + Technical Visual */}
+      <section className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <FadeIn>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                  Measured indicators
+                </h2>
+                <p className="mt-3 text-base text-slate-600">
+                  TES tracks condenser indicators that show real water-side performance.
+                </p>
+                <p className="mt-2 text-sm text-slate-500">
+                  Compared at matched load/ambient conditions using agreed baselines.
+                </p>
+              </FadeIn>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "Temperature Rise (TR)",
+                    detail: "Cooling-water rise across the condenser.",
+                  },
+                  {
+                    title: "Terminal Temp. Diff. (TTD)",
+                    detail: "Primary indicator of fouling resistance.",
+                  },
+                  {
+                    title: "Condenser Vacuum",
+                    detail: "Stability under matched load and ambient.",
+                  },
+                  {
+                    title: "Water-Side Stability",
+                    detail: "Make-up, blowdown, and chemistry control.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="rounded-lg border border-slate-200 bg-white p-4"
+                  >
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-4">
+              <CoolingSchematic />
               <p className="mt-3 text-xs text-slate-500">
-                A single, surface-active treatment focused on the cold end.
+                Simplified loop view showing TES dosing point and monitored pathways.
               </p>
-              </div>
-            </FadeIn>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* IoT & Data */}
-      <section className="border-b bg-slate-50">
+      {/* Implementation workflow */}
+      <section className="border-b bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              IoT dosing and cooling-water data
+              Implementation workflow
             </h2>
-          </FadeIn>
-          <div className="mt-5 grid gap-8 md:grid-cols-2">
-            <FadeIn delay={100}>
-              <div>
-                <p className="text-base text-slate-600 leading-relaxed">
-                  TES uses IoT-enabled dosing skids (based on the Nordic Thingy:91X
-                  platform) to create a traceable record of what was dosed, where and
-                  when. Level sensing and event logging mean dosing history is no
-                  longer guesswork.
-                </p>
-                <p className="mt-3 text-base text-slate-600 leading-relaxed">
-                  This dosing record is then linked to cooling-water and condenser
-                  metrics — such as TR, TTD and vacuum stability — to build a simple
-                  performance view.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-lg border bg-white p-5 shadow-sm">
-                <h3 className="text-sm font-semibold text-slate-900">
-                  The goal
-                </h3>
-                <p className="mt-2 text-base text-slate-600 leading-relaxed">
-                  Make condenser fouling a visible, managed variable — not a hidden
-                  loss buried in the heat-rate. Station teams can see the correlation
-                  between dosing and performance, and adjust with confidence.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Verification */}
-      <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Verification and future carbon-credit potential
-            </h2>
-          </FadeIn>
-          <div className="mt-5 grid gap-8 md:grid-cols-2">
-            <FadeIn delay={100}>
-              <div className="rounded-lg border bg-slate-50 p-5">
-                <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                  RT&D Protocol alignment
-                </h3>
-                <p className="text-base text-slate-600 leading-relaxed">
-                  Verification follows the baseline → intervention → post-intervention
-                  structure in Eskom RT&amp;D&apos;s Tutuka Surfactant (FFA) Testing
-                  Protocol Rev08. The same logic can be adapted for other stations or
-                  industrial plants.
-                </p>
-                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                  An independent referee such as the Water Research Commission (WRC)
-                  can review the methodology and results where required.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-lg border bg-emerald-50 p-5 border-emerald-200">
-                <h3 className="text-sm font-semibold text-slate-900 mb-3">
-                  Carbon-credit potential
-                </h3>
-                <p className="text-base text-slate-600 leading-relaxed">
-                  Once cooling-water improvements are measured and repeatable, they can
-                  support future work on emissions-intensity and carbon-credit
-                  methodologies (e.g. through bodies such as Brundtland).
-                </p>
-                <p className="mt-3 text-sm text-slate-500">
-                  TES is presented first as a technical efficiency solution, not a
-                  carbon-trading scheme.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Reference frameworks & governance */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Reference frameworks and governance
-            </h2>
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
+              A repeatable method with traceable logs and consistent baselines.
+            </p>
           </FadeIn>
           <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <FadeIn delay={100}>
-              <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm h-full">
-              <h3 className="text-sm font-semibold text-slate-900">
-                Eskom RT&amp;D alignment
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                TES uses the baseline → intervention → post-intervention structure
-                defined in Eskom RT&amp;D&apos;s Tutuka Surfactant (FFA) Testing
-                Protocol Rev08. This gives station teams, RT&amp;D and governance
-                bodies a shared, documented way to assess performance.
-              </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm h-full">
-              <h3 className="text-sm font-semibold text-slate-900">
-                Independent technical review
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Independent organisations such as the Water Research Commission (WRC)
-                can act as referees for TES pilots where needed. Their role is to
-                verify that the agreed protocol and data handling have been followed,
-                not to market the solution.
-              </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={300}>
-              <div className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm h-full">
-              <h3 className="text-sm font-semibold text-slate-900">
-                International Mexel track record
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Mexel®432 has been used at thermal and nuclear plants, refineries and
-                industrial cooling systems internationally. TES leverages that history
-                but is tailored to South African station and industrial conditions,
-                with a clear efficiency and governance focus.
-              </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* How a pilot works */}
-      <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              How a TES pilot works
-            </h2>
-          </FadeIn>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <FadeIn delay={100}>
-              <div className="rounded-lg border bg-slate-50 p-5 h-full">
-                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
-                  Step 1
+            {[
+              {
+                step: "Baseline",
+                detail:
+                  "Confirm KPIs, collection intervals, and operating context before dosing.",
+                deliverable: "Baseline pack: KPIs, intervals, operating context.",
+              },
+              {
+                step: "Intervention window",
+                detail:
+                  "Apply Mexel®432 with controlled dosing and traceable event logs.",
+                deliverable: "Event log + dosing trace.",
+              },
+              {
+                step: "Review & sign-off",
+                detail:
+                  "Compare against baseline, document findings, and confirm repeatability.",
+                deliverable: "Comparison report + sign-off notes.",
+              },
+            ].map((item) => (
+              <div
+                key={item.step}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-5"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+                  {item.step}
                 </p>
-                <h3 className="mt-2 text-sm font-semibold text-slate-900">
-                  Scoping and baseline
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Agree on the unit(s), circuits and KPIs. Confirm how TR, TTD,
-                  condenser vacuum and water quality are currently measured. Collect a
-                  baseline dataset over an agreed period.
-                </p>
+                <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
+                <p className="mt-2 text-xs text-slate-500">{item.deliverable}</p>
               </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-lg border bg-slate-50 p-5 h-full">
-                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
-                  Step 2
-                </p>
-                <h3 className="mt-2 text-sm font-semibold text-slate-900">
-                  Dosing and monitoring
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Install the TES dosing skid, configure Mexel®432 treatment and begin
-                  dosing. Monitor cooling-water and condenser performance against the
-                  baseline.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={300}>
-              <div className="rounded-lg border bg-slate-50 p-5 h-full">
-                <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">
-                  Step 3
-                </p>
-                <h3 className="mt-2 text-sm font-semibold text-slate-900">
-                  Review and decision
-                </h3>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Compare intervention results with the baseline, using the same KPIs
-                  and the RT&amp;D protocol. Decide whether to extend TES to more units
-                  or stations.
-                </p>
-              </div>
-            </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section>
+      <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 md:flex-row md:items-center md:justify-between">
             <div>
               <h2 className="text-lg font-semibold text-slate-900">
-                Ready to discuss a TES pilot?
+                Engage TES with a structured pilot
               </h2>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                A short technical discussion is usually enough to see if TES fits
-                your station or plant. We&apos;ll scope the pilot, agree on KPIs and
-                get started.
+              <p className="mt-2 text-sm text-slate-600">
+                We scope the unit, agree KPIs, and align verification expectations
+                before deployment.
               </p>
             </div>
             <div className="flex flex-col gap-2">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
               >
-                Contact Mexel Energy Sustain
+                Request a Pilot Study
               </Link>
               <Link
-                href="/applications"
-                className="inline-flex items-center justify-center text-sm font-semibold text-emerald-600 hover:text-emerald-800"
+                href="/products"
+                className="inline-flex items-center justify-center text-sm font-semibold text-emerald-700 hover:text-emerald-800"
               >
-                View application examples →
+                View Technical Specs
               </Link>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import SystemHeader from "../../components/SystemHeader";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -15,29 +16,25 @@ export const metadata: Metadata = {
 export default function IndustriesPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
+      <SystemHeader
+        tag="OPERATING CONTEXTS"
+        title="Operating contexts for TES deployment."
+        description="TES is applied where cooling-water performance can be measured and verified using baseline → review methodology at matched load and ambient conditions."
+        continuity="These are the operating contexts where TES is applied."
+        currentLabel="Contexts"
+        activeSteps={[2, 3]}
+      />
+
       <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-            Industries
+        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+          <p className="max-w-3xl text-sm leading-relaxed text-slate-700">
+            Select an industry below to learn more about how TES addresses specific
+            cooling-water challenges in each sector.
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-            Where TES and Mexel chemistry are applied
-          </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-            TES and Mexel®432 are designed for cooling-water systems wherever
-            energy, reliability and water use matter. The same principles apply
-            across wet-cooled power stations, mines, refineries, process plants,
-            data centres, maritime facilities and agricultural operations.
-          </p>
-          <p className="mt-2 max-w-3xl text-sm leading-relaxed text-slate-700">
-            Select an industry below to learn more about how TES addresses
-            specific cooling-water challenges in each sector.
-          </p>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             <Link
               href="/industries/power-energy"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Power & Energy
@@ -48,7 +45,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/mining"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Mining & Minerals
@@ -59,7 +56,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/refineries"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Refineries & Petrochemical
@@ -70,7 +67,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/food-beverage"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Food & Beverage
@@ -81,7 +78,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/agriculture"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Agriculture & Irrigation
@@ -92,7 +89,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/data-centres"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Data Centres
@@ -103,7 +100,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/ports"
-              className="group rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition-all hover:border-emerald-300 hover:shadow-md"
+              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Sea / Harbours / Ports
@@ -133,7 +130,7 @@ export default function IndustriesPage() {
                 href="/contact"
                 className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
-                Contact Us
+                Request a Pilot Study
               </Link>
               <Link
                 href="/knowledge-hub"

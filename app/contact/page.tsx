@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import SystemHeader from "../../components/SystemHeader";
 
 interface FormErrors {
   name?: string;
@@ -91,22 +92,14 @@ export default function ContactPage() {
   };
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
-            Contact
-          </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Contact us
-          </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700">
-            We prefer focused technical conversations over generic marketing. If you are
-            responsible for an industrial plant, we are happy to discuss whether TES
-            would make sense for your site.
-          </p>
-        </div>
-      </section>
+      <SystemHeader
+        tag="PILOT REQUEST"
+        title="Request a TES pilot study."
+        description="We scope requests against condenser indicators (TR, TTD, vacuum) and a baseline → review method to confirm fit."
+        continuity="Start a technical conversation aligned to measured outcomes."
+        currentLabel="Request"
+        activeSteps={[3]}
+      />
 
       {/* Contact details + form */}
       <section>

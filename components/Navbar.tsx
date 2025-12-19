@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -73,11 +74,16 @@ const navItems = [
     ]
   },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact", cta: true },
+  { href: "/contact", label: "Request a Pilot Study", cta: true },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname?.startsWith(href);
+  };
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -123,7 +129,9 @@ export default function Navbar() {
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   item.cta
                     ? "bg-emerald-600 text-white hover:bg-emerald-700"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                    : isActive(item.href)
+                      ? "bg-emerald-50 text-emerald-700"
+                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 {item.label}
@@ -205,7 +213,11 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => !item.items && setMobileOpen(false)}
                   className={`block px-3 py-2 text-base font-medium rounded-md ${
-                    item.cta ? "bg-emerald-600 text-white text-center mt-4" : "text-slate-900 hover:bg-slate-50"
+                    item.cta
+                      ? "bg-emerald-600 text-white text-center mt-4"
+                      : isActive(item.href)
+                        ? "bg-emerald-50 text-emerald-700"
+                        : "text-slate-900 hover:bg-slate-50"
                   }`}
                 >
                   {item.label}
