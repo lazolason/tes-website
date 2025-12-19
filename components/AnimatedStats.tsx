@@ -104,13 +104,13 @@ export default function AnimatedStats() {
   }, []);
 
   return (
-    <section ref={ref} className="border-b bg-gradient-to-br from-gray-900 to-gray-800 py-16 lg:py-20">
-      <div className="mx-auto max-w-6xl px-4">
+    <section ref={ref} className="border-b bg-gradient-to-br from-gray-900 to-gray-800 py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="text-center">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-400">
             Proven Results
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-white sm:text-3xl">
+          <h2 className="mt-2 text-xl sm:text-2xl font-bold text-white sm:text-3xl">
             Measurable Impact, Verified Performance
           </h2>
           <p className="mt-3 text-sm text-gray-400">
@@ -118,11 +118,11 @@ export default function AnimatedStats() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 sm:mt-12 grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`group relative overflow-hidden rounded-xl bg-white/5 p-6 backdrop-blur transition-all duration-700 hover:bg-white/10 ${
+              className={`group relative overflow-hidden rounded-xl bg-white/5 p-5 sm:p-6 backdrop-blur transition-all duration-700 hover:bg-white/10 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0"
@@ -131,7 +131,7 @@ export default function AnimatedStats() {
             >
               <div className="absolute -right-4 -top-4 h-24 w-24 rounded-full bg-brand-500/10 transition-transform group-hover:scale-150" />
               <div className="relative">
-                <p className="text-4xl font-bold text-brand-400 lg:text-5xl">
+                <p className="text-3xl sm:text-4xl font-bold text-brand-400 lg:text-5xl">
                   <AnimatedNumber
                     value={stat.value}
                     suffix={stat.suffix}

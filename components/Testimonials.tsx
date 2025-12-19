@@ -64,8 +64,8 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={ref} className="border-b bg-gray-50 py-16 lg:py-20">
-      <div className="mx-auto max-w-4xl px-4">
+    <section ref={ref} className="border-b bg-gray-50 py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <div
           className={`text-center transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
@@ -74,7 +74,7 @@ export default function Testimonials() {
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             Client Feedback
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="mt-2 text-xl sm:text-2xl font-bold text-gray-900 sm:text-3xl">
             What Industry Professionals Say
           </h2>
         </div>
@@ -98,7 +98,7 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonial card */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg lg:p-12">
+          <div className="rounded-2xl bg-white p-6 sm:p-8 shadow-lg lg:p-12">
             <div className="min-h-[160px]">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -111,14 +111,14 @@ export default function Testimonials() {
                 >
                   {index === currentIndex && (
                     <>
-                      <p className="text-center text-lg leading-relaxed text-gray-700 lg:text-xl">
+                      <p className="text-center text-base sm:text-lg leading-relaxed text-gray-700 lg:text-xl">
                         &ldquo;{testimonial.quote}&rdquo;
                       </p>
                       <div className="mt-6 text-center">
-                        <p className="font-semibold text-gray-900">
+                        <p className="text-sm sm:text-base font-semibold text-gray-900">
                           {testimonial.author}
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-xs sm:text-sm text-gray-500">
                           {testimonial.role} · {testimonial.organization}
                         </p>
                       </div>
@@ -128,19 +128,21 @@ export default function Testimonials() {
               ))}
             </div>
 
-            {/* Navigation dots */}
-            <div className="mt-8 flex justify-center gap-2">
+            {/* Navigation dots - Touch-friendly */}
+            <div className="mt-8 flex justify-center gap-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`h-2.5 w-2.5 rounded-full transition-all ${
-                    index === currentIndex
-                      ? "w-8 bg-brand-500"
-                      : "bg-gray-300 hover:bg-gray-400"
-                  }`}
+                  className="rounded-full transition-all min-w-[44px] min-h-[44px] flex items-center justify-center bg-transparent"
                   aria-label={`Go to testimonial ${index + 1}`}
-                />
+                >
+                  <span className={`rounded-full block transition-all ${
+                    index === currentIndex
+                      ? "w-8 h-3 bg-brand-500"
+                      : "w-2.5 h-2.5 bg-gray-300"
+                  }`} />
+                </button>
               ))}
             </div>
           </div>
