@@ -78,7 +78,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-gray-900 antialiased">
+      <body className="bg-white text-slate-900 antialiased">
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />

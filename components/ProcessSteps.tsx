@@ -57,38 +57,38 @@ export default function ProcessSteps() {
   return (
     <div className="relative">
       {/* Connecting Line (Desktop) */}
-      <div className="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-gray-200 -z-10" />
+      <div className="hidden lg:block absolute top-12 left-0 w-full h-0.5 bg-slate-200 -z-10" />
 
       <div className="grid gap-8 lg:grid-cols-4 lg:gap-6">
         {steps.map((step, index) => (
           <FadeIn key={step.number} delay={index * 150} className="relative bg-white lg:bg-transparent">
              {/* Mobile Connecting Line (Vertical) */}
              {index !== steps.length - 1 && (
-                <div className="lg:hidden absolute top-12 left-6 bottom-[-32px] w-0.5 bg-gray-200 -z-10" />
+                <div className="lg:hidden absolute top-12 left-6 bottom-[-32px] w-0.5 bg-slate-200 -z-10" />
              )}
 
             <div className="flex flex-col lg:items-center text-left lg:text-center group">
               {/* Icon / Number Bubble */}
               <div className="flex items-center gap-4 lg:flex-col lg:gap-4">
-                <div className="relative flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-brand-500 shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
+                <div className="relative flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 rounded-full bg-emerald-600 shadow-md ring-4 ring-white group-hover:scale-110 transition-transform duration-300">
                     {step.icon}
-                    <span className="absolute -top-1 -right-1 lg:top-0 lg:right-0 bg-gray-900 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">
+                    <span className="absolute -top-1 -right-1 lg:top-0 lg:right-0 bg-slate-900 text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">
                         {step.number}
                     </span>
                 </div>
                 <div>
-                   <h3 className="text-lg font-bold text-gray-900">{step.title}</h3>
-                   <span className="text-xs font-semibold uppercase tracking-wider text-brand-600 lg:hidden block">
+                   <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
+                   <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700 lg:hidden block">
                      {step.subtitle}
                    </span>
                 </div>
               </div>
               
               <div className="ml-16 lg:ml-0 lg:mt-4">
-                 <span className="hidden lg:block text-xs font-semibold uppercase tracking-wider text-brand-600 mb-2">
+                 <span className="hidden lg:block text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-2">
                      {step.subtitle}
                  </span>
-                 <p className="text-sm leading-relaxed text-gray-600">
+                 <p className="text-sm leading-relaxed text-slate-600">
                     {step.description}
                  </p>
               </div>

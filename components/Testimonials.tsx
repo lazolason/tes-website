@@ -64,17 +64,17 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={ref} className="border-b bg-gray-50 py-16 lg:py-20">
+    <section ref={ref} className="border-b bg-slate-50 py-16 lg:py-20">
       <div className="mx-auto max-w-4xl px-4">
         <div
           className={`text-center transition-all duration-700 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
             Client Feedback
           </p>
-          <h2 className="mt-2 text-2xl font-bold text-gray-900 sm:text-3xl">
+          <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
             What Industry Professionals Say
           </h2>
         </div>
@@ -86,7 +86,7 @@ export default function Testimonials() {
         >
           {/* Quote icon */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-500">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600">
               <svg
                 className="h-5 w-5 text-white"
                 fill="currentColor"
@@ -111,14 +111,14 @@ export default function Testimonials() {
                 >
                   {index === currentIndex && (
                     <>
-                      <p className="text-center text-lg leading-relaxed text-gray-700 lg:text-xl">
+                      <p className="text-center text-lg leading-relaxed text-slate-700 lg:text-xl">
                         &ldquo;{testimonial.quote}&rdquo;
                       </p>
                       <div className="mt-6 text-center">
-                        <p className="font-semibold text-gray-900">
+                        <p className="font-semibold text-slate-900">
                           {testimonial.author}
                         </p>
-                        <p className="text-sm text-gray-500">
+                        <p className="text-sm text-slate-500">
                           {testimonial.role} · {testimonial.organization}
                         </p>
                       </div>
@@ -136,8 +136,8 @@ export default function Testimonials() {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2.5 w-2.5 rounded-full transition-all ${
                     index === currentIndex
-                      ? "w-8 bg-brand-500"
-                      : "bg-gray-300 hover:bg-gray-400"
+                      ? "w-8 bg-emerald-600"
+                      : "bg-slate-300 hover:bg-slate-400"
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />

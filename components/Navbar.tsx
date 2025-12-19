@@ -93,7 +93,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
         {/* Brand */}
         <Link href="/" className="flex items-center pl-2 lg:pl-0">
@@ -122,8 +122,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
                   item.cta
-                    ? "bg-brand-500 text-gray-900 hover:bg-brand-400"
-                    : "text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                    ? "bg-emerald-600 text-white hover:bg-emerald-700"
+                    : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 {item.label}
@@ -136,22 +136,22 @@ export default function Navbar() {
                     item.type === 'mega' ? 'left-1/2 -translate-x-1/2 w-[600px]' : 'left-0 w-56'
                   }`}
                 >
-                  <div className="bg-white border rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 p-1">
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 p-1">
                     {item.type === 'mega' ? (
                       <div className="grid grid-cols-2 gap-2 p-2">
                         {item.items.map((subItem: any) => (
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 transition-colors group"
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
                           >
-                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 group-hover:bg-brand-500 group-hover:text-gray-900 transition-colors">
+                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-600/10 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                               <subItem.icon className="w-4 h-4" />
                             </div>
                             <div>
-                              <div className="text-sm font-semibold text-gray-900">{subItem.label}</div>
+                              <div className="text-sm font-semibold text-slate-900">{subItem.label}</div>
                               {subItem.desc && (
-                                <div className="text-xs text-gray-500 mt-0.5 line-clamp-1">{subItem.desc}</div>
+                                <div className="text-xs text-slate-500 mt-0.5 line-clamp-1">{subItem.desc}</div>
                               )}
                             </div>
                           </Link>
@@ -163,7 +163,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                            className="px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900"
                           >
                             {subItem.label}
                           </Link>
@@ -180,7 +180,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-md"
+          className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md"
         >
           <span className="sr-only">Open menu</span>
           {mobileOpen ? (
@@ -197,7 +197,7 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-gray-100 bg-white">
+        <div className="lg:hidden border-t border-slate-200 bg-white">
           <nav className="flex flex-col p-4 space-y-1">
             {navItems.map((item) => (
               <div key={item.label}>
@@ -205,19 +205,19 @@ export default function Navbar() {
                   href={item.href}
                   onClick={() => !item.items && setMobileOpen(false)}
                   className={`block px-3 py-2 text-base font-medium rounded-md ${
-                    item.cta ? "bg-brand-500 text-gray-900 text-center mt-4" : "text-gray-900 hover:bg-gray-50"
+                    item.cta ? "bg-emerald-600 text-white text-center mt-4" : "text-slate-900 hover:bg-slate-50"
                   }`}
                 >
                   {item.label}
                 </Link>
                 {item.items && (
-                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-gray-100 ml-3">
+                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-slate-200 ml-3">
                     {item.items.map((subItem: any) => (
                       <Link
                         key={subItem.label}
                         href={subItem.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-brand-600 rounded-md"
+                        className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md"
                       >
                         {subItem.label}
                       </Link>

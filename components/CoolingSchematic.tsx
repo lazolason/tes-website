@@ -6,7 +6,7 @@ export default function CoolingSchematic() {
     <div className="relative h-44 w-full overflow-hidden rounded-lg border bg-white sm:h-48 md:h-40">
       <svg
         viewBox="0 0 260 120"
-        className="h-full w-full text-gray-700"
+        className="h-full w-full text-slate-700"
         role="img"
         aria-labelledby="cooling-diagram-title"
       >

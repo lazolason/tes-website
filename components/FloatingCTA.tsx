@@ -27,7 +27,7 @@ export default function FloatingCTA() {
         href="/contact"
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
-        className={`group flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-brand-600 hover:shadow-xl hover:scale-105 ${
+        className={`group flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-emerald-700 hover:shadow-xl hover:scale-105 ${
           isHovered ? "pr-6" : ""
         }`}
       >
