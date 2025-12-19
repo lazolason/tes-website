@@ -34,31 +34,31 @@ const pillars = [
 
 export default function ValidationSection() {
   return (
-    <section className="bg-white py-20 lg:py-28 relative overflow-hidden">
+    <section className="bg-white py-12 sm:py-16 lg:py-20 xl:py-28 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-emerald-50 rounded-full blur-3xl opacity-50" />
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Rigorous Validation, Trusted Results
             </h2>
-            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
               TES is built on a foundation of scientific protocols and real-world performance data.
             </p>
           </div>
         </FadeIn>
 
-        <div className="grid gap-12 lg:grid-cols-3">
+        <div className="grid gap-8 sm:gap-12 lg:grid-cols-3">
           {pillars.map((pillar, index) => (
             <FadeIn key={pillar.title} delay={index * 150}>
-              <div className="flex flex-col items-center text-center p-8 rounded-3xl bg-slate-50 border border-slate-100 transition-all duration-300 hover:shadow-lg">
-                <div className="mb-6 p-4 rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/50">
+              <div className="flex flex-col items-center text-center p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-100 transition-all duration-300 hover:shadow-lg">
+                <div className="mb-5 sm:mb-6 p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/50">
                   {pillar.icon}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">
                   {pillar.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-slate-600">

@@ -16,22 +16,22 @@ export default function ProblemSolutionTabs() {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 lg:py-28">
+    <section className="bg-slate-50 py-12 sm:py-16 lg:py-20 xl:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+          <div className="text-center mb-10 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               From hidden losses to verifiable gains
             </h2>
-            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+            <p className="mt-4 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto">
               Cooling water systems are often the neglected bottleneck of plant performance. 
               We turn that bottleneck into an efficiency driver.
             </p>
           </div>
         </FadeIn>
 
-        {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12" role="tablist" aria-label="TES overview tabs">
+        {/* Tab Navigation - Touch-friendly mobile */}
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mb-10 sm:mb-12" role="tablist" aria-label="TES overview tabs">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -41,9 +41,9 @@ export default function ProblemSolutionTabs() {
               role="tab"
               aria-selected={activeTab === tab.id}
               aria-controls={`panel-${tab.id}`}
-              className={`px-8 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-6 sm:px-8 py-3.5 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 min-h-[44px] flex items-center justify-center ${
                 activeTab === tab.id
-                  ? `${tab.activeClass} text-white shadow-lg scale-105 ring-2 ring-offset-2`
+                  ? `${tab.activeClass} text-white shadow-lg sm:scale-105 ring-2 ring-offset-2`
                   : "bg-white text-slate-600 hover:bg-slate-100 shadow-sm hover:shadow"
               }`}
             >
@@ -53,7 +53,7 @@ export default function ProblemSolutionTabs() {
         </div>
 
         {/* Tab Content */}
-        <div className="relative min-h-[400px]">
+        <div className="relative min-h-[300px] sm:min-h-[400px]">
           
           {/* PROBLEM CONTENT */}
           <div
@@ -66,28 +66,28 @@ export default function ProblemSolutionTabs() {
                 : "opacity-0 translate-x-8 pointer-events-none absolute"
             }`}
           >
-            <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-rose-100">
+            <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-rose-100">
               <div className="grid lg:grid-cols-2">
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="inline-flex items-center gap-2 text-rose-600 font-bold uppercase tracking-wider text-sm mb-4">
+                <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="inline-flex items-center gap-2 text-rose-600 font-bold uppercase tracking-wider text-xs sm:text-sm mb-4">
                     <span className="w-2 h-2 rounded-full bg-rose-600"></span>
                     Pain Points
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-5 sm:mb-6">
                     The Silent Efficiency Killer
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex gap-4">
+                  <ul className="space-y-3 sm:space-y-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold text-xs">✕</div>
-                      <p className="text-slate-600"><strong>Micro-fouling:</strong> Even a thin slime layer creates an insulating barrier, destroying heat transfer.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Micro-fouling:</strong> Even a thin slime layer creates an insulating barrier, destroying heat transfer.</p>
                     </li>
-                    <li className="flex gap-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold text-xs">✕</div>
-                      <p className="text-slate-600"><strong>Corrosion:</strong> MIC (Microbiologically Influenced Corrosion) quietly eats away at condenser tubes.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Corrosion:</strong> MIC (Microbiologically Influenced Corrosion) quietly eats away at condenser tubes.</p>
                     </li>
-                    <li className="flex gap-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-rose-100 flex items-center justify-center text-rose-600 font-bold text-xs">✕</div>
-                      <p className="text-slate-600"><strong>Lost Megawatts:</strong> Higher backpressure means burning more coal for the same output.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Lost Megawatts:</strong> Higher backpressure means burning more coal for the same output.</p>
                     </li>
                   </ul>
                 </div>
@@ -117,28 +117,28 @@ export default function ProblemSolutionTabs() {
                 : "opacity-0 translate-x-8 pointer-events-none absolute"
             }`}
           >
-             <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-emerald-100">
+             <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-emerald-100">
               <div className="grid lg:grid-cols-2">
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="inline-flex items-center gap-2 text-emerald-600 font-bold uppercase tracking-wider text-sm mb-4">
+                <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="inline-flex items-center gap-2 text-emerald-600 font-bold uppercase tracking-wider text-xs sm:text-sm mb-4">
                     <span className="w-2 h-2 rounded-full bg-emerald-600"></span>
                     The TES System
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-5 sm:mb-6">
                     Active Performance Management
                   </h3>
-                  <ul className="space-y-4">
-                    <li className="flex gap-4">
+                  <ul className="space-y-3 sm:space-y-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xs">✓</div>
-                      <p className="text-slate-600"><strong>Clean Surfaces:</strong> Mexel®432 forms a protective film that prevents fouling from attaching.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Clean Surfaces:</strong> Mexel®432 forms a protective film that prevents fouling from attaching.</p>
                     </li>
-                    <li className="flex gap-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xs">✓</div>
-                      <p className="text-slate-600"><strong>IoT Dosing:</strong> Smart skids dose precisely when needed, logging every event to the cloud.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>IoT Dosing:</strong> Smart skids dose precisely when needed, logging every event to the cloud.</p>
                     </li>
-                    <li className="flex gap-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 font-bold text-xs">✓</div>
-	                      <p className="text-slate-600"><strong>Efficiency Gains:</strong> Maintain &quot;Day 1&quot; cleanliness for better vacuum and lower fuel use.</p>
+	                      <p className="text-sm sm:text-base text-slate-600"><strong>Efficiency Gains:</strong> Maintain &quot;Day 1&quot; cleanliness for better vacuum and lower fuel use.</p>
                     </li>
                   </ul>
                 </div>
@@ -167,31 +167,31 @@ export default function ProblemSolutionTabs() {
                 : "opacity-0 translate-x-8 pointer-events-none absolute"
             }`}
           >
-             <div className="bg-white rounded-3xl overflow-hidden shadow-xl border border-blue-100">
+             <div className="bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-blue-100">
               <div className="grid lg:grid-cols-2">
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <div className="inline-flex items-center gap-2 text-blue-600 font-bold uppercase tracking-wider text-sm mb-4">
+                <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="inline-flex items-center gap-2 text-blue-600 font-bold uppercase tracking-wider text-xs sm:text-sm mb-4">
                     <span className="w-2 h-2 rounded-full bg-blue-600"></span>
                     Methodology
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-slate-900 mb-6">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 mb-5 sm:mb-6">
                     A Partnership, Not a Product
                   </h3>
-	                  <p className="text-slate-600 mb-6">
+	                  <p className="text-sm sm:text-base text-slate-600 mb-5 sm:mb-6">
 	                    We don&apos;t just sell drums of chemical. We deploy a managed system with shared goals.
 	                  </p>
-                  <ul className="space-y-4">
-                    <li className="flex gap-4">
+                  <ul className="space-y-3 sm:space-y-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">1</div>
-                      <p className="text-slate-600"><strong>Baseline:</strong> We verify current performance gaps using Eskom RT&D protocols.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Baseline:</strong> We verify current performance gaps using Eskom RT&D protocols.</p>
                     </li>
-                    <li className="flex gap-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">2</div>
-                      <p className="text-slate-600"><strong>Intervention:</strong> We deploy the skid and chemistry, monitoring TR and TTD in real-time.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Intervention:</strong> We deploy the skid and chemistry, monitoring TR and TTD in real-time.</p>
                     </li>
-                    <li className="flex gap-4">
+                    <li className="flex gap-3 sm:gap-4">
                       <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-xs">3</div>
-                      <p className="text-slate-600"><strong>Verification:</strong> Independent referees validate the results for total transparency.</p>
+                      <p className="text-sm sm:text-base text-slate-600"><strong>Verification:</strong> Independent referees validate the results for total transparency.</p>
                     </li>
                   </ul>
                 </div>
