@@ -92,15 +92,15 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b border-slate-200/70 bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <p className="text-xs font-semibold uppercase tracking-wide text-brand-500">
+          <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
             Contact
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Contact us
           </h1>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-gray-700">
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700">
             We prefer focused technical conversations over generic marketing. If you are
             responsible for an industrial plant, we are happy to discuss whether TES
             would make sense for your site.
@@ -113,12 +113,12 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <div className="grid gap-16 md:grid-cols-2">
             {/* Enquiry form */}
-            <div className="rounded-lg border bg-white p-6 shadow-sm">
+            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
               {status === "success" ? (
                 <div className="py-8 text-center">
-                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-emerald-100">
                     <svg
-                      className="h-6 w-6 text-green-600"
+                      className="h-6 w-6 text-emerald-600"
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -131,26 +131,26 @@ export default function ContactPage() {
                       />
                     </svg>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold text-gray-900">
+                  <h3 className="mt-4 text-lg font-semibold text-slate-900">
                     Message sent successfully
                   </h3>
-                  <p className="mt-2 text-sm text-gray-600">
+                  <p className="mt-2 text-sm text-slate-600">
                     Thank you for your enquiry. We typically respond within 1-2
                     business days.
                   </p>
                   <button
                     onClick={() => setStatus("idle")}
-                    className="mt-6 text-sm font-semibold text-brand-500 hover:text-brand-800"
+                    className="mt-6 text-sm font-semibold text-emerald-700 hover:text-emerald-900"
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
                 <>
-                  <h2 className="text-lg font-semibold text-gray-900">
+                  <h2 className="text-lg font-semibold text-slate-900">
                     Send a message
                   </h2>
-                  <p className="mt-2 text-sm text-gray-600 leading-relaxed">
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                     Please fill in the details below and we will get back to you as soon as possible.
                   </p>
 
@@ -162,7 +162,7 @@ export default function ContactPage() {
 
                   <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
                     <div>
-                      <label className="block text-xs font-semibold text-gray-800">
+                      <label className="block text-xs font-semibold text-slate-800">
                         Name <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -170,10 +170,10 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${
                           errors.name
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                            : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
+                            : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
                         }`}
                         placeholder="Your name"
                       />
@@ -183,7 +183,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-gray-800">
+                      <label className="block text-xs font-semibold text-slate-800">
                         Organisation / Site
                       </label>
                       <input
@@ -191,13 +191,13 @@ export default function ContactPage() {
                         name="organisation"
                         value={formData.organisation}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-600 focus:outline-none focus:ring-1 focus:ring-emerald-600"
                         placeholder="e.g. Eskom Power Station, mine, refinery, etc."
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-gray-800">
+                      <label className="block text-xs font-semibold text-slate-800">
                         Your email <span className="text-red-500">*</span>
                       </label>
                       <input
@@ -205,10 +205,10 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${
                           errors.email
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                            : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
+                            : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
                         }`}
                         placeholder="you@example.com"
                       />
@@ -218,14 +218,14 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-gray-800">
+                      <label className="block text-xs font-semibold text-slate-800">
                         Area of interest
                       </label>
                       <select
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        className="mt-1 w-full rounded-md border border-slate-300 bg-white px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-600 focus:outline-none focus:ring-1 focus:ring-emerald-600"
                       >
                         <option value="">Select one…</option>
                         <option value="TES for Eskom wet-cooled power stations">
@@ -247,14 +247,14 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-gray-800">
+                      <label className="block text-xs font-semibold text-slate-800">
                         Brief description
                       </label>
                       <textarea
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        className="mt-1 w-full rounded-md border border-slate-300 px-3 py-2.5 text-sm text-slate-900 focus:border-emerald-600 focus:outline-none focus:ring-1 focus:ring-emerald-600"
                         rows={4}
                         placeholder="Please provide a brief description of your operational context and what you would like to explore."
                       />
@@ -263,7 +263,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-emerald-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
                     >
                       {status === "submitting" ? (
                         <>
@@ -315,20 +315,20 @@ export default function ContactPage() {
             </div>
             {/* Direct contact */}
             <div className="space-y-4 order-first">
-              <h2 className="text-lg font-semibold text-gray-900">
+              <h2 className="text-lg font-semibold text-slate-900">
                 Direct contact
               </h2>
 
-              <div className="rounded-lg border bg-gray-50 p-4 text-sm text-gray-800">
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-800">
 
-                <p className="font-semibold text-gray-900">TES</p>
+                <p className="font-semibold text-slate-900">TES</p>
                 <p>B-BBEE Level 1 Contributor</p>
                 <p className="mt-1">Technical Director: Lazola Sonqishe</p>
                 <p className="mt-2">
                   <span className="font-semibold">Email:</span>{" "}
                   <a
                     href="mailto:lazola@tes.net"
-                    className="text-brand-500 hover:text-brand-900"
+                    className="text-emerald-700 hover:text-emerald-900"
                   >
                     lazola@tes.net
                   </a>
@@ -337,7 +337,7 @@ export default function ContactPage() {
                   <span className="font-semibold">Mobile:</span>{" "}
                   <a
                     href="tel:+27794648298"
-                    className="text-brand-500 hover:text-brand-900"
+                    className="text-emerald-700 hover:text-emerald-900"
                   >
                     +27 79 464 8298
                   </a>
@@ -346,7 +346,7 @@ export default function ContactPage() {
                   <span className="font-semibold">General enquiries:</span>{" "}
                   <a
                     href="mailto:info@tes.net"
-                    className="text-brand-500 hover:text-brand-900"
+                    className="text-emerald-700 hover:text-emerald-900"
                   >
                     info@tes.net
                   </a>
@@ -357,8 +357,8 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="mt-12">
-            <h2 className="text-lg font-semibold text-gray-900">Additional note</h2>
-            <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+            <h2 className="text-lg font-semibold text-slate-900">Additional note</h2>
+            <p className="mt-2 text-sm text-slate-700 leading-relaxed">
               For any technical questions, please contact Lazola Sonqishe directly
               using the details above.
             </p>

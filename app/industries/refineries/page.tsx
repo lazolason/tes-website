@@ -18,17 +18,17 @@ export default function RefineriesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b border-slate-200/70 bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-amber-700">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
                 Industries / Refineries & Petrochemical
               </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
                 Refineries, petrochemical and metals
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
                 Refineries, petrochemical plants and steel mills run networks of
                 critical heat exchangers and cooling-water loops. Fouling or
                 corrosion here quickly becomes a production and safety issue, not
@@ -49,7 +49,7 @@ export default function RefineriesPage() {
       </section>
 
       {/* Main content */}
-      <section className="border-b">
+      <section className="border-b border-slate-200/70">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <FadeIn>
@@ -64,10 +64,10 @@ export default function RefineriesPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-semibold tracking-tight text-gray-900">
+                  <h2 className="text-xl font-semibold tracking-tight text-slate-900">
                     Critical challenges
                   </h2>
-                  <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
                     <li>• Exchanger fouling that drives higher energy spend or throughput limits</li>
                     <li>• Corrosion risk on carbon steel and mixed-metallurgy systems</li>
                     <li>• Biofouling in cooling towers and distribution headers</li>
@@ -79,16 +79,16 @@ export default function RefineriesPage() {
 
             <FadeIn delay={150}>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-slate-900">
                   How Mexel®432 and TES help
                 </h3>
-                <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
                   In these environments, Mexel®432 is used to improve surface cleanliness
                   and corrosion protection in the cooling-water system, while TES
                   provides a structured way to link those interventions to performance
                   data. Our focus remains on cooling-water, not on process-side chemistry.
                 </p>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                   Where required, we work with site engineering and existing water-treatment
                   partners to integrate Mexel®432 into established programs without
                   disrupting critical production.
@@ -102,25 +102,25 @@ export default function RefineriesPage() {
       {/* CTA */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border bg-gray-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-sm font-semibold text-gray-900">
+              <h2 className="text-sm font-semibold text-slate-900">
                 Integrate TES into your refinery operations
               </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 Discuss how TES can fit your existing water-treatment program.
               </p>
             </div>
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-amber-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-amber-800"
+                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
                 Contact Us
               </Link>
               <Link
                 href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-amber-700 hover:text-amber-900"
+                className="inline-flex items-center justify-center font-semibold text-emerald-700 hover:text-emerald-900"
               >
                 View case studies →
               </Link>

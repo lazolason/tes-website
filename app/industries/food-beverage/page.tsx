@@ -18,17 +18,17 @@ export default function FoodBeveragePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b border-slate-200/70 bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-violet-700">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
                 Industries / Food & Beverage
               </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
                 Food & beverage, breweries and laundries
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
                 These operations run almost continuously and depend on stable cooling
                 for process, refrigeration and HVAC. Fouling and biofilm drive up
                 energy usage and risk unplanned downtime.
@@ -48,7 +48,7 @@ export default function FoodBeveragePage() {
       </section>
 
       {/* Main content */}
-      <section className="border-b">
+      <section className="border-b border-slate-200/70">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <FadeIn>
@@ -63,10 +63,10 @@ export default function FoodBeveragePage() {
                 </div>
 
                 <div>
-                  <h2 className="text-xl font-semibold tracking-tight text-gray-900">
+                  <h2 className="text-xl font-semibold tracking-tight text-slate-900">
                     Common challenges
                   </h2>
-                  <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
                     <li>• Chillers and condensers losing performance over time</li>
                     <li>• Cooling towers with biological growth and scale</li>
                     <li>• High energy consumption for refrigeration or hot-water systems</li>
@@ -78,10 +78,10 @@ export default function FoodBeveragePage() {
 
             <FadeIn delay={150}>
               <div>
-                <h3 className="text-lg font-semibold text-gray-900">
+                <h3 className="text-lg font-semibold text-slate-900">
                   Cooling-water focus in these sectors
                 </h3>
-                <p className="mt-4 text-sm text-gray-600 leading-relaxed">
+                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
                   In these plants, Mexel®432 is applied to cooling towers, condensers
                   and critical cooling loops to keep surfaces cleaner and control
                   biofouling and corrosion. TES concepts can be scaled down to fit the
@@ -97,25 +97,25 @@ export default function FoodBeveragePage() {
       {/* CTA */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border bg-gray-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-sm font-semibold text-gray-900">
+              <h2 className="text-sm font-semibold text-slate-900">
                 Improve cooling efficiency in your facility
               </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 Let&apos;s discuss how TES can reduce energy costs and downtime.
               </p>
             </div>
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-violet-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-violet-800"
+                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
                 Contact Us
               </Link>
               <Link
                 href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-violet-700 hover:text-violet-900"
+                className="inline-flex items-center justify-center font-semibold text-emerald-700 hover:text-emerald-900"
               >
                 View case studies →
               </Link>

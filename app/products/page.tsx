@@ -18,17 +18,17 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
                 Products
               </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
                 Mexel®432: Film-forming chemistry that works.
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
                 Mexel®432 is a film-forming amine/surfactant technology proven across
                 cooling-water systems worldwide. It controls biofouling, corrosion and
                 scaling with minimal environmental impact. TES is built around Mexel®432
@@ -37,13 +37,13 @@ export default function ProductsPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="/mexel432"
-                  className="inline-flex items-center rounded-md bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
+                  className="inline-flex items-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
                 >
                   Mexel®432 Deep Dive →
                 </Link>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-900"
+                  className="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800"
                 >
                   Request Technical Data
                 </Link>
@@ -66,10 +66,10 @@ export default function ProductsPage() {
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-gray-900">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               How Mexel®432 Works
             </h2>
-            <p className="mt-3 max-w-3xl text-base text-gray-600">
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
               Film-forming chemistry that replaces biofilm with a protective molecular layer.
             </p>
           </FadeIn>
@@ -89,10 +89,10 @@ export default function ProductsPage() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <FadeIn>
               <div className="max-w-xl">
-              <h2 className="text-xl font-semibold text-gray-900">
+              <h2 className="text-xl font-semibold text-slate-900">
                 Mexel®432 – Cooling-water film-forming amine/surfactant
               </h2>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                 Mexel®432 is a non-oxidant, film-forming amine emulsion
                 containing a specialised surfactant system. It is designed for
                 once-through and recirculating cooling-water systems using river,
@@ -100,14 +100,14 @@ export default function ProductsPage() {
                 used to restore and maintain condenser and cooling-water
                 performance.
               </p>
-              <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                 Applied correctly, Mexel®432 reduces fouling and corrosion at the
                 cold end, helping stations burn less coal or fuel per net MWh,
                 reduce emissions intensity and extend asset life.
               </p>
 
               <div className="mt-5 flex flex-wrap gap-3 text-xs">
-                <span className="rounded-full bg-brand-100 px-3 py-1 font-semibold text-brand-800">
+                <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
                   Cooling-water TES core product
                 </span>
                 <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
@@ -122,10 +122,10 @@ export default function ProductsPage() {
 
             <FadeIn delay={150}>
               <div className="max-w-md rounded-lg border bg-white p-5 shadow-sm">
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Key functions in cooling-water systems
               </h3>
-              <ul className="mt-3 space-y-2 text-xs text-gray-700 leading-relaxed">
+              <ul className="mt-3 space-y-2 text-xs text-slate-700 leading-relaxed">
                 <li>
                   • <span className="font-semibold">Surfactant / film-forming layer:</span>{" "}
                   creates a protective molecular film on metal and other wetted
@@ -168,23 +168,23 @@ export default function ProductsPage() {
           </div>
 
           {/* Role in TES */}
-          <div className="mt-10 grid gap-6 md:grid-cols-3">\
-            <div className="rounded-lg border bg-gray-50 p-5">
-              <h3 className="text-sm font-semibold text-gray-900">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="rounded-lg border bg-slate-50 p-5">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Role within TES
               </h3>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 Within TES, Mexel®432 is the primary intervention at the cold
                 end. The IoT dosing, data view and verification framework are
                 built specifically to understand and demonstrate what Mexel®432
                 is doing for condenser cleanliness and cooling-water performance.
               </p>
             </div>
-            <div className="rounded-lg border bg-gray-50 p-5">
-              <h3 className="text-sm font-semibold text-gray-900">
+            <div className="rounded-lg border bg-slate-50 p-5">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Verification boundary
               </h3>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 TES verification is explicitly defined around Mexel®432 in
                 cooling-water service, using Eskom RT&amp;D&apos;s baseline →
                 intervention → post-intervention protocol. Other products are
@@ -192,11 +192,11 @@ export default function ProductsPage() {
                 station-approved methodology is developed.
               </p>
             </div>
-            <div className="rounded-lg border bg-gray-50 p-5">
-              <h3 className="text-sm font-semibold text-gray-900">
+            <div className="rounded-lg border bg-slate-50 p-5">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Typical applications
               </h3>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 • Wet-cooled coal-fired units (condenser and cooling-tower
                 circuits){" "}
                 <br />
@@ -213,13 +213,13 @@ export default function ProductsPage() {
           <div className="mt-8 flex flex-wrap gap-3 text-sm">
             <Link
               href="/tes"
-              className="inline-flex items-center text-xs font-semibold text-brand-500 hover:text-brand-900"
+              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
             >
               See how Mexel®432 fits into TES →
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center text-xs font-semibold text-brand-500 hover:text-brand-900"
+              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
             >
               Request Mexel®432 technical data sheets →
             </Link>
@@ -228,19 +228,19 @@ export default function ProductsPage() {
       </section>
 
       {/* MexSteam 100 – separate, boiler-side strategic product */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <div className="max-w-3xl">
-            <h2 className="text-xl font-semibold text-gray-900">
+            <h2 className="text-xl font-semibold text-slate-900">
               MexSteam 100 – Boiler-side strategic product
             </h2>
-            <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
               MexSteam 100 is a boiler-treatment product for steam-side
               protection and efficiency. It is a film-forming amine-based
               solution designed to protect condensate and steam circuits from
               corrosion and deposition in specific boiler applications.
             </p>
-            <p className="mt-3 text-sm text-gray-700 leading-relaxed">
+            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
               We regard MexSteam 100 as a strategic product that complements
               TES at the plant level, but it is deliberately kept outside the
               current TES verification boundary. Any efficiency or fuel-related
@@ -252,12 +252,12 @@ export default function ProductsPage() {
               <span className="rounded-full bg-amber-50 px-3 py-1 font-semibold text-amber-800">
                 Boiler / steam-side
               </span>
-              <span className="rounded-full bg-gray-100 px-3 py-1 font-semibold text-gray-800">
+              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
                 Strategic product (not in TES verification)
               </span>
             </div>
 
-            <p className="mt-5 text-xs text-gray-600 leading-relaxed">
+            <p className="mt-5 text-xs text-slate-600 leading-relaxed">
               For now, TES communications and verification remain focused on
               Mexel®432 in cooling-water service. MexSteam 100 is available as
               a separate discussion for customers with suitable boiler and
@@ -272,10 +272,10 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-6xl px-4 py-10 lg:py-12">
           <div className="flex flex-col gap-4 rounded-lg border bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-sm font-semibold text-gray-900">
+              <h2 className="text-sm font-semibold text-slate-900">
                 Need to understand how these products fit your plant?
               </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 We prefer to start with your specific cooling-water or boiler
                 context, not a generic brochure. A short technical discussion is
                 usually enough to see whether Mexel®432, MexSteam 100 or TES as
@@ -285,13 +285,13 @@ export default function ProductsPage() {
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
                 Contact Mexel Energy Sustain
               </Link>
               <Link
                 href="/applications"
-                className="inline-flex items-center justify-center font-semibold text-brand-500 hover:text-brand-900"
+                className="inline-flex items-center justify-center font-semibold text-emerald-600 hover:text-emerald-800"
               >
                 View typical TES applications →
               </Link>

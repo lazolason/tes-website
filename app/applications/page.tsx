@@ -17,17 +17,17 @@ export default function ApplicationsPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
           <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
                 TES Applications
               </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
                 Where TES delivers results: Power stations and industrial plants.
               </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
                 TES is proven on Eskom wet-cooled power stations and industrial cooling-water
                 systems. Whether you run a coal-fired unit, refinery, mine or data centre,
                 the same principles apply: clean heat exchangers, stable chemistry, verifiable results.
@@ -35,13 +35,13 @@ export default function ApplicationsPage() {
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
                   href="/knowledge-hub/case-studies"
-                  className="inline-flex items-center rounded-md bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-600"
+                  className="inline-flex items-center rounded-md bg-emerald-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-700"
                 >
                   View Case Studies →
                 </Link>
                 <Link
                   href="/industries"
-                  className="inline-flex items-center text-sm font-semibold text-brand-500 hover:text-brand-900"
+                  className="inline-flex items-center text-sm font-semibold text-emerald-600 hover:text-emerald-800"
                 >
                   Explore Industries
                 </Link>
@@ -77,17 +77,17 @@ export default function ApplicationsPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-xl font-semibold text-slate-900">
                   TES for Eskom wet-cooled coal stations
                 </h2>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
                   At wet-cooled stations, TES focuses on the condenser and cooling-water
                   system as a distinct performance node. It is suited to units at stations
                   such as Tutuka, Matla, Kriel, Kendal and similar plants where raw-water
                   quality, biofouling, scaling and corrosion have historically been
                   difficult to manage with multi-chemical programs.
                 </p>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-slate-700">
                   <li>• Units with persistent condenser fouling and unstable TR / TTD.</li>
                   <li>• Stations using dam, river or mine water with variable quality.</li>
                   <li>• Sites where the cooling-water system is the dominant raw-water user.</li>
@@ -109,16 +109,16 @@ export default function ApplicationsPage() {
               </div>
 
               <div>
-                <h2 className="text-xl font-semibold text-gray-900">
+                <h2 className="text-xl font-semibold text-slate-900">
                   TES for industrial cooling-water users
                 </h2>
-                <p className="mt-2 text-sm text-gray-700 leading-relaxed">
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
                   Outside the utility sector, many industrial plants operate cooling-water
                   systems that are just as critical as a condenser in a power station.
                   TES principles – Mexel®432 chemistry, smart dosing and targeted data –
                   translate directly into these environments.
                 </p>
-                <ul className="mt-3 space-y-2 text-sm text-gray-700">
+                <ul className="mt-3 space-y-2 text-sm text-slate-700">
                   <li>• Mines and concentrators with large open cooling circuits.</li>
                   <li>• Refineries, petrochemical and steel plants.</li>
                   <li>• Breweries, food &amp; beverage and laundries with constant cooling duty.</li>
@@ -131,12 +131,12 @@ export default function ApplicationsPage() {
       </section>
 
       {/* TES building blocks in context – with placeholders */}
-      <section className="border-b bg-gray-50">
+      <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+          <h2 className="text-xl font-semibold text-slate-900">
             The same four TES building blocks, applied to different sites.
           </h2>
-          <p className="mt-2 max-w-3xl text-sm text-gray-700">
+          <p className="mt-2 max-w-3xl text-sm text-slate-700">
             Regardless of site, TES is always built from the same elements: Mexel®432,
             IoT-enabled dosing, a cooling-water performance view and a verification
             framework. The application details change by station or plant.
@@ -153,10 +153,10 @@ export default function ApplicationsPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Mexel®432 chemistry
               </h3>
-              <p className="mt-1 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-1 text-xs text-slate-700 leading-relaxed">
                 Applied to once-through and recirculating systems using river, dam, mine
                 or seawater. Focused on biofouling, corrosion, scaling and solids
                 dispersion at the cold end.
@@ -173,10 +173,10 @@ export default function ApplicationsPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 TES dosing skid (Thingy:91X)
               </h3>
-              <p className="mt-1 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-1 text-xs text-slate-700 leading-relaxed">
                 IoT-enabled dosing units sized for station or plant circuits, with
                 level sensing, logging and remote configuration for transparent dosing
                 records.
@@ -193,10 +193,10 @@ export default function ApplicationsPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Cooling-water data view
               </h3>
-              <p className="mt-1 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-1 text-xs text-slate-700 leading-relaxed">
                 Simple dashboards linking dosing history with TR, TTD, vacuum and other
                 key indicators, tailored for each station or industrial plant.
               </p>
@@ -212,10 +212,10 @@ export default function ApplicationsPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Verification framework
               </h3>
-              <p className="mt-1 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-1 text-xs text-slate-700 leading-relaxed">
                 Built on Eskom RT&amp;D’s Tutuka protocol for stations, and adapted
                 to industrial sites with clear baselines, interventions and reviews.
               </p>
@@ -227,15 +227,15 @@ export default function ApplicationsPage() {
       {/* Example pilot structures */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <h2 className="text-xl font-semibold text-gray-900">
+          <h2 className="text-xl font-semibold text-slate-900">
             Example TES pilot structures
           </h2>
           <div className="mt-6 grid gap-6 md:grid-cols-2">
             <div className="rounded-lg border bg-white p-6 shadow-sm">
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Eskom wet-cooled unit pilot
               </h3>
-              <ul className="mt-3 space-y-2 text-xs text-gray-700 leading-relaxed">
+              <ul className="mt-3 space-y-2 text-xs text-slate-700 leading-relaxed">
                 <li>• Select one unit and associated cooling-water circuits.</li>
                 <li>• Define KPIs: TR, TTD, vacuum stability, key chemistry parameters.</li>
                 <li>• Collect baseline data using RT&amp;D protocol structure.</li>
@@ -245,10 +245,10 @@ export default function ApplicationsPage() {
               </ul>
             </div>
             <div className="rounded-lg border bg-white p-6 shadow-sm">
-              <h3 className="text-sm font-semibold text-gray-900">
+              <h3 className="text-sm font-semibold text-slate-900">
                 Industrial cooling-water pilot
               </h3>
-              <ul className="mt-3 space-y-2 text-xs text-gray-700 leading-relaxed">
+              <ul className="mt-3 space-y-2 text-xs text-slate-700 leading-relaxed">
                 <li>• Identify the most critical cooling-water loop or exchanger bank.</li>
                 <li>• Agree on metrics: heat-exchanger performance, downtime, cleaning frequency.</li>
                 <li>• Establish a realistic baseline period.</li>
@@ -266,10 +266,10 @@ export default function ApplicationsPage() {
         <div className="mx-auto max-w-6xl px-4 py-10 lg:py-12">
           <div className="flex flex-col gap-4 rounded-lg border bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
             <div>
-              <h2 className="text-sm font-semibold text-gray-900">
+              <h2 className="text-sm font-semibold text-slate-900">
                 Exploring TES for your station or plant.
               </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
                 We usually start with a short technical discussion: your current cooling-water
                 configuration, constraints and data. From there we can propose a TES pilot
                 that is realistic for your site and aligned with your existing protocols.
@@ -278,13 +278,13 @@ export default function ApplicationsPage() {
             <div className="flex flex-col gap-2 text-xs">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
               >
                 Start a TES application discussion
               </Link>
               <Link
                 href="/tes"
-                className="inline-flex items-center justify-center font-semibold text-brand-500 hover:text-brand-900"
+                className="inline-flex items-center justify-center font-semibold text-emerald-600 hover:text-emerald-800"
               >
                 Revisit the TES system overview →
               </Link>
