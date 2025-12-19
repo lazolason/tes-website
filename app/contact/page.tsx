@@ -170,7 +170,8 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                        disabled={status === "submitting"}
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-gray-50 ${
                           errors.name
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
                             : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
@@ -191,7 +192,8 @@ export default function ContactPage() {
                         name="organisation"
                         value={formData.organisation}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        disabled={status === "submitting"}
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-gray-50"
                         placeholder="e.g. Eskom Power Station, mine, refinery, etc."
                       />
                     </div>
@@ -205,7 +207,8 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                        disabled={status === "submitting"}
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-gray-50 ${
                           errors.email
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
                             : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
@@ -225,7 +228,8 @@ export default function ContactPage() {
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        disabled={status === "submitting"}
+                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-gray-50"
                       >
                         <option value="">Select one…</option>
                         <option value="TES for Eskom wet-cooled power stations">
@@ -254,7 +258,8 @@ export default function ContactPage() {
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        disabled={status === "submitting"}
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 disabled:cursor-not-allowed disabled:opacity-60 disabled:bg-gray-50"
                         rows={4}
                         placeholder="Please provide a brief description of your operational context and what you would like to explore."
                       />
