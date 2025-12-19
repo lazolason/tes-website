@@ -134,17 +134,13 @@ export default function Testimonials() {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`h-3 w-3 rounded-full transition-all min-w-[44px] min-h-[44px] flex items-center justify-center ${
-                    index === currentIndex
-                      ? "bg-transparent"
-                      : "bg-transparent"
-                  }`}
+                  className="rounded-full transition-all min-w-[44px] min-h-[44px] flex items-center justify-center bg-transparent"
                   aria-label={`Go to testimonial ${index + 1}`}
                 >
-                  <span className={`h-2.5 w-2.5 rounded-full block transition-all ${
+                  <span className={`rounded-full block transition-all ${
                     index === currentIndex
-                      ? "w-8 bg-brand-500"
-                      : "bg-gray-300"
+                      ? "w-8 h-3 bg-brand-500"
+                      : "w-2.5 h-2.5 bg-gray-300"
                   }`} />
                 </button>
               ))}
