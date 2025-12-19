@@ -6,6 +6,7 @@ Use this guide to run the MCP CLI against the Codex server entirely through Dock
 
 - Docker installed locally.
 - A Codex API key exported in your shell as `CODEX_API_KEY`.
+- Access to your host Docker daemon (mounting `/var/run/docker.sock`) and a Docker CLI binary available to the MCP client container.
 
 ## 1) Copy the Codex MCP client config
 
@@ -20,12 +21,14 @@ If you prefer to keep the configuration within the project directory, you can mo
 
 ## 2) Run the MCP client in Docker
 
-Start the official MCP CLI container and mount the directory containing the configuration file. The CLI will be able to reach the Codex server using the `codex` entry defined in the config.
+Start the official MCP CLI container and mount the directory containing the configuration file. To allow the Codex server to launch via Docker from inside the container, also mount your host Docker socket and Docker CLI binary. The CLI will be able to reach the Codex server using the `codex` entry defined in the config.
 
 ```bash
 docker run --rm -it \
   -e CODEX_API_KEY="$CODEX_API_KEY" \
   -v "$HOME/.config/mcp:/root/.config/mcp" \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v "$(which docker)":/usr/bin/docker \
   ghcr.io/modelcontextprotocol/clients/cli:latest
 ```
 
