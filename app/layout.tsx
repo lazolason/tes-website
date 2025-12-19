@@ -2,6 +2,7 @@ import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FloatingCTA from '../components/FloatingCTA'
+import Script from 'next/script'
 import type { Metadata } from 'next'
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mexelenergysustain.com';
@@ -76,9 +77,18 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN || 'localhost';
+  
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-white text-gray-900 antialiased">
+        {/* Plausible Analytics - Privacy-friendly, GDPR compliant */}
+        <Script
+          defer
+          data-domain={plausibleDomain}
+          src="https://plausible.io/js/script.js"
+          strategy="afterInteractive"
+        />
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />

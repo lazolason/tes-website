@@ -1,19 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import FadeIn from "../../../components/FadeIn";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Resources",
-  description:
-    "Technical resources, white papers and documentation from Mexel Energy Sustain: TES system overview, Mexel®432 technical data and case study reports.",
-  openGraph: {
-    title: "Resources | Mexel Energy Sustain",
-    description:
-      "Download technical resources, white papers and case study documentation.",
-  },
-};
+import { trackEvent } from "@/lib/analytics";
 
 export default function ResourcesPage() {
+  const handlePDFDownload = (fileName: string) => {
+    trackEvent("PDF Download", { file: fileName });
+  };
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
@@ -46,6 +40,7 @@ export default function ResourcesPage() {
               <a
                 href="/Lost_Megawatts_Restored.pdf"
                 download
+                onClick={() => handlePDFDownload("Lost_Megawatts_Restored")}
                 className="group block rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex items-start justify-between">

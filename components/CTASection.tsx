@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import FadeIn from "./FadeIn";
+import { trackEvent } from "@/lib/analytics";
 
 export default function CTASection() {
   return (
@@ -23,11 +24,16 @@ export default function CTASection() {
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
                   href="/contact"
+                  onClick={() => trackEvent("CTA Clicked", { location: "CTA Section", action: "Request Pilot Study" })}
                   className="rounded-full bg-white px-8 py-4 text-sm font-bold text-emerald-600 shadow-sm hover:bg-emerald-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white transition-all duration-300 transform hover:scale-105"
                 >
                   Request a Pilot Study
                 </Link>
-                <Link href="/knowledge-hub/case-studies" className="text-sm font-bold leading-6 text-white hover:text-emerald-100 transition-colors">
+                <Link 
+                  href="/knowledge-hub/case-studies" 
+                  onClick={() => trackEvent("CTA Clicked", { location: "CTA Section", action: "View Case Studies" })}
+                  className="text-sm font-bold leading-6 text-white hover:text-emerald-100 transition-colors"
+                >
                   View Case Studies <span aria-hidden="true">→</span>
                 </Link>
               </div>
