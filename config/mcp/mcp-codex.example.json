@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "codex": {
+      "command": "docker",
+      "args": [
+        "run",
+        "--rm",
+        "-i",
+        "-e",
+        "CODEX_API_KEY=${CODEX_API_KEY}",
+        "ghcr.io/modelcontextprotocol/servers/codex:latest"
+      ],
+      "env": {
+        "CODEX_API_KEY": "${CODEX_API_KEY}"
+      },
+      "description": "Start the Codex MCP server in Docker with the API key supplied via CODEX_API_KEY."
+    }
+  }
+}
