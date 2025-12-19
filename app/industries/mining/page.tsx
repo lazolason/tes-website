@@ -37,7 +37,7 @@ export default function MiningPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-mining.png"
+                src="/industry-mining.webp"
                 alt="Mining operations cooling systems"
                 fill
                 className="rounded-xl object-cover shadow-lg"
@@ -56,7 +56,7 @@ export default function MiningPage() {
               <div className="flex flex-col gap-4">
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
-                    src="/mining-plant.png"
+                    src="/mining-plant.webp"
                     alt="Mining and minerals processing plant"
                     fill
                     className="object-cover"

@@ -38,7 +38,7 @@ export default function AgriculturePage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-agriculture.png"
+                src="/industry-agriculture.webp"
                 alt="Agricultural cooling and irrigation systems"
                 fill
                 className="rounded-xl object-cover shadow-lg"

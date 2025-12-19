@@ -37,7 +37,7 @@ export default function PortsPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-ports.png"
+                src="/industry-ports.webp"
                 alt="Port facilities and cooling systems"
                 fill
                 className="rounded-xl object-cover shadow-lg"

@@ -39,7 +39,7 @@ export default function PowerEnergyPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
               <Image
-                src="/industry-power.png"
+                src="/industry-power.webp"
                 alt="Power generation facility with cooling towers"
                 fill
                 className="object-cover"
@@ -83,7 +83,7 @@ export default function PowerEnergyPage() {
                 {/* Condenser image */}
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
-                    src="/condenser.png"
+                    src="/condenser.webp"
                     alt="Industrial condenser system"
                     fill
                     className="object-cover"

@@ -34,7 +34,7 @@ export default function Mexel432Page() {
           {/* Technical Infographic */}
           <div className="mt-10 relative h-96 md:h-[32rem] lg:h-[40rem]">
             <Image
-              src="/before-after-tubes.png"
+              src="/before-after-tubes.webp"
               alt="Before: Heavily fouled condenser tubes vs After: Restored tubes with Mexel432 treatment"
               fill
               className="object-contain"

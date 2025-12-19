@@ -43,7 +43,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-56 overflow-hidden rounded-xl shadow-lg lg:h-64">
               <Image
-                src="/control-room.png"
+                src="/control-room.webp"
                 alt="Power station control room"
                 fill
                 className="object-cover"
@@ -131,7 +131,7 @@ export default function AboutPage() {
             <FadeIn delay={100}>
               <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="/lazola-sonqishe.png"
+                  src="/lazola-sonqishe.webp"
                   alt="Lazola Sonqishe, Managing Director"
                   fill
                   className="object-cover"

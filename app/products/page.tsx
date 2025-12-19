@@ -51,7 +51,7 @@ export default function ProductsPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/dosing-skid.png"
+                src="/dosing-skid.webp"
                 alt="Mexel®432 dosing system with IoT monitoring"
                 fill
                 className="rounded-xl object-cover shadow-lg"
@@ -78,7 +78,7 @@ export default function ProductsPage() {
           <FadeIn delay={200}>
             <div className="relative mt-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
               <Image
-                src="/condenser.png"
+                src="/condenser.webp"
                 alt="Condenser heat exchanger system"
                 fill
                 className="object-cover"

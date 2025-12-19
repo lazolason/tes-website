@@ -37,7 +37,7 @@ export default function DataCentresPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-data-centre.png"
+                src="/industry-data-centre.webp"
                 alt="Data centre cooling infrastructure"
                 fill
                 className="rounded-xl object-cover shadow-lg"

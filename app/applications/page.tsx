@@ -49,7 +49,7 @@ export default function ApplicationsPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/cooling-tower.png"
+                src="/cooling-tower.webp"
                 alt="Wet-cooled power station cooling tower"
                 fill
                 className="rounded-xl object-cover shadow-lg"
@@ -69,7 +69,7 @@ export default function ApplicationsPage() {
               {/* Power station image */}
               <div className="relative h-32 w-full overflow-hidden rounded-lg">
                 <Image
-                  src="/cooling-tower.png"
+                  src="/cooling-tower.webp"
                   alt="Wet-cooled power station cooling tower"
                   fill
                   className="object-cover"
@@ -101,7 +101,7 @@ export default function ApplicationsPage() {
               {/* Industrial plant image */}
               <div className="relative h-32 w-full overflow-hidden rounded-lg">
                 <Image
-                  src="/industrial-plant.png"
+                  src="/industrial-plant.webp"
                   alt="Industrial cooling water system"
                   fill
                   className="object-cover"
@@ -147,7 +147,7 @@ export default function ApplicationsPage() {
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
               <div className="relative h-24 w-full overflow-hidden rounded">
                 <Image
-                  src="/dosing-skid.png"
+                  src="/dosing-skid.webp"
                   alt="Mexel®432 dosing equipment"
                   fill
                   className="object-cover"
@@ -167,7 +167,7 @@ export default function ApplicationsPage() {
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
               <div className="relative h-24 w-full overflow-hidden rounded">
                 <Image
-                  src="/iot-dashboard.png"
+                  src="/iot-dashboard.webp"
                   alt="IoT dosing dashboard"
                   fill
                   className="object-cover"
@@ -187,7 +187,7 @@ export default function ApplicationsPage() {
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
               <div className="relative h-24 w-full overflow-hidden rounded">
                 <Image
-                  src="/control-room.png"
+                  src="/control-room.webp"
                   alt="Cooling water data view"
                   fill
                   className="object-cover"
@@ -206,7 +206,7 @@ export default function ApplicationsPage() {
             <div className="flex flex-col gap-3 rounded-lg border bg-white p-4 shadow-sm">
               <div className="relative h-24 w-full overflow-hidden rounded">
                 <Image
-                  src="/verification.png"
+                  src="/verification.webp"
                   alt="Verification framework"
                   fill
                   className="object-cover"

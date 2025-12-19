@@ -37,7 +37,7 @@ export default function RefineriesPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-refinery.png"
+                src="/industry-refinery.webp"
                 alt="Refinery cooling infrastructure"
                 fill
                 className="rounded-xl object-cover shadow-lg"
@@ -56,7 +56,7 @@ export default function RefineriesPage() {
               <div className="flex flex-col gap-4">
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
-                    src="/refinery.png"
+                    src="/refinery.webp"
                     alt="Refinery and petrochemical plant"
                     fill
                     className="object-cover"
