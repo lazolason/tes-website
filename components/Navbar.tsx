@@ -95,9 +95,9 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
-        {/* Brand */}
-        <Link href="/" className="flex items-center pl-2 lg:pl-0">
-          <div className="relative h-16 w-56 flex-shrink-0">
+        {/* Brand - Responsive sizing for mobile */}
+        <Link href="/" className="flex items-center lg:pl-0">
+          <div className="relative h-12 w-40 sm:h-14 sm:w-48 lg:h-16 lg:w-56 flex-shrink-0">
              {/* Using object-contain and left alignment to keep it tidy */}
             <Image
               src="/logo.png"
@@ -177,12 +177,13 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Mobile menu button */}
+        {/* Mobile menu button - 44x44px minimum touch target */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-gray-600 hover:bg-gray-100 rounded-md"
+          className="lg:hidden p-3 text-gray-600 hover:bg-gray-100 rounded-md min-w-[44px] min-h-[44px] flex items-center justify-center"
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
-          <span className="sr-only">Open menu</span>
+          <span className="sr-only">{mobileOpen ? "Close menu" : "Open menu"}</span>
           {mobileOpen ? (
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -195,29 +196,29 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav - Improved touch targets and spacing */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-gray-100 bg-white">
-          <nav className="flex flex-col p-4 space-y-1">
+          <nav className="flex flex-col px-4 py-2 space-y-1">
             {navItems.map((item) => (
               <div key={item.label}>
                 <Link
                   href={item.href}
                   onClick={() => !item.items && setMobileOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium rounded-md ${
-                    item.cta ? "bg-brand-500 text-gray-900 text-center mt-4" : "text-gray-900 hover:bg-gray-50"
+                  className={`block px-4 py-3 text-base font-medium rounded-md min-h-[44px] flex items-center ${
+                    item.cta ? "bg-brand-500 text-gray-900 text-center justify-center mt-4" : "text-gray-900 hover:bg-gray-50"
                   }`}
                 >
                   {item.label}
                 </Link>
                 {item.items && (
-                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-gray-100 ml-3">
+                  <div className="pl-6 space-y-1 mt-2 border-l-2 border-gray-100 ml-3">
                     {item.items.map((subItem: any) => (
                       <Link
                         key={subItem.label}
                         href={subItem.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-3 py-2 text-sm text-gray-600 hover:text-brand-600 rounded-md"
+                        className="block px-3 py-3 text-sm text-gray-600 hover:text-brand-600 hover:bg-gray-50 rounded-md min-h-[44px] flex items-center"
                       >
                         {subItem.label}
                       </Link>

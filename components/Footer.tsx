@@ -6,16 +6,16 @@ export default function Footer() {
 
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
-      <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
-          <div className="space-y-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 lg:py-16">
+        <div className="flex flex-col gap-8 sm:gap-12 md:flex-row md:items-start md:justify-between">
+          <div className="space-y-4 sm:space-y-6">
             {/* Logo mark */}
             <Image
               src="/logo.png"
               alt="Mexel Energy Sustain"
               width={140}
               height={44}
-              className="h-10 w-auto brightness-0 invert opacity-90"
+              className="h-9 sm:h-10 w-auto brightness-0 invert opacity-90"
             />
             <div className="space-y-2">
               <p className="text-sm font-bold tracking-tight text-white">
@@ -30,13 +30,13 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col items-start gap-6 md:items-end md:text-right">
+          <div className="flex flex-col items-start gap-4 sm:gap-6 md:items-end md:text-right">
             <div className="space-y-2">
-              <p className="text-sm font-bold text-white uppercase tracking-wider">Technical contact</p>
+              <p className="text-xs sm:text-sm font-bold text-white uppercase tracking-wider">Technical contact</p>
               <p>
                 <a
                   href="mailto:info@mexelenergysustain.com"
-                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors"
+                  className="text-base sm:text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors break-words"
                 >
                   info@mexelenergysustain.com
                 </a>
@@ -44,13 +44,13 @@ export default function Footer() {
               <p>
                 <a
                   href="tel:+27794648298"
-                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors"
+                  className="text-base sm:text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors"
                 >
                   +27 79 464 8298
                 </a>
               </p>
             </div>
-            <div className="space-y-2 text-[11px] text-slate-500 md:max-w-sm">
+            <div className="space-y-2 text-[10px] sm:text-[11px] text-slate-500 md:max-w-sm">
               <p>© {year} Mexel Energy Sustain (Pty) Ltd. All rights reserved.</p>
               <p>
                 This site is for technical and informational use. It does not replace

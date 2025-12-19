@@ -27,7 +27,7 @@ export default function TesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 px-6 overflow-hidden bg-slate-50">
+      <section className="relative pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 px-4 sm:px-6 overflow-hidden bg-slate-50">
         {/* Gradient Blobs Background */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 -right-40 w-96 h-96 bg-emerald-400/10 rounded-full blur-3xl animate-float"></div>
@@ -43,11 +43,11 @@ export default function TesPage() {
               <div className="inline-flex items-center rounded-full bg-emerald-600/10 px-3 py-1.5 text-xs font-semibold text-emerald-700 ring-1 ring-inset ring-emerald-600/20 mb-6">
                 Thermal Efficiency Solution
               </div>
-              <h1 className="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl lg:leading-[1.1]">
+              <h1 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl md:text-5xl lg:text-6xl lg:leading-[1.1]">
                 Stop hidden losses in your{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-600">cooling water.</span>
 	              </h1>
-	              <p className="mt-6 text-lg leading-8 text-slate-700">
+	              <p className="mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-slate-700">
 	                TES isn&apos;t just a chemical—it&apos;s a verifiable system. We combine{' '}
 	                <span className="text-slate-900 font-semibold">Mexel®432 chemistry</span>,{' '}
 	                <span className="text-slate-900 font-semibold">IoT dosing</span>, and{' '}
@@ -55,34 +55,34 @@ export default function TesPage() {
 	                restore condenser performance on wet-cooled units.
 	              </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
                 <Link
                   href="/contact"
-                  className="rounded-lg bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 transition-all hover:shadow-lg hover:shadow-emerald-600/30"
+                  className="rounded-lg bg-emerald-600 px-6 py-3.5 text-sm font-bold text-white shadow-sm hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 transition-all hover:shadow-lg hover:shadow-emerald-600/30 min-h-[44px] flex items-center justify-center text-center"
                 >
                   Request a Pilot Study
                 </Link>
                 <Link
                   href="/products"
-                  className="rounded-lg bg-slate-100 px-6 py-3.5 text-sm font-semibold text-slate-900 hover:bg-slate-200 transition-all"
+                  className="rounded-lg bg-slate-100 px-6 py-3.5 text-sm font-semibold text-slate-900 hover:bg-slate-200 transition-all min-h-[44px] flex items-center justify-center text-center"
                 >
                   Technical Specs →
                 </Link>
               </div>
 
               {/* Credibility Labels */}
-              <div className="mt-12 flex flex-wrap gap-x-8 gap-y-4 border-t border-slate-200 pt-8">
+              <div className="mt-12 flex flex-col sm:flex-row sm:flex-wrap gap-4 sm:gap-x-8 sm:gap-y-4 border-t border-slate-200 pt-8">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200">
-                    <svg className="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="flex h-10 w-10 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200 flex-shrink-0">
+                    <svg className="h-5 w-5 sm:h-4 sm:w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
                   <span className="text-sm font-medium text-slate-700">Eskom RT&D Protocol</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200">
-                    <svg className="h-4 w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <div className="flex h-10 w-10 sm:h-8 sm:w-8 items-center justify-center rounded-full bg-emerald-100 ring-1 ring-emerald-200 flex-shrink-0">
+                    <svg className="h-5 w-5 sm:h-4 sm:w-4 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                     </svg>
                   </div>
@@ -119,12 +119,12 @@ export default function TesPage() {
 
       {/* TES 4-Step Process */}
       <section className="border-b bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-14 lg:py-20">
           <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-gray-900 text-center">
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-gray-900 text-center">
               How TES Works
             </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-base text-gray-600 text-center">
+            <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-gray-600 text-center">
               TES combines four integrated components to deliver measurable cooling-water efficiency improvements.
             </p>
           </FadeIn>
@@ -136,12 +136,12 @@ export default function TesPage() {
 
       {/* TES Benefits Grid */}
       <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-14 lg:py-20">
           <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 text-center">
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900 text-center">
               Why TES Delivers Results
             </h2>
-            <p className="mt-3 max-w-2xl mx-auto text-base text-slate-600 text-center">
+            <p className="mt-3 max-w-2xl mx-auto text-sm sm:text-base text-slate-600 text-center">
               Eight core capabilities working together to transform cooling-water performance.
             </p>
           </FadeIn>
@@ -240,9 +240,9 @@ export default function TesPage() {
 
       {/* What TES is / is not */}
       <section className="border-b bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-14 lg:py-20">
           <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">
               What TES is – and what it is not
             </h2>
           </FadeIn>
@@ -304,12 +304,12 @@ export default function TesPage() {
 
       {/* Four building blocks */}
       <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-14 lg:py-20">
           <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+            <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">
               TES in four building blocks
             </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
+            <p className="mt-3 max-w-3xl text-sm sm:text-base text-slate-600">
               TES has four components that work together. Each one is simple on
               its own; the value is in the way they combine to give a clear
               picture of cooling-water performance.
@@ -408,8 +408,8 @@ export default function TesPage() {
 
       {/* How a pilot works */}
       <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 py-12 sm:py-14 lg:py-20">
+          <h2 className="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">
             How a TES pilot works in practice
           </h2>
           <div className="mt-4 grid gap-6 md:grid-cols-3">

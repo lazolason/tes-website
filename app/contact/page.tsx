@@ -113,7 +113,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <div className="grid gap-16 md:grid-cols-2">
             {/* Enquiry form */}
-            <div className="rounded-lg border bg-white p-6 shadow-sm">
+            <div className="rounded-lg border bg-white p-5 sm:p-6 shadow-sm">
               {status === "success" ? (
                 <div className="py-8 text-center">
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
@@ -160,7 +160,7 @@ export default function ContactPage() {
                     </div>
                   )}
 
-                  <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+                  <form className="mt-5 space-y-5" onSubmit={handleSubmit}>
                     <div>
                       <label className="block text-xs font-semibold text-gray-800">
                         Name <span className="text-red-500">*</span>
@@ -170,7 +170,7 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                        className={`mt-1 w-full rounded-md border px-3 py-3 text-base text-gray-900 focus:outline-none focus:ring-1 min-h-[44px] ${
                           errors.name
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
                             : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
@@ -191,7 +191,7 @@ export default function ContactPage() {
                         name="organisation"
                         value={formData.organisation}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-3 text-base text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 min-h-[44px]"
                         placeholder="e.g. Eskom Power Station, mine, refinery, etc."
                       />
                     </div>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-1 ${
+                        className={`mt-1 w-full rounded-md border px-3 py-3 text-base text-gray-900 focus:outline-none focus:ring-1 min-h-[44px] ${
                           errors.email
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
                             : "border-gray-300 focus:border-brand-500 focus:ring-brand-500"
@@ -225,7 +225,7 @@ export default function ContactPage() {
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        className="mt-1 w-full rounded-md border border-gray-300 bg-white px-3 py-3 text-base text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500 min-h-[44px]"
                       >
                         <option value="">Select one…</option>
                         <option value="TES for Eskom wet-cooled power stations">
@@ -254,7 +254,7 @@ export default function ContactPage() {
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
-                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-2.5 text-sm text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
+                        className="mt-1 w-full rounded-md border border-gray-300 px-3 py-3 text-base text-gray-900 focus:border-brand-500 focus:outline-none focus:ring-1 focus:ring-brand-500"
                         rows={4}
                         placeholder="Please provide a brief description of your operational context and what you would like to explore."
                       />
@@ -263,7 +263,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={status === "submitting"}
-                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-500 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60"
+                      className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-brand-500 px-5 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 min-h-[44px]"
                     >
                       {status === "submitting" ? (
                         <>
