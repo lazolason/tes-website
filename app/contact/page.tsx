@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 interface FormErrors {
   name?: string;
@@ -62,6 +63,10 @@ export default function ContactPage() {
 
       if (result.success) {
         setStatus("success");
+        // Track successful form submission
+        trackEvent("Contact Form Submitted", {
+          interest: formData.interest || "Not specified",
+        });
         setFormData({
           name: "",
           email: "",

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { trackEvent } from "@/lib/analytics";
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -25,6 +26,7 @@ export default function FloatingCTA() {
     >
       <Link
         href="/contact"
+        onClick={() => trackEvent("CTA Clicked", { location: "Floating CTA" })}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className={`group flex items-center gap-2 rounded-full bg-brand-500 px-5 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-brand-600 hover:shadow-xl hover:scale-105 ${
