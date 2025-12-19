@@ -7,6 +7,13 @@ Use this guide to run the MCP CLI against the Codex server entirely through Dock
 - Docker installed locally.
 - A Codex API key exported in your shell as `CODEX_API_KEY`.
 
+⚠️ **Note on Image Access**: The Docker-based MCP client (`ghcr.io/modelcontextprotocol/clients/cli`) and Codex server (`ghcr.io/modelcontextprotocol/servers/codex`) images are hosted on GHCR and may require special access permissions. If you receive a `denied: permission_denied` error when pulling images, you do not currently have access to use this approach.
+
+**Alternatives if you don't have access:**
+- Use Codex native MCP support (if your environment supports it)
+- Try the [Docker Desktop MCP Toolkit Beta](https://www.docker.com/products/mcp/)
+- Set up a local MCP server following the [Model Context Protocol documentation](https://modelcontextprotocol.io/)
+
 ## 1) Copy the Codex MCP client config
 
 The repository includes an example client configuration that launches the Codex server via Docker when requested by the MCP CLI.
