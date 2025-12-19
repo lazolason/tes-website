@@ -30,3 +30,7 @@ This project is a Next.js 14 application using the App Router, TypeScript, Tailw
 ## Deployment
 
 Deploy this project to platforms like Vercel or Netlify. Configure environment variables if required for the Sanity client.
+
+## MCP client (Codex via Docker)
+
+To run the Model Context Protocol CLI against the Codex server without installing additional tools locally, follow the Docker-based setup outlined in [`docs/mcp-client-codex.md`](docs/mcp-client-codex.md).
