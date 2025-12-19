@@ -43,7 +43,7 @@ export default function TesPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-72">
               <Image
-                src="/plant-overview.png"
+                src="/plant-overview.webp"
                 alt="Industrial cooling system overview"
                 fill
                 className="object-cover"

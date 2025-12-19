@@ -36,7 +36,7 @@ export default function FoodBeveragePage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-agriculture.png"
+                src="/industry-agriculture.webp"
                 alt="Food and beverage processing facilities"
                 fill
                 className="rounded-xl object-cover shadow-lg"
@@ -55,7 +55,7 @@ export default function FoodBeveragePage() {
               <div className="flex flex-col gap-4">
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
-                    src="/food-beverage.png"
+                    src="/food-beverage.webp"
                     alt="Food and beverage processing facility"
                     fill
                     className="object-cover"

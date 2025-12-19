@@ -42,7 +42,7 @@ export default function KrielCaseStudyPage() {
           {/* Hero image */}
           <div className="relative mt-8 h-48 overflow-hidden rounded-xl shadow-lg lg:h-64">
             <Image
-              src="/cooling-tower.png"
+              src="/cooling-tower.webp"
               alt="Kriel Power Station cooling towers"
               fill
               className="object-cover"
