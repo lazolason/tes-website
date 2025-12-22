@@ -31,6 +31,36 @@ export default function KnowledgeHubPage() {
         </div>
       </section>
 
+      {/* Featured Playbook */}
+      <section className="border-b">
+        <div className="mx-auto max-w-6xl px-4 py-10">
+          <FadeIn>
+            <div className="rounded-lg border bg-white p-6 shadow-sm">
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+                    New
+                  </p>
+                  <h2 className="mt-2 text-2xl font-semibold tracking-tight text-gray-900">
+                    TES Engineering Playbook
+                  </h2>
+                  <p className="mt-3 text-sm text-gray-600 leading-relaxed">
+                    A structured, engineering-first guide covering fundamentals, readiness,
+                    troubleshooting, and compliance. Built for audit-ready evaluation.
+                  </p>
+                </div>
+                <Link
+                  href="/knowledge-hub/engineering-playbook"
+                  className="inline-flex items-center justify-center rounded-md bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand-700 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+                >
+                  Open playbook
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Quick Navigation */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-8">

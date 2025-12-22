@@ -29,6 +29,15 @@ export default function ResourcesPage() {
             Download technical documentation, white papers and case study reports
             about TES, Mexel®432 and cooling-water efficiency solutions.
           </p>
+          <p className="mt-4 text-sm text-gray-600">
+            Looking for structured guidance?{" "}
+            <Link
+              href="/knowledge-hub/engineering-playbook"
+              className="font-semibold text-brand-500 hover:text-brand-900"
+            >
+              Open the TES Engineering Playbook →
+            </Link>
+          </p>
         </div>
       </section>
 
