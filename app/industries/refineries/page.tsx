@@ -99,6 +99,76 @@ export default function RefineriesPage() {
         </div>
       </section>
 
+      {/* MexSteam 100 - Boiler-side complement */}
+      <section id="mexsteam" className="border-b border-slate-200/70 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
+              STRATEGIC COMPLEMENT
+            </p>
+            <h2 className="mt-3 text-xl font-semibold text-slate-900">
+              MexSteam 100 for boiler-side efficiency
+            </h2>
+            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+              Refineries and petrochemical plants typically operate large process
+              steam boilers, heat recovery steam generators (HRSG) and integrated
+              condensate systems. Process contamination, variable water quality and
+              high heat loads make boiler-side corrosion and deposition common.
+              MexSteam 100 provides film-forming corrosion protection and helps
+              maintain heat-transfer surfaces in boiler and steam circuits operating
+              under demanding conditions.
+            </p>
+
+            {/* Industry-specific boiler applications */}
+            <div className="mt-5">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Typical boiler applications in refineries and petrochemical plants
+              </h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                <li>
+                  • Process steam boilers supplying reboilers, distillation columns
+                  and reaction vessels with high reliability requirements
+                </li>
+                <li>
+                  • Heat recovery steam generators (HRSG) in combined-cycle power
+                  blocks or waste-heat recovery systems
+                </li>
+                <li>
+                  • Condensate return networks showing low pH corrosion from
+                  carbonic acid or contamination from process leaks
+                </li>
+                <li>
+                  • Feedwater circuits where water quality varies due to blowdown
+                  recycling or integration with process streams
+                </li>
+                <li>
+                  • Steam distribution systems requiring protection against
+                  deposition and corrosion in superheater, reheater or economizer sections
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-3 text-xs">
+              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                Boiler / steam-side
+              </span>
+              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                Outside TES verification
+              </span>
+            </div>
+
+            <div className="mt-5 text-xs">
+              <Link
+                href="/products#mexsteam"
+                className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-800"
+              >
+                Learn more about MexSteam 100 →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">

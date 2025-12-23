@@ -193,40 +193,170 @@ export default function ProductsPage() {
       </section>
 
       {/* MexSteam 100 – separate, boiler-side strategic product */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <div className="max-w-3xl">
-            <h2 className="text-xl font-semibold text-slate-900">
-              MexSteam 100 – Boiler-side strategic product
+      <section id="mexsteam" className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              How MexSteam 100 Works
             </h2>
-            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-              MexSteam 100 is a boiler-treatment product for steam-side
-              protection and efficiency. It is a film-forming amine-based
-              solution designed to protect condensate and steam circuits from
-              corrosion and deposition in specific boiler applications.
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
+              Film-forming chemistry for boiler-side protection and steam-system efficiency.
             </p>
-            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-              We regard MexSteam 100 as a strategic product that complements
-              TES at the plant level, but it is deliberately kept outside the
-              current TES verification boundary. Any efficiency or fuel-related
-              claims for MexSteam 100 would need their own test plan and
-              station-approved methodology.
-            </p>
+          </FadeIn>
 
-            <div className="mt-5 flex flex-wrap gap-3 text-xs">
-              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                Boiler / steam-side
-              </span>
-              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                Strategic product (not in TES verification)
-              </span>
+          {/* Boiler system image */}
+          <FadeIn delay={200}>
+            <div className="relative mt-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
+              {/* TODO: Add boiler-system.png image */}
+              {/* Image brief: Boiler steam generation system with visible tubes, economizer, and steam lines */}
+              <div className="flex h-full items-center justify-center bg-slate-200 text-xs text-slate-500">
+                Boiler System Image Placeholder
+              </div>
             </div>
+          </FadeIn>
 
-            <p className="mt-5 text-xs text-slate-600 leading-relaxed">
-              For now, TES communications and verification remain focused on
-              Mexel®432 in cooling-water service. MexSteam 100 is available as
-              a separate discussion for customers with suitable boiler and
-              condensate systems.
+          <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
+            <FadeIn>
+              <div className="max-w-xl">
+                <h2 className="text-xl font-semibold text-slate-900">
+                  MexSteam 100 – Boiler-side strategic product
+                </h2>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  MexSteam 100 is a film-forming amine-based treatment designed
+                  for boiler feedwater, condensate return and steam systems. It
+                  provides corrosion protection and helps maintain heat-transfer
+                  surfaces in high-temperature, high-pressure boiler environments.
+                </p>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  MexSteam 100 is positioned as a strategic complement to TES at
+                  the plant level. It is deliberately kept outside the current TES
+                  verification boundary. Any efficiency or fuel-related claims for
+                  MexSteam 100 would need their own test plan and station-approved
+                  methodology.
+                </p>
+
+                <div className="mt-5 flex flex-wrap gap-3 text-xs">
+                  <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                    Boiler / steam-side
+                  </span>
+                  <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
+                    Film-forming amine (FFA)
+                  </span>
+                  <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                    Strategic complement to TES
+                  </span>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={150}>
+              <div className="max-w-md rounded-lg border bg-white p-5 shadow-sm">
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Key functions in boiler and steam systems
+                </h3>
+                <ul className="mt-3 space-y-2 text-xs text-slate-700 leading-relaxed">
+                  <li>
+                    • <span className="font-semibold">Corrosion protection:</span>{" "}
+                    forms a protective molecular film on metal surfaces in
+                    feedwater, condensate return and steam lines, reducing
+                    corrosion from oxygen, carbonic acid and other dissolved
+                    gases.
+                  </li>
+                  <li>
+                    • <span className="font-semibold">Deposition control:</span>{" "}
+                    helps prevent scale formation and fouling on boiler tubes,
+                    economizers and other heat-transfer surfaces, maintaining
+                    thermal efficiency and reducing shutdown risk.
+                  </li>
+                  <li>
+                    • <span className="font-semibold">Condensate pH stabilisation:</span>{" "}
+                    assists in maintaining condensate pH within acceptable
+                    operating ranges, reducing the risk of low-pH corrosion in
+                    return lines and feedwater circuits.
+                  </li>
+                  <li>
+                    • <span className="font-semibold">Steam purity maintenance:</span>{" "}
+                    designed to minimise carryover and maintain steam quality by
+                    reducing the tendency for deposits to form on critical
+                    surfaces and enter the steam phase.
+                  </li>
+                  <li>
+                    • <span className="font-semibold">Compatibility with feedwater systems:</span>{" "}
+                    suitable for use in conjunction with modern feedwater
+                    treatment regimes, including demineralised and polished
+                    water systems in power generation and industrial applications.
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Role in relation to TES */}
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="rounded-lg border bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Role as strategic complement
+              </h3>
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
+                MexSteam 100 addresses boiler-side efficiency and protection
+                challenges that are separate from the TES cooling-water focus.
+                Together, they provide plant-wide water chemistry solutions:
+                TES for cooling-water and condensers, MexSteam for boilers and
+                steam circuits.
+              </p>
+            </div>
+            <div className="rounded-lg border bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Why outside TES verification
+              </h3>
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
+                TES verification is explicitly defined around Mexel®432 in
+                cooling-water service, using the RT&amp;D baseline protocol.
+                MexSteam 100 operates in a different system boundary (boiler
+                and steam-side) and would require a separate, station-approved
+                test methodology and verification framework.
+              </p>
+            </div>
+            <div className="rounded-lg border bg-white p-5">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Typical boiler applications
+              </h3>
+              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
+                • High-pressure boilers in power stations (coal, gas, biomass)
+                <br />
+                • Industrial steam generators (mining, petrochemical, food
+                processing)
+                <br />
+                • Heat recovery steam generators (HRSG) and combined-cycle plants
+                <br />
+                • Condensate return and feedwater treatment circuits
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap gap-3 text-sm">
+            <Link
+              href="/industries/power-energy#mexsteam"
+              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
+            >
+              See boiler applications in power & energy →
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
+            >
+              Request MexSteam 100 technical data sheets →
+            </Link>
+          </div>
+
+          <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
+            <p className="text-xs text-slate-600 leading-relaxed">
+              <span className="font-semibold text-slate-700">Verification note:</span>{" "}
+              TES communications and verification remain focused on Mexel®432 in
+              cooling-water service. MexSteam 100 is available as a separate
+              discussion for customers with suitable boiler and condensate systems.
+              Any efficiency or fuel-related claims would require independent
+              testing and station-approved methodology.
             </p>
           </div>
         </div>

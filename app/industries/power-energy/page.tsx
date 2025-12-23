@@ -111,6 +111,74 @@ export default function PowerEnergyPage() {
         </div>
       </section>
 
+      {/* MexSteam 100 - Boiler-side complement */}
+      <section id="mexsteam" className="border-b border-slate-200/70 bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+          <div className="max-w-3xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
+              STRATEGIC COMPLEMENT
+            </p>
+            <h2 className="mt-3 text-xl font-semibold text-slate-900">
+              MexSteam 100 for boiler-side efficiency
+            </h2>
+            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+              While TES addresses cooling-water and condenser performance,
+              MexSteam 100 is designed for boiler feedwater, condensate return
+              and steam systems. In coal-fired power stations, boiler-side
+              corrosion and deposition can reduce efficiency through higher
+              firing rates, forced outages and increased maintenance.
+            </p>
+
+            {/* Industry-specific boiler applications */}
+            <div className="mt-5">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Typical boiler applications in power generation
+              </h3>
+              <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                <li>
+                  • High-pressure boilers in coal, gas and biomass units with
+                  recurring tube failures or scale formation
+                </li>
+                <li>
+                  • Condensate return systems showing low pH corrosion or
+                  oxygen ingress
+                </li>
+                <li>
+                  • Feedwater treatment circuits requiring corrosion inhibition
+                  alongside demineralisation or polishing
+                </li>
+                <li>
+                  • Economizer and evaporator sections with deposition issues
+                  linked to water chemistry drift
+                </li>
+                <li>
+                  • Combined-cycle plants with heat recovery steam generators
+                  (HRSG) requiring steam-side protection
+                </li>
+              </ul>
+            </div>
+
+            <div className="mt-5 flex flex-wrap gap-3 text-xs">
+              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                Boiler / steam-side
+              </span>
+              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                Outside TES verification
+              </span>
+            </div>
+
+            <div className="mt-5 text-xs">
+              <Link
+                href="/products#mexsteam"
+                className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-800"
+              >
+                Learn more about MexSteam 100 →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section>
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
