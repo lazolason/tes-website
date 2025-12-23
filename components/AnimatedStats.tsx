@@ -13,18 +13,10 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    value: 40,
-    suffix: "%",
-    prefix: "↑",
-    label: "TR Improvement",
-    description: "Temperature rise recovery measured in trial conditions",
-  },
-  {
     value: 4,
-    suffix: "°C",
-    prefix: "↓",
-    label: "Cooling Gain",
-    description: "Average condenser outlet temperature reduction",
+    suffix: "",
+    label: "Stage System",
+    description: "Chemistry, dosing, monitoring, and verification integrated",
   },
   {
     value: 90,
@@ -37,6 +29,12 @@ const stats: StatItem[] = [
     suffix: "+",
     label: "Years Experience",
     description: "Mexel International deployment track record",
+  },
+  {
+    value: 100,
+    suffix: "%",
+    label: "Protocol-Based",
+    description: "RT&D-aligned verification with audit-ready evidence",
   },
 ];
 

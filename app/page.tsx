@@ -1,15 +1,14 @@
 import Link from "next/link";
-import Image from "next/image";
 import type { Metadata } from "next";
-import FadeIn from "../components/FadeIn";
 import TrustedBy from "../components/TrustedBy";
 import AnimatedStats from "../components/AnimatedStats";
 import Testimonials from "../components/Testimonials";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
-import ProcessSteps from "../components/ProcessSteps";
 import IndustryGrid from "../components/IndustryGrid";
 import ValidationSection from "../components/ValidationSection";
 import CTASection from "../components/CTASection";
+import ValuePropBand from "../components/ValuePropBand";
+import PathwayCTA from "../components/PathwayCTA";
 
 export const metadata: Metadata = {
   title: "TES Cooling-Water Efficiency System",
@@ -34,12 +33,13 @@ export default function TesPage() {
                 Cooling-Water Efficiency System
               </div>
               <h1 className="mt-6 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-                Measured thermal efficiency for wet-cooled plants.
+                Measured thermal efficiency recovery for wet-cooled plants.
               </h1>
+              <p className="mt-4 text-xl font-medium leading-8 text-slate-800 sm:text-2xl">
+                Restore lost efficiency. Recover output capability. Reduce emissions — with verification, not guesswork.
+              </p>
               <p className="mt-6 text-base leading-7 text-slate-700 sm:text-lg">
-                TES integrates Mexel®432 surface-active chemistry, controlled dosing, and
-                transparent performance data to stabilize condenser heat transfer. The
-                result is a credible, engineering-first path to reduced cold-end losses.
+                TES combines chemistry, dosing control, monitoring, and protocol-based verification to stabilise condenser performance.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -124,150 +124,84 @@ export default function TesPage() {
         </div>
       </section>
 
+      {/* Value Proposition Band */}
+      <ValuePropBand />
+
+      {/* Primary Conversion Pathways */}
+      <PathwayCTA />
+
       {/* Trusted By Strip */}
       <TrustedBy />
 
-      {/* Problem */}
-      <section className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <FadeIn>
-                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                  Problem
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                  Cold-end losses hide in the water side.
-                </h2>
-                <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
-                  Fouling and biofilm add film resistance, driving up terminal temperature
-                  difference (TTD) and reducing condenser vacuum. The result is lost MW,
-                  unstable performance, and higher auxiliary demand.
-                </p>
-              </FadeIn>
-              <ul className="mt-6 space-y-3 text-sm text-slate-700">
-                <li className="flex gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-600" />
-                  TTD drift and backpressure during steady load.
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-600" />
-                  Temperature rise (TR) underperforms in similar ambient conditions.
-                </li>
-                <li className="flex gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-emerald-600" />
-                  Frequent cleaning outages or unstable water chemistry.
-                </li>
-              </ul>
-            </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-              {/* Image brief: /public/images/home-problem-fouled-tubes.jpg — Close-up of fouled condenser tubes or heat exchanger surfaces showing scale and biofilm; cool industrial lighting. */}
-              <Image
-                src="/images/home-problem-fouled-tubes.jpg"
-                alt="Fouled heat-exchanger tubes showing scale and biofilm"
-                fill
-                className="object-cover"
-              />
-            </div>
+      {/* How TES Works - System Overview */}
+      <section className="border-t border-slate-200 bg-white py-16 lg:py-20">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-8 text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
+              System Overview
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+              How TES works
+            </h2>
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
+              TES integrates four components into a unified efficiency system, designed for measurable and verifiable results.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Physics */}
-      <section className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div className="order-2 lg:order-1">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-                {/* Image brief: /public/images/home-physics-heat-exchanger.jpg — Clean heat exchanger/condensate system with instrumentation and piping, sharp detail, industrial realism. */}
-                <Image
-                  src="/images/home-physics-heat-exchanger.jpg"
-                  alt="Heat exchanger piping and instrumentation in a plant condenser hall"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-            </div>
-            <div className="order-1 lg:order-2">
-              <FadeIn>
-                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                  Physics
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                  Heat transfer is measurable and repeatable.
-                </h2>
-                <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
-                  TES quantifies film resistance using standard condenser indicators and
-                  consistent baselines. We focus on the cold end, where small shifts in
-                  heat-transfer performance have outsized efficiency impact.
-                </p>
-              </FadeIn>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    title: "Temperature Rise (TR)",
-                    detail: "Cooling-water rise across the condenser.",
-                  },
-                  {
-                    title: "Terminal Temp. Diff. (TTD)",
-                    detail: "Primary indicator of fouling resistance.",
-                  },
-                  {
-                    title: "Condenser Vacuum",
-                    detail: "Stability under matched load and ambient.",
-                  },
-                  {
-                    title: "Water-Side Stability",
-                    detail: "Make-up, blowdown, and chemistry balance.",
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="rounded-lg border border-slate-200 bg-white p-4"
-                  >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
-                      {item.title}
-                    </p>
-                    <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                number: "01",
+                title: "Chemistry",
+                subtitle: "Mexel®432",
+                detail: "Surface-active emulsion that forms a protective film on wetted surfaces.",
+              },
+              {
+                number: "02",
+                title: "Dosing",
+                subtitle: "Controlled Skid",
+                detail: "Automated dosing with level sensing and traceable event logs.",
+              },
+              {
+                number: "03",
+                title: "Monitoring",
+                subtitle: "Condenser Indicators",
+                detail: "TR, TTD, condenser vacuum, and water-side stability tracked continuously.",
+              },
+              {
+                number: "04",
+                title: "Verification",
+                subtitle: "Baseline → Review",
+                detail: "Baseline → intervention → review with audit-ready evidence pack.",
+              },
+            ].map((step) => (
+              <div
+                key={step.number}
+                className="rounded-lg border border-slate-200 bg-slate-50 p-5"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">
+                    {step.number}
+                  </span>
+                  <div>
+                    <h3 className="text-sm font-semibold text-slate-900">{step.title}</h3>
+                    <span className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
+                      {step.subtitle}
+                    </span>
                   </div>
-                ))}
+                </div>
+                <p className="mt-3 text-sm leading-relaxed text-slate-600">{step.detail}</p>
               </div>
-            </div>
+            ))}
           </div>
-        </div>
-      </section>
 
-      {/* Intervention */}
-      <section className="border-t border-slate-200 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <FadeIn>
-                <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                  Intervention
-                </p>
-                <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
-                  TES combines chemistry, dosing, and measurement.
-                </h2>
-                <p className="mt-4 text-sm leading-6 text-slate-600 sm:text-base">
-                  Mexel®432 forms a protective surface film, controlled dosing maintains
-                  coverage, and every intervention is logged against performance data.
-                  The system is designed for plant engineers, not marketing promises.
-                </p>
-              </FadeIn>
-            </div>
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-              {/* Image brief: /public/images/home-intervention-dosing-skid.jpg — Dosing skid or chemical feed system in an industrial plant, clear controls, stainless steel, clean layout. */}
-              <Image
-                src="/images/home-intervention-dosing-skid.jpg"
-                alt="TES dosing skid and chemical feed system in an industrial plant"
-                fill
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <div className="mt-12">
-            <ProcessSteps />
+          <div className="mt-8 text-center">
+            <Link
+              href="/tes"
+              className="inline-flex items-center text-sm font-semibold text-emerald-700 hover:text-emerald-800"
+            >
+              View full system architecture →
+            </Link>
           </div>
         </div>
       </section>
@@ -277,6 +211,9 @@ export default function TesPage() {
 
       {/* Outcomes */}
       <AnimatedStats />
+
+      {/* Testimonials Section */}
+      <Testimonials />
 
       {/* Industry Grid Section */}
       <IndustryGrid />
@@ -333,9 +270,6 @@ export default function TesPage() {
           </div>
         </div>
       </section>
-
-      {/* Testimonials Section */}
-      <Testimonials />
 
       <CTASection />
     </main>
