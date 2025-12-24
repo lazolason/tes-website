@@ -31,13 +31,17 @@ export default function BeforeAfterSlider({
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const clampPosition = useCallback((value: number) => {
+    return Math.max(0, Math.min(value, 100));
+  }, []);
+
   const handleMove = useCallback((clientX: number) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
     const percentage = (x / rect.width) * 100;
-    setSliderPosition(percentage);
-  }, []);
+    setSliderPosition(clampPosition(percentage));
+  }, [clampPosition]);
 
   const onMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!isDragging) return;
@@ -50,6 +54,33 @@ export default function BeforeAfterSlider({
 
   const onMouseDown = () => setIsDragging(true);
   const onTouchStart = () => setIsDragging(true);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    const step = event.shiftKey ? 5 : 1;
+    let nextValue = sliderPosition;
+
+    switch (event.key) {
+      case "ArrowLeft":
+      case "ArrowDown":
+        nextValue = sliderPosition - step;
+        break;
+      case "ArrowRight":
+      case "ArrowUp":
+        nextValue = sliderPosition + step;
+        break;
+      case "Home":
+        nextValue = 0;
+        break;
+      case "End":
+        nextValue = 100;
+        break;
+      default:
+        return;
+    }
+
+    event.preventDefault();
+    setSliderPosition(clampPosition(nextValue));
+  };
 
   const stopDragging = useCallback(() => {
     setIsDragging(false);
@@ -115,8 +146,15 @@ export default function BeforeAfterSlider({
 
       {/* Slider Handle */}
       <div
-        className="absolute top-0 bottom-0 z-20 w-1 cursor-ew-resize bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)]"
+        className="absolute top-0 bottom-0 z-20 w-1 cursor-ew-resize bg-white shadow-[0_0_10px_rgba(0,0,0,0.5)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
         style={{ left: `${sliderPosition}%` }}
+        role="slider"
+        aria-label="Before and after comparison"
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(sliderPosition)}
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
       >
         <div className="absolute left-1/2 top-1/2 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-emerald-600 shadow-lg">
           <svg

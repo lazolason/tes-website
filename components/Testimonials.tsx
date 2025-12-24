@@ -118,7 +118,7 @@ export default function Testimonials() {
                         <p className="font-semibold text-slate-900">
                           {testimonial.author}
                         </p>
-                        <p className="text-sm text-slate-500">
+                        <p className="text-sm text-slate-600">
                           {testimonial.role} · {testimonial.organization}
                         </p>
                       </div>
@@ -134,7 +134,7 @@ export default function Testimonials() {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`h-2.5 w-2.5 rounded-full transition-all ${
+                  className={`h-2.5 w-2.5 rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
                     index === currentIndex
                       ? "w-8 bg-emerald-600"
                       : "bg-slate-300 hover:bg-slate-400"

@@ -33,7 +33,7 @@ export default function SystemHeader({
             {description}
           </p>
           {continuity && (
-            <p className="mt-3 text-sm text-slate-500">{continuity}</p>
+            <p className="mt-3 text-sm text-slate-600">{continuity}</p>
           )}
         </div>
 
@@ -46,7 +46,7 @@ export default function SystemHeader({
                   <div key={step} className="flex items-center gap-2">
                     <span
                       className={`flex items-center gap-2 ${
-                        isActive ? "text-emerald-700" : "text-slate-500"
+                        isActive ? "text-emerald-700" : "text-slate-600"
                       }`}
                     >
                       <span

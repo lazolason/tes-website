@@ -40,20 +40,20 @@ export default function TesPage() {
               <p className="mt-6 text-base leading-7 text-slate-700 sm:text-lg">
                 TES combines chemistry, dosing control, monitoring, and protocol-aligned verification to stabilise condenser performance.
               </p>
-              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-700">
                 Implementation supports maintenance — it does not replace it.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href="/contact"
-                  className="rounded-md bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700"
+                  className="rounded-md bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                 >
                   Request a Pilot Study
                 </Link>
                 <Link
                   href="/products"
-                  className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50"
+                  className="rounded-md border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-800 transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                 >
                   Technical Specs
                 </Link>
@@ -61,7 +61,7 @@ export default function TesPage() {
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
                 <div className="rounded-lg border border-slate-200 bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                     Protocol aligned
                   </p>
                   <p className="mt-2 text-sm text-slate-700">
@@ -69,7 +69,7 @@ export default function TesPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-slate-200 bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                     Data traceable
                   </p>
                   <p className="mt-2 text-sm text-slate-700">
@@ -77,7 +77,7 @@ export default function TesPage() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-slate-200 bg-white p-4">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                     Verification-ready
                   </p>
                   <p className="mt-2 text-sm text-slate-700">
@@ -86,7 +86,7 @@ export default function TesPage() {
                 </div>
               </div>
               <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                   Indicative impact (site-specific)
                 </p>
                 <ul className="mt-3 grid gap-2 text-sm text-slate-700 sm:grid-cols-3">
@@ -198,7 +198,7 @@ export default function TesPage() {
                 </p>
               </Link>
             </div>
-            <p className="mt-4 text-xs text-slate-500">
+            <p className="mt-4 text-xs text-slate-600">
               Not sure where you fit? Start with the Engineering Playbook.
             </p>
           </div>

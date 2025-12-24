@@ -120,7 +120,7 @@ export default function Mexel432Page() {
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Mexel®432 application at Kriel showed <span className="font-semibold text-slate-900">40% performance improvement</span> on Unit 6, with significant temperature rise improvement demonstrated over a 90-day trial period.
               </p>
-              <p className="mt-2 text-xs text-slate-500">
+              <p className="mt-2 text-xs text-slate-700">
                 Documented by Eskom RT&D with station data showing measurable condenser efficiency gains.
               </p>
             </div>
@@ -129,7 +129,7 @@ export default function Mexel432Page() {
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Mexel®432 has been applied in thermal and nuclear power plants, refineries, petrochemical facilities and industrial cooling systems across France, USA, UAE, Japan, Brazil and India.
               </p>
-              <p className="mt-2 text-xs text-slate-500">
+              <p className="mt-2 text-xs text-slate-700">
                 Common results: improved condenser cleanliness, reduced corrosion, measurable heat-rate improvements.
               </p>
             </div>

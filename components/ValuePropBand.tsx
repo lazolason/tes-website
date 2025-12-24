@@ -44,7 +44,7 @@ export default function ValuePropBand() {
           </div>
 
           <div className="mt-8 flex justify-center">
-            <p className="text-xs font-medium text-slate-500 italic border-l-2 border-slate-200 pl-4">
+            <p className="border-l-2 border-slate-200 pl-4 text-xs font-medium italic text-slate-600">
               “Designed for audit-ready reporting. Implementation does not replace maintenance.”
             </p>
           </div>
