@@ -78,14 +78,14 @@ const industries = [
 
 export default function IndustryGrid() {
   return (
-    <section className="bg-slate-900 py-20 lg:py-28">
+    <section className="bg-slate-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
               Proven Across Industries
             </h2>
-            <p className="mt-4 text-lg text-slate-400 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
               Wherever cooling water dictates performance, TES delivers verified results.
             </p>
           </div>
@@ -96,18 +96,20 @@ export default function IndustryGrid() {
             <FadeIn key={industry.title} delay={index * 100}>
               <Link
                 href={industry.href}
-                className="group relative flex flex-col h-full bg-slate-800 rounded-2xl p-6 transition-all duration-300 hover:bg-slate-700 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-500/10 border border-slate-700 hover:border-emerald-500/30"
+                className="group relative flex flex-col h-full bg-white rounded-xl p-6 transition-all duration-300 hover:-translate-y-1 shadow-sm hover:shadow-lg border border-slate-200/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
               >
-                <div className="mb-4 p-3 rounded-lg bg-slate-900 w-fit ring-1 ring-white/10 group-hover:ring-emerald-500/50 transition-all">
-                  {industry.icon}
+                <div className="mb-4 p-3 rounded-lg bg-slate-50 w-fit ring-1 ring-slate-200 group-hover:ring-emerald-500/50 transition-all">
+                  <div className="text-emerald-600">
+                    {industry.icon}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">
+                <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-700 transition-colors">
                   {industry.title}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   {industry.description}
                 </p>
-                <div className="mt-auto pt-4 flex items-center text-sm font-medium text-emerald-500 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
+                <div className="mt-auto pt-4 flex items-center text-sm font-medium text-emerald-600 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                   Explore Sector 
                   <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -121,9 +123,9 @@ export default function IndustryGrid() {
           <FadeIn delay={700}>
              <Link
                 href="/applications"
-                className="group relative flex flex-col h-full bg-emerald-600 rounded-2xl p-6 transition-all duration-300 hover:bg-emerald-500 hover:-translate-y-1 hover:shadow-xl"
+                className="group relative flex flex-col h-full bg-emerald-600 rounded-xl p-6 transition-all duration-300 hover:bg-emerald-700 hover:-translate-y-1 hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
               >
-                <div className="mb-4 p-3 rounded-lg bg-emerald-700 w-fit text-white">
+                <div className="mb-4 p-3 rounded-lg bg-emerald-700/50 w-fit text-white">
                   <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                   </svg>
@@ -131,7 +133,7 @@ export default function IndustryGrid() {
                 <h3 className="text-xl font-bold text-white mb-2">
                   View All Applications
                 </h3>
-                <p className="text-sm text-emerald-100 leading-relaxed">
+                <p className="text-sm text-emerald-500 leading-relaxed">
                   See our full range of case studies and technical papers.
                 </p>
                 <div className="mt-auto pt-4 flex items-center text-sm font-medium text-white">

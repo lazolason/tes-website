@@ -53,23 +53,11 @@ const navItems = [
     items: [
       { href: "/tes", label: "TES System" },
       { href: "/products", label: "Products" },
+      { href: "/applications", label: "Applications" },
     ]
   },
   { 
     href: "/industries", 
-    label: "Industries",
-    type: "mega",
-    items: [
-      { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
-      { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
-      { href: "/industries/refineries", label: "Refineries", icon: Icons.Refineries, desc: "Corrosion control & efficiency." },
-      { href: "/industries/food-beverage", label: "Food & Beverage", icon: Icons.Food, desc: "Safe, reliable cooling water." },
-      { href: "/industries/agriculture", label: "Agriculture", icon: Icons.Agriculture, desc: "Irrigation & system protection." },
-      { href: "/industries/data-centres", label: "Data Centres", icon: Icons.Data, desc: "High-uptime cooling efficiency." },
-      { href: "/industries/ports", label: "Ports & Harbours", icon: Icons.Ports, desc: "Marine environment solutions." },
-    ]
-  },
-  { href: "/applications", label: "Applications" },
   { 
     href: "/knowledge-hub", 
     label: "Knowledge Hub",
@@ -133,7 +121,7 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors ${
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
                   item.cta
                     ? "bg-emerald-600 text-white hover:bg-emerald-700"
                     : isActive(item.href)
@@ -158,7 +146,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group"
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
                           >
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-600/10 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                               <subItem.icon className="w-4 h-4" />
@@ -178,7 +166,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                            className="px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 rounded-md"
                           >
                             {subItem.label}
                           </Link>
