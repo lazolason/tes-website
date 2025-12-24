@@ -133,7 +133,7 @@ export default function AnimatedStats() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-700 ${
+              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-700 hover:shadow-lg hover:scale-[1.02] ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 120}ms` }}

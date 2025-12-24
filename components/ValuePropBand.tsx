@@ -7,7 +7,7 @@ export default function ValuePropBand() {
         <FadeIn>
           <div className="grid gap-6 md:grid-cols-3">
             {/* Outcome */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
               <div className="flex flex-col h-full">
                 <span className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Outcome
@@ -19,7 +19,7 @@ export default function ValuePropBand() {
             </div>
 
             {/* Mechanism */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
               <div className="flex flex-col h-full">
                 <span className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Mechanism
@@ -31,7 +31,7 @@ export default function ValuePropBand() {
             </div>
 
             {/* Proof */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
               <div className="flex flex-col h-full">
                 <span className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Proof

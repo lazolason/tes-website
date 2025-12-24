@@ -113,7 +113,7 @@ export default function ValidationSection() {
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           {pillars.map((pillar, index) => (
             <FadeIn key={pillar.title} delay={index * 150}>
-              <div className="flex flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
                 <div className="mb-4 rounded-xl bg-emerald-50 p-3 ring-1 ring-emerald-100">
                   {pillar.icon}
                 </div>

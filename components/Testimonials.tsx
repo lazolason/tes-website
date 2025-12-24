@@ -98,7 +98,7 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonial card */}
-          <div className="rounded-xl border border-slate-200/70 bg-white p-8 shadow-sm transition-shadow duration-200 hover:shadow-lg lg:p-12">
+          <div className="rounded-xl border border-slate-200/70 bg-white p-8 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.01] lg:p-12">
             <div className="min-h-[160px]">
               {testimonials.map((testimonial, index) => (
                 <div
