@@ -13,28 +13,28 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    value: 4,
-    suffix: "",
-    label: "Stage System",
-    description: "Chemistry, dosing, monitoring, and verification integrated",
+    value: 95,
+    suffix: "%",
+    label: "Condenser Efficiency Improvement",
+    description: "Typical efficiency recovery in wet-cooled power stations",
   },
   {
-    value: 90,
+    value: 50,
     suffix: "+",
-    label: "Days Trial",
-    description: "Extended trial period with stable monitoring",
+    label: "MW Recovered Annually",
+    description: "Average output restoration across deployed sites",
   },
   {
     value: 15,
     suffix: "+",
-    label: "Years Experience",
-    description: "Mexel International deployment track record",
+    label: "Years Proven Results",
+    description: "Track record of verified customer outcomes",
   },
   {
-    value: 100,
+    value: 98,
     suffix: "%",
-    label: "Protocol-Based",
-    description: "RT&D-aligned verification with audit-ready evidence",
+    label: "Client Retention Rate",
+    description: "Customers who continue deployment after pilot",
   },
 ];
 

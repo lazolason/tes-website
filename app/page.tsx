@@ -59,50 +59,25 @@ export default function TesPage() {
                 </Link>
               </div>
 
-              <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
-                    Protocol aligned
-                  </p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    Eskom RT&D baseline structure
-                  </p>
+              <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
+                <div className="flex items-center gap-2">
+                  <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>RT&D protocol aligned</span>
                 </div>
-                <div className="rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
-                    Data traceable
-                  </p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    Dosing and performance logged
-                  </p>
+                <div className="flex items-center gap-2">
+                  <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Fully traceable data</span>
                 </div>
-                <div className="rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-                  <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
-                    Verification-ready
-                  </p>
-                  <p className="mt-2 text-sm text-slate-700">
-                    Independent review supported
-                  </p>
+                <div className="flex items-center gap-2">
+                  <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>Audit-ready verification</span>
                 </div>
-              </div>
-              <div className="mt-6 rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-                <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
-                  Indicative impact (site-specific)
-                </p>
-                <ul className="mt-3 grid gap-2 text-sm text-slate-700 sm:grid-cols-3">
-                  <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">↓</span>
-                    TTD drift
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">↑</span>
-                    condenser vacuum stability
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="text-emerald-700">↓</span>
-                    auxiliary power loss
-                  </li>
-                </ul>
               </div>
             </div>
 
@@ -133,14 +108,14 @@ export default function TesPage() {
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
               Why TES
             </p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900">
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               A disciplined system for condenser stability.
             </h2>
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
             <div className="rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900">
                 Outcome: Stabilise condenser performance
               </h3>
               <p className="mt-3 text-sm text-slate-700 leading-relaxed">
@@ -148,7 +123,7 @@ export default function TesPage() {
               </p>
             </div>
             <div className="rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900">
                 Mechanism: Surface treatment + controlled dosing
               </h3>
               <p className="mt-3 text-sm text-slate-700 leading-relaxed">
@@ -156,51 +131,13 @@ export default function TesPage() {
               </p>
             </div>
             <div className="rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900">
                 Proof: Measured indicators + protocol-aligned verification
               </h3>
               <p className="mt-3 text-sm text-slate-700 leading-relaxed">
                 Interpret TR/TTD/vacuum trends using normalisation principles for audit-ready reporting.
               </p>
             </div>
-          </div>
-
-          <div className="mt-10">
-            <h3 className="text-lg font-semibold text-slate-900">
-              Choose your path
-            </h3>
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              <Link
-                href="/industries#power-stations"
-                className="rounded-xl border border-slate-200/70 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg"
-              >
-                <p className="text-sm font-semibold text-slate-900">Power stations</p>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Wet-cooled condensers, cooling towers, STEP-aligned performance language.
-                </p>
-              </Link>
-              <Link
-                href="/industries#industrial-users"
-                className="rounded-xl border border-slate-200/70 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg"
-              >
-                <p className="text-sm font-semibold text-slate-900">Industrial users</p>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Cooling networks and heat exchangers where uptime and efficiency matter.
-                </p>
-              </Link>
-              <Link
-                href="/knowledge-hub/engineering-playbook"
-                className="rounded-xl border border-slate-200/70 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg"
-              >
-                <p className="text-sm font-semibold text-slate-900">View results</p>
-                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                  Engineering Playbook: verification approach, constraints, troubleshooting.
-                </p>
-              </Link>
-            </div>
-            <p className="mt-4 text-xs text-slate-600">
-              Not sure where you fit? Start with the Engineering Playbook.
-            </p>
           </div>
         </div>
       </section>
@@ -218,7 +155,7 @@ export default function TesPage() {
             <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
               System Overview
             </p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            <h2 className="mt-3 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               How TES works
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">
@@ -299,12 +236,12 @@ export default function TesPage() {
       {/* How a pilot works */}
       <section className="bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
             How a TES pilot works in practice
           </h2>
-          <div className="mt-4 grid gap-6 md:grid-cols-3">
+          <div className="mt-6 grid gap-6 md:grid-cols-3">
             <div>
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900">
                 1. Scoping and baseline
               </h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
@@ -315,7 +252,7 @@ export default function TesPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900">
                 2. Dosing and monitoring
               </h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">
@@ -326,7 +263,7 @@ export default function TesPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-sm font-semibold text-slate-900">
+              <h3 className="text-base font-semibold text-slate-900">
                 3. Review and decision
               </h3>
               <p className="mt-2 text-xs text-slate-600 leading-relaxed">

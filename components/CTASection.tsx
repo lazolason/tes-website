@@ -9,7 +9,7 @@ export default function CTASection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="rounded-2xl border border-emerald-700 bg-emerald-600 px-6 py-16 text-center text-white shadow-sm sm:px-12">
           <FadeIn>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
               Ready to restore your plant&apos;s efficiency?
             </h2>
             <p className="mx-auto mt-4 max-w-2xl text-base text-emerald-100">
