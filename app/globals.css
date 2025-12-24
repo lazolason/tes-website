@@ -93,3 +93,25 @@ body {
   display: block;
   animation: fade-in 0.4s ease-out;
 }
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-fade-in,
+  .animate-slide-in-right,
+  .animate-float,
+  .animate-float-delayed {
+    animation: none;
+  }
+
+  .tab-content.active {
+    animation: none;
+  }
+}

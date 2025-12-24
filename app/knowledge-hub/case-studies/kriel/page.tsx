@@ -46,6 +46,8 @@ export default function KrielCaseStudyPage() {
               alt="Kriel Power Station cooling towers"
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 75vw"
             />
           </div>
 

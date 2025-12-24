@@ -42,6 +42,7 @@ export default function PortsPage() {
                 fill
                 className="rounded-xl object-cover shadow-lg"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

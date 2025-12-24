@@ -111,7 +111,14 @@ export default function BeforeAfterSlider({
     >
       {/* After Image (Background - Visible on the RIGHT side) */}
       <div className="absolute inset-0 h-full w-full">
-        <Image src={afterImage} alt={afterAlt} fill className="object-cover" priority />
+        <Image
+          src={afterImage}
+          alt={afterAlt}
+          fill
+          className="object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+        />
         <div className="absolute top-4 right-4 rounded bg-slate-950/60 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
           {afterLabel}
         </div>
@@ -122,7 +129,14 @@ export default function BeforeAfterSlider({
         className="absolute inset-0 h-full w-full"
         style={{ clipPath: `inset(0 ${100 - sliderPosition}% 0 0)` }}
       >
-        <Image src={beforeImage} alt={beforeAlt} fill className="object-cover" priority />
+        <Image
+          src={beforeImage}
+          alt={beforeAlt}
+          fill
+          className="object-cover"
+          priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+        />
         <div className="absolute top-4 left-4 rounded bg-slate-950/60 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
           {beforeLabel}
         </div>

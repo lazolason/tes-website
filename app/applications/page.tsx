@@ -39,6 +39,8 @@ export default function ApplicationsPage() {
                   alt="Wet-cooled power station cooling tower"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 
@@ -71,6 +73,8 @@ export default function ApplicationsPage() {
                   alt="Industrial cooling water system"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
 
@@ -117,6 +121,8 @@ export default function ApplicationsPage() {
                   alt="Mexel®432 dosing equipment"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
               <h3 className="text-sm font-semibold text-slate-900">
@@ -137,6 +143,8 @@ export default function ApplicationsPage() {
                   alt="IoT dosing dashboard"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
               <h3 className="text-sm font-semibold text-slate-900">
@@ -157,6 +165,8 @@ export default function ApplicationsPage() {
                   alt="Cooling water data view"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
               <h3 className="text-sm font-semibold text-slate-900">
@@ -176,6 +186,8 @@ export default function ApplicationsPage() {
                   alt="Verification framework"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                 />
               </div>
               <h3 className="text-sm font-semibold text-slate-900">

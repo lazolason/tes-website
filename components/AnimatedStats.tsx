@@ -125,6 +125,8 @@ export default function AnimatedStats() {
               alt="Cooling water discharge with visible flow texture"
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             />
           </div>
         </div>

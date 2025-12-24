@@ -106,6 +106,8 @@ export default function ValidationSection() {
               alt="Plant instrumentation panel showing logged measurements"
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             />
           </div>
         </div>

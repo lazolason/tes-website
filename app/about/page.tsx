@@ -47,6 +47,8 @@ export default function AboutPage() {
                 alt="Power station control room"
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -135,6 +137,8 @@ export default function AboutPage() {
                   alt="Lazola Sonqishe, Managing Director"
                   fill
                   className="object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 25vw"
                 />
               </div>
             </FadeIn>

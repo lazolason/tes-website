@@ -47,6 +47,8 @@ export default function ProductsPage() {
                 alt="Condenser heat exchanger system"
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 75vw"
               />
             </div>
           </FadeIn>
