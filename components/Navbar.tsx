@@ -46,32 +46,32 @@ const Icons = {
 
 const navItems = [
   { href: "/", label: "Home" },
-    { 
-      href: "/tes", 
-      label: "Solutions",
-      type: "dropdown",
-      items: [
-        { href: "/tes", label: "TES System" },
-        { href: "/products", label: "Products" },
-        { href: "/applications", label: "Applications" },
-      ]
-    },
-    { 
-      href: "/industries", 
-      label: "Industries",
-      type: "mega",
-      items: [
-        { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
-        { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
-        { href: "/industries/refineries", label: "Refineries", icon: Icons.Refineries, desc: "Corrosion control & efficiency." },
-        { href: "/industries/food-beverage", label: "Food & Beverage", icon: Icons.Food, desc: "Safe, reliable cooling water." },
-        { href: "/industries/agriculture", label: "Agriculture", icon: Icons.Agriculture, desc: "Irrigation & system protection." },
-        { href: "/industries/data-centres", label: "Data Centres", icon: Icons.Data, desc: "High-uptime cooling efficiency." },
-        { href: "/industries/ports", label: "Ports & Harbours", icon: Icons.Ports, desc: "Marine environment solutions." },
-      ]
-    },
-    { 
-      href: "/knowledge-hub", 
+  { 
+    href: "/tes", 
+    label: "Solutions",
+    type: "dropdown",
+    items: [
+      { href: "/tes", label: "TES System" },
+      { href: "/products", label: "Products" },
+    ]
+  },
+  { 
+    href: "/industries", 
+    label: "Industries",
+    type: "mega",
+    items: [
+      { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
+      { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
+      { href: "/industries/refineries", label: "Refineries", icon: Icons.Refineries, desc: "Corrosion control & efficiency." },
+      { href: "/industries/food-beverage", label: "Food & Beverage", icon: Icons.Food, desc: "Safe, reliable cooling water." },
+      { href: "/industries/agriculture", label: "Agriculture", icon: Icons.Agriculture, desc: "Irrigation & system protection." },
+      { href: "/industries/data-centres", label: "Data Centres", icon: Icons.Data, desc: "High-uptime cooling efficiency." },
+      { href: "/industries/ports", label: "Ports & Harbours", icon: Icons.Ports, desc: "Marine environment solutions." },
+    ]
+  },
+  { href: "/applications", label: "Applications" },
+  { 
+    href: "/knowledge-hub", 
     label: "Knowledge Hub",
     type: "dropdown",
     items: [
