@@ -19,13 +19,13 @@ export default function CTASection() {
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Link
                 href="/contact"
-                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50"
+                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200 focus-visible:ring-offset-2"
               >
                 Request a Pilot Study
               </Link>
               <Link
                 href="/knowledge-hub/case-studies"
-                className="rounded-md border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                className="rounded-md border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200 focus-visible:ring-offset-2"
               >
                 View Case Studies
               </Link>

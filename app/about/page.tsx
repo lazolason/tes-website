@@ -265,7 +265,7 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <p className="mt-6 text-xs text-slate-500">
+          <p className="mt-6 text-xs text-slate-700">
             Documentation including the TES Master Evidence Pack, RT&amp;D protocol and JET correspondence
             is available for qualified enquiries.
           </p>

@@ -86,7 +86,7 @@ export default function TesPage() {
                 <p className="mt-3 text-base text-slate-600">
                   TES tracks condenser indicators that show real water-side performance.
                 </p>
-                <p className="mt-2 text-sm text-slate-500">
+                <p className="mt-2 text-sm text-slate-600">
                   Compared at matched load/ambient conditions using agreed baselines.
                 </p>
               </FadeIn>
@@ -113,7 +113,7 @@ export default function TesPage() {
                     key={item.title}
                     className="rounded-lg border border-slate-200 bg-white p-4"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                       {item.title}
                     </p>
                     <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
@@ -123,7 +123,7 @@ export default function TesPage() {
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-4">
               <CoolingSchematic />
-              <p className="mt-3 text-xs text-slate-500">
+              <p className="mt-3 text-xs text-slate-700">
                 Simplified loop view showing TES dosing point and monitored pathways.
               </p>
             </div>
@@ -171,7 +171,7 @@ export default function TesPage() {
                   {item.step}
                 </p>
                 <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
-                <p className="mt-2 text-xs text-slate-500">{item.deliverable}</p>
+                <p className="mt-2 text-xs text-slate-700">{item.deliverable}</p>
               </div>
             ))}
           </div>
