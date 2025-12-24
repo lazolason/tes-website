@@ -7,7 +7,6 @@ import BeforeAfterSlider from "../components/BeforeAfterSlider";
 import IndustryGrid from "../components/IndustryGrid";
 import ValidationSection from "../components/ValidationSection";
 import CTASection from "../components/CTASection";
-import ValuePropBand from "../components/ValuePropBand";
 import PathwayCTA from "../components/PathwayCTA";
 
 export const metadata: Metadata = {
@@ -39,7 +38,10 @@ export default function TesPage() {
                 Restore lost efficiency. Recover output capability. Reduce emissions — with verification, not guesswork.
               </p>
               <p className="mt-6 text-base leading-7 text-slate-700 sm:text-lg">
-                TES combines chemistry, dosing control, monitoring, and protocol-based verification to stabilise condenser performance.
+                TES combines chemistry, dosing control, monitoring, and protocol-aligned verification to stabilise condenser performance.
+              </p>
+              <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+                Implementation supports maintenance — it does not replace it.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
@@ -124,8 +126,84 @@ export default function TesPage() {
         </div>
       </section>
 
-      {/* Value Proposition Band */}
-      <ValuePropBand />
+      {/* Why TES */}
+      <section className="border-t border-slate-200 bg-slate-50 py-12 lg:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="mb-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
+              Why TES
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-tight text-slate-900">
+              A disciplined system for condenser stability.
+            </h2>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Outcome: Stabilise condenser performance
+              </h3>
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                Reduce fouling-driven losses and keep heat transfer consistent under real operating conditions.
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Mechanism: Surface treatment + controlled dosing
+              </h3>
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                Film-forming approach with repeatable dosing schedules and operational discipline.
+              </p>
+            </div>
+            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <h3 className="text-sm font-semibold text-slate-900">
+                Proof: Measured indicators + protocol-aligned verification
+              </h3>
+              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                Interpret TR/TTD/vacuum trends using normalisation principles for audit-ready reporting.
+              </p>
+            </div>
+          </div>
+
+          <div className="mt-10">
+            <h3 className="text-lg font-semibold text-slate-900">
+              Choose your path
+            </h3>
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
+              <Link
+                href="/industries#power-stations"
+                className="rounded-lg border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:border-emerald-500 hover:shadow-md"
+              >
+                <p className="text-sm font-semibold text-slate-900">Power stations</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  Wet-cooled condensers, cooling towers, STEP-aligned performance language.
+                </p>
+              </Link>
+              <Link
+                href="/industries#industrial-users"
+                className="rounded-lg border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:border-emerald-500 hover:shadow-md"
+              >
+                <p className="text-sm font-semibold text-slate-900">Industrial users</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  Cooling networks and heat exchangers where uptime and efficiency matter.
+                </p>
+              </Link>
+              <Link
+                href="/knowledge-hub/engineering-playbook"
+                className="rounded-lg border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:border-emerald-500 hover:shadow-md"
+              >
+                <p className="text-sm font-semibold text-slate-900">View results</p>
+                <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                  Engineering Playbook: verification approach, constraints, troubleshooting.
+                </p>
+              </Link>
+            </div>
+            <p className="mt-4 text-xs text-slate-500">
+              Not sure where you fit? Start with the Engineering Playbook.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Primary Conversion Pathways */}
       <PathwayCTA />
