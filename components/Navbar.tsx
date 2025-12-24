@@ -133,25 +133,34 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 flex items-center gap-1 ${
                   item.cta
-                    ? "bg-emerald-600 text-white hover:bg-emerald-700"
+                    ? "bg-emerald-600 text-white hover:bg-emerald-700 cta-pulse"
                     : isActive(item.href)
                       ? "bg-emerald-50 text-emerald-700"
                       : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                 }`}
+                aria-haspopup={item.items ? "true" : undefined}
+                aria-expanded={item.items && hoveredItem === item.label ? "true" : "false"}
               >
                 {item.label}
+                {item.items && !item.cta && (
+                  <svg className="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                )}
               </Link>
 
               {/* Mega Menu / Dropdown Logic */}
               {hoveredItem === item.label && item.items && (
-                <div 
+                <div
                   className={`absolute top-full pt-2 ${
-                    item.type === 'mega' ? 'left-1/2 -translate-x-1/2 w-[600px]' : 'left-0 w-56'
+                    item.type === 'mega' ? 'left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw]' : 'left-0 w-56'
                   }`}
+                  role="menu"
+                  aria-label={`${item.label} submenu`}
                 >
-                  <div className="bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 p-1">
+                  <div className="bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 p-1 dropdown-enter">
                     {item.type === 'mega' ? (
                       <div className="grid grid-cols-2 gap-2 p-2">
                         {item.items.map((subItem: any) => (
@@ -212,31 +221,39 @@ export default function Navbar() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white">
-          <nav className="flex flex-col p-4 space-y-1">
+        <div className="lg:hidden border-t border-slate-200 bg-white dropdown-enter">
+          <nav className="flex flex-col p-4 space-y-1" role="navigation" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <div key={item.label}>
                 <Link
                   href={item.href}
                   onClick={() => !item.items && setMobileOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 ${
+                  className={`flex items-center justify-between px-3 py-2 text-base font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 ${
                     item.cta
-                      ? "bg-emerald-600 text-white text-center mt-4"
+                      ? "bg-emerald-600 text-white text-center mt-4 justify-center"
                       : isActive(item.href)
                         ? "bg-emerald-50 text-emerald-700"
                         : "text-slate-900 hover:bg-slate-50"
                   }`}
+                  aria-haspopup={item.items ? "true" : undefined}
+                  aria-expanded={item.items ? "true" : undefined}
                 >
-                  {item.label}
+                  <span>{item.label}</span>
+                  {item.items && !item.cta && (
+                    <svg className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  )}
                 </Link>
                 {item.items && (
-                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-slate-200 ml-3">
+                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-slate-200 ml-3" role="menu" aria-label={`${item.label} submenu`}>
                     {item.items.map((subItem: any) => (
                       <Link
                         key={subItem.label}
                         href={subItem.href}
                         onClick={() => setMobileOpen(false)}
                         className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
+                        role="menuitem"
                       >
                         {subItem.label}
                       </Link>

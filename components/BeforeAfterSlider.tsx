@@ -117,6 +117,7 @@ export default function BeforeAfterSlider({
           fill
           className="object-cover"
           priority
+          unoptimized
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
         />
         <div className="absolute top-4 right-4 rounded bg-slate-950/60 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">
@@ -135,6 +136,7 @@ export default function BeforeAfterSlider({
           fill
           className="object-cover"
           priority
+          unoptimized
           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
         />
         <div className="absolute top-4 left-4 rounded bg-slate-950/60 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white backdrop-blur-sm">

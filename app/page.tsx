@@ -1,13 +1,36 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import TrustedBy from "../components/TrustedBy";
-import AnimatedStats from "../components/AnimatedStats";
-import Testimonials from "../components/Testimonials";
+import dynamic from "next/dynamic";
 import BeforeAfterSlider from "../components/BeforeAfterSlider";
-import IndustryGrid from "../components/IndustryGrid";
-import ValidationSection from "../components/ValidationSection";
-import CTASection from "../components/CTASection";
-import PathwayCTA from "../components/PathwayCTA";
+
+// Lazy load below-the-fold components for better initial page load
+const TrustedBy = dynamic(() => import("../components/TrustedBy"), {
+  loading: () => <div className="h-32 bg-slate-50 animate-pulse" />,
+});
+
+const PathwayCTA = dynamic(() => import("../components/PathwayCTA"), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+const AnimatedStats = dynamic(() => import("../components/AnimatedStats"), {
+  loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
+});
+
+const Testimonials = dynamic(() => import("../components/Testimonials"), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+const IndustryGrid = dynamic(() => import("../components/IndustryGrid"), {
+  loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
+});
+
+const ValidationSection = dynamic(() => import("../components/ValidationSection"), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+const CTASection = dynamic(() => import("../components/CTASection"), {
+  loading: () => <div className="h-64 bg-emerald-600 animate-pulse" />,
+});
 
 export const metadata: Metadata = {
   title: "TES Cooling-Water Efficiency System",
@@ -24,7 +47,7 @@ export default function TesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="relative pt-28 pb-16 px-6 bg-white">
+      <section className="relative pt-28 pb-16 px-6 bg-mesh-gradient animate-mesh">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="max-w-2xl">
@@ -86,8 +109,8 @@ export default function TesPage() {
                 {/* Image brief: /public/images/hero/before-fouled-tubes.jpg and /public/images/hero/after-stabilised-tubes.jpg — Same angle, lighting, and geometry; only surface condition changes. */}
                 <BeforeAfterSlider
                   className="absolute inset-0"
-                  beforeImage="/images/hero/before-fouled-tubes.png"
-                  afterImage="/images/hero/after-stabilised-tubes.png"
+                  beforeImage="/images/hero/before-fouled-tubes.png?v=2"
+                  afterImage="/images/hero/after-stabilised-tubes.png?v=2"
                   beforeLabel="FOULED SURFACE"
                   afterLabel="STABILISED SURFACE"
                   captionTitle="ILLUSTRATIVE RESULT"

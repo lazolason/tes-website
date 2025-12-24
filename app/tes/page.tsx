@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import FadeIn from "../../components/FadeIn";
-import ProcessSteps from "../../components/ProcessSteps";
 import SystemHeader from "../../components/SystemHeader";
-import CoolingSchematic from "../../components/CoolingSchematic";
+import Tooltip from "../../components/Tooltip";
+import { MonitoringIcon, VerificationIcon } from "../../components/BenefitIcons";
+
+// Lazy load heavy interactive components
+const ProcessSteps = dynamic(() => import("../../components/ProcessSteps"), {
+  loading: () => <div className="h-96 bg-white animate-pulse" />,
+});
+
+const CoolingSchematic = dynamic(() => import("../../components/CoolingSchematic"), {
+  loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
+});
 
 export const metadata: Metadata = {
   title: "TES System Overview",
@@ -87,35 +97,58 @@ export default function TesPage() {
                   TES tracks condenser indicators that show real water-side performance.
                 </p>
                 <p className="mt-2 text-sm text-slate-600">
-                  Compared at matched load/ambient conditions using agreed baselines.
+                  Compared at matched load/ambient conditions using agreed{" "}
+                  <Tooltip content="A baseline is the reference dataset collected before TES intervention, used to measure performance improvements against controlled conditions.">
+                    baselines
+                  </Tooltip>.
                 </p>
               </FadeIn>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {[
                   {
-                    title: "Temperature Rise (TR)",
+                    title: "TR",
+                    fullTitle: "Temperature Rise",
                     detail: "Cooling-water rise across the condenser.",
+                    tooltip: "Temperature Rise (TR) measures the increase in water temperature as it passes through the condenser, indicating heat transfer efficiency.",
+                    icon: <MonitoringIcon className="w-5 h-5" />,
                   },
                   {
-                    title: "Terminal Temp. Diff. (TTD)",
+                    title: "TTD",
+                    fullTitle: "Terminal Temperature Difference",
                     detail: "Primary indicator of fouling resistance.",
+                    tooltip: "Terminal Temperature Difference (TTD) is the difference between exhaust steam temperature and cooling water outlet temperature. Lower TTD indicates better heat transfer and less fouling.",
+                    icon: <MonitoringIcon className="w-5 h-5" />,
                   },
                   {
-                    title: "Condenser Vacuum",
+                    title: "Vacuum",
+                    fullTitle: "Condenser Vacuum",
                     detail: "Stability under matched load and ambient.",
+                    tooltip: "Condenser vacuum stability indicates consistent low-pressure conditions that improve turbine efficiency. Degraded vacuum often signals fouling or air ingress.",
+                    icon: <VerificationIcon className="w-5 h-5" />,
                   },
                   {
-                    title: "Water-Side Stability",
+                    title: "Water Quality",
+                    fullTitle: "Water-Side Stability",
                     detail: "Make-up, blowdown, and chemistry control.",
+                    tooltip: "Water-side stability tracks make-up rates, blowdown cycles, and chemistry parameters to ensure optimal treatment and system control.",
+                    icon: <VerificationIcon className="w-5 h-5" />,
                   },
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="rounded-lg border border-slate-200 bg-white p-4"
+                    className="group rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md hover:-translate-y-0.5"
                   >
-                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
-                      {item.title}
-                    </p>
+                    <div className="flex items-center justify-between">
+                      <Tooltip content={item.tooltip}>
+                        <span className="text-xs font-semibold uppercase tracking-wide text-slate-700">
+                          {item.title}
+                        </span>
+                      </Tooltip>
+                      <span className="text-emerald-600 transition-transform duration-200 group-hover:scale-110">
+                        {item.icon}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-slate-500">{item.fullTitle}</p>
                     <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
                   </div>
                 ))}

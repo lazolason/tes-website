@@ -3,6 +3,16 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FloatingCTA from '../components/FloatingCTA'
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+
+// Optimize font loading with next/font for better performance
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+  preload: true,
+  fallback: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+})
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mexelenergysustain.com';
 
@@ -77,8 +87,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className="bg-white text-slate-900 antialiased">
+    <html lang="en" suppressHydrationWarning className={inter.variable}>
+      <body className="bg-white text-slate-900 antialiased font-sans">
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />
