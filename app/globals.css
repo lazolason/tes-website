@@ -96,22 +96,12 @@ body {
 
 /* Reduced motion support for accessibility */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
-  .animate-fade-in,
-  .animate-slide-in-right,
-  .animate-float,
-  .animate-float-delayed {
-    animation: none;
-  }
-
-  .tab-content.active {
+  .animate-fade-in, .animate-slide-in-right, .animate-float, .animate-float-delayed, .tab-content.active {
     animation: none;
   }
 }
