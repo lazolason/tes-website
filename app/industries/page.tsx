@@ -32,28 +32,32 @@ export default function IndustriesPage() {
             cooling-water challenges in each sector.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            <Link
-              href="/industries/power-energy"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
-            >
-              <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
-                Power & Energy
-              </h3>
-              <p className="mt-1 text-xs text-slate-600">
-                Wet-cooled coal, gas and nuclear stations
-              </p>
-            </Link>
-            <Link
-              href="/industries/mining"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
-            >
-              <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
-                Mining & Minerals
-              </h3>
-              <p className="mt-1 text-xs text-slate-600">
-                Concentrators and processing plants
-              </p>
-            </Link>
+            <div id="power-stations">
+              <Link
+                href="/industries/power-energy"
+                className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              >
+                <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
+                  Power & Energy
+                </h3>
+                <p className="mt-1 text-xs text-slate-600">
+                  Wet-cooled coal, gas and nuclear stations
+                </p>
+              </Link>
+            </div>
+            <div id="industrial-users">
+              <Link
+                href="/industries/mining"
+                className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              >
+                <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
+                  Mining & Minerals
+                </h3>
+                <p className="mt-1 text-xs text-slate-600">
+                  Concentrators and processing plants
+                </p>
+              </Link>
+            </div>
             <Link
               href="/industries/refineries"
               className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
