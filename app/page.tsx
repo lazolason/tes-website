@@ -60,7 +60,7 @@ export default function TesPage() {
               </div>
 
               <div className="mt-10 grid gap-4 sm:grid-cols-3">
-                <div className="rounded-lg border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                     Protocol aligned
                   </p>
@@ -68,7 +68,7 @@ export default function TesPage() {
                     Eskom RT&D baseline structure
                   </p>
                 </div>
-                <div className="rounded-lg border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                     Data traceable
                   </p>
@@ -76,7 +76,7 @@ export default function TesPage() {
                     Dosing and performance logged
                   </p>
                 </div>
-                <div className="rounded-lg border border-slate-200 bg-white p-4">
+                <div className="rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
                   <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                     Verification-ready
                   </p>
@@ -85,7 +85,7 @@ export default function TesPage() {
                   </p>
                 </div>
               </div>
-              <div className="mt-6 rounded-lg border border-slate-200 bg-slate-50 p-4">
+              <div className="mt-6 rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg">
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-700">
                   Indicative impact (site-specific)
                 </p>
@@ -139,7 +139,7 @@ export default function TesPage() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-3">
-            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
               <h3 className="text-sm font-semibold text-slate-900">
                 Outcome: Stabilise condenser performance
               </h3>
@@ -147,7 +147,7 @@ export default function TesPage() {
                 Reduce fouling-driven losses and keep heat transfer consistent under real operating conditions.
               </p>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
               <h3 className="text-sm font-semibold text-slate-900">
                 Mechanism: Surface treatment + controlled dosing
               </h3>
@@ -155,7 +155,7 @@ export default function TesPage() {
                 Film-forming approach with repeatable dosing schedules and operational discipline.
               </p>
             </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+            <div className="rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
               <h3 className="text-sm font-semibold text-slate-900">
                 Proof: Measured indicators + protocol-aligned verification
               </h3>
@@ -172,7 +172,7 @@ export default function TesPage() {
             <div className="mt-4 grid gap-4 md:grid-cols-3">
               <Link
                 href="/industries#power-stations"
-                className="rounded-lg border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:border-emerald-500 hover:shadow-md"
+                className="rounded-xl border border-slate-200/70 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg"
               >
                 <p className="text-sm font-semibold text-slate-900">Power stations</p>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">
@@ -181,7 +181,7 @@ export default function TesPage() {
               </Link>
               <Link
                 href="/industries#industrial-users"
-                className="rounded-lg border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:border-emerald-500 hover:shadow-md"
+                className="rounded-xl border border-slate-200/70 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg"
               >
                 <p className="text-sm font-semibold text-slate-900">Industrial users</p>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">
@@ -190,7 +190,7 @@ export default function TesPage() {
               </Link>
               <Link
                 href="/knowledge-hub/engineering-playbook"
-                className="rounded-lg border border-slate-200 bg-white p-5 text-left shadow-sm transition hover:border-emerald-500 hover:shadow-md"
+                className="rounded-xl border border-slate-200/70 bg-white p-5 text-left shadow-sm transition-shadow duration-200 hover:shadow-lg"
               >
                 <p className="text-sm font-semibold text-slate-900">View results</p>
                 <p className="mt-2 text-sm text-slate-600 leading-relaxed">
@@ -255,7 +255,7 @@ export default function TesPage() {
             ].map((step) => (
               <div
                 key={step.number}
-                className="rounded-lg border border-slate-200 bg-slate-50 p-5"
+                className="rounded-xl border border-slate-200/70 bg-white p-5 shadow-sm transition-shadow duration-200 hover:shadow-lg"
               >
                 <div className="flex items-center gap-3">
                   <span className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-xs font-bold text-white">

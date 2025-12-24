@@ -35,7 +35,7 @@ export default function IndustriesPage() {
             <div id="power-stations">
               <Link
                 href="/industries/power-energy"
-                className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+                className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
               >
                 <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                   Power & Energy
@@ -48,7 +48,7 @@ export default function IndustriesPage() {
             <div id="industrial-users">
               <Link
                 href="/industries/mining"
-                className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+                className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
               >
                 <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                   Mining & Minerals
@@ -60,7 +60,7 @@ export default function IndustriesPage() {
             </div>
             <Link
               href="/industries/refineries"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Refineries & Petrochemical
@@ -71,7 +71,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/food-beverage"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Food & Beverage
@@ -82,7 +82,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/agriculture"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Agriculture & Irrigation
@@ -93,7 +93,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/data-centres"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Data Centres
@@ -104,7 +104,7 @@ export default function IndustriesPage() {
             </Link>
             <Link
               href="/industries/ports"
-              className="group rounded-lg border border-slate-200 bg-white p-4 transition-all hover:border-emerald-300"
+              className="group rounded-xl border border-slate-200/70 bg-white p-4 shadow-sm transition-shadow duration-200 hover:shadow-lg"
             >
               <h3 className="text-sm font-semibold text-slate-900 group-hover:text-emerald-700">
                 Sea / Harbours / Ports
