@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -56,9 +56,21 @@ const navItems = [
       { href: "/applications", label: "Applications" },
     ]
   },
-  { 
-    href: "/industries", 
-  { 
+  {
+    href: "/industries",
+    label: "Industries",
+    type: "mega",
+    items: [
+      { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
+      { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
+      { href: "/industries/refineries", label: "Refineries", icon: Icons.Refineries, desc: "Corrosion control & efficiency." },
+      { href: "/industries/food-beverage", label: "Food & Beverage", icon: Icons.Food, desc: "Safe, reliable cooling water." },
+      { href: "/industries/agriculture", label: "Agriculture", icon: Icons.Agriculture, desc: "Irrigation & system protection." },
+      { href: "/industries/data-centres", label: "Data Centres", icon: Icons.Data, desc: "High-uptime cooling efficiency." },
+      { href: "/industries/ports", label: "Ports & Harbours", icon: Icons.Ports, desc: "Marine environment solutions." },
+    ]
+  },
+  {
     href: "/knowledge-hub", 
     label: "Knowledge Hub",
     type: "dropdown",
@@ -154,7 +166,7 @@ export default function Navbar() {
                             <div>
                               <div className="text-sm font-semibold text-slate-900">{subItem.label}</div>
                               {subItem.desc && (
-                                <div className="text-xs text-slate-500 mt-0.5 line-clamp-1">{subItem.desc}</div>
+                                <div className="text-xs text-slate-600 mt-0.5 line-clamp-1">{subItem.desc}</div>
                               )}
                             </div>
                           </Link>
@@ -183,7 +195,7 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md"
+          className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
         >
           <span className="sr-only">Open menu</span>
           {mobileOpen ? (
@@ -207,7 +219,7 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   onClick={() => !item.items && setMobileOpen(false)}
-                  className={`block px-3 py-2 text-base font-medium rounded-md ${
+                  className={`block px-3 py-2 text-base font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 ${
                     item.cta
                       ? "bg-emerald-600 text-white text-center mt-4"
                       : isActive(item.href)
@@ -224,7 +236,7 @@ export default function Navbar() {
                         key={subItem.label}
                         href={subItem.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md"
+                        className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
                       >
                         {subItem.label}
                       </Link>
