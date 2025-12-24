@@ -46,8 +46,15 @@ const Icons = {
 
 const navItems = [
   { href: "/", label: "Home" },
-  { href: "/tes", label: "TES System" },
-  { href: "/products", label: "Products" },
+  { 
+    href: "/tes",
+    label: "Solutions",
+    type: "dropdown",
+    items: [
+      { href: "/tes", label: "TES System" },
+      { href: "/products", label: "Products" },
+    ]
+  },
   { 
     href: "/industries", 
     label: "Industries",
