@@ -129,11 +129,11 @@ export default function ProductsPage() {
                       {item.icon}
                     </div>
                     <div className="flex-1">
-                      <Tooltip content={item.tooltip}>
-                        <h4 className="text-xs font-semibold text-slate-900">
-                          {item.title}
-                        </h4>
-                      </Tooltip>
+                      <h4 className="text-xs font-semibold text-slate-900">
+                        <Tooltip content={item.tooltip}>
+                          <span>{item.title}</span>
+                        </Tooltip>
+                      </h4>
                       <p className="mt-1 text-xs text-slate-600 leading-relaxed">
                         {item.description}
                       </p>

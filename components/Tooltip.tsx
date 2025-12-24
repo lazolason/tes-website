@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useId, useRef, useState } from "react";
 
 interface TooltipProps {
   content: string;
@@ -11,6 +11,7 @@ interface TooltipProps {
 export default function Tooltip({ content, children, position = "top" }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const tooltipId = useId();
 
   const handleMouseEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -36,6 +37,8 @@ export default function Tooltip({ content, children, position = "top" }: Tooltip
       onMouseLeave={handleMouseLeave}
       onFocus={handleMouseEnter}
       onBlur={handleMouseLeave}
+      tabIndex={0}
+      aria-describedby={isVisible ? tooltipId : undefined}
     >
       <span className="border-b border-dotted border-emerald-600 cursor-help text-emerald-700 font-medium">
         {children}
@@ -44,6 +47,7 @@ export default function Tooltip({ content, children, position = "top" }: Tooltip
         <span
           className={`absolute ${positionClasses[position]} z-50 w-64 px-3 py-2 text-xs leading-relaxed text-white bg-slate-900 rounded-lg shadow-lg pointer-events-none tooltip-enter`}
           role="tooltip"
+          id={tooltipId}
         >
           {content}
           {/* Arrow */}
