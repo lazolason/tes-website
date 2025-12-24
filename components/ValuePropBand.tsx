@@ -7,9 +7,9 @@ export default function ValuePropBand() {
         <FadeIn>
           <div className="grid gap-6 md:grid-cols-3">
             {/* Outcome */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-emerald-200 hover:shadow-sm">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
               <div className="flex flex-col h-full">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-3">
+                <span className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Outcome
                 </span>
                 <h3 className="text-lg font-semibold text-slate-900 leading-tight">
@@ -19,9 +19,9 @@ export default function ValuePropBand() {
             </div>
 
             {/* Mechanism */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-emerald-200 hover:shadow-sm">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
               <div className="flex flex-col h-full">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-3">
+                <span className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Mechanism
                 </span>
                 <h3 className="text-lg font-semibold text-slate-900 leading-tight">
@@ -31,9 +31,9 @@ export default function ValuePropBand() {
             </div>
 
             {/* Proof */}
-            <div className="relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all hover:border-emerald-200 hover:shadow-sm">
+            <div className="relative overflow-hidden rounded-xl border border-slate-200/70 bg-white p-6 shadow-sm transition-shadow duration-200 hover:shadow-lg">
               <div className="flex flex-col h-full">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600 mb-3">
+                <span className="mb-3 text-[10px] font-bold uppercase tracking-[0.2em] text-slate-600">
                   Proof
                 </span>
                 <h3 className="text-lg font-semibold text-slate-900 leading-tight">
