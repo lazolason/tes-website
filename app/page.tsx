@@ -86,8 +86,8 @@ export default function TesPage() {
                 {/* Image brief: /public/images/hero/before-fouled-tubes.jpg and /public/images/hero/after-stabilised-tubes.jpg — Same angle, lighting, and geometry; only surface condition changes. */}
                 <BeforeAfterSlider
                   className="absolute inset-0"
-                  beforeImage="/images/hero/before-fouled-tubes.jpg"
-                  afterImage="/images/hero/after-stabilised-tubes.jpg"
+                  beforeImage="/images/hero/before-fouled-tubes.png"
+                  afterImage="/images/hero/after-stabilised-tubes.png"
                   beforeLabel="FOULED SURFACE"
                   afterLabel="STABILISED SURFACE"
                   captionTitle="ILLUSTRATIVE RESULT"

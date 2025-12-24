@@ -119,9 +119,9 @@ export default function AnimatedStats() {
             </p>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            {/* Image brief: /public/images/home-outcomes-cooling-water.jpg — Cooling water in motion near condenser outflow, high shutter detail, industrial realism. */}
+            {/* Image brief: /public/images/home-outcomes-cooling-water.png — Cooling water in motion near condenser outflow, high shutter detail, industrial realism. */}
             <Image
-              src="/images/home-outcomes-cooling-water.jpg"
+              src="/images/home-outcomes-cooling-water.png"
               alt="Cooling water discharge with visible flow texture"
               fill
               className="object-cover"
