@@ -133,7 +133,7 @@ export default function IndustryGrid() {
                 <h3 className="text-xl font-bold text-white mb-2">
                   View All Applications
                 </h3>
-                <p className="text-sm text-emerald-500 leading-relaxed">
+                <p className="text-sm text-emerald-100 leading-relaxed">
                   See our full range of case studies and technical papers.
                 </p>
                 <div className="mt-auto pt-4 flex items-center text-sm font-medium text-white">
