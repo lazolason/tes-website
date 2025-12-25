@@ -1,11 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 @layer utilities {
@@ -19,10 +17,37 @@ body {
   /* Subtle mesh gradient for depth */
   .bg-mesh-gradient {
     background-color: #f8fafc;
-    background-image: 
+    background-image:
         radial-gradient(at 0% 0%, rgba(108, 255, 71, 0.08) 0px, transparent 50%),
         radial-gradient(at 100% 0%, rgba(200, 200, 200, 0.1) 0px, transparent 50%),
         radial-gradient(at 100% 100%, rgba(108, 255, 71, 0.05) 0px, transparent 50%);
+  }
+
+  .animate-mesh {
+    background-size: 200% 200%;
+    animation: mesh-flow 15s ease-in-out infinite;
+  }
+
+  /* Subtle gradient overlays for section depth */
+  .bg-gradient-emerald {
+    background: linear-gradient(135deg, rgba(240, 253, 244, 0.5) 0%, rgba(255, 255, 255, 1) 100%);
+  }
+
+  .bg-gradient-slate {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 1) 0%, rgba(255, 255, 255, 0.95) 100%);
+  }
+
+  .bg-gradient-accent {
+    background: linear-gradient(to bottom, transparent 0%, rgba(16, 185, 129, 0.02) 100%);
+  }
+}
+
+@keyframes mesh-flow {
+  0%, 100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
   }
 }
 
@@ -92,4 +117,62 @@ body {
 .tab-content.active {
   display: block;
   animation: fade-in 0.4s ease-out;
+}
+
+/* Navbar dropdown/mega menu animations */
+@keyframes dropdown-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdown-enter {
+  animation: dropdown-fade-in 0.15s ease-out;
+}
+
+/* CTA pulse effect */
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0);
+  }
+}
+
+.cta-pulse {
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+/* Tooltip fade-in animation */
+@keyframes tooltip-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tooltip-enter {
+  animation: tooltip-fade-in 0.2s ease-out;
+}
+
+/* Reduced motion support for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .animate-fade-in, .animate-slide-in-right, .animate-float, .animate-float-delayed, .tab-content.active, .dropdown-enter, .cta-pulse, .tooltip-enter {
+    animation: none;
+  }
 }

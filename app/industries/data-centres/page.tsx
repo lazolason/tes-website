@@ -42,6 +42,7 @@ export default function DataCentresPage() {
                 fill
                 className="rounded-xl object-cover shadow-lg"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>

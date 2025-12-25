@@ -41,6 +41,7 @@ export default function FoodBeveragePage() {
                 fill
                 className="rounded-xl object-cover shadow-lg"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -59,6 +60,8 @@ export default function FoodBeveragePage() {
                     alt="Food and beverage processing facility"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 

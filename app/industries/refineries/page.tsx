@@ -42,6 +42,7 @@ export default function RefineriesPage() {
                 fill
                 className="rounded-xl object-cover shadow-lg"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -60,6 +61,8 @@ export default function RefineriesPage() {
                     alt="Refinery and petrochemical plant"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 

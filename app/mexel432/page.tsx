@@ -39,6 +39,7 @@ export default function Mexel432Page() {
               fill
               className="object-contain"
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 80vw"
             />
           </div>
         </div>

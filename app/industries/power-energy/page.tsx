@@ -44,6 +44,7 @@ export default function PowerEnergyPage() {
                 fill
                 className="object-cover"
                 priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -87,6 +88,8 @@ export default function PowerEnergyPage() {
                     alt="Industrial condenser system"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
 

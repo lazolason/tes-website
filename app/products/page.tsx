@@ -2,6 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
 import SystemHeader from "../../components/SystemHeader";
+import Tooltip from "../../components/Tooltip";
+import { BiofoulingIcon, CorrosionIcon, ScalingIcon } from "../../components/BenefitIcons";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -47,6 +49,8 @@ export default function ProductsPage() {
                 alt="Condenser heat exchanger system"
                 fill
                 className="object-cover"
+                loading="lazy"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 80vw, 75vw"
               />
             </div>
           </FadeIn>
@@ -86,48 +90,57 @@ export default function ProductsPage() {
             </FadeIn>
 
             <FadeIn delay={150}>
-              <div className="max-w-md rounded-lg border bg-white p-5 shadow-sm">
+              <div className="max-w-md">
               <h3 className="text-sm font-semibold text-slate-900">
                 Key functions in cooling-water systems
               </h3>
-              <ul className="mt-3 space-y-2 text-xs text-slate-700 leading-relaxed">
-                <li>
-                  • <span className="font-semibold">Surfactant / film-forming layer:</span>{" "}
-                  creates a protective molecular film on metal and other wetted
-                  surfaces, modifying surface energy and making it harder for
-                  deposits and organisms to attach.
-                </li>
-                <li>
-                  • <span className="font-semibold">Biofouling / biocide effect:</span>{" "}
-                  detaches and controls biofilm, algae and other organic deposits,
-                  reducing biological fouling pressure in condenser tubes and
-                  cooling circuits.
-                </li>
-                <li>
-                  • <span className="font-semibold">Corrosion inhibitor:</span>{" "}
-                  reduces corrosion on carbon steel and other materials by
-                  forming a barrier between the metal surface and the water
-                  phase.
-                </li>
-                <li>
-                  • <span className="font-semibold">Ash / mud / sludge dispersant:</span>{" "}
-                  helps lift and disperse fine solids (ash, mud, silt) that
-                  accumulate at tube inlets and low-velocity areas, improving
-                  effective cross-section and heat transfer.
-                </li>
-                <li>
-                  • <span className="font-semibold">Scaling control:</span>{" "}
-                  interferes with scale formation on heat-transfer surfaces,
-                  complementing or replacing traditional anti-scalants depending
-                  on the system design.
-                </li>
-                <li>
-                  • <span className="font-semibold">Separation support in process water:</span>{" "}
-                  by modifying surface interactions, Mexel®432 can assist in
-                  keeping solids dispersed and improving clarification and
-                  separation behaviour in certain mining and industrial circuits.
-                </li>
-              </ul>
+              <div className="mt-4 space-y-3">
+                {[
+                  {
+                    icon: <BiofoulingIcon className="w-5 h-5" />,
+                    title: "Film-forming layer",
+                    description: "Creates a protective molecular film on wetted surfaces, making it harder for deposits to attach.",
+                    tooltip: "Film-Forming Amines (FFA) create a hydrophobic molecular layer that modifies surface energy, reducing adhesion of biological and mineral deposits.",
+                  },
+                  {
+                    icon: <BiofoulingIcon className="w-5 h-5" />,
+                    title: "Biofouling control",
+                    description: "Detaches and controls biofilm, algae and organic deposits in condenser tubes.",
+                    tooltip: "Biofouling is the accumulation of microorganisms, algae, and biofilm on cooling surfaces. Mexel®432 disrupts biofilm attachment and growth without traditional oxidizing biocides.",
+                  },
+                  {
+                    icon: <CorrosionIcon className="w-5 h-5" />,
+                    title: "Corrosion inhibitor",
+                    description: "Reduces corrosion on carbon steel by forming a barrier between metal and water.",
+                    tooltip: "Corrosion inhibition works by creating a protective film that isolates the metal surface from dissolved oxygen and corrosive ions in the cooling water.",
+                  },
+                  {
+                    icon: <ScalingIcon className="w-5 h-5" />,
+                    title: "Scaling control",
+                    description: "Interferes with scale formation on heat-transfer surfaces.",
+                    tooltip: "Scaling occurs when dissolved minerals (calcium, magnesium, silica) precipitate onto hot surfaces. Mexel®432 modifies crystal growth and keeps particles dispersed.",
+                  },
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="group flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-3 transition-all duration-200 hover:border-emerald-300 hover:shadow-md"
+                  >
+                    <div className="flex-shrink-0 rounded-full bg-emerald-50 p-2 text-emerald-700 transition-transform duration-200 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white">
+                      {item.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h4 className="text-xs font-semibold text-slate-900">
+                        <Tooltip content={item.tooltip}>
+                          <span>{item.title}</span>
+                        </Tooltip>
+                      </h4>
+                      <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               </div>
             </FadeIn>
           </div>

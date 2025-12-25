@@ -100,12 +100,14 @@ export default function ValidationSection() {
             </div>
           </FadeIn>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-            {/* Image brief: /public/images/home-verification-instrumentation.jpg — Instrumentation panel or data logger in a plant control room, clear gauges and readouts, calm lighting. */}
+            {/* Image brief: /public/images/home-verification-instrumentation.png — Instrumentation panel or data logger in a plant control room, clear gauges and readouts, calm lighting. */}
             <Image
-              src="/images/home-verification-instrumentation.jpg"
+              src="/images/home-verification-instrumentation.png"
               alt="Plant instrumentation panel showing logged measurements"
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             />
           </div>
         </div>
@@ -113,7 +115,7 @@ export default function ValidationSection() {
         <div className="mt-12 grid gap-8 lg:grid-cols-3">
           {pillars.map((pillar, index) => (
             <FadeIn key={pillar.title} delay={index * 150}>
-              <div className="flex flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div className="flex flex-col items-start rounded-2xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.02]">
                 <div className="mb-4 rounded-xl bg-emerald-50 p-3 ring-1 ring-emerald-100">
                   {pillar.icon}
                 </div>

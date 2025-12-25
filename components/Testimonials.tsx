@@ -71,7 +71,7 @@ export default function Testimonials() {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
           }`}
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
+          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
             Client Feedback
           </p>
           <h2 className="mt-2 text-2xl font-bold text-slate-900 sm:text-3xl">
@@ -86,9 +86,9 @@ export default function Testimonials() {
         >
           {/* Quote icon */}
           <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-emerald-600/10 text-emerald-700">
               <svg
-                className="h-5 w-5 text-white"
+                className="h-5 w-5"
                 fill="currentColor"
                 viewBox="0 0 24 24"
               >
@@ -98,7 +98,7 @@ export default function Testimonials() {
           </div>
 
           {/* Testimonial card */}
-          <div className="rounded-2xl bg-white p-8 shadow-lg lg:p-12">
+          <div className="rounded-xl border border-slate-200/70 bg-white p-8 shadow-md transition-all duration-200 hover:shadow-lg hover:scale-[1.01] lg:p-12">
             <div className="min-h-[160px]">
               {testimonials.map((testimonial, index) => (
                 <div

@@ -102,6 +102,8 @@ export default function FundamentalsPage() {
                     alt="Cooling tube surface with visible fouling"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
                 <figcaption className="mt-3 text-xs text-gray-500">
@@ -117,6 +119,8 @@ export default function FundamentalsPage() {
                     alt="Cooling tube surface after stabilisation"
                     fill
                     className="object-cover"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 50vw"
                   />
                 </div>
                 <figcaption className="mt-3 text-xs text-gray-500">

@@ -9,10 +9,10 @@ export default function PathwayCTA() {
       <div className="mx-auto max-w-6xl px-4">
         <FadeIn>
           <div className="mb-8 text-center">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900 sm:text-3xl">
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
               Choose your pathway
             </h2>
-            <p className="mt-3 text-sm text-slate-600">
+            <p className="mt-3 text-base text-slate-600">
               Explore TES applications for your context or review engineering evidence
             </p>
           </div>

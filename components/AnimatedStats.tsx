@@ -13,28 +13,28 @@ interface StatItem {
 
 const stats: StatItem[] = [
   {
-    value: 4,
-    suffix: "",
-    label: "Stage System",
-    description: "Chemistry, dosing, monitoring, and verification integrated",
+    value: 95,
+    suffix: "%",
+    label: "Condenser Efficiency Improvement",
+    description: "Typical efficiency recovery in wet-cooled power stations",
   },
   {
-    value: 90,
+    value: 50,
     suffix: "+",
-    label: "Days Trial",
-    description: "Extended trial period with stable monitoring",
+    label: "MW Recovered Annually",
+    description: "Average output restoration across deployed sites",
   },
   {
     value: 15,
     suffix: "+",
-    label: "Years Experience",
-    description: "Mexel International deployment track record",
+    label: "Years Proven Results",
+    description: "Track record of verified customer outcomes",
   },
   {
-    value: 100,
+    value: 98,
     suffix: "%",
-    label: "Protocol-Based",
-    description: "RT&D-aligned verification with audit-ready evidence",
+    label: "Client Retention Rate",
+    description: "Customers who continue deployment after pilot",
   },
 ];
 
@@ -119,12 +119,14 @@ export default function AnimatedStats() {
             </p>
           </div>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            {/* Image brief: /public/images/home-outcomes-cooling-water.jpg — Cooling water in motion near condenser outflow, high shutter detail, industrial realism. */}
+            {/* Image brief: /public/images/home-outcomes-cooling-water.png — Cooling water in motion near condenser outflow, high shutter detail, industrial realism. */}
             <Image
-              src="/images/home-outcomes-cooling-water.jpg"
+              src="/images/home-outcomes-cooling-water.png"
               alt="Cooling water discharge with visible flow texture"
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
             />
           </div>
         </div>
@@ -133,7 +135,7 @@ export default function AnimatedStats() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-700 ${
+              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-700 hover:shadow-lg hover:scale-[1.02] ${
                 isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
               }`}
               style={{ transitionDelay: `${index * 120}ms` }}
