@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "../../../components/FadeIn";
+import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
+import { ArrowRightIcon } from "@/components/icons/NavIcons";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Food & Beverage | Industries",
@@ -17,112 +20,127 @@ export const metadata: Metadata = {
 export default function FoodBeveragePage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                Industries / Food & Beverage
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Food & beverage, breweries and laundries
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-                These operations run almost continuously and depend on stable cooling
-                for process, refrigeration and HVAC. Fouling and biofilm drive up
-                energy usage and risk unplanned downtime.
-              </p>
-            </div>
-            <div className="relative h-64 lg:h-80">
-              <Image
-                src="/industry-agriculture.png"
-                alt="Food and beverage processing facilities"
-                fill
-                className="rounded-xl object-cover shadow-lg"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-900 z-0">
+          <Image
+            src="/food-beverage.webp"
+            alt="Food & Beverage processing"
+            fill
+            className="object-cover opacity-30"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full mb-6 border border-emerald-500/20">
+              Industries / Food & Beverage
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-[1.1]">
+              Hygiene and <br />
+              <span className="text-emerald-400">Cooling Stability.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
+              Breweries, laundries, and processing plants depend on refrigeration
+              and steam for continuous ops. TES keeps the cooling side deposit-free
+              to ensure your process never hits a thermal limit.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                Request a Pilot Study
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main content */}
-      <section className="border-b border-slate-200/70">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid gap-8 md:grid-cols-2">
-            <FadeIn>
-              <div className="flex flex-col gap-4">
-                <div className="relative h-48 w-full overflow-hidden rounded-lg">
+      {/* Schematic & Problem Solving */}
+      <section className="py-20 lg:py-32 border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionHeading
+                tag="Technical Overview"
+                title="Process Reliability."
+                description="Food processing depends on stable chiller loops. TES provides the surface layer stability needed for zero-fouling operations."
+              />
+              <ul className="space-y-6">
+                {[
+                  { title: "Biofilm Prevention", desc: "Non-oxidising protection that keeps pasteurisers and condensers free from efficiency-robbing biofilm." },
+                  { title: "Energy Reduction", desc: "Maintain low compressor discharge pressures by ensuring peak heat-rejection in cooling towers." },
+                  { title: "Water Optimisation", desc: "Reduce blowdown and chemical handling while maintaining system integrity." }
+                ].map((item, i) => (
+                  <FadeIn key={i} delay={item.title === "Water Optimisation" ? 200 : i * 100}>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-900 uppercase tracking-tight text-sm mb-1">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </ul>
+            </div>
+
+            <FadeIn delay={300}>
+              <div className="relative bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 shadow-inner">
+                <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/food-beverage.png"
-                    alt="Food and beverage processing facility"
+                    src="/schematics/food-beverage.png"
+                    alt="Food & Beverage Cooling Schematic"
                     fill
-                    className="object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-contain bg-white"
                   />
                 </div>
-
-                <div>
-                  <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                    Common challenges
-                  </h2>
-                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                    <li>• Chillers and condensers losing performance over time</li>
-                    <li>• Cooling towers with biological growth and scale</li>
-                    <li>• High energy consumption for refrigeration or hot-water systems</li>
-                    <li>• Tight quality and reliability requirements</li>
-                  </ul>
+                <div className="mt-8 text-center">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Pasteuriser & Chiller Layout</p>
                 </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={150}>
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900">
-                  Cooling-water focus in these sectors
-                </h3>
-                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                  In these plants, Mexel®432 is applied to cooling towers, condensers
-                  and critical cooling loops to keep surfaces cleaner and control
-                  biofouling and corrosion. TES concepts can be scaled down to fit the
-                  size and data-availability of each site, while keeping the same
-                  discipline around baselines and measurable impact.
-                </p>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">
-                Improve cooling efficiency in your facility
-              </h2>
-              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
-                Let&apos;s discuss how TES can reduce energy costs and downtime.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-emerald-700 hover:text-emerald-900"
-              >
-                View case studies →
-              </Link>
-            </div>
+      {/* Benefits Grid */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Compliance Ready", desc: "Environmentally responsible chemistry that aligns with corporate sustainability goals." },
+              { title: "Reduced Maintenance", desc: "Extend the interval between mechanical cleanings of condensers and reboilers." },
+              { title: "Stable Quality", desc: "Predictive cooling ensures process temperatures remain within narrow quality bands." }
+            ].map((benefit, i) => (
+              <FadeIn key={i} delay={i * 100}>
+                <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-24 lg:py-32 text-center bg-white">
+        <div className="mx-auto max-w-4xl px-4">
+          <SectionHeading
+            title="Maintain Your Thermal Integrity."
+            description="Discuss your cooling infrastructure and PUE goals with our food & beverage engineering specialists."
+            centered
+          />
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button href="/contact" size="lg">
+              Contact Specialist Team
+            </Button>
+            <Button href="/knowledge-hub" variant="outline" size="lg">
+              Explore Knowledge Hub
+            </Button>
           </div>
         </div>
       </section>

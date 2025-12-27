@@ -1,11 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import Button from "./ui/Button";
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     let ticking = false;
@@ -26,20 +25,15 @@ export default function FloatingCTA() {
 
   return (
     <div
-      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${
-        isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
-      }`}
-    >
-      <Link
-        href="/contact"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        className={`group flex items-center gap-2 rounded-full bg-emerald-600 px-5 py-3 font-semibold text-white shadow-lg transition-all duration-300 hover:bg-emerald-700 hover:shadow-xl hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 ${
-          isHovered ? "pr-6" : ""
+      className={`fixed bottom-6 right-6 z-50 transition-all duration-300 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-16 opacity-0"
         }`}
+    >
+      <Button
+        href="/contact"
+        className="group rounded-full shadow-lg hover:shadow-xl hover:scale-105"
       >
         <svg
-          className="h-5 w-5"
+          className="h-5 w-5 mr-2"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -53,9 +47,7 @@ export default function FloatingCTA() {
         </svg>
         <span className="text-sm">Request a Pilot Study</span>
         <svg
-          className={`h-4 w-4 transition-transform duration-300 ${
-            isHovered ? "translate-x-1" : ""
-          }`}
+          className="h-4 w-4 ml-2 transition-transform duration-300 group-hover:translate-x-1"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -67,7 +59,7 @@ export default function FloatingCTA() {
             d="M9 5l7 7-7 7"
           />
         </svg>
-      </Link>
+      </Button>
     </div>
   );
 }

@@ -1,7 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "../../../components/FadeIn";
+import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
+import { ArrowRightIcon } from "@/components/icons/NavIcons";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Agriculture & Irrigation | Industries",
@@ -17,109 +20,128 @@ export const metadata: Metadata = {
 export default function AgriculturePage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                Industries / Agriculture & Irrigation
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Agriculture and irrigation
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-                Large-scale farming operations, greenhouses, aquaculture and 
-                irrigation networks rely on cooling-water systems for climate 
-                control, refrigeration and process water. Biofilm, scaling and 
-                corrosion in cooling loops, evaporative coolers and irrigation 
-                lines reduce efficiency and increase maintenance.
-              </p>
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-900 z-0">
+          <Image
+            src="/industry-agriculture.webp"
+            alt="Agricultural cooling and irrigation systems"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full mb-6 border border-emerald-500/20">
+              Industries / Agriculture
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-[1.1]">
+              Reliability for <br />
+              <span className="text-emerald-400">Rural Water Networks.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
+              Protecting irrigation infrastructure and climate control systems from
+              biological fouling and corrosion in variable-quality water environments.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                Request a Pilot Study
+              </Button>
             </div>
-            <div className="relative h-64 lg:h-80">
-              <Image
-                src="/industry-agriculture.png"
-                alt="Agricultural cooling and irrigation systems"
-                fill
-                className="rounded-xl object-cover shadow-lg"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Overview */}
+      <section className="py-20 lg:py-32 border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionHeading
+                tag="Agri-Engineering"
+                title="Sustaining Flow & Cooling."
+                description="Agriculture relies on consistent water flow and efficient cooling for packhouses, cold storage, and greenhouse environments."
               />
+              <ul className="space-y-6">
+                {[
+                  { title: "Bio-Deposit Control", desc: "Prevent the build-up of organic slime and algae in irrigation emitters, pumps, and manifolds." },
+                  { title: "Cold Storage Uptime", desc: "Maintain the efficiency of refrigeration cooling loops during peak harvest periods." },
+                  { title: "Infrastructure Protection", desc: "Extend the life of pipelines and pumps by mitigating under-deposit corrosion and scale." }
+                ].map((item, i) => (
+                  <FadeIn key={i} delay={i * 100}>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-900 uppercase tracking-tight text-sm mb-1">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Main content */}
-      <section className="border-b border-slate-200/70">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid gap-8 md:grid-cols-2">
-            <FadeIn>
-              <div>
-                <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                  Common challenges
-                </h2>
-                <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                  <li>• Cooling systems for cold storage and packhouses</li>
-                  <li>• Evaporative coolers in greenhouses and livestock facilities</li>
-                  <li>• Irrigation system fouling from biological growth and particulates</li>
-                  <li>• Water quality variability in rural or dam-fed systems</li>
-                  <li>• Corrosion in galvanized and mixed-metal irrigation infrastructure</li>
-                </ul>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={150}>
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900">
-                  How TES applies in agriculture
-                </h3>
-                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                  Mexel®432&apos;s film-forming and dispersant properties help keep 
-                  heat exchangers, cooling towers and irrigation lines cleaner, 
-                  reducing biofilm build-up and scaling. In cooling-water circuits, 
-                  this translates to lower energy use for refrigeration and more 
-                  stable operating temperatures.
-                </p>
-                <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                  For irrigation systems, improved water flow and reduced fouling 
-                  can extend maintenance intervals and improve uniformity. TES 
-                  monitoring concepts can be adapted to smaller agricultural 
-                  operations where cooling-water performance directly impacts 
-                  product quality and energy costs.
-                </p>
+            <FadeIn delay={300}>
+              <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
+                  <Image
+                    src="/industry-agriculture.webp"
+                    alt="Agricultural Water System"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/20">
+                      Visual Context Only
+                    </span>
+                  </div>
+                </div>
+                <div className="mt-8 text-center">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Large-Scale Irrigation Context</p>
+                </div>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">
-                Optimize cooling and irrigation systems
-              </h2>
-              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
-                Discuss your agricultural cooling-water challenges with us.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/knowledge-hub"
-                className="inline-flex items-center justify-center font-semibold text-emerald-700 hover:text-emerald-900"
-              >
-                Explore Knowledge Hub →
-              </Link>
-            </div>
+      {/* Benefits Grid */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Operational Continuity", desc: "Reduce unscheduled pump maintenance and irrigation line flushing requirements." },
+              { title: "Water Stewardship", desc: "Maintain efficiency even with high organic loading from dam and river water sources." },
+              { title: "Sustainable Chemistry", desc: "FDA-aligned, non-oxidising chemistry reduces the toxic load on local water tables." }
+            ].map((benefit, i) => (
+              <FadeIn key={i} delay={i * 100}>
+                <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 lg:py-32 text-center bg-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Maintain Your Agri-Cooling Edge."
+            description="Contact our team to discuss how TES can stabilize your cooling and irrigation performance."
+            centered
+          />
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button href="/contact" size="md">
+              Contact Agri Engineering
+            </Button>
           </div>
         </div>
       </section>

@@ -102,7 +102,7 @@ export default function ValidationSection() {
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
             {/* Image brief: /public/images/home-verification-instrumentation.png — Instrumentation panel or data logger in a plant control room, clear gauges and readouts, calm lighting. */}
             <Image
-              src="/images/home-verification-instrumentation.png"
+              src="/control-room.webp"
               alt="Plant instrumentation panel showing logged measurements"
               fill
               className="object-cover"

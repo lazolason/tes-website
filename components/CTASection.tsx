@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import FadeIn from "./FadeIn";
+import Button from "./ui/Button";
 
 export default function CTASection() {
   return (
@@ -17,18 +18,12 @@ export default function CTASection() {
               verification-ready reporting.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/contact"
-                className="rounded-md bg-white px-6 py-3 text-sm font-semibold text-emerald-700 transition-colors hover:bg-emerald-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200 focus-visible:ring-offset-2"
-              >
+              <Button href="/contact" variant="outline" size="md">
                 Request a Pilot Study
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies"
-                className="rounded-md border border-white/60 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-200 focus-visible:ring-offset-2"
-              >
+              </Button>
+              <Button href="/knowledge-hub/case-studies" variant="ghost" size="md" className="text-white hover:bg-white/10">
                 View Case Studies
-              </Link>
+              </Button>
             </div>
           </FadeIn>
         </div>

@@ -270,6 +270,89 @@ export default function TesPage() {
         </div>
       </section>
 
+      {/* Applied tracks: Power vs Industry */}
+      <section className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Where TES is applied
+            </h2>
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
+              TES principles translate across any large-scale cooling-water circuit where heat-transfer efficiency is a priority.
+            </p>
+          </FadeIn>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <FadeIn delay={100}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">Utility Power Generation</h3>
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                  Ideal for wet-cooled thermal units using river, dam or mine-water. TES addresses persistent condenser fouling, biofouling and scaling that multi-chemical programs often fail to control.
+                </p>
+                <ul className="mt-4 space-y-2 text-xs text-slate-600">
+                  <li>• Focus on TR/TTD and Vacuum stability.</li>
+                  <li>• Traceable dosing for environmental compliance.</li>
+                  <li>• High-load condenser protection.</li>
+                </ul>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-lg font-semibold text-slate-900">Industrial Process Cooling</h3>
+                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                  Applied to refineries, steel plants, mines and food processing facilities where cooling towers and heat exchangers are critical to production continuity.
+                </p>
+                <ul className="mt-4 space-y-2 text-xs text-slate-600">
+                  <li>• Reductions in manual cleaning and downtime.</li>
+                  <li>• Managing high-solids or process-contaminated water.</li>
+                  <li>• Scaling control in critical exchanger banks.</li>
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Pilot Structure */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              TES Pilot Structure
+            </h2>
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
+              A standard pilot allows you to verify technical benefits on a single unit or loop before plant-wide adoption.
+            </p>
+          </FadeIn>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "1. Scope & Baseline",
+                items: ["Define KPIs (TR, TTD, Vacuum)", "Agree on collection intervals", "Establish 30-90 day baseline"],
+              },
+              {
+                title: "2. Intervention",
+                items: ["Install TES dosing skid", "Apply Mexel®432 treatment", "Maintain traceable dosing logs"],
+              },
+              {
+                title: "3. Verification",
+                items: ["Compare data to baseline", "Physical tube inspections", "Full performance review report"],
+              },
+            ].map((section, index) => (
+              <FadeIn key={section.title} delay={100 * index}>
+                <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="text-sm font-semibold text-slate-900">{section.title}</h3>
+                  <ul className="mt-3 space-y-2 text-xs text-slate-700">
+                    {section.items.map((item) => (
+                      <li key={item}>• {item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="bg-gradient-emerald">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
@@ -299,10 +382,10 @@ export default function TesPage() {
                   Request a Pilot Study
                 </Link>
                 <Link
-                  href="/products"
+                  href="/mexel432"
                   className="inline-flex items-center justify-center gap-1 font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
                 >
-                  View Technical Specs
+                  View Chemistry Specs
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>

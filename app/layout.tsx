@@ -87,10 +87,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" suppressHydrationWarning className={inter.variable}>
+    <html lang="en" className={inter.variable}>
+      {/* suppressHydrationWarning: Browser extensions may inject classes (e.g., antigravity-scroll-lock) */}
       <body className="bg-white text-slate-900 antialiased font-sans">
+        {/* Skip to main content link for keyboard accessibility */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <Navbar />
-        <div className="min-h-screen">{children}</div>
+        <main id="main-content" className="min-h-screen">{children}</main>
         <Footer />
         <FloatingCTA />
       </body>

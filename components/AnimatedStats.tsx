@@ -121,7 +121,7 @@ export default function AnimatedStats() {
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
             {/* Image brief: /public/images/home-outcomes-cooling-water.png — Cooling water in motion near condenser outflow, high shutter detail, industrial realism. */}
             <Image
-              src="/images/home-outcomes-cooling-water.png"
+              src="/hero-image.webp"
               alt="Cooling water discharge with visible flow texture"
               fill
               className="object-cover"
@@ -135,9 +135,8 @@ export default function AnimatedStats() {
           {stats.map((stat, index) => (
             <div
               key={stat.label}
-              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-700 hover:shadow-lg hover:scale-[1.02] ${
-                isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
-              }`}
+              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-700 hover:shadow-lg hover:scale-[1.02] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+                }`}
               style={{ transitionDelay: `${index * 120}ms` }}
             >
               <p className="text-3xl font-semibold text-emerald-700 lg:text-4xl">

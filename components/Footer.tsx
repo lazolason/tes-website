@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-slate-900 border-t border-slate-800">
       <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
+        <div className="grid gap-12 md:grid-cols-3">
           <div className="space-y-6">
             {/* Logo mark */}
             <Image
@@ -30,13 +30,25 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Solutions Navigation */}
+          <div className="space-y-3">
+            <p className="text-sm font-bold text-white uppercase tracking-wider">Solutions</p>
+            <nav className="flex flex-col gap-2 text-sm text-slate-400">
+              <Link href="/tes" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">TES System</Link>
+              <Link href="/mexel432" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Mexel®432</Link>
+              <Link href="/mexsteam" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">MexSteam 100</Link>
+              <Link href="/industries" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Industries</Link>
+              <Link href="/knowledge-hub" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Knowledge Hub</Link>
+            </nav>
+          </div>
+
           <div className="flex flex-col items-start gap-6 md:items-end md:text-right">
             <div className="space-y-2">
               <p className="text-sm font-bold text-white uppercase tracking-wider">Technical contact</p>
               <p>
                 <a
                   href="mailto:info@mexelenergysustain.com"
-                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors"
+                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors focus-ring rounded-sm"
                 >
                   info@mexelenergysustain.com
                 </a>
@@ -44,7 +56,7 @@ export default function Footer() {
               <p>
                 <a
                   href="tel:+27794648298"
-                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors"
+                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors focus-ring rounded-sm"
                 >
                   +27 79 464 8298
                 </a>

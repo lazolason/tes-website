@@ -1,8 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import CoolingSchematic from "../../../components/CoolingSchematic";
-import FadeIn from "../../../components/FadeIn";
+import CoolingSchematic from "@/components/CoolingSchematic";
+import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
+import { ArrowRightIcon } from "@/components/icons/NavIcons";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Power & Energy | Industries",
@@ -18,196 +21,145 @@ export const metadata: Metadata = {
 export default function PowerEnergyPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-                Industries / Power & Energy
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Wet-cooled power generation
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
-                TES is primarily designed for wet-cooled coal-fired units where
-                the condenser and cooling-water system are a significant source
-                of efficiency loss. These are typically large stations using
-                river, dam or mine water, with complex chemistry and high raw-water
-                demand.
-              </p>
-            </div>
-            <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
-              <Image
-                src="/industry-power.png"
-                alt="Power generation facility with cooling towers"
-                fill
-                className="object-cover"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
-            </div>
-          </div>
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-900 z-0">
+          <Image
+            src="/industry-power.webp"
+            alt="Power generation facility"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
         </div>
-      </section>
 
-      {/* Main content */}
-      <section className="border-b border-slate-200/70">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid gap-8 md:grid-cols-2">
-            <FadeIn>
-              <div className="flex flex-col gap-4">
-                {/* Cooling-water system schematic */}
-                <CoolingSchematic />
-
-                <div>
-                  <h2 className="text-xl font-semibold tracking-tight text-slate-900">
-                    Common cooling-water challenges
-                  </h2>
-                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                    <li>• Biofouling and sludge at condenser tube inlets</li>
-                    <li>• Scaling and corrosion on heat-transfer surfaces</li>
-                    <li>• Variable make-up water (dam, mine water, blends)</li>
-                    <li>• Multi-chemical regimes with unclear net impact</li>
-                    <li>• TR / TTD instability linked to cold-end fouling</li>
-                  </ul>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                    TES combines Mexel®432, IoT dosing and a cooling-water performance
-                    view to restore and maintain condenser cleanliness on these units.
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={150}>
-              <div className="flex flex-col gap-4">
-                {/* Condenser image */}
-                <div className="relative h-48 w-full overflow-hidden rounded-lg">
-                  <Image
-                    src="/condenser.png"
-                    alt="Industrial condenser system"
-                    fill
-                    className="object-cover"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-slate-900">
-                    Typical use cases in power generation
-                  </h3>
-                  <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                    <li>• Units with recurring condenser cleaning or tube issues</li>
-                    <li>• Stations where dam or mine-water quality has deteriorated</li>
-                    <li>• Sites planning life-extension but still running on old cooling assets</li>
-                    <li>• Stations seeking structured, RT&D-aligned trials instead of ad-hoc dosing</li>
-                  </ul>
-                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">
-                    Our goal in this sector is simple: help stabilise condenser performance
-                    and reduce cold-end losses in a way that station teams can see and verify.
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* MexSteam 100 - Boiler-side complement */}
-      <section id="mexsteam" className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-              STRATEGIC COMPLEMENT
+            <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full mb-6 border border-emerald-500/20">
+              Industries / Power & Energy
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-[1.1]">
+              Verification for <br />
+              <span className="text-emerald-400">Large-Scale Cold Ends.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
+              Wet-cooled power stations are where TES was born. We bridge the gap
+              between complex chemistry and station-ready performance metrics
+              to restore MW capacity lost to condenser fouling.
             </p>
-            <h2 className="mt-3 text-xl font-semibold text-slate-900">
-              MexSteam 100 for boiler-side efficiency
-            </h2>
-            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-              While TES addresses cooling-water and condenser performance,
-              MexSteam 100 is designed for boiler feedwater, condensate return
-              and steam systems. In coal-fired power stations, boiler-side
-              corrosion and deposition can reduce efficiency through higher
-              firing rates, forced outages and increased maintenance.
-            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                Request a Pilot Study
+              </Button>
+              <Link
+                href="/knowledge-hub/case-studies/kriel"
+                className="rounded-xl bg-white/10 backdrop-blur-md px-8 py-4 text-sm font-bold text-white border border-white/20 transition-all hover:bg-white/20"
+              >
+                View Kriel Case Study
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Industry-specific boiler applications */}
-            <div className="mt-5">
-              <h3 className="text-sm font-semibold text-slate-900">
-                Typical boiler applications in power generation
-              </h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>
-                  • High-pressure boilers in coal, gas and biomass units with
-                  recurring tube failures or scale formation
-                </li>
-                <li>
-                  • Condensate return systems showing low pH corrosion or
-                  oxygen ingress
-                </li>
-                <li>
-                  • Feedwater treatment circuits requiring corrosion inhibition
-                  alongside demineralisation or polishing
-                </li>
-                <li>
-                  • Economizer and evaporator sections with deposition issues
-                  linked to water chemistry drift
-                </li>
-                <li>
-                  • Combined-cycle plants with heat recovery steam generators
-                  (HRSG) requiring steam-side protection
-                </li>
+      {/* Schematic & Technical Deep-Dive */}
+      <section className="py-20 lg:py-32 border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionHeading
+                tag="The Methodology"
+                title="Cold-End Optimisation."
+                description="TES is primarily designed for wet-cooled coal and gas units where the condenser is a primary source of efficiency loss."
+              />
+              <ul className="space-y-6">
+                {[
+                  { title: "Condenser Performance", desc: "Stabilise TR and TTD values by keeping condenser tubes free of biofouling and scale." },
+                  { title: "Make-up Integrity", desc: "Maintain system efficiency even as make-up water quality (dam/mine water) fluctuates." },
+                  { title: "MW Restoration", desc: "Directly link cleaner surfaces to measurable improvements in unit heat rate." }
+                ].map((item, i) => (
+                  <FadeIn key={i} delay={i * 100}>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-900 uppercase tracking-tight text-sm mb-1">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
               </ul>
             </div>
 
-            <div className="mt-5 flex flex-wrap gap-3 text-xs">
-              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                Boiler / steam-side
-              </span>
-              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                Outside TES verification
-              </span>
-            </div>
+            <FadeIn delay={300}>
+              <div className="relative bg-slate-50 rounded-[2.5rem] p-10 border border-slate-100 shadow-inner overflow-hidden">
+                <CoolingSchematic />
+                <div className="mt-8 text-center">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Condenser & Tower Circuit</p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
 
-            <div className="mt-5 text-xs">
+      {/* Strategic Complement: MexSteam 100 */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-[2.5rem] p-12 lg:p-20 shadow-xl border border-slate-100 grid lg:grid-cols-2 gap-12 items-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full -mr-32 -mt-32 opacity-50" />
+            <div>
+              <span className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-6 block">Strategic Complement</span>
+              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">MexSteam 100 for Boiler-Side Stability.</h2>
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                While TES manages the cold end, MexSteam 100 protects the high-pressure
+                boiler and steam circuit. In large power blocks, this means reduced tube
+                failures and maintained heat-transfer in economiser and evaporator sections.
+              </p>
               <Link
                 href="/products#mexsteam"
-                className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-800"
+                className="inline-flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all"
               >
-                Learn more about MexSteam 100 →
+                View Steam-Side Solutions
+                <ArrowRightIcon className="w-4 h-4" />
               </Link>
+            </div>
+            <div className="grid grid-cols-2 gap-4 relative z-10">
+              {[
+                "HP Boiler Protection",
+                "Condensate Stability",
+                "Tube Failure Reduction",
+                "Evaporator Integrity"
+              ].map((tag) => (
+                <div key={tag} className="bg-slate-900 text-white rounded-xl p-6 text-xs font-bold uppercase tracking-tight shadow-lg">
+                  {tag}
+                </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">
-                Interested in TES for your power station?
-              </h2>
-              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
-                Start with a technical discussion about your cooling-water system and constraints.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-emerald-700 hover:text-emerald-900"
-              >
-                View case studies →
-              </Link>
-            </div>
+      {/* Final CTA */}
+      <section className="py-24 lg:py-32 text-center bg-white">
+        <div className="mx-auto max-w-3xl px-4">
+          <h2 className="text-3xl lg:text-5xl font-bold text-slate-900 mb-8">
+            Start Your Thermal Baseline Review.
+          </h2>
+          <p className="text-slate-600 text-lg mb-12">
+            The first step in any TES implementation is a disciplined primary → secondary baseline.
+            Connect with our engineering team to begin the process.
+          </p>
+          <div className="flex flex-wrap justify-center gap-6">
+            <Button href="/contact" size="lg">
+              Contact Power Engineering
+            </Button>
+            <Button href="/knowledge-hub/engineering-playbook" variant="outline" size="lg">
+              Explore Engineering Playbook
+            </Button>
           </div>
         </div>
       </section>

@@ -5,54 +5,19 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-// Icons for the Mega Menu
-const Icons = {
-  Power: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
-    </svg>
-  ),
-  Mining: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-    </svg>
-  ),
-  Refineries: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-    </svg>
-  ),
-  Food: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
-    </svg>
-  ),
-  Agriculture: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-    </svg>
-  ),
-  Data: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-    </svg>
-  ),
-  Ports: (props: any) => (
-    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-    </svg>
-  ),
-};
+import { NavIcons } from "./icons/NavIcons";
 
 const navItems = [
   { href: "/", label: "Home" },
-  { 
-    href: "/tes", 
+  {
+    href: "/tes",
     label: "Solutions",
     type: "dropdown",
     items: [
-      { href: "/tes", label: "TES System" },
-      { href: "/products", label: "Products" },
+      { href: "/tes", label: "TES System Overview" },
+      { href: "/mexel432", label: "Mexel®432 Product" },
+      { href: "/mexsteam", label: "MexSteam 100 Product" },
+      { href: "/products", label: "All Products" },
       { href: "/applications", label: "Applications" },
     ]
   },
@@ -61,17 +26,18 @@ const navItems = [
     label: "Industries",
     type: "mega",
     items: [
-      { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
-      { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
-      { href: "/industries/refineries", label: "Refineries", icon: Icons.Refineries, desc: "Corrosion control & efficiency." },
-      { href: "/industries/food-beverage", label: "Food & Beverage", icon: Icons.Food, desc: "Safe, reliable cooling water." },
-      { href: "/industries/agriculture", label: "Agriculture", icon: Icons.Agriculture, desc: "Irrigation & system protection." },
-      { href: "/industries/data-centres", label: "Data Centres", icon: Icons.Data, desc: "High-uptime cooling efficiency." },
-      { href: "/industries/ports", label: "Ports & Harbours", icon: Icons.Ports, desc: "Marine environment solutions." },
+      { href: "/industries/power-energy", label: "Power & Energy", icon: NavIcons.Power, desc: "Improve condenser performance." },
+      { href: "/industries/mining", label: "Mining & Minerals", icon: NavIcons.Mining, desc: "Critical cooling for operations." },
+      { href: "/industries/refineries", label: "Refineries", icon: NavIcons.Refineries, desc: "Corrosion control & efficiency." },
+      { href: "/industries/sugar-ethanol", label: "Sugar & Ethanol", icon: NavIcons.Agriculture, desc: "Evaporator & process stability." },
+      { href: "/industries/food-beverage", label: "Food & Beverage", icon: NavIcons.Food, desc: "Safe, reliable cooling water." },
+      { href: "/industries/agriculture", label: "Agriculture", icon: NavIcons.Agriculture, desc: "Irrigation & system protection." },
+      { href: "/industries/hvac-data-centers", label: "HVAC & Data Centres", icon: NavIcons.Data, desc: "High-uptime cooling efficiency." },
+      { href: "/industries/ports", label: "Ports & Harbours", icon: NavIcons.Ports, desc: "Marine environment solutions." },
     ]
   },
   {
-    href: "/knowledge-hub", 
+    href: "/knowledge-hub",
     label: "Knowledge Hub",
     type: "dropdown",
     items: [
@@ -111,7 +77,7 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="flex items-center pl-2 lg:pl-0">
           <div className="relative h-16 w-56 flex-shrink-0">
-             {/* Using object-contain and left alignment to keep it tidy */}
+            {/* Using object-contain and left alignment to keep it tidy */}
             <Image
               src="/logo.png"
               alt="Mexel Energy Sustain logo"
@@ -133,30 +99,26 @@ export default function Navbar() {
             >
               <Link
                 href={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 flex items-center gap-1 ${
-                  item.cta
-                    ? "bg-emerald-600 text-white hover:bg-emerald-700 cta-pulse"
-                    : isActive(item.href)
-                      ? "bg-emerald-50 text-emerald-700"
-                      : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-                }`}
+                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-ring flex items-center gap-1 ${item.cta
+                  ? "bg-emerald-600 text-white hover:bg-emerald-700 cta-pulse"
+                  : isActive(item.href)
+                    ? "bg-emerald-50 text-emerald-700"
+                    : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
+                  }`}
                 aria-haspopup={item.items ? "true" : undefined}
                 aria-expanded={item.items && hoveredItem === item.label ? "true" : "false"}
               >
                 {item.label}
                 {item.items && !item.cta && (
-                  <svg className="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <NavIcons.ChevronDown className="w-3 h-3 text-slate-500" />
                 )}
               </Link>
 
               {/* Mega Menu / Dropdown Logic */}
               {hoveredItem === item.label && item.items && (
                 <div
-                  className={`absolute top-full pt-2 ${
-                    item.type === 'mega' ? 'left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw]' : 'left-0 w-56'
-                  }`}
+                  className={`absolute top-full pt-2 ${item.type === 'mega' ? 'left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw]' : 'left-0 w-56'
+                    }`}
                   role="menu"
                   aria-label={`${item.label} submenu`}
                 >
@@ -167,7 +129,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2"
+                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group focus-ring"
                           >
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-600/10 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                               <subItem.icon className="w-4 h-4" />
@@ -187,7 +149,7 @@ export default function Navbar() {
                           <Link
                             key={subItem.label}
                             href={subItem.href}
-                            className="px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 rounded-md"
+                            className="px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 focus-ring rounded-md"
                           >
                             {subItem.label}
                           </Link>
@@ -204,17 +166,13 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
+          className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md focus-ring"
         >
           <span className="sr-only">Open menu</span>
           {mobileOpen ? (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
+            <NavIcons.Close className="w-6 h-6" />
           ) : (
-             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
+            <NavIcons.Menu className="w-6 h-6" />
           )}
         </button>
       </div>
@@ -228,21 +186,18 @@ export default function Navbar() {
                 <Link
                   href={item.href}
                   onClick={() => !item.items && setMobileOpen(false)}
-                  className={`flex items-center justify-between px-3 py-2 text-base font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 ${
-                    item.cta
-                      ? "bg-emerald-600 text-white text-center mt-4 justify-center"
-                      : isActive(item.href)
-                        ? "bg-emerald-50 text-emerald-700"
-                        : "text-slate-900 hover:bg-slate-50"
-                  }`}
+                  className={`flex items-center justify-between px-3 py-2 text-base font-medium rounded-md focus-ring ${item.cta
+                    ? "bg-emerald-600 text-white text-center mt-4 justify-center"
+                    : isActive(item.href)
+                      ? "bg-emerald-50 text-emerald-700"
+                      : "text-slate-900 hover:bg-slate-50"
+                    }`}
                   aria-haspopup={item.items ? "true" : undefined}
                   aria-expanded={item.items ? "true" : undefined}
                 >
                   <span>{item.label}</span>
                   {item.items && !item.cta && (
-                    <svg className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                    <NavIcons.ChevronDown className="w-4 h-4 text-slate-500" />
                   )}
                 </Link>
                 {item.items && (
@@ -252,7 +207,7 @@ export default function Navbar() {
                         key={subItem.label}
                         href={subItem.href}
                         onClick={() => setMobileOpen(false)}
-                        className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
+                        className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md focus-ring"
                         role="menuitem"
                       >
                         {subItem.label}

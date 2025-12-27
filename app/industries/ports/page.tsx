@@ -1,10 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "../../../components/FadeIn";
+import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
+import { ArrowRightIcon } from "@/components/icons/NavIcons";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Button from "@/components/ui/Button";
 
 export const metadata: Metadata = {
-  title: "Sea / Harbours / Ports | Industries",
+  title: "Ports & Harbours | Industries",
   description:
     "TES and Mexel®432 for maritime and port facilities: marine cooling systems, desalination support, and coastal industrial operations.",
   openGraph: {
@@ -17,153 +20,126 @@ export const metadata: Metadata = {
 export default function PortsPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-700">
-                Industries / Sea / Harbours / Ports
-              </p>
-              <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
-                Maritime, harbours and port facilities
-              </h1>
-              <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-                Port facilities, marine terminals, coastal power plants and desalination
-                operations face unique cooling-water challenges due to seawater intake,
-                biological growth, and harsh marine environments. Mexel®432 provides
-                effective fouling control without relying heavily on aggressive biocides.
-              </p>
+      {/* Hero Section */}
+      <section className="relative py-24 lg:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-slate-900 z-0">
+          <Image
+            src="/industry-ports.webp"
+            alt="Maritime and port facilities"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl">
+            <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full mb-6 border border-emerald-500/20">
+              Industries / Ports & Harbours
+            </span>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-[1.1]">
+              Protection for <br />
+              <span className="text-emerald-400">Coastal Asset Clusters.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
+              Seawater cooling systems face unique challenges from macro-fouling and aggressive corrosion.
+              TES provides a non-oxidising solution that protects critical marine infrastructure.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                Request a Pilot Study
+              </Button>
             </div>
-            <div className="relative h-64 lg:h-80">
-              <Image
-                src="/industry-ports.png"
-                alt="Port facilities and cooling systems"
-                fill
-                className="rounded-xl object-cover shadow-lg"
-                priority
-                sizes="(max-width: 768px) 100vw, 50vw"
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Overview */}
+      <section className="py-20 lg:py-32 border-b border-slate-100">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <SectionHeading
+                tag="Marine Engineering"
+                title="Managing Seawater Loops."
+                description="Port facilities and coastal terminals rely on once-through or open-loop seawater systems that are highly susceptible to biological ingress."
               />
+              <ul className="space-y-6">
+                {[
+                  { title: "Macro-Fouling Control", desc: "Prevent the attachment of mussels, barnacles, and algae in intake galleries and pipelines." },
+                  { title: "Corrosion Inhibition", desc: "Film-forming chemistry provides a barrier against chloride-driven corrosion in metal alloy systems." },
+                  { title: "Environmental Compliance", desc: "Reduce reliance on high-concentration chlorine, meeting stringent marine discharge standards." }
+                ].map((item, i) => (
+                  <FadeIn key={i} delay={i * 100}>
+                    <div className="flex gap-4">
+                      <div className="flex-shrink-0 w-8 h-8 rounded-lg bg-emerald-50 flex items-center justify-center text-emerald-600 font-bold text-sm">
+                        {i + 1}
+                      </div>
+                      <div>
+                        <h3 className="font-bold text-slate-900 uppercase tracking-tight text-sm mb-1">{item.title}</h3>
+                        <p className="text-slate-600 text-sm leading-relaxed">{item.desc}</p>
+                      </div>
+                    </div>
+                  </FadeIn>
+                ))}
+              </ul>
             </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Main content */}
-      <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid gap-8 md:grid-cols-2">
-            <FadeIn>
-              <div>
-                <h2 className="text-xl font-semibold tracking-tight text-gray-900">
-                  Marine cooling challenges
-                </h2>
-                <ul className="mt-4 space-y-2 text-sm text-gray-700">
-                  <li>• Biofouling from algae, barnacles and marine organisms</li>
-                  <li>• High salinity and corrosive seawater environments</li>
-                  <li>• Scaling in heat exchangers and desalination pre-treatment</li>
-                  <li>• Seasonal variation in water temperature and quality</li>
-                  <li>• Regulatory limits on biocide discharge to marine environments</li>
-                  <li>• Mixed seawater and freshwater cooling loops</li>
-                </ul>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={150}>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900">
-                  How TES works in marine environments
-                </h3>
-                <p className="mt-4 text-sm text-gray-600 leading-relaxed">
-                  Mexel®432&apos;s film-forming properties create a protective layer that
-                  discourages biofouling attachment and reduces corrosion on heat-transfer
-                  surfaces. This is particularly valuable in once-through seawater cooling
-                  systems or where environmental discharge standards limit traditional
-                  biocide use.
-                </p>
-                <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  For coastal power plants, desalination facilities and port infrastructure,
-                  TES provides a structured approach to managing cooling-water performance
-                  while meeting environmental compliance requirements.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Applications section */}
-      <section className="border-b bg-cyan-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-xl font-semibold text-gray-900">
-              Typical applications
-            </h2>
-          </FadeIn>
-          <div className="mt-6 grid gap-6 md:grid-cols-3">
-            <FadeIn delay={100}>
-              <div className="rounded-lg bg-white border border-cyan-100 p-5">
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Coastal power plants
-                </h3>
-                <p className="mt-2 text-xs text-gray-600 leading-relaxed">
-                  Once-through seawater cooling for steam condensers and auxiliary
-                  heat exchangers.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-lg bg-white border border-cyan-100 p-5">
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Desalination plants
-                </h3>
-                <p className="mt-2 text-xs text-gray-600 leading-relaxed">
-                  Pre-treatment and cooling loops supporting reverse osmosis or
-                  thermal desalination processes.
-                </p>
-              </div>
-            </FadeIn>
             <FadeIn delay={300}>
-              <div className="rounded-lg bg-white border border-cyan-100 p-5">
-                <h3 className="text-sm font-semibold text-gray-900">
-                  Port terminals
-                </h3>
-                <p className="mt-2 text-xs text-gray-600 leading-relaxed">
-                  Refrigeration and HVAC systems for cold storage, container
-                  terminals and marine facilities.
-                </p>
+              <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
+                  <Image
+                    src="/schematics/ports.png"
+                    alt="Port & Marine Cooling Schematic"
+                    fill
+                    className="object-contain bg-white"
+                  />
+                </div>
+                <div className="mt-8 text-center">
+                  <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Typical Maritime Cooling Layout</p>
+                </div>
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border bg-gray-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-gray-900">
-                Discuss marine cooling-water solutions
-              </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                Let&apos;s explore how TES can work in your coastal or maritime operation.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-cyan-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-cyan-800"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-cyan-700 hover:text-cyan-900"
-              >
-                View case studies →
-              </Link>
-            </div>
+      {/* Benefits Grid */}
+      <section className="py-20 lg:py-32 bg-slate-50">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { title: "Asset Longevity", desc: "Protect expensive titanium and copper-nickel alloys from under-deposit corrosion and pitting." },
+              { title: "Sustainable Discharge", desc: "Eco-friendly chemistry ensures minimal impact on local marine ecosystems and biodiversity." },
+              { title: "Operational Continuity", desc: "Reduce the need for mechanical intake cleaning and unplanned marine-growth related shutdowns." }
+            ].map((benefit, i) => (
+              <FadeIn key={i} delay={i * 100}>
+                <div className="bg-white p-8 rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
+                  <h3 className="text-xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
+                  <p className="text-slate-600 text-sm leading-relaxed">{benefit.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 lg:py-32 text-center bg-white">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <SectionHeading
+            title="Secure Your Coastal Infrastructure."
+            description="Contact our marine engineering specialists to discuss a tailored fouling control strategy for your port or coastal facility."
+            centered
+          />
+          <div className="flex flex-wrap justify-center gap-4">
+            <Button href="/contact" size="md">
+              Contact Marine Team
+            </Button>
+            <Button href="/knowledge-hub/case-studies" variant="outline" size="md">
+              View Marine Case Studies
+            </Button>
           </div>
         </div>
       </section>

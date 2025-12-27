@@ -3,6 +3,7 @@ import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
 import SystemHeader from "../../components/SystemHeader";
 import Tooltip from "../../components/Tooltip";
+import Button from "../../components/ui/Button";
 import { BiofoulingIcon, CorrosionIcon, ScalingIcon } from "../../components/BenefitIcons";
 import type { Metadata } from "next";
 
@@ -40,12 +41,12 @@ export default function ProductsPage() {
               Film-forming chemistry that replaces biofilm with a protective molecular layer.
             </p>
           </FadeIn>
-          
+
           {/* Condenser system image */}
           <FadeIn delay={200}>
             <div className="relative mt-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
               <Image
-                src="/condenser.png"
+                src="/condenser.webp"
                 alt="Condenser heat exchanger system"
                 fill
                 className="object-cover"
@@ -58,89 +59,89 @@ export default function ProductsPage() {
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <FadeIn>
               <div className="max-w-xl">
-              <h2 className="text-xl font-semibold text-slate-900">
-                Mexel®432 – Cooling-water film-forming amine/surfactant
-              </h2>
-              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-                Mexel®432 is a non-oxidant, film-forming amine emulsion
-                containing a specialised surfactant system. It is designed for
-                once-through and recirculating cooling-water systems using river,
-                dam, mine or seawater. In TES, Mexel®432 is the core chemistry
-                used to restore and maintain condenser and cooling-water
-                performance.
-              </p>
-              <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-                Applied correctly, Mexel®432 reduces fouling and corrosion at the
-                cold end, helping stations burn less coal or fuel per net MWh,
-                reduce emissions intensity and extend asset life.
-              </p>
+                <h2 className="text-xl font-semibold text-slate-900">
+                  Mexel®432 – Cooling-water film-forming amine/surfactant
+                </h2>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  Mexel®432 is a non-oxidant, film-forming amine emulsion
+                  containing a specialised surfactant system. It is designed for
+                  once-through and recirculating cooling-water systems using river,
+                  dam, mine or seawater. In TES, Mexel®432 is the core chemistry
+                  used to restore and maintain condenser and cooling-water
+                  performance.
+                </p>
+                <p className="mt-3 text-sm text-slate-700 leading-relaxed">
+                  Applied correctly, Mexel®432 reduces fouling and corrosion at the
+                  cold end, helping stations burn less coal or fuel per net MWh,
+                  reduce emissions intensity and extend asset life.
+                </p>
 
-              <div className="mt-5 flex flex-wrap gap-3 text-xs">
-                <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                  Cooling-water TES core product
-                </span>
-                <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
-                  Film-forming amine (FFA)
-                </span>
-                <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                  Multi-function chemistry
-                </span>
-              </div>
+                <div className="mt-5 flex flex-wrap gap-3 text-xs">
+                  <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                    Cooling-water TES core product
+                  </span>
+                  <span className="rounded-full bg-emerald-50 px-3 py-1 font-semibold text-emerald-800">
+                    Film-forming amine (FFA)
+                  </span>
+                  <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
+                    Multi-function chemistry
+                  </span>
+                </div>
               </div>
             </FadeIn>
 
             <FadeIn delay={150}>
               <div className="max-w-md">
-              <h3 className="text-sm font-semibold text-slate-900">
-                Key functions in cooling-water systems
-              </h3>
-              <div className="mt-4 space-y-3">
-                {[
-                  {
-                    icon: <BiofoulingIcon className="w-5 h-5" />,
-                    title: "Film-forming layer",
-                    description: "Creates a protective molecular film on wetted surfaces, making it harder for deposits to attach.",
-                    tooltip: "Film-Forming Amines (FFA) create a hydrophobic molecular layer that modifies surface energy, reducing adhesion of biological and mineral deposits.",
-                  },
-                  {
-                    icon: <BiofoulingIcon className="w-5 h-5" />,
-                    title: "Biofouling control",
-                    description: "Detaches and controls biofilm, algae and organic deposits in condenser tubes.",
-                    tooltip: "Biofouling is the accumulation of microorganisms, algae, and biofilm on cooling surfaces. Mexel®432 disrupts biofilm attachment and growth without traditional oxidizing biocides.",
-                  },
-                  {
-                    icon: <CorrosionIcon className="w-5 h-5" />,
-                    title: "Corrosion inhibitor",
-                    description: "Reduces corrosion on carbon steel by forming a barrier between metal and water.",
-                    tooltip: "Corrosion inhibition works by creating a protective film that isolates the metal surface from dissolved oxygen and corrosive ions in the cooling water.",
-                  },
-                  {
-                    icon: <ScalingIcon className="w-5 h-5" />,
-                    title: "Scaling control",
-                    description: "Interferes with scale formation on heat-transfer surfaces.",
-                    tooltip: "Scaling occurs when dissolved minerals (calcium, magnesium, silica) precipitate onto hot surfaces. Mexel®432 modifies crystal growth and keeps particles dispersed.",
-                  },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="group flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-3 transition-all duration-200 hover:border-emerald-300 hover:shadow-md"
-                  >
-                    <div className="flex-shrink-0 rounded-full bg-emerald-50 p-2 text-emerald-700 transition-transform duration-200 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white">
-                      {item.icon}
+                <h3 className="text-sm font-semibold text-slate-900">
+                  Key functions in cooling-water systems
+                </h3>
+                <div className="mt-4 space-y-3">
+                  {[
+                    {
+                      icon: <BiofoulingIcon className="w-5 h-5" />,
+                      title: "Film-forming layer",
+                      description: "Creates a protective molecular film on wetted surfaces, making it harder for deposits to attach.",
+                      tooltip: "Film-Forming Amines (FFA) create a hydrophobic molecular layer that modifies surface energy, reducing adhesion of biological and mineral deposits.",
+                    },
+                    {
+                      icon: <BiofoulingIcon className="w-5 h-5" />,
+                      title: "Biofouling control",
+                      description: "Detaches and controls biofilm, algae and organic deposits in condenser tubes.",
+                      tooltip: "Biofouling is the accumulation of microorganisms, algae, and biofilm on cooling surfaces. Mexel®432 disrupts biofilm attachment and growth without traditional oxidizing biocides.",
+                    },
+                    {
+                      icon: <CorrosionIcon className="w-5 h-5" />,
+                      title: "Corrosion inhibitor",
+                      description: "Reduces corrosion on carbon steel by forming a barrier between metal and water.",
+                      tooltip: "Corrosion inhibition works by creating a protective film that isolates the metal surface from dissolved oxygen and corrosive ions in the cooling water.",
+                    },
+                    {
+                      icon: <ScalingIcon className="w-5 h-5" />,
+                      title: "Scaling control",
+                      description: "Interferes with scale formation on heat-transfer surfaces.",
+                      tooltip: "Scaling occurs when dissolved minerals (calcium, magnesium, silica) precipitate onto hot surfaces. Mexel®432 modifies crystal growth and keeps particles dispersed.",
+                    },
+                  ].map((item, index) => (
+                    <div
+                      key={index}
+                      className="group flex items-start gap-3 rounded-lg border border-slate-200 bg-white p-3 transition-all duration-200 hover:border-emerald-300 hover:shadow-md"
+                    >
+                      <div className="flex-shrink-0 rounded-full bg-emerald-50 p-2 text-emerald-700 transition-transform duration-200 group-hover:scale-110 group-hover:bg-emerald-600 group-hover:text-white">
+                        {item.icon}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xs font-semibold text-slate-900">
+                          <Tooltip content={item.tooltip}>
+                            <span>{item.title}</span>
+                          </Tooltip>
+                        </h4>
+                        <p className="mt-1 text-xs text-slate-600 leading-relaxed">
+                          {item.description}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1">
-                      <h4 className="text-xs font-semibold text-slate-900">
-                        <Tooltip content={item.tooltip}>
-                          <span>{item.title}</span>
-                        </Tooltip>
-                      </h4>
-                      <p className="mt-1 text-xs text-slate-600 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -188,18 +189,21 @@ export default function ProductsPage() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3 text-sm">
+          <div className="mt-8 flex flex-wrap gap-4 text-sm">
+            <Button href="/mexel432" size="sm">
+              View Mexel®432 Full Specs →
+            </Button>
             <Link
               href="/tes"
-              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
+              className="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-emerald-600"
             >
-              See how Mexel®432 fits into TES →
+              See role in TES system →
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
+              className="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-emerald-600"
             >
-              Request Mexel®432 technical data sheets →
+              Request technical data →
             </Link>
           </div>
         </div>
@@ -347,18 +351,15 @@ export default function ProductsPage() {
             </div>
           </div>
 
-          <div className="mt-8 flex flex-wrap gap-3 text-sm">
-            <Link
-              href="/industries/power-energy#mexsteam"
-              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
-            >
-              See boiler applications in power & energy →
-            </Link>
+          <div className="mt-8 flex flex-wrap gap-4 text-sm">
+            <Button href="/mexsteam" size="sm">
+              View MexSteam 100 Full Specs →
+            </Button>
             <Link
               href="/contact"
-              className="inline-flex items-center text-xs font-semibold text-emerald-600 hover:text-emerald-800"
+              className="inline-flex items-center text-xs font-semibold text-slate-600 hover:text-emerald-600"
             >
-              Request MexSteam 100 technical data sheets →
+              Request technical data →
             </Link>
           </div>
 
@@ -391,12 +392,9 @@ export default function ProductsPage() {
               </p>
             </div>
             <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
-              >
+              <Button href="/contact">
                 Request a Pilot Study
-              </Link>
+              </Button>
               <Link
                 href="/applications"
                 className="inline-flex items-center justify-center font-semibold text-emerald-600 hover:text-emerald-800"
