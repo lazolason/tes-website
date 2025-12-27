@@ -51,6 +51,103 @@ Each industry needs a cooling system schematic diagram showing:
 
 ---
 
+## PHASE 0: CODE DEDUPLICATION (Do This First!)
+
+### 0.1 Duplicate Icons Object (CRITICAL)
+
+The same `Icons` object with 7 SVG icons is duplicated in **3 files**:
+- `components/Navbar.tsx` (lines 8-52)
+- `app/industries/page.tsx` (lines 17-53)
+- `app/knowledge-hub/page.tsx`
+
+**Action Required:**
+1. Create `components/icons/IndustryIcons.tsx`:
+```tsx
+// components/icons/IndustryIcons.tsx
+export const IndustryIcons = {
+  Power: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+    </svg>
+  ),
+  Mining: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+    </svg>
+  ),
+  Refineries: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+    </svg>
+  ),
+  Food: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+    </svg>
+  ),
+  Agriculture: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+    </svg>
+  ),
+  Data: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+    </svg>
+  ),
+  Ports: (props: React.SVGProps<SVGSVGElement>) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+    </svg>
+  ),
+};
+
+export default IndustryIcons;
+```
+
+2. Update imports in all 3 files:
+```tsx
+import { IndustryIcons } from "@/components/icons/IndustryIcons";
+// Then use: <IndustryIcons.Power className="w-6 h-6" />
+```
+
+3. Delete the local `Icons` const from each file
+
+### 0.2 Other Duplicates to Consolidate
+
+| Pattern | Occurrences | Action |
+|---------|-------------|--------|
+| `rounded-full bg-emerald-600` button styles | 20+ | Create `components/ui/Button.tsx` variants |
+| `border border-slate-200 bg-slate-50` card styles | 15+ | Create `components/ui/Card.tsx` |
+| Contact CTA sections | 7+ industry pages | Create `components/IndustryCTA.tsx` |
+| MexSteam 100 section | Multiple industry pages | Create `components/MexSteamSection.tsx` |
+
+### 0.3 Files to Modify for Deduplication
+
+```
+CREATE:
+  components/icons/IndustryIcons.tsx
+  components/icons/index.ts
+  components/ui/Button.tsx (optional)
+  components/ui/Card.tsx (optional)
+  components/IndustryCTA.tsx
+  components/MexSteamSection.tsx
+
+MODIFY:
+  components/Navbar.tsx - Remove Icons const, import from IndustryIcons
+  app/industries/page.tsx - Remove Icons const, import from IndustryIcons
+  app/knowledge-hub/page.tsx - Remove Icons const, import from IndustryIcons
+  app/industries/mining/page.tsx - Use shared MexSteamSection
+  app/industries/refineries/page.tsx - Use shared MexSteamSection
+  app/industries/food-beverage/page.tsx - Use shared MexSteamSection
+  app/industries/agriculture/page.tsx - Use shared MexSteamSection
+  app/industries/data-centres/page.tsx - Use shared MexSteamSection
+  app/industries/ports/page.tsx - Use shared MexSteamSection
+  app/industries/power-energy/page.tsx - Use shared MexSteamSection
+```
+
+---
+
 ## PHASE 1: IMAGE AUDIT & CORRECTION
 
 ### 1.1 Current State (BROKEN)
