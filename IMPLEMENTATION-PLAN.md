@@ -51,17 +51,27 @@ Each industry needs a cooling system schematic diagram showing:
 
 ---
 
-## PHASE 0: CODE DEDUPLICATION (Do This First!)
+## PHASE 0: CODE DEDUPLICATION ✅ PARTIALLY COMPLETE
 
-### 0.1 Duplicate Icons Object (CRITICAL)
+### 0.1 Duplicate Icons Object - ✅ DONE
 
-The same `Icons` object with 7 SVG icons is duplicated in **3 files**:
-- `components/Navbar.tsx` (lines 8-52)
-- `app/industries/page.tsx` (lines 17-53)
-- `app/knowledge-hub/page.tsx`
+**Status: COMPLETED** - The following has already been implemented:
+- ✅ Created `components/icons/IndustryIcons.tsx`
+- ✅ Created `components/icons/index.ts` (barrel export)
+- ✅ Updated `components/Navbar.tsx` to use shared icons
+- ✅ Updated `app/industries/page.tsx` to use shared icons
+- ✅ Created `components/IndustryCTA.tsx` (reusable CTA)
+- ✅ Created `components/MexSteamSection.tsx` (reusable section)
 
-**Action Required:**
-1. Create `components/icons/IndustryIcons.tsx`:
+**Still TODO for Codex:**
+- Update 7 industry pages to USE the new `IndustryCTA` and `MexSteamSection` components
+
+The same `Icons` object with 7 SVG icons WAS duplicated in **3 files** (now fixed):
+- `components/Navbar.tsx` - ✅ UPDATED
+- `app/industries/page.tsx` - ✅ UPDATED
+- `app/knowledge-hub/page.tsx` - Has DIFFERENT icons (Methodology, FAQ, Evidence) - no change needed
+
+**Reference - Already Created `components/icons/IndustryIcons.tsx`:
 ```tsx
 // components/icons/IndustryIcons.tsx
 export const IndustryIcons = {
