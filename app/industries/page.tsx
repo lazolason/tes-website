@@ -58,7 +58,7 @@ export default function IndustriesPage() {
 
                   {/* Content Side */}
                   <div className="lg:w-1/2">
-                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 mb-6 border border-emerald-100">
+                    <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 mb-6 border border-emerald-100 transition-all duration-300 hover:scale-110 hover:rotate-3 hover:bg-emerald-100">
                       {industry.icon && <industry.icon className="w-6 h-6" />}
                     </div>
                     <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">

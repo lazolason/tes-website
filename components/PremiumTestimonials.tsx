@@ -24,7 +24,7 @@ export default function PremiumTestimonials() {
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                     {TESTIMONIALS_DATA.map((t, index) => (
                         <FadeIn key={t.id} delay={index * 150}>
-                            <div className="relative flex flex-col h-full bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100 transition-all duration-300 hover:shadow-xl hover:bg-white group">
+                            <div className="relative flex flex-col h-full bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100 transition-all duration-300 hover:shadow-xl hover:bg-white hover:-translate-y-1 group">
                                 <div className="mb-8">
                                     {[1, 2, 3, 4, 5].map((s) => (
                                         <span key={s} className="text-emerald-500 text-lg">★</span>

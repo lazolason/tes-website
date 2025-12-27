@@ -76,7 +76,7 @@ export default function DataInsights() {
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4 pr-6">
+                                <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4 pr-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
                                     <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -84,7 +84,7 @@ export default function DataInsights() {
                                     </div>
                                     <span className="text-sm font-semibold text-white">RT&D Protocol Aligned</span>
                                 </div>
-                                <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4 pr-6">
+                                <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4 pr-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
                                     <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
                                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -117,7 +117,7 @@ function StatCard({ stat, index, trigger }: { stat: any, index: number, trigger:
 
     return (
         <FadeIn delay={index * 100}>
-            <div className="group relative bg-[#131b2b] border border-white/5 rounded-2xl p-8 transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+            <div className="group relative bg-[#131b2b] border border-white/5 rounded-2xl p-8 transition-all duration-300 hover:border-emerald-500/30 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] hover:scale-105">
                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                     <svg className="w-12 h-12 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
