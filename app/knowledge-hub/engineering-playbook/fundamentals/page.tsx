@@ -1,6 +1,6 @@
 import Image from "next/image";
 import FadeIn from "../../../../components/FadeIn";
-import CoolingSchematic from "../../../../components/CoolingSchematic";
+import PowerEnergySchematic from "../../../../components/schematics/PowerEnergySchematic";
 import PlaybookBreadcrumbs from "../../../../components/PlaybookBreadcrumbs";
 import PlaybookNavigation from "../../../../components/PlaybookNavigation";
 import type { Metadata } from "next";
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function FundamentalsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-20">
           <PlaybookBreadcrumbs />
@@ -98,7 +98,7 @@ export default function FundamentalsPage() {
               <figure className="rounded-lg border bg-white p-4 shadow-sm">
                 <div className="relative h-64 w-full overflow-hidden rounded-md">
                   <Image
-                    src="/images/hero/before-fouled-tubes.jpg"
+                    src="/images/hero/before-fouled-tubes.webp"
                     alt="Cooling tube surface with visible fouling"
                     fill
                     className="object-cover"
@@ -115,7 +115,7 @@ export default function FundamentalsPage() {
               <figure className="rounded-lg border bg-white p-4 shadow-sm">
                 <div className="relative h-64 w-full overflow-hidden rounded-md">
                   <Image
-                    src="/images/hero/after-stabilised-tubes.jpg"
+                    src="/images/hero/after-stabilised-tubes.webp"
                     alt="Cooling tube surface after stabilisation"
                     fill
                     className="object-cover"
@@ -144,7 +144,7 @@ export default function FundamentalsPage() {
             </p>
           </FadeIn>
           <div className="mt-6">
-            <CoolingSchematic />
+            <PowerEnergySchematic />
           </div>
           <PlaybookNavigation
             previous={{

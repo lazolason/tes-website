@@ -180,6 +180,7 @@ export default function BeforeAfterSlider({
             strokeWidth={2.5}
             stroke="currentColor"
             className="h-4 w-4"
+            aria-hidden="true"
           >
             <path
               strokeLinecap="round"

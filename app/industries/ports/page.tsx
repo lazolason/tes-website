@@ -1,5 +1,6 @@
-import Link from "next/link";
 import Image from "next/image";
+import IndustryCTA from "../../../components/IndustryCTA";
+import PortsSchematic from "../../../components/schematics/PortsSchematic";
 import FadeIn from "../../../components/FadeIn";
 import type { Metadata } from "next";
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function PortsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
@@ -37,7 +38,7 @@ export default function PortsPage() {
             </div>
             <div className="relative h-64 lg:h-80">
               <Image
-                src="/industry-ports.png"
+                src="/industry-ports.webp"
                 alt="Port facilities and cooling systems"
                 fill
                 className="rounded-xl object-cover shadow-lg"
@@ -54,7 +55,8 @@ export default function PortsPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <div className="grid gap-8 md:grid-cols-2">
             <FadeIn>
-              <div>
+              <div className="flex flex-col gap-4">
+                <PortsSchematic />
                 <h2 className="text-xl font-semibold tracking-tight text-gray-900">
                   Marine cooling challenges
                 </h2>
@@ -138,35 +140,10 @@ export default function PortsPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border bg-gray-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-gray-900">
-                Discuss marine cooling-water solutions
-              </h2>
-              <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                Let&apos;s explore how TES can work in your coastal or maritime operation.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-cyan-700 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-cyan-800"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-cyan-700 hover:text-cyan-900"
-              >
-                View case studies →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryCTA
+        industry="ports"
+        description="Let's explore how TES can work in your coastal or maritime operation."
+      />
     </main>
   );
 }

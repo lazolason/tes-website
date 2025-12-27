@@ -91,7 +91,7 @@ export default function ContactPage() {
     }
   };
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <SystemHeader
         tag="PILOT REQUEST"
         title="Request a TES pilot study."
@@ -115,6 +115,7 @@ export default function ContactPage() {
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
+                      aria-hidden="true"
                     >
                       <path
                         strokeLinecap="round"
@@ -264,6 +265,7 @@ export default function ContactPage() {
                             className="h-4 w-4 animate-spin"
                             fill="none"
                             viewBox="0 0 24 24"
+                            aria-hidden="true"
                           >
                             <circle
                               className="opacity-25"
@@ -288,6 +290,7 @@ export default function ContactPage() {
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
+                            aria-hidden="true"
                           >
                             <path
                               strokeLinecap="round"

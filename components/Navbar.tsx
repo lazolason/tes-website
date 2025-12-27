@@ -75,7 +75,7 @@ export default function Navbar() {
           <div className="relative h-16 w-56 flex-shrink-0">
              {/* Using object-contain and left alignment to keep it tidy */}
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Mexel Energy Sustain logo"
               fill
               className="object-contain object-left"
@@ -107,7 +107,13 @@ export default function Navbar() {
               >
                 {item.label}
                 {item.items && !item.cta && (
-                  <svg className="w-3 h-3 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-3 h-3 text-slate-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 )}
@@ -166,15 +172,17 @@ export default function Navbar() {
         {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
           className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
         >
           <span className="sr-only">Open menu</span>
           {mobileOpen ? (
-            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -202,7 +210,13 @@ export default function Navbar() {
                 >
                   <span>{item.label}</span>
                   {item.items && !item.cta && (
-                    <svg className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg
+                      className="w-4 h-4 text-slate-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   )}

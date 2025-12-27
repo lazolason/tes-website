@@ -11,9 +11,12 @@ const ProcessSteps = dynamic(() => import("../../components/ProcessSteps"), {
   loading: () => <div className="h-96 bg-white animate-pulse" />,
 });
 
-const CoolingSchematic = dynamic(() => import("../../components/CoolingSchematic"), {
-  loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
-});
+const PowerEnergySchematic = dynamic(
+  () => import("../../components/schematics/PowerEnergySchematic"),
+  {
+    loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
+  }
+);
 
 export const metadata: Metadata = {
   title: "TES System Overview",
@@ -28,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function TesPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <SystemHeader
         tag="TES SYSTEM"
         title="System architecture for verifiable cooling-water efficiency."
@@ -50,7 +53,12 @@ export default function TesPage() {
               <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-5 w-5 text-emerald-700" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5 text-emerald-700"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -63,7 +71,12 @@ export default function TesPage() {
                     "Built for traceable dosing and measurable outcomes.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <svg className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>{item}</span>
@@ -76,7 +89,12 @@ export default function TesPage() {
               <div className="rounded-xl border border-slate-300 bg-slate-100/50 p-6">
                 <div className="flex items-center gap-2 mb-4">
                   <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200">
-                    <svg className="h-5 w-5 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
+                    <svg
+                      className="h-5 w-5 text-slate-700"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      aria-hidden="true"
+                    >
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -89,7 +107,12 @@ export default function TesPage() {
                     "Implemented without baseline definition and agreed KPIs.",
                   ].map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <svg className="h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                      <svg
+                        className="h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                       </svg>
                       <span>{item}</span>
@@ -191,7 +214,7 @@ export default function TesPage() {
               </div>
             </div>
             <div className="rounded-xl border border-slate-200 bg-white p-4">
-              <CoolingSchematic />
+            <PowerEnergySchematic />
               <p className="mt-3 text-xs text-slate-700">
                 Simplified loop view showing TES dosing point and monitored pathways.
               </p>
@@ -279,7 +302,14 @@ export default function TesPage() {
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <svg
+                      className="w-6 h-6 text-emerald-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                      aria-hidden="true"
+                    >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
                     </svg>
                   </div>
@@ -303,7 +333,13 @@ export default function TesPage() {
                   className="inline-flex items-center justify-center gap-1 font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
                 >
                   View Technical Specs
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="w-4 h-4"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </Link>

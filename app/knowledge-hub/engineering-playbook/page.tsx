@@ -62,7 +62,7 @@ const sections = [
 
 export default function EngineeringPlaybookIndexPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-20">
           <PlaybookBreadcrumbs />

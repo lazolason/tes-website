@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <SystemHeader
         tag="TES COMPONENTS"
         title="Components within the TES architecture."
@@ -45,7 +45,7 @@ export default function ProductsPage() {
           <FadeIn delay={200}>
             <div className="relative mt-8 h-48 w-full overflow-hidden rounded-xl lg:h-64">
               <Image
-                src="/condenser.png"
+                src="/condenser.webp"
                 alt="Condenser heat exchanger system"
                 fill
                 className="object-cover"

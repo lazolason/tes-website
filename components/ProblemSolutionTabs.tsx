@@ -96,7 +96,13 @@ export default function ProblemSolutionTabs() {
                     {/* Placeholder for Problem Illustration - using CSS pattern for now */}
                     <div className="w-full h-full bg-[radial-gradient(#e11d48_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
                      <div className="absolute inset-0 flex items-center justify-center text-rose-200">
-                        <svg className="w-32 h-32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="w-32 h-32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
                         </svg>
                      </div>
@@ -146,7 +152,13 @@ export default function ProblemSolutionTabs() {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-full h-full bg-[radial-gradient(#059669_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
                      <div className="absolute inset-0 flex items-center justify-center text-emerald-200">
-                        <svg className="w-32 h-32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="w-32 h-32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                      </div>
@@ -199,7 +211,13 @@ export default function ProblemSolutionTabs() {
                    <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-full h-full bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
                      <div className="absolute inset-0 flex items-center justify-center text-blue-200">
-                        <svg className="w-32 h-32" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg
+                          className="w-32 h-32"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          aria-hidden="true"
+                        >
                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                         </svg>
                      </div>

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function AdvancedEngineeringPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">

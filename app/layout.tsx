@@ -51,7 +51,7 @@ export const metadata: Metadata = {
       'TES combines Mexel®432 chemistry, IoT dosing and cooling-water data to improve condenser performance on wet-cooled units.',
     images: [
       {
-        url: '/logo.png',
+        url: '/logo.webp',
         width: 400,
         height: 130,
         alt: 'Mexel Energy Sustain logo',
@@ -89,6 +89,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={inter.variable}>
       <body className="bg-white text-slate-900 antialiased font-sans">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 bg-emerald-600 text-white px-4 py-2 rounded"
+        >
+          Skip to main content
+        </a>
         <Navbar />
         <div className="min-h-screen">{children}</div>
         <Footer />

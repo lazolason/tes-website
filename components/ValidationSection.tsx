@@ -14,6 +14,7 @@ const pillars = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -34,6 +35,7 @@ const pillars = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -54,6 +56,7 @@ const pillars = [
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
+        aria-hidden="true"
       >
         <path
           strokeLinecap="round"
@@ -100,9 +103,9 @@ export default function ValidationSection() {
             </div>
           </FadeIn>
           <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200 bg-slate-100 shadow-sm">
-            {/* Image brief: /public/images/home-verification-instrumentation.png — Instrumentation panel or data logger in a plant control room, clear gauges and readouts, calm lighting. */}
+            {/* Image brief: /public/images/home-verification-instrumentation.webp — Instrumentation panel or data logger in a plant control room, clear gauges and readouts, calm lighting. */}
             <Image
-              src="/images/home-verification-instrumentation.png"
+              src="/images/home-verification-instrumentation.webp"
               alt="Plant instrumentation panel showing logged measurements"
               fill
               className="object-cover"

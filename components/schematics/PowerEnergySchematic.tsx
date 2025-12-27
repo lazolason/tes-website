@@ -1,17 +1,17 @@
-// components/CoolingSchematic.tsx
+// components/schematics/PowerEnergySchematic.tsx
 "use client";
 
-export default function CoolingSchematic() {
+export default function PowerEnergySchematic() {
   return (
     <div className="relative h-44 w-full overflow-hidden rounded-lg border border-slate-200 bg-white sm:h-48 md:h-40">
       <svg
         viewBox="0 0 260 120"
         className="h-full w-full text-slate-700"
         role="img"
-        aria-labelledby="cooling-diagram-title"
+        aria-labelledby="power-energy-diagram-title"
       >
-        <title id="cooling-diagram-title">
-          Simplified wet-cooled unit cooling-water schematic with TES dosing point
+        <title id="power-energy-diagram-title">
+          Power station cooling-water schematic with TES dosing point
         </title>
 
         {/* Section labels */}

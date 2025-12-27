@@ -1,6 +1,6 @@
 export default function LegalPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       <section className="border-b border-slate-200/70 bg-slate-50">
         <div className="mx-auto max-w-5xl px-4 py-12 lg:py-16">
           <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">

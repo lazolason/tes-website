@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function TesPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       {/* Hero */}
       <section className="relative pt-28 pb-16 px-6 bg-mesh-gradient animate-mesh">
         <div className="mx-auto max-w-7xl">
@@ -84,19 +84,37 @@ export default function TesPage() {
 
               <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-600">
                 <div className="flex items-center gap-2">
-                  <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-emerald-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>RT&D protocol aligned</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-emerald-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>Fully traceable data</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg
+                    className="h-5 w-5 text-emerald-600"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <span>Audit-ready verification</span>
@@ -106,11 +124,11 @@ export default function TesPage() {
 
             <div className="relative w-full">
               <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-slate-200/50 bg-slate-100 shadow-[0_6px_18px_rgba(15,23,42,0.08)]">
-                {/* Image brief: /public/images/hero/before-fouled-tubes.jpg and /public/images/hero/after-stabilised-tubes.jpg — Same angle, lighting, and geometry; only surface condition changes. */}
+                {/* Image brief: /public/images/hero/before-fouled-tubes.webp and /public/images/hero/after-stabilised-tubes.webp — Same angle, lighting, and geometry; only surface condition changes. */}
                 <BeforeAfterSlider
                   className="absolute inset-0"
-                  beforeImage="/images/hero/before-fouled-tubes.png?v=2"
-                  afterImage="/images/hero/after-stabilised-tubes.png?v=2"
+                  beforeImage="/images/hero/before-fouled-tubes.webp?v=2"
+                  afterImage="/images/hero/after-stabilised-tubes.webp?v=2"
                   beforeLabel="FOULED SURFACE"
                   afterLabel="STABILISED SURFACE"
                   captionTitle="ILLUSTRATIVE RESULT"

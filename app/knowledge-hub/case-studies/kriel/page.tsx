@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function KrielCaseStudyPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b bg-gray-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
@@ -42,7 +42,7 @@ export default function KrielCaseStudyPage() {
           {/* Hero image */}
           <div className="relative mt-8 h-48 overflow-hidden rounded-xl shadow-lg lg:h-64">
             <Image
-              src="/cooling-tower.png"
+              src="/cooling-tower.webp"
               alt="Kriel Power Station cooling towers"
               fill
               className="object-cover"

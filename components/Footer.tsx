@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="space-y-6">
             {/* Logo mark */}
             <Image
-              src="/logo.png"
+              src="/logo.webp"
               alt="Mexel Energy Sustain"
               width={140}
               height={44}

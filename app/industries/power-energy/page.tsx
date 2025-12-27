@@ -1,6 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
-import CoolingSchematic from "../../../components/CoolingSchematic";
+import IndustryCTA from "../../../components/IndustryCTA";
+import MexSteamSection from "../../../components/MexSteamSection";
+import PowerEnergySchematic from "../../../components/schematics/PowerEnergySchematic";
 import FadeIn from "../../../components/FadeIn";
 import type { Metadata } from "next";
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
 
 export default function PowerEnergyPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main id="main-content" className="min-h-screen bg-white">
       {/* Hero */}
       <section className="border-b border-slate-200/70 bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
@@ -39,7 +40,7 @@ export default function PowerEnergyPage() {
             </div>
             <div className="relative h-64 overflow-hidden rounded-xl shadow-lg lg:h-80">
               <Image
-                src="/industry-power.png"
+                src="/industry-power.webp"
                 alt="Power generation facility with cooling towers"
                 fill
                 className="object-cover"
@@ -58,7 +59,7 @@ export default function PowerEnergyPage() {
             <FadeIn>
               <div className="flex flex-col gap-4">
                 {/* Cooling-water system schematic */}
-                <CoolingSchematic />
+                <PowerEnergySchematic />
 
                 <div>
                   <h2 className="text-xl font-semibold tracking-tight text-slate-900">
@@ -84,7 +85,7 @@ export default function PowerEnergyPage() {
                 {/* Condenser image */}
                 <div className="relative h-48 w-full overflow-hidden rounded-lg">
                   <Image
-                    src="/condenser.png"
+                    src="/condenser.webp"
                     alt="Industrial condenser system"
                     fill
                     className="object-cover"
@@ -114,103 +115,23 @@ export default function PowerEnergyPage() {
         </div>
       </section>
 
-      {/* MexSteam 100 - Boiler-side complement */}
-      <section id="mexsteam" className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <div className="max-w-3xl">
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-              STRATEGIC COMPLEMENT
-            </p>
-            <h2 className="mt-3 text-xl font-semibold text-slate-900">
-              MexSteam 100 for boiler-side efficiency
-            </h2>
-            <p className="mt-3 text-sm text-slate-700 leading-relaxed">
-              While TES addresses cooling-water and condenser performance,
-              MexSteam 100 is designed for boiler feedwater, condensate return
-              and steam systems. In coal-fired power stations, boiler-side
-              corrosion and deposition can reduce efficiency through higher
-              firing rates, forced outages and increased maintenance.
-            </p>
+      <MexSteamSection
+        industry="power"
+        introText="While TES addresses cooling-water and condenser performance, MexSteam 100 is designed for boiler feedwater, condensate return and steam systems. In coal-fired power stations, boiler-side corrosion and deposition can reduce efficiency through higher firing rates, forced outages and increased maintenance."
+        applicationsTitle="Typical boiler applications in power generation"
+        applications={[
+          "High-pressure boilers in coal, gas and biomass units with recurring tube failures or scale formation",
+          "Condensate return systems showing low pH corrosion or oxygen ingress",
+          "Feedwater treatment circuits requiring corrosion inhibition alongside demineralisation or polishing",
+          "Economizer and evaporator sections with deposition issues linked to water chemistry drift",
+          "Combined-cycle plants with heat recovery steam generators (HRSG) requiring steam-side protection",
+        ]}
+      />
 
-            {/* Industry-specific boiler applications */}
-            <div className="mt-5">
-              <h3 className="text-sm font-semibold text-slate-900">
-                Typical boiler applications in power generation
-              </h3>
-              <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                <li>
-                  • High-pressure boilers in coal, gas and biomass units with
-                  recurring tube failures or scale formation
-                </li>
-                <li>
-                  • Condensate return systems showing low pH corrosion or
-                  oxygen ingress
-                </li>
-                <li>
-                  • Feedwater treatment circuits requiring corrosion inhibition
-                  alongside demineralisation or polishing
-                </li>
-                <li>
-                  • Economizer and evaporator sections with deposition issues
-                  linked to water chemistry drift
-                </li>
-                <li>
-                  • Combined-cycle plants with heat recovery steam generators
-                  (HRSG) requiring steam-side protection
-                </li>
-              </ul>
-            </div>
-
-            <div className="mt-5 flex flex-wrap gap-3 text-xs">
-              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                Boiler / steam-side
-              </span>
-              <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-800">
-                Outside TES verification
-              </span>
-            </div>
-
-            <div className="mt-5 text-xs">
-              <Link
-                href="/products#mexsteam"
-                className="inline-flex items-center font-semibold text-emerald-600 hover:text-emerald-800"
-              >
-                Learn more about MexSteam 100 →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="flex flex-col gap-4 rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">
-                Interested in TES for your power station?
-              </h2>
-              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
-                Start with a technical discussion about your cooling-water system and constraints.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
-              >
-                Contact Us
-              </Link>
-              <Link
-                href="/knowledge-hub/case-studies"
-                className="inline-flex items-center justify-center font-semibold text-emerald-700 hover:text-emerald-900"
-              >
-                View case studies →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <IndustryCTA
+        industry="power"
+        description="Start with a technical discussion about your cooling-water system and constraints."
+      />
     </main>
   );
 }
