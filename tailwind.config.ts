@@ -38,9 +38,23 @@ const config: Config = {
           800: '#3aa820',
           900: '#2F2F2F',  // Mexel charcoal gray
         },
+        // Secondary accent for urgency, energy, and warnings
+        secondary: {
+          50: '#fff7ed',
+          100: '#ffedd5',
+          200: '#fed7aa',
+          300: '#fdba74',
+          400: '#fb923c',
+          500: '#f97316',  // Primary orange
+          600: '#ea580c',
+          700: '#c2410c',
+          800: '#9a3412',
+          900: '#7c2d12',
+        },
         mexel: {
           green: '#6CFF47',
           charcoal: '#2F2F2F',
+          orange: '#f97316',  // Quick reference to secondary
         },
       },
     },

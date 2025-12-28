@@ -24,7 +24,11 @@ export default function PremiumTestimonials() {
                 <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
                     {TESTIMONIALS_DATA.map((t, index) => (
                         <FadeIn key={t.id} delay={index * 150}>
-                            <div className="relative flex flex-col h-full bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100 transition-all duration-300 hover:shadow-xl hover:bg-white hover:-translate-y-1 group">
+                            <div className="relative group">
+                                {/* Gradient blob background on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/10 via-secondary-500/5 to-emerald-500/10 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-700" aria-hidden="true" />
+
+                                <div className="relative flex flex-col h-full bg-slate-50 rounded-3xl p-8 lg:p-12 border border-slate-100 transition-all duration-300 hover:shadow-xl hover:bg-white hover:-translate-y-1 hover:border-emerald-200 overflow-hidden">
                                 <div className="mb-8">
                                     {[1, 2, 3, 4, 5].map((s) => (
                                         <span key={s} className="text-emerald-500 text-lg">★</span>
@@ -36,7 +40,7 @@ export default function PremiumTestimonials() {
                                 </blockquote>
 
                                 <div className="flex items-center gap-4 border-t border-slate-200 pt-8">
-                                    <div className="w-12 h-12 rounded-full bg-emerald-600 flex items-center justify-center text-white font-bold text-lg">
+                                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-emerald-600 flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:shadow-emerald-500/50 transition-shadow">
                                         {t.author.charAt(0)}
                                     </div>
                                     <div>
@@ -45,6 +49,10 @@ export default function PremiumTestimonials() {
                                         <div className="text-sm font-bold text-emerald-700 mt-1">{t.company}</div>
                                     </div>
                                 </div>
+
+                                {/* Sliding accent border */}
+                                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-emerald-500 to-secondary-500 group-hover:w-full transition-all duration-700 rounded-full" />
+                            </div>
                             </div>
                         </FadeIn>
                     ))}

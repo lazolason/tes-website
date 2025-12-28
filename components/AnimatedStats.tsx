@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { NavIcons } from "./icons/NavIcons";
 
 interface StatItem {
   value: number;
@@ -9,6 +10,9 @@ interface StatItem {
   prefix?: string;
   label: string;
   description: string;
+  icon: React.ComponentType<{ className?: string }>;
+  gradient: string; // Tailwind gradient classes
+  accentColor: string; // For number and icon
 }
 
 const stats: StatItem[] = [
@@ -17,24 +21,36 @@ const stats: StatItem[] = [
     suffix: "%",
     label: "Condenser Efficiency Improvement",
     description: "Typical efficiency recovery in wet-cooled power stations",
+    icon: NavIcons.CheckCircle,
+    gradient: "from-emerald-500/10 to-emerald-600/5",
+    accentColor: "emerald",
   },
   {
     value: 50,
     suffix: "+",
     label: "MW Recovered Annually",
     description: "Average output restoration across deployed sites",
+    icon: NavIcons.Power,
+    gradient: "from-secondary-500/10 to-secondary-600/5",
+    accentColor: "secondary",
   },
   {
     value: 15,
     suffix: "+",
     label: "Years Proven Results",
     description: "Track record of verified customer outcomes",
+    icon: NavIcons.Data,
+    gradient: "from-emerald-500/10 to-blue-500/5",
+    accentColor: "emerald",
   },
   {
     value: 98,
     suffix: "%",
     label: "Client Retention Rate",
     description: "Customers who continue deployment after pilot",
+    icon: NavIcons.CheckCircle,
+    gradient: "from-secondary-500/10 to-emerald-500/5",
+    accentColor: "secondary",
   },
 ];
 
@@ -132,27 +148,64 @@ export default function AnimatedStats() {
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <div
-              key={stat.label}
-              className={`rounded-xl border border-slate-200 bg-white p-6 shadow-md transition-all duration-700 hover:shadow-lg hover:scale-[1.02] ${isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          {stats.map((stat, index) => {
+            const StatIcon = stat.icon;
+            const numberColor = stat.accentColor === 'secondary'
+              ? 'bg-gradient-to-r from-secondary-600 to-secondary-500'
+              : 'bg-gradient-to-r from-emerald-600 to-emerald-500';
+            const iconBg = stat.accentColor === 'secondary'
+              ? 'bg-gradient-to-br from-secondary-500 to-secondary-600'
+              : 'bg-gradient-to-br from-emerald-500 to-emerald-600';
+
+            return (
+              <div
+                key={stat.label}
+                className={`relative group transition-all duration-700 ${
+                  isVisible ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
                 }`}
-              style={{ transitionDelay: `${index * 120}ms` }}
-            >
-              <p className="text-3xl font-semibold text-emerald-700 lg:text-4xl">
-                <AnimatedNumber
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  prefix={stat.prefix}
-                  isVisible={isVisible}
+                style={{ transitionDelay: `${index * 120}ms` }}
+              >
+                {/* Animated gradient blob background */}
+                <div
+                  className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500 opacity-0 group-hover:opacity-100`}
+                  aria-hidden="true"
                 />
-              </p>
-              <p className="mt-2 text-sm font-semibold text-slate-900">
-                {stat.label}
-              </p>
-              <p className="mt-1 text-xs text-slate-600">{stat.description}</p>
-            </div>
-          ))}
+
+                {/* Card content */}
+                <div className="relative bg-white/80 backdrop-blur-sm border border-slate-200 rounded-2xl p-6 hover:border-slate-300 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                  {/* Icon with gradient background */}
+                  <div className={`w-12 h-12 rounded-xl ${iconBg} flex items-center justify-center mb-4 shadow-lg`}>
+                    <StatIcon className="w-6 h-6 text-white" />
+                  </div>
+
+                  {/* Animated number with gradient */}
+                  <p className={`text-4xl font-bold ${numberColor} bg-clip-text text-transparent tabular-nums`}>
+                    <AnimatedNumber
+                      value={stat.value}
+                      suffix={stat.suffix}
+                      prefix={stat.prefix}
+                      isVisible={isVisible}
+                    />
+                  </p>
+
+                  {/* Label and description */}
+                  <p className="mt-3 text-sm font-semibold text-slate-900 leading-tight">
+                    {stat.label}
+                  </p>
+                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
+                    {stat.description}
+                  </p>
+
+                  {/* Bottom accent line */}
+                  <div className={`mt-4 h-1 w-0 bg-gradient-to-r ${
+                    stat.accentColor === 'secondary'
+                      ? 'from-secondary-500 to-emerald-500'
+                      : 'from-emerald-500 to-blue-500'
+                  } group-hover:w-full transition-all duration-500 rounded-full`} />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -38,10 +38,14 @@ export default function VisualIndustryGrid() {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {INDUSTRIES_DATA.map((industry, index) => (
                         <FadeIn key={industry.id} delay={index * 100}>
-                            <Link
-                                href={`/industries/${industry.slug}`}
-                                className="group relative flex flex-col h-[420px] overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-200/60"
-                            >
+                            <div className="relative group">
+                                {/* Animated gradient blob that appears on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/15 to-secondary-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-700" aria-hidden="true" />
+
+                                <Link
+                                    href={`/industries/${industry.slug}`}
+                                    className="relative flex flex-col h-[420px] overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-200/60 hover:border-emerald-300"
+                                >
                                 {/* Background Image with Overlay */}
                                 <div className="absolute inset-0 z-0">
                                     <Image
@@ -82,7 +86,11 @@ export default function VisualIndustryGrid() {
                                         <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                                     </div>
                                 </div>
+
+                                {/* Sliding accent border at bottom */}
+                                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-emerald-500 via-secondary-500 to-emerald-500 group-hover:w-full transition-all duration-700 rounded-full z-20" />
                             </Link>
+                            </div>
                         </FadeIn>
                     ))}
                 </div>
