@@ -34,3 +34,4 @@ Deploy this project to platforms like Vercel or Netlify. Configure environment v
 ## MCP client (Codex via Docker)
 
 To run the Model Context Protocol CLI against the Codex server without installing additional tools locally, follow the Docker-based setup outlined in [`docs/mcp-client-codex.md`](docs/mcp-client-codex.md).
+# Last updated: Sun Dec 28 16:45:54 SAST 2025
