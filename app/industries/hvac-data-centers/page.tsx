@@ -91,7 +91,7 @@ export default function DataCentresPage() {
               <div className="relative bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/data-centre.png"
+                    src="/schematics/data-centre-v2.png"
                     alt="Data Centre Cooling Schematic"
                     fill
                     className="object-contain bg-white"

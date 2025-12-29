@@ -91,7 +91,7 @@ export default function MiningPage() {
               <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/mining.png"
+                    src="/schematics/mining-v2.png"
                     alt="Mining Operations Cooling Schematic"
                     fill
                     className="object-contain bg-white"
