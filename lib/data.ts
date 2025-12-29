@@ -22,7 +22,7 @@ export const INDUSTRIES_DATA: Industry[] = [
         title: 'Refineries',
         slug: 'refineries',
         description: 'Maintain thermal efficiency in complex heat exchanger networks and mitigate under-deposit corrosion.',
-    image: '/schematics/refineries-v2.png?v=2',        icon: NavIcons.Refineries,
+    image: '/schematics/refinery-v2.png?v=2',        icon: NavIcons.Refineries,
         benefits: ['Improve energy efficiency', 'Safety & reliability', 'Reduce maintenance cleaning'],
     },
     {
@@ -53,7 +53,7 @@ export const INDUSTRIES_DATA: Industry[] = [
         title: 'HVAC & Data Centres',
         slug: 'hvac-data-centers',
         description: 'High-uptime cooling solutions to improve PUE (Power Usage Effectiveness) and cooling reliability.',
-    image: '/schematics/hvac-data-centers-v2.png?v=2',        benefits: ['Reduce energy costs', 'Reliability of uptime', 'Sustainable chemistry'],
+    image: '/schematics/data-centre-v2.png?v=2: ['Reduce energy costs', 'Reliability of uptime', 'Sustainable chemistry'],
     },
     {
         id: 'ports',
