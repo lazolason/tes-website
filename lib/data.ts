@@ -165,6 +165,6 @@ export const CASE_STUDIES: CaseStudy[] = [
             'Vacuum stabilized within ±0.1 kPa of design',
             'Significantly reduced manual cleaning frequency',
         ],
-        image: '/industry-power.webp',
+        image: '/power-energy-v2.webp?v=4',
     },
 ];
