@@ -15,7 +15,6 @@ export const INDUSTRIES_DATA: Industry[] = [
         title: 'Mining & Minerals',
         slug: 'mining',
         description: 'Ensure operational continuity by protecting critical cooling loops from biofouling and corrosion.',
-        image: '/industry-mining.webp',
     image: '/schematics/mining-v2.png?v=2',        benefits: ['Reduce downtime', 'Minimize chemical load', 'Protect process heat exchangers'],
     },
     {
@@ -31,7 +30,6 @@ export const INDUSTRIES_DATA: Industry[] = [
         title: 'Food & Beverage',
         slug: 'food-beverage',
         description: 'Non-toxic, FDA-aligned cooling water solutions for breweries, laundries, and processing plants.',
-        image: '/food-beverage.webp',
     image: '/schematics/food-beverage-v2.png?v=2',        benefits: ['Safe for food environments', 'Effective bio-control', 'Reduce water consumption'],
     },
     {
@@ -55,7 +53,6 @@ export const INDUSTRIES_DATA: Industry[] = [
         title: 'HVAC & Data Centres',
         slug: 'hvac-data-centers',
         description: 'High-uptime cooling solutions to improve PUE (Power Usage Effectiveness) and cooling reliability.',
-        image: '/industry-data-centre.webp',
     image: '/schematics/hvac-data-centers-v2.png?v=2',        benefits: ['Reduce energy costs', 'Reliability of uptime', 'Sustainable chemistry'],
     },
     {
