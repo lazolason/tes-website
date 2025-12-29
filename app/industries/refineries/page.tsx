@@ -24,7 +24,7 @@ export default function RefineriesPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900 z-0">
           <Image
-            src="/industry-refinery.webp"
+            src="/refinery-v2.webp?v=4"
             alt="Refinery cooling infrastructure"
             fill
             className="object-cover opacity-40"
@@ -90,7 +90,7 @@ export default function RefineriesPage() {
               <div className="relative bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/refinery-v2.webp?v=4"
+                    src="/refinery-v2.webp?v=4"
                     alt="Refinery Cooling Schematic"
                     fill
                     className="object-contain bg-white"

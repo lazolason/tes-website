@@ -22,17 +22,16 @@ export default function PowerEnergyPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-slate-900 z-0">
-          <Image
-            src="/industry-power.webp"
-            alt="Power generation facility"
-            fill
-            className="object-cover opacity-40"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
-        </div>
-
+                  <div className="absolute inset-0 bg-slate-900 z-0">
+                    <Image
+                      src="/power-energy-v2.webp?v=4"
+                      alt="Power generation facility"
+                      fill
+                      className="object-cover opacity-40"
+                      priority
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+                  </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full mb-6 border border-emerald-500/20">
@@ -97,7 +96,7 @@ export default function PowerEnergyPage() {
               <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/power-energy-v2.webp?v=4"
+                    src="/power-energy-v2.webp?v=4"
                     alt="Power Generation Cooling Schematic"
                     fill
                     className="object-contain bg-white"

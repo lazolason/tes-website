@@ -24,7 +24,7 @@ export default function FoodBeveragePage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900 z-0">
           <Image
-            src="/food-beverage.webp"
+            src="/food-beverage-v2.webp?v=4"
             alt="Food & Beverage processing"
             fill
             className="object-cover opacity-30"
@@ -91,7 +91,7 @@ export default function FoodBeveragePage() {
               <div className="relative bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-[16/10] rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/food-beverage-v2.webp?v=4"
+                    src="/food-beverage-v2.webp?v=4"
                     alt="Food & Beverage Cooling Schematic"
                     fill
                     className="object-contain bg-white"

@@ -24,7 +24,7 @@ export default function PortsPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900 z-0">
           <Image
-            src="/industry-ports.webp"
+            src="/ports-v2.webp?v=4"
             alt="Maritime and port facilities"
             fill
             className="object-cover opacity-40"
@@ -90,7 +90,7 @@ export default function PortsPage() {
               <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/ports-v2.webp?v=4"
+                    src="/ports-v2.webp?v=4"
                     alt="Port & Marine Cooling Schematic"
                     fill
                     className="object-contain bg-white"

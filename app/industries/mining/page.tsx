@@ -24,7 +24,7 @@ export default function MiningPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900 z-0">
           <Image
-            src="/industry-mining.webp"
+            src="/mining-v2.webp?v=4"
             alt="Mining operations"
             fill
             className="object-cover opacity-40"
@@ -91,7 +91,7 @@ export default function MiningPage() {
               <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/mining-v2.webp?v=4"
+                    src="/mining-v2.webp?v=4"
                     alt="Mining Operations Cooling Schematic"
                     fill
                     className="object-contain bg-white"

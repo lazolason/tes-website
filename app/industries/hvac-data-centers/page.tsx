@@ -24,7 +24,7 @@ export default function DataCentresPage() {
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-slate-900 z-0">
           <Image
-            src="/industry-data-centre.webp"
+            src="/schematics/data-centre-v2.webp?v=4"
             alt="HVAC and data centre cooling infrastructure"
             fill
             className="object-cover opacity-40"
