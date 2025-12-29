@@ -53,7 +53,7 @@ export const INDUSTRIES_DATA: Industry[] = [
         title: 'HVAC & Data Centres',
         slug: 'hvac-data-centers',
         description: 'High-uptime cooling solutions to improve PUE (Power Usage Effectiveness) and cooling reliability.',
-    image: '/schematics/data-centre-v2.png?v=2: ['Reduce energy costs', 'Reliability of uptime', 'Sustainable chemistry'],
+    image: '/schematics/data-centre-v2.png?v=2:', icon: NavIcons.DataCentres, benefits: ['Reduce energy costs', 'Reliability of uptime', 'Sustainable chemistry'],
     },
     {
         id: 'ports',
