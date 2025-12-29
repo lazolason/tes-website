@@ -97,7 +97,7 @@ export default function PowerEnergyPage() {
               <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/power-energy-v2.png?v=2"
+                    src="/schematics/power-energy-v2.webp?v=4"
                     alt="Power Generation Cooling Schematic"
                     fill
                     className="object-contain bg-white"
