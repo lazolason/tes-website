@@ -4,8 +4,7 @@ const nextConfig = {
   images: {
     localPatterns: [
       {
-        pathname: '/schematics/**',
-        search: '',
+        pathname: '/**',
       },
     ],
   },
