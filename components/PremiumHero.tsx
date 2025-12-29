@@ -76,14 +76,14 @@ export default function PremiumHero() {
                             <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200 border border-slate-200/50 bg-slate-100">
                                 <BeforeAfterSlider
                                     className="absolute inset-0"
-                                    beforeImage="/images/hero/before-fouled-tubes.webp?v=2"
-                                    afterImage="/images/hero/after-stabilised-tubes.webp?v=2"
-                                    beforeLabel="FOULED SURFACE"
-                                    afterLabel="STABILISED SURFACE"
+                                    beforeImage="/images/hero/before-fouled-tubes-v3.webp"
+                                    afterImage="/images/hero/after-clean-tubes-v3.webp"
+                                    beforeLabel="FOULED TUBES"
+                                    afterLabel="CLEAN TUBES WITH MEXEL®432"
                                     captionTitle="ILLUSTRATIVE RESULT"
-                                    caption="Actual performance verified using site baselines and condenser indicators (TR, TTD, vacuum)."
-                                    beforeAlt="Fouled condenser tubes with visible deposits"
-                                    afterAlt="Stabilised condenser tubes after treatment"
+                                    caption="Visual evidence of Mexel®432 effectiveness. Fouling removed, thermal transfer restored."
+                                    beforeAlt="Heavily fouled condenser tubes before treatment"
+                                    afterAlt="Clean condenser tubes after Mexel®432 treatment"
                                 />
                             </div>
 

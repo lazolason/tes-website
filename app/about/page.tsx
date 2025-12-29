@@ -43,7 +43,7 @@ export default function AboutPage() {
             </div>
             <div className="relative h-56 overflow-hidden rounded-xl shadow-lg lg:h-64">
               <Image
-                src="/control-room.png"
+                src="/control-room.webp"
                 alt="Power station control room"
                 fill
                 className="object-cover"

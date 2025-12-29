@@ -98,7 +98,7 @@ export default function FundamentalsPage() {
               <figure className="rounded-lg border bg-white p-4 shadow-sm">
                 <div className="relative h-64 w-full overflow-hidden rounded-md">
                   <Image
-                    src="/images/hero/before-fouled-tubes.jpg"
+                    src="/images/hero/before-fouled-tubes-v3.webp"
                     alt="Cooling tube surface with visible fouling"
                     fill
                     className="object-cover"
@@ -115,7 +115,7 @@ export default function FundamentalsPage() {
               <figure className="rounded-lg border bg-white p-4 shadow-sm">
                 <div className="relative h-64 w-full overflow-hidden rounded-md">
                   <Image
-                    src="/images/hero/after-stabilised-tubes.jpg"
+                    src="/images/hero/after-clean-tubes-v3.webp"
                     alt="Cooling tube surface after stabilisation"
                     fill
                     className="object-cover"
