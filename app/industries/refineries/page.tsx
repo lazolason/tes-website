@@ -90,7 +90,7 @@ export default function RefineriesPage() {
               <div className="relative bg-slate-50 rounded-[2.5rem] p-8 border border-slate-100 shadow-inner">
                 <div className="relative aspect-[4/3] rounded-xl overflow-hidden shadow-2xl border border-white">
                   <Image
-                    src="/schematics/refinery-v2.png"
+                    src="/schematics/refinery-v2.png?v=2"
                     alt="Refinery Cooling Schematic"
                     fill
                     className="object-contain bg-white"

@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import CoolingSchematic from "@/components/CoolingSchematic";
 import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
 import { ArrowRightIcon } from "@/components/icons/NavIcons";
@@ -95,8 +94,15 @@ export default function PowerEnergyPage() {
             </div>
 
             <FadeIn delay={300}>
-              <div className="relative bg-slate-50 rounded-[2.5rem] p-10 border border-slate-100 shadow-inner overflow-hidden">
-                <CoolingSchematic />
+              <div className="relative bg-slate-50 rounded-[2rem] p-8 border border-slate-100 shadow-inner">
+                <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl border border-white">
+                  <Image
+                    src="/schematics/power-energy-v2.png?v=2"
+                    alt="Power Generation Cooling Schematic"
+                    fill
+                    className="object-contain bg-white"
+                  />
+                </div>
                 <div className="mt-8 text-center">
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-[0.2em]">Condenser & Tower Circuit</p>
                 </div>
