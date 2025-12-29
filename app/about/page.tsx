@@ -4,7 +4,7 @@ import FadeIn from "../../components/FadeIn";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Mexel Energy Sustain",
   description:
     "About Mexel Energy Sustain (Pty) Ltd – a South African company focused on cooling-water efficiency using Mexel®432 chemistry, IoT dosing and the TES verification framework.",
   openGraph: {
