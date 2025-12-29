@@ -15,3 +15,6 @@ package-lock.json
 .vercel
 .env*.local
 public/_backup_images/
+
+# Playwright MCP artifacts
+.playwright-mcp/
