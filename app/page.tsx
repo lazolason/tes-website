@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import PremiumHero from "../components/PremiumHero";
 import {
-  TrustedBySkeleton,
+  // TrustedBySkeleton,
   IndustryGridSkeleton,
   ProcessSkeleton,
   StatsSkeleton,
@@ -10,9 +10,9 @@ import {
 } from "../components/skeletons/HomeSkeletons";
 
 // Lazy load below-the-fold components for better initial page load
-const TrustedBy = dynamic(() => import("../components/TrustedBy"), {
-  loading: () => <TrustedBySkeleton />,
-});
+// const TrustedBy = dynamic(() => import("../components/TrustedBy"), {
+//   loading: () => <TrustedBySkeleton />,
+// });
 
 const LiveDashboard = dynamic(() => import("../components/LiveDashboard"), {
   loading: () => <div className="h-96 bg-slate-900 animate-pulse rounded-3xl" />,
@@ -55,7 +55,7 @@ export default function Home() {
       <PremiumHero />
 
       {/* 2. SOCIAL PROOF: Trusted Industry Leaders */}
-      <TrustedBy />
+      {/* <TrustedBy /> */}
 
       {/* 2.5. TECHNICAL PROOF: Live Performance Dashboard */}
       <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-slate-50">

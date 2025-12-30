@@ -154,12 +154,12 @@ export const TESTIMONIALS_DATA: Testimonial[] = [
 export const CASE_STUDIES: CaseStudy[] = [
     {
         id: 'kriel-condenser',
-        title: 'Kriel Power Station: Condenser Efficiency Recovery',
+        title: 'Kriel Power Station: Mexel®432 Results',
         slug: 'kriel',
         industry: 'Power Generation',
-        client: 'Eskom',
+        client: 'Mexel Energy Sustain',
         challenge: 'High biofouling levels and under-deposit corrosion resulting in 3-5 MW loss per unit.',
-        solution: 'Implementation of the TES System with Mexel®432 pulsed dosing and continuous M&V.',
+        solution: 'Implementation of the TES System with Mexel®432 pulsed dosing and continuous M&V. Chemistry supplied by Mexel International (France).',
         results: [
             '4.2 MW recovered on average per unit',
             'Vacuum stabilized within ±0.1 kPa of design',
