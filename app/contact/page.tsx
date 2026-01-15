@@ -163,11 +163,10 @@ export default function ContactPage() {
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${
-                          errors.name
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${errors.name
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
                             : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
-                        }`}
+                          }`}
                         placeholder="Your name"
                       />
                       {errors.name && (
@@ -198,11 +197,10 @@ export default function ContactPage() {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${
-                          errors.email
+                        className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${errors.email
                             ? "border-red-300 focus:border-red-500 focus:ring-red-500"
                             : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
-                        }`}
+                          }`}
                         placeholder="you@example.com"
                       />
                       {errors.email && (
@@ -314,19 +312,24 @@ export default function ContactPage() {
 
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-800">
 
-                <p className="font-semibold text-slate-900">TES</p>
-                <p>B-BBEE Level 1 Contributor</p>
-                <p className="mt-1">Technical Director: Lazola Sonqishe</p>
+                <p className="font-semibold text-slate-900">Mexel Energy Sustain (Pty) Ltd</p>
+                <p className="text-xs text-slate-500 mb-2">B-BBEE Level 1 Contributor</p>
+
+                <p className="mt-3 font-medium">Technical Director: Lazola Sonqishe</p>
+
+                {/* 1. EMAIL (Fixed Domain) */}
                 <p className="mt-2">
                   <span className="font-semibold">Email:</span>{" "}
                   <a
-                    href="mailto:lazola@tes.net"
-                    className="text-emerald-700 hover:text-emerald-900"
+                    href="mailto:lazola@mexelenergysustain.com"
+                    className="text-emerald-700 hover:text-emerald-900 underline"
                   >
-                    lazola@tes.net
+                    lazola@mexelenergysustain.com
                   </a>
                 </p>
-                <p>
+
+                {/* 2. MOBILE (Existing) */}
+                <p className="mt-2">
                   <span className="font-semibold">Mobile:</span>{" "}
                   <a
                     href="tel:+27794648298"
@@ -335,13 +338,28 @@ export default function ContactPage() {
                     +27 79 464 8298
                   </a>
                 </p>
-                <p className="mt-2">
+
+                {/* 3. WHATSAPP (New Safety Net) */}
+                <p className="mt-1">
+                  <span className="font-semibold text-emerald-600">WhatsApp:</span>{" "}
+                  <a
+                    href="https://wa.me/27794648298"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-emerald-700 hover:text-emerald-900 hover:underline"
+                  >
+                    Chat Directly
+                  </a>
+                </p>
+
+                {/* 4. GENERAL ENQUIRIES (Fixed Domain) */}
+                <p className="mt-4 border-t border-slate-200 pt-2">
                   <span className="font-semibold">General enquiries:</span>{" "}
                   <a
-                    href="mailto:info@tes.net"
-                    className="text-emerald-700 hover:text-emerald-900"
+                    href="mailto:info@mexelenergysustain.com"
+                    className="text-emerald-700 hover:text-emerald-900 underline"
                   >
-                    info@tes.net
+                    info@mexelenergysustain.com
                   </a>
                 </p>
               </div>

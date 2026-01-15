@@ -3,95 +3,92 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { INDUSTRIES_DATA } from '@/lib/data';
-import FadeIn from '@/components/FadeIn';
-import { NavIcons, ArrowRightIcon } from './icons/NavIcons';
-import Button from './ui/Button';
-import { cn } from '@/lib/utils';
+import { ArrowRightIcon } from './icons/NavIcons';
 
 export default function VisualIndustryGrid() {
-    return (
-        <section className="relative py-24 lg:py-32 overflow-hidden bg-slate-50">
-            {/* Background patterns */}
-            <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] pointer-events-none" />
 
+    // STRATEGY: Filter specifically for the "Big Budget" sectors.
+    // We match keywords to find the right cards from your data file.
+    const TARGET_KEYWORDS = ['Power', 'Mining', 'Heavy', 'Metals'];
+
+    const strategicIndustries = INDUSTRIES_DATA.filter(industry =>
+        TARGET_KEYWORDS.some(keyword => industry.title.includes(keyword))
+    );
+
+    // FALLBACK: If the filter matches nothing (e.g. typos), show the first 3.
+    const displayIndustries = strategicIndustries.length > 0
+        ? strategicIndustries
+        : INDUSTRIES_DATA.slice(0, 3);
+
+    return (
+        <section className="relative py-24 bg-white border-t border-slate-200">
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 lg:mb-16 gap-6">
+
+                {/* HEADLINE: Pure Engineering Focus */}
+                <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
                     <div className="max-w-2xl">
-                        <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-700 bg-emerald-50 rounded-full mb-4">
-                            Our Expertise
+                        <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-slate-500 border border-slate-200 bg-slate-50 rounded-full mb-4">
+                            Core Sectors
                         </span>
-                        <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
-                            Operational Impact Across Industrial Verticals
+                        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900 leading-tight">
+                            High-Load Industrial Cooling
                         </h2>
+                        <p className="mt-4 text-lg text-slate-600">
+                            We specialize in critical vacuum recovery for utilities and energy-intensive processing plants.
+                        </p>
                     </div>
-                    <Button
-                        href="/industries"
-                        variant="outline"
-                        size="sm"
-                        className="group"
-                    >
-                        Explore all sectors
-                        <ArrowRightIcon className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                    </Button>
+                    {/* BUTTON REMOVED: No "Exploring". Focus only on what matters. */}
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-                    {INDUSTRIES_DATA.map((industry, index) => (
-                        <FadeIn key={industry.id} delay={index * 100}>
-                            <div className="relative group">
-                                {/* Animated gradient blob that appears on hover */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/15 to-secondary-500/10 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 group-hover:blur-2xl transition-all duration-700" aria-hidden="true" />
-
-                                <Link
-                                    href={`/industries/${industry.slug}`}
-                                    className="relative flex flex-col h-[420px] overflow-hidden rounded-2xl bg-white shadow-sm transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 border border-slate-200/60 hover:border-emerald-300"
-                                >
-                                {/* Background Image with Overlay */}
+                {/* THE GRID: Static, Clean, Professional */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {displayIndustries.map((industry) => (
+                        <div key={industry.id} className="relative group">
+                            <Link
+                                href={`/industries/${industry.slug}`}
+                                className="relative flex flex-col h-[400px] overflow-hidden rounded-xl bg-slate-900 shadow-sm border border-slate-200 group-hover:shadow-xl transition-shadow duration-300"
+                            >
+                                {/* Background Image: Darkened for Text Readability */}
                                 <div className="absolute inset-0 z-0">
+                                    {/* Note: We keep the image but kill the 'Scale' animation */}
                                     <Image
                                         src={industry.image}
                                         alt={industry.title}
                                         fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        className="object-cover opacity-60"
                                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
+                                    {/* Professional Gradient Overlay (Static) */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/60 to-transparent" />
                                 </div>
 
                                 {/* Content */}
                                 <div className="relative z-10 flex flex-col h-full p-8 justify-end">
-                                    <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-emerald-500/20 backdrop-blur-md border border-white/10 text-emerald-400 group-hover:bg-emerald-500 group-hover:text-white transition-all duration-300">
-                                        {industry.icon && <industry.icon className="w-6 h-6" />}
-                                    </div>
-
-                                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
+                                    <h3 className="text-2xl font-bold text-white mb-2">
                                         {industry.title}
                                     </h3>
 
-                                    <p className="text-slate-300 text-sm leading-relaxed mb-6 line-clamp-2 group-hover:text-white transition-colors">
+                                    <p className="text-slate-300 text-sm leading-relaxed mb-6 line-clamp-2">
                                         {industry.description}
                                     </p>
 
-                                    <ul className="space-y-2 mb-8 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                                    {/* Benefits List: Always Visible (No Hover Hide/Seek) */}
+                                    <ul className="space-y-2 mb-6">
                                         {industry.benefits?.slice(0, 2).map((benefit) => (
                                             <li key={benefit} className="flex items-center gap-2 text-xs font-medium text-emerald-400">
-                                                <span className="w-1 h-1 rounded-full bg-emerald-500" />
+                                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                                                 {benefit}
                                             </li>
                                         ))}
                                     </ul>
 
-                                    <div className="flex items-center gap-2 text-sm font-bold text-white group-hover:text-emerald-400 transition-colors">
-                                        Case Studies
-                                        <ArrowRightIcon className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                                    <div className="flex items-center gap-2 text-sm font-bold text-white border-t border-white/10 pt-4">
+                                        View Case Studies
+                                        <ArrowRightIcon className="w-4 h-4 text-emerald-500" />
                                     </div>
                                 </div>
-
-                                {/* Sliding accent border at bottom */}
-                                <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-emerald-500 via-secondary-500 to-emerald-500 group-hover:w-full transition-all duration-700 rounded-full z-20" />
                             </Link>
-                            </div>
-                        </FadeIn>
+                        </div>
                     ))}
                 </div>
             </div>

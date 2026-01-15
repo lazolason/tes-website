@@ -1,100 +1,118 @@
 'use client';
 
 import Link from 'next/link';
-import BeforeAfterSlider from './BeforeAfterSlider';
-import FadeIn from '@/components/FadeIn';
-import { NavIcons } from './icons/NavIcons';
-import Button from './ui/Button';
+// We are pointing to the 'ui' folder based on your file structure
+import BeforeAfterSlider from './ui/BeforeAfterSlider';
 
 export default function PremiumHero() {
     return (
         <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden bg-white">
-            {/* Decorative Blur Backgrounds */}
-            <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-50/50 -skew-x-12 transform translate-x-1/4 pointer-events-none z-0" />
-            <div className="absolute top-24 left-10 w-64 h-64 bg-emerald-200/20 rounded-full blur-3xl pointer-events-none z-0" />
+            {/* CLEAN BACKGROUND (No Blurs/Distractions) */}
+            <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -skew-x-12 transform translate-x-1/4 pointer-events-none z-0" />
 
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 w-full">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+
+                    {/* LEFT COLUMN: The Engineering Pitch */}
                     <div className="max-w-2xl">
-                        <FadeIn>
-                            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50/50 px-3 py-1 mb-8">
-                                <span className="relative flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                                </span>
-                                <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-800">
-                                    Thermal Efficiency Solution
-                                </span>
-                            </div>
 
-                            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05] mb-8">
-                                Restore Thermal <br />
-                                <span className="text-emerald-600">Capability.</span> <br />
-                                Verify Results.
-                            </h1>
+                        {/* 1. PRODUCT CATEGORY (Not Service) */}
+                        <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-slate-50 px-3 py-1 mb-8">
+                            <span className="relative flex h-2 w-2">
+                                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
+                            </span>
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
+                                Emulsion Technology &bull; Cooling Water
+                            </span>
+                        </div>
 
-                            <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-xl mb-10">
-                                A disciplined engineering approach to condenser stability.
-                                Move beyond guesswork with RT&D-aligned chemical surface
-                                treatment and traceable performance data.
-                            </p>
+                        {/* 2. THE HEADLINE (Outcome Focused) */}
+                        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05] mb-8">
+                            Restore Condenser <br />
+                            <span className="text-emerald-700">Vacuum.</span> <br />
+                            Verify the MW Gain.
+                        </h1>
 
-                            <div className="flex flex-wrap gap-4 mb-12">
-                                <Button href="/contact" size="lg" className="cta-pulse">
-                                    Request a Pilot Study
-                                </Button>
-                                <Button href="/products" variant="outline" size="lg">
-                                    Technical Specs
-                                </Button>
-                            </div>
+                        {/* 3. THE SUB-HEAD (No estimates, No RT&D name-dropping) */}
+                        <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-xl mb-10 font-medium">
+                            Move beyond guesswork. We use measurable <strong>thermodynamic baselines</strong> to verify condenser performance.
+                            <br /><br />
+                            No estimates. No "managed service" contracts. Just raw data and a solution that cleans the tubes while the unit runs.
+                        </p>
 
-                            <div className="grid grid-cols-2 gap-8 border-t border-slate-100 pt-10">
-                                <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
-                                        <NavIcons.CheckCircle className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">M&V Protocol</div>
-                                        <div className="text-xs text-slate-500 mt-1">Audit-Ready Evidence</div>
-                                    </div>
+                        {/* 4. THE CALL TO ACTION (Direct Line for Emergencies) */}
+                        <div className="flex flex-wrap gap-4 mb-12">
+                            {/* Primary Button */}
+                            <Link
+                                href="/contact"
+                                className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors"
+                            >
+                                Request Specs
+                            </Link>
+
+                            {/* WhatsApp Button: Bypasses the broken Email Server */}
+                            <a
+                                href="https://wa.me/27794648298"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center rounded-lg border border-emerald-600 px-8 py-4 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
+                            >
+                                <span className="mr-2">⚡</span> Talk to Engineering
+                            </a>
+                        </div>
+
+                        {/* 5. THE TRUST SIGNALS (Compliance & Data) */}
+                        <div className="grid grid-cols-2 gap-8 border-t border-slate-200 pt-10">
+                            <div className="flex gap-4">
+                                <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-emerald-700 flex-shrink-0">
+                                    {/* Inline SVG: Check Circle */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                                        <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clipRule="evenodd" />
+                                    </svg>
                                 </div>
-                                <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-lg bg-slate-50 border border-slate-100 flex items-center justify-center text-emerald-600 flex-shrink-0">
-                                        <NavIcons.Data className="w-5 h-5" />
-                                    </div>
-                                    <div>
-                                        <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">Live IoT</div>
-                                        <div className="text-xs text-slate-500 mt-1">Continuous Traceability</div>
-                                    </div>
+                                <div>
+                                    <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">PFMA Compliant</div>
+                                    <div className="text-xs text-slate-600 mt-1">Fixed-Cost Supply</div>
                                 </div>
                             </div>
-                        </FadeIn>
+                            <div className="flex gap-4">
+                                <div className="w-10 h-10 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-center text-emerald-700 flex-shrink-0">
+                                    {/* Inline SVG: Data/Chart */}
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+                                        <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.035-.84-1.875-1.875-1.875h-.75zM9.75 8.625c-1.035 0-1.875.84-1.875 1.875v8.25c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V10.5c0-1.035-.84-1.875-1.875-1.875h-.75zM3 13.125c-1.035 0-1.875.84-1.875 1.875v3.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875v-3.75c0-1.035-.84-1.875-1.875-1.875h-.75z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div className="text-xs font-bold text-slate-900 uppercase tracking-wider">Traceability</div>
+                                    <div className="text-xs text-slate-600 mt-1">Live Performance Data</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
+                    {/* RIGHT COLUMN: The Evidence (Static Container) */}
                     <div className="relative lg:ml-auto w-full max-w-[600px]">
-                        <FadeIn delay={200}>
-                            <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-slate-200 border border-slate-200/50 bg-slate-100">
-                                <BeforeAfterSlider
-                                    className="absolute inset-0"
-                                    beforeImage="/images/hero/before-fouled-tubes-v3.webp"
-                                    afterImage="/images/hero/after-clean-tubes-v3.webp"
-                                    beforeLabel="FOULED TUBES"
-                                    afterLabel="CLEAN TUBES WITH MEXEL®432"
-                                    captionTitle="ILLUSTRATIVE RESULT"
-                                    caption="Visual evidence of Mexel®432 effectiveness. Fouling removed, thermal transfer restored."
-                                    beforeAlt="Heavily fouled condenser tubes before treatment"
-                                    afterAlt="Clean condenser tubes after Mexel®432 treatment"
-                                />
-                            </div>
+                        <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-slate-200 bg-slate-100">
+                            <BeforeAfterSlider
+                                className="absolute inset-0"
+                                beforeImage="/images/hero/before-fouled-tubes-v3.webp"
+                                afterImage="/images/hero/after-clean-tubes-v3.webp"
+                                beforeLabel="FOULED (High Back Pressure)"
+                                afterLabel="CLEAN (Design Vacuum)"
+                                captionTitle="VACUUM RECOVERY"
+                                caption="Micro-fouling removal restores heat transfer coefficient (U-Value) to design spec."
+                                beforeAlt="Fouled condenser tubes causing high back pressure"
+                                afterAlt="Clean condenser tubes restoring vacuum"
+                            />
+                        </div>
 
-                            {/* Floating Badge */}
-                            <div className="absolute -bottom-6 -left-6 z-20 bg-white rounded-2xl p-6 shadow-xl border border-slate-100 max-w-[200px] animate-float">
-                                <div className="text-3xl font-bold text-emerald-600">50MW+</div>
-                                <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-1">
-                                    Recovered capacity
-                                </div>
+                        {/* Hard Data Badge (Static) */}
+                        <div className="absolute -bottom-6 -left-6 z-20 bg-white rounded-xl p-6 shadow-lg border border-slate-200 max-w-[200px]">
+                            <div className="text-3xl font-bold text-emerald-700">40%</div>
+                            <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">
+                                Improvement in Heat Transfer
                             </div>
-                        </FadeIn>
+                        </div>
                     </div>
                 </div>
             </div>
