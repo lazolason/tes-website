@@ -5,7 +5,34 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
-import { NavIcons } from "./icons/NavIcons";
+// DEFINING ICONS INLINE TO PREVENT IMPORT ERRORS
+const Icons = {
+  ChevronDown: ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
+      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+    </svg>
+  ),
+  Menu: ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
+    </svg>
+  ),
+  Close: ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clipRule="evenodd" />
+    </svg>
+  ),
+  Power: ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path fillRule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clipRule="evenodd" />
+    </svg>
+  ),
+  Mining: ({ className }: { className?: string }) => (
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+      <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 8.625a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM15.375 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zM7.5 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clipRule="evenodd" />
+    </svg>
+  )
+};
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -16,8 +43,7 @@ const navItems = [
     items: [
       { href: "/tes", label: "TES System Overview" },
       { href: "/mexel432", label: "Mexel®432 Product" },
-      { href: "/mexsteam", label: "MexSteam 100 Product" },
-      { href: "/products", label: "All Products" },
+      { href: "/products", label: "Technical Specs" },
       { href: "/applications", label: "Applications" },
     ]
   },
@@ -26,8 +52,9 @@ const navItems = [
     label: "Industries",
     type: "mega",
     items: [
-      { href: "/industries/power-energy", label: "Power & Energy", icon: NavIcons.Power, desc: "Improve condenser performance." },
-      { href: "/industries/mining", label: "Mining & Minerals", icon: NavIcons.Mining, desc: "Critical cooling for operations." },
+      // HARDCODED FILTER: Only Power and Mining are listed here.
+      { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
+      { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
     ]
   },
   {
@@ -35,12 +62,11 @@ const navItems = [
     label: "Knowledge Hub",
     type: "dropdown",
     items: [
-      { href: "/knowledge-hub", label: "Methodology & FAQ" },
+      { href: "/knowledge-hub", label: "Methodology" },
       { href: "/knowledge-hub/case-studies", label: "Case Studies" },
       { href: "/knowledge-hub/resources", label: "Resources" },
     ]
   },
-  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact Engineering", cta: true },
 ];
 
@@ -71,7 +97,7 @@ export default function Navbar() {
         {/* Brand */}
         <Link href="/" className="flex items-center pl-2 lg:pl-0">
           <div className="relative h-16 w-56 flex-shrink-0">
-            {/* Using object-contain and left alignment to keep it tidy */}
+            {/* Logo Image */}
             <Image
               src="/logo.png"
               alt="Mexel Energy Sustain logo"
@@ -104,7 +130,7 @@ export default function Navbar() {
               >
                 {item.label}
                 {item.items && !item.cta && (
-                  <NavIcons.ChevronDown className="w-3 h-3 text-slate-500" />
+                  <Icons.ChevronDown className="w-3 h-3 text-slate-500" />
                 )}
               </Link>
 
@@ -126,7 +152,7 @@ export default function Navbar() {
                             className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group focus-ring"
                           >
                             <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-600/10 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                              <subItem.icon className="w-4 h-4" />
+                              {subItem.icon && <subItem.icon className="w-4 h-4" />}
                             </div>
                             <div>
                               <div className="text-sm font-semibold text-slate-900">{subItem.label}</div>
@@ -164,9 +190,9 @@ export default function Navbar() {
         >
           <span className="sr-only">Open menu</span>
           {mobileOpen ? (
-            <NavIcons.Close className="w-6 h-6" />
+            <Icons.Close className="w-6 h-6" />
           ) : (
-            <NavIcons.Menu className="w-6 h-6" />
+            <Icons.Menu className="w-6 h-6" />
           )}
         </button>
       </div>
@@ -191,7 +217,7 @@ export default function Navbar() {
                 >
                   <span>{item.label}</span>
                   {item.items && !item.cta && (
-                    <NavIcons.ChevronDown className="w-4 h-4 text-slate-500" />
+                    <Icons.ChevronDown className="w-4 h-4 text-slate-500" />
                   )}
                 </Link>
                 {item.items && (
