@@ -6,6 +6,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mexelenergysustain.com";
   const lastModified = new Date();
 
+  // STRATEGY: Only index high-value, PFMA-compliant sectors.
+  // We are removing "Sugar", "Food", "Agriculture", and "Ports" to focus on Power & Mining.
   const routes = [
     "",
     "/tes",
@@ -14,12 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/industries",
     "/industries/power-energy",
     "/industries/mining",
-    "/industries/refineries",
-    "/industries/sugar-ethanol",
-    "/industries/food-beverage",
-    "/industries/agriculture",
-    "/industries/hvac-data-centers",
-    "/industries/ports",
+    "/industries/hvac-data-centers", // Keep for Data Centers/Mining overlap
     "/knowledge-hub",
     "/knowledge-hub/case-studies",
     "/knowledge-hub/case-studies/kriel",
