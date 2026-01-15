@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: '%s | Mexel Energy Sustain',
   },
   description:
-    'TES (Thermal Efficiency Solution) combines Mexel®432 chemistry, IoT dosing and cooling-water data to improve condenser performance on wet-cooled power stations and industrial plants.',
+    'Thermal Efficiency Solutions for Power Generation & Heavy Industry. TES combines Mexel®432 technology, IoT dosing, and verification to improve condenser performance.',
   keywords: [
     'TES',
     'Thermal Efficiency Solution',

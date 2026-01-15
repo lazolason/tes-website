@@ -81,13 +81,13 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn delay={200}>
               <div className="space-y-3">
-              <h3 className="text-sm font-semibold text-slate-900">Principles</h3>
-              <ul className="space-y-2 text-sm text-slate-700">
-                <li>• Transparent, data-driven, engineering-first.</li>
-                <li>• Respect existing station and plant protocols.</li>
-                <li>• Scope tightly; avoid overpromising or overselling.</li>
-                <li>• Let measured results, not claims, drive decisions.</li>
-              </ul>
+                <h3 className="text-sm font-semibold text-slate-900">Principles</h3>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li>• Transparent, data-driven, engineering-first.</li>
+                  <li>• Respect existing station and plant protocols.</li>
+                  <li>• Scope tightly; avoid overpromising or overselling.</li>
+                  <li>• Let measured results, not claims, drive decisions.</li>
+                </ul>
               </div>
             </FadeIn>
           </div>
@@ -241,9 +241,9 @@ export default function AboutPage() {
           <div className="mt-4 grid gap-8 md:grid-cols-2">
             <div>
               <p className="text-sm text-slate-700 leading-relaxed">
-                Beyond power stations, many industrial and commercial sites depend on
+                Beyond power stations, many industrial sites depend on
                 reliable cooling-water systems: mines, refineries, steel plants,
-                breweries, laundries and large processing facilities. They face the same
+                and large processing facilities. They face the same
                 underlying issues – biofilm, corrosion, scaling, solids – often with
                 variable raw-water quality.
               </p>
