@@ -28,12 +28,6 @@ const navItems = [
     items: [
       { href: "/industries/power-energy", label: "Power & Energy", icon: NavIcons.Power, desc: "Improve condenser performance." },
       { href: "/industries/mining", label: "Mining & Minerals", icon: NavIcons.Mining, desc: "Critical cooling for operations." },
-      { href: "/industries/refineries", label: "Refineries", icon: NavIcons.Refineries, desc: "Corrosion control & efficiency." },
-      { href: "/industries/sugar-ethanol", label: "Sugar & Ethanol", icon: NavIcons.Agriculture, desc: "Evaporator & process stability." },
-      { href: "/industries/food-beverage", label: "Food & Beverage", icon: NavIcons.Food, desc: "Safe, reliable cooling water." },
-      { href: "/industries/agriculture", label: "Agriculture", icon: NavIcons.Agriculture, desc: "Irrigation & system protection." },
-      { href: "/industries/hvac-data-centers", label: "HVAC & Data Centres", icon: NavIcons.Data, desc: "High-uptime cooling efficiency." },
-      { href: "/industries/ports", label: "Ports & Harbours", icon: NavIcons.Ports, desc: "Marine environment solutions." },
     ]
   },
   {
