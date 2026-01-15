@@ -36,7 +36,6 @@ export default function Footer() {
             <nav className="flex flex-col gap-2 text-sm text-slate-400">
               <Link href="/tes" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">TES System</Link>
               <Link href="/mexel432" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Mexel®432</Link>
-              <Link href="/mexsteam" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">MexSteam 100</Link>
               <Link href="/industries" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Industries</Link>
               <Link href="/knowledge-hub" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Knowledge Hub</Link>
             </nav>
