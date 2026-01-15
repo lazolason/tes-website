@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import FadeIn from "../../components/FadeIn";
 import SystemHeader from "../../components/SystemHeader";
 import Tooltip from "../../components/Tooltip";
-import { MonitoringIcon, VerificationIcon } from "../../components/BenefitIcons";
 
 // Lazy load heavy interactive components
 const ProcessSteps = dynamic(() => import("../../components/ProcessSteps"), {
@@ -15,14 +14,33 @@ const CoolingSchematic = dynamic(() => import("../../components/CoolingSchematic
   loading: () => <div className="h-96 bg-slate-50 animate-pulse" />,
 });
 
+// INLINE ICONS to prevent dependency errors and keep the system robust
+const Icons = {
+  Hardware: (props: any) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+    </svg>
+  ),
+  Chemistry: (props: any) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+    </svg>
+  ),
+  Data: (props: any) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z" />
+    </svg>
+  )
+};
+
 export const metadata: Metadata = {
-  title: "TES System Overview",
+  title: "TES Integrated System",
   description:
-    "TES is a verifiable cooling-water efficiency system combining Mexel®432 chemistry, controlled dosing, monitoring and RT&D-aligned verification for wet-cooled units.",
+    "TES is a hardware and consumable system combining Mexel®432 emulsions, automated dosing units, and thermodynamic monitoring for condenser efficiency.",
   openGraph: {
-    title: "TES System Overview | Mexel Energy Sustain",
+    title: "TES Integrated System | Mexel Energy Sustain",
     description:
-      "Chemistry, dosing, monitoring and verification tied to measurable condenser indicators.",
+      "Supply and installation of automated dosing units and Mexel®432 performance emulsions.",
   },
 };
 
@@ -30,322 +48,54 @@ export default function TesPage() {
   return (
     <main className="min-h-screen bg-white">
       <SystemHeader
-        tag="TES SYSTEM"
-        title="System architecture for verifiable cooling-water efficiency."
-        description="TES combines Mexel®432 chemistry, controlled dosing, and monitoring tied to condenser indicators (TR, TTD, vacuum). Structured baseline → intervention → review keeps results measurable and audit-ready, designed to stabilise condenser performance — not a replacement for maintenance."
-        continuity="This is the system architecture behind the Home overview."
-        currentLabel="Architecture"
+        tag="TECHNOLOGY STACK"
+        title="Integrated Hardware & Emulsion System."
+        description="TES is not a service contract. It is a proprietary system comprising automated dosing units, the Mexel®432 consumable emulsion, and telemetry integration. The system mechanically injects surfactant at specific intervals to maintain condenser vacuum and thermodynamic transfer."
+        continuity="System specifications and component breakdown."
+        currentLabel="System Architecture"
       />
 
-      {/* What TES is / is not */}
+      {/* The "Product" Definition - Critical for PFMA */}
       <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              What TES is — and what it is not
+              System Components (Supply & Install)
             </h2>
-          </FadeIn>
-          <div className="mt-6 grid gap-6 md:grid-cols-2">
-            <FadeIn delay={100}>
-              <div className="rounded-xl border border-emerald-200 bg-emerald-50/50 p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-100">
-                    <svg className="h-5 w-5 text-emerald-700" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm font-semibold text-emerald-900">TES is…</h3>
-                </div>
-                <ul className="space-y-3">
-                  {[
-                    "A cooling-water stabilisation and verification layer.",
-                    "Focused on condenser cleanliness and water-side control.",
-                    "Built for traceable dosing and measurable outcomes.",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <svg className="h-5 w-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-xl border border-slate-300 bg-slate-100/50 p-6">
-                <div className="flex items-center gap-2 mb-4">
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200">
-                    <svg className="h-5 w-5 text-slate-700" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                  <h3 className="text-sm font-semibold text-slate-900">TES is not…</h3>
-                </div>
-                <ul className="space-y-3">
-                  {[
-                    "A replacement for maintenance or asset upgrades.",
-                    "A boiler programme or combustion optimisation.",
-                    "Implemented without baseline definition and agreed KPIs.",
-                  ].map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-slate-700">
-                      <svg className="h-5 w-5 text-slate-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                      </svg>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Architecture */}
-      <section className="border-b bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              TES architecture
-            </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
-              A four-stage system designed for traceability and measured efficiency
-              gains in wet-cooled environments.
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              The TES solution is delivered as a turnkey technical installation consisting of three integrated components.
             </p>
           </FadeIn>
-          <div className="mt-10">
-            <ProcessSteps variant="tes-system" />
-          </div>
-        </div>
-      </section>
 
-      {/* Measured Indicators + Technical Visual */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-2">
-            <div>
-              <FadeIn>
-                <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-                  Measured indicators
-                </h2>
-                <p className="mt-3 text-base text-slate-600">
-                  TES tracks condenser indicators that show real water-side performance.
-                </p>
-                <p className="mt-2 text-sm text-slate-600">
-                  Compared at matched load/ambient conditions using agreed{" "}
-                  <Tooltip content="A baseline is the reference dataset collected before TES intervention, used to measure performance improvements against controlled conditions.">
-                    baselines
-                  </Tooltip>.
-                </p>
-              </FadeIn>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                {[
-                  {
-                    title: "TR",
-                    fullTitle: "Temperature Rise",
-                    detail: "Cooling-water rise across the condenser.",
-                    tooltip: "Temperature Rise (TR) measures the increase in water temperature as it passes through the condenser, indicating heat transfer efficiency.",
-                    icon: <MonitoringIcon className="w-5 h-5" />,
-                  },
-                  {
-                    title: "TTD",
-                    fullTitle: "Terminal Temperature Difference",
-                    detail: "Primary indicator of fouling resistance.",
-                    tooltip: "Terminal Temperature Difference (TTD) is the difference between exhaust steam temperature and cooling water outlet temperature. Lower TTD indicates better heat transfer and less fouling.",
-                    icon: <MonitoringIcon className="w-5 h-5" />,
-                  },
-                  {
-                    title: "Vacuum",
-                    fullTitle: "Condenser Vacuum",
-                    detail: "Stability under matched load and ambient.",
-                    tooltip: "Condenser vacuum stability indicates consistent low-pressure conditions that improve turbine efficiency. Degraded vacuum often signals fouling or air ingress.",
-                    icon: <VerificationIcon className="w-5 h-5" />,
-                  },
-                  {
-                    title: "Water Quality",
-                    fullTitle: "Water-Side Stability",
-                    detail: "Make-up, blowdown, and chemistry control.",
-                    tooltip: "Water-side stability tracks make-up rates, blowdown cycles, and chemistry parameters to ensure optimal treatment and system control.",
-                    icon: <VerificationIcon className="w-5 h-5" />,
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="group rounded-lg border border-slate-200 bg-white p-4 transition-all duration-200 hover:border-emerald-300 hover:shadow-md hover:-translate-y-0.5"
-                  >
-                    <div className="flex items-center justify-between">
-                      <Tooltip content={item.tooltip}>
-                        <span className="text-xs font-semibold uppercase tracking-wide text-slate-700">
-                          {item.title}
-                        </span>
-                      </Tooltip>
-                      <span className="text-emerald-600 transition-transform duration-200 group-hover:scale-110">
-                        {item.icon}
-                      </span>
-                    </div>
-                    <p className="mt-1 text-xs text-slate-500">{item.fullTitle}</p>
-                    <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div className="rounded-xl border border-slate-200 bg-white p-4">
-              <CoolingSchematic />
-              <p className="mt-3 text-xs text-slate-700">
-                Simplified loop view showing TES dosing point and monitored pathways.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Implementation workflow */}
-      <section className="border-b bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Implementation workflow
-            </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
-              A repeatable method with traceable logs and consistent baselines.
-            </p>
-          </FadeIn>
-          <div className="mt-10 relative">
-            {/* Timeline connector */}
-            <div className="absolute top-0 left-1/2 h-full w-0.5 bg-gradient-to-b from-emerald-200 via-emerald-300 to-emerald-200 hidden md:block -translate-x-1/2"></div>
-
-            <div className="grid gap-8 md:grid-cols-3 relative">
-              {[
-                {
-                  step: "Baseline",
-                  number: 1,
-                  detail:
-                    "Confirm KPIs, collection intervals, and operating context before dosing.",
-                  deliverable: "Baseline pack: KPIs, intervals, operating context.",
-                },
-                {
-                  step: "Intervention window",
-                  number: 2,
-                  detail:
-                    "Apply Mexel®432 with controlled dosing and traceable event logs.",
-                  deliverable: "Event log + dosing trace.",
-                },
-                {
-                  step: "Review & sign-off",
-                  number: 3,
-                  detail:
-                    "Compare against baseline, document findings, and confirm repeatability.",
-                  deliverable: "Comparison report + sign-off notes.",
-                },
-              ].map((item) => (
-                <div key={item.step} className="relative">
-                  {/* Timeline dot */}
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 hidden md:flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white text-xs font-bold shadow-lg ring-4 ring-white z-10">
-                    {item.number}
-                  </div>
-
-                  <div className="group rounded-xl border border-slate-200 bg-white p-6 shadow-sm transition-all duration-200 hover:border-emerald-300 hover:shadow-lg hover:-translate-y-1 md:mt-6">
-                    <div className="flex items-center gap-2 mb-3 md:hidden">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-emerald-600 text-white text-sm font-bold">
-                        {item.number}
-                      </div>
-                      <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">
-                        {item.step}
-                      </p>
-                    </div>
-                    <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700 mb-3 hidden md:block">
-                      {item.step}
-                    </p>
-                    <p className="text-sm text-slate-700 leading-relaxed">{item.detail}</p>
-                    <div className="mt-4 pt-4 border-t border-slate-100">
-                      <p className="text-xs font-medium text-slate-500 mb-1">Deliverable:</p>
-                      <p className="text-xs text-slate-700">{item.deliverable}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Applied tracks: Power vs Industry */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Where TES is applied
-            </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
-              TES principles translate across any large-scale cooling-water circuit where heat-transfer efficiency is a priority.
-            </p>
-          </FadeIn>
-          <div className="mt-8 grid gap-8 md:grid-cols-2">
-            <FadeIn delay={100}>
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">Utility Power Generation</h3>
-                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                  Ideal for wet-cooled thermal units using river, dam or mine-water. TES addresses persistent condenser fouling, biofouling and scaling that multi-chemical programs often fail to control.
-                </p>
-                <ul className="mt-4 space-y-2 text-xs text-slate-600">
-                  <li>• Focus on TR/TTD and Vacuum stability.</li>
-                  <li>• Traceable dosing for environmental compliance.</li>
-                  <li>• High-load condenser protection.</li>
-                </ul>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">Industrial Process Cooling</h3>
-                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                  Applied to refineries, steel plants, mines and food processing facilities where cooling towers and heat exchangers are critical to production continuity.
-                </p>
-                <ul className="mt-4 space-y-2 text-xs text-slate-600">
-                  <li>• Reductions in manual cleaning and downtime.</li>
-                  <li>• Managing high-solids or process-contaminated water.</li>
-                  <li>• Scaling control in critical exchanger banks.</li>
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Pilot Structure */}
-      <section className="border-b bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              TES Pilot Structure
-            </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
-              A standard pilot allows you to verify technical benefits on a single unit or loop before plant-wide adoption.
-            </p>
-          </FadeIn>
-          <div className="mt-8 grid gap-6 md:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                title: "1. Scope & Baseline",
-                items: ["Define KPIs (TR, TTD, Vacuum)", "Agree on collection intervals", "Establish 30-90 day baseline"],
+                title: "1. The Hardware",
+                subtitle: "Automated Dosing Unit",
+                desc: "Skid-mounted injection system with programmable logic controllers (PLC) and variable speed drives. Installed directly into the CW intake lines.",
+                icon: Icons.Hardware,
               },
               {
-                title: "2. Intervention",
-                items: ["Install TES dosing skid", "Apply Mexel®432 treatment", "Maintain traceable dosing logs"],
+                title: "2. The Consumable",
+                subtitle: "Mexel®432 Emulsion",
+                desc: "A filming polyamine surfactant supplied in bulk IBCs. It acts as a dispersant and corrosion inhibitor, forming a micron-thin barrier on tube surfaces.",
+                icon: Icons.Chemistry,
               },
               {
-                title: "3. Verification",
-                items: ["Compare data to baseline", "Physical tube inspections", "Full performance review report"],
+                title: "3. The Telemetry",
+                subtitle: "Performance Monitoring",
+                desc: "Integration with plant Scada to track Vacuum, TR, and TTD in real-time. Provides verification of system performance against guarantees.",
+                icon: Icons.Data,
               },
-            ].map((section, index) => (
-              <FadeIn key={section.title} delay={100 * index}>
-                <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
-                  <h3 className="text-sm font-semibold text-slate-900">{section.title}</h3>
-                  <ul className="mt-3 space-y-2 text-xs text-slate-700">
-                    {section.items.map((item) => (
-                      <li key={item}>• {item}</li>
-                    ))}
-                  </ul>
+            ].map((item) => (
+              <FadeIn key={item.title} delay={100}>
+                <div className="h-full rounded-xl border border-slate-200 bg-white p-6 shadow-sm hover:border-emerald-300 transition-colors">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600 mb-4">
+                    <item.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-slate-400">{item.title}</h3>
+                  <div className="text-lg font-bold text-slate-900 mt-1">{item.subtitle}</div>
+                  <p className="mt-3 text-sm text-slate-600 leading-relaxed">{item.desc}</p>
                 </div>
               </FadeIn>
             ))}
@@ -353,43 +103,148 @@ export default function TesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gradient-emerald">
+      {/* Architecture Visual */}
+      <section className="border-b bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full -mr-32 -mt-32 opacity-50"></div>
-            <div className="relative flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center">
-                    <svg className="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
-                    </svg>
+          <div className="grid items-center gap-10 lg:grid-cols-2">
+            <div>
+              <FadeIn>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                  Thermodynamic Verification
+                </h2>
+                <p className="mt-3 text-base text-slate-600">
+                  The system is validated by physical indicators, not theoretical models. We track the recovery of the condenser's design parameters.
+                </p>
+              </FadeIn>
+              <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                {[
+                  {
+                    title: "TR (Temp Rise)",
+                    detail: "Restoring the Delta-T across the condenser (Heat Absorption).",
+                  },
+                  {
+                    title: "TTD (Temp Diff)",
+                    detail: "Minimizing the gap between Steam Temp and Outlet Water Temp.",
+                  },
+                  {
+                    title: "Back Pressure",
+                    detail: "Reducing kPa to design specifications (Vacuum Recovery).",
+                  },
+                  {
+                    title: "Tube Cleanliness",
+                    detail: "Physical reduction in fouling factor (Rf) and biological film.",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.title}
+                    className="group rounded-lg border border-slate-200 bg-slate-50 p-4"
+                  >
+                    <span className="text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                      {item.title}
+                    </span>
+                    <p className="mt-2 text-sm text-slate-700">{item.detail}</p>
                   </div>
-                  <h2 className="text-base font-semibold text-slate-900">
-                    Engage TES with a structured pilot
-                  </h2>
+                ))}
+              </div>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+              <CoolingSchematic />
+              <p className="mt-3 text-xs text-slate-500 text-center">
+                Fig 1. Typical Injection Layout for 600MW+ Unit
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Implementation workflow - Renamed to "Deployment" */}
+      <section className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Deployment Methodology
+            </h2>
+            <p className="mt-3 max-w-3xl text-base text-slate-600">
+              Standard engineering installation process.
+            </p>
+          </FadeIn>
+          <div className="mt-10">
+            {/* We reuse the ProcessSteps but it's now framed as Deployment, not "Service" */}
+            <ProcessSteps variant="tes-system" />
+          </div>
+        </div>
+      </section>
+
+      {/* Target Sectors - CLEANED (No Food/Ag) */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Core Applications
+            </h2>
+          </FadeIn>
+          <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <FadeIn delay={100}>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-white rounded-lg border border-slate-200">
+                    <Icons.Hardware className="w-6 h-6 text-slate-700" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900">Power Generation (Utilities)</h3>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed max-w-xl">
-                  We scope the unit, agree KPIs, and align verification expectations before deployment. Baseline → intervention → review methodology ensures measurable, audit-ready results.
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  Engineered for 500MW+ wet-cooled units (coal/nuclear) using river or mine-water.
+                  Focus on restoring MW output lost to back-pressure/vacuum decay.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 text-sm flex-shrink-0">
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="p-2 bg-white rounded-lg border border-slate-200">
+                    <Icons.Chemistry className="w-6 h-6 text-slate-700" />
+                  </div>
+                  <h3 className="text-lg font-bold text-slate-900">Heavy Industry & Mining</h3>
+                </div>
+                <p className="text-sm text-slate-700 leading-relaxed">
+                  Critical cooling for smelter furnaces, compressors, and underground refrigeration.
+                  Focus on preventing heat-exchanger fouling in high-solids water loops.
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA - Engineering Focus */}
+      <section className="bg-slate-900">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <div className="relative overflow-hidden rounded-2xl border border-slate-700 bg-slate-800 shadow-2xl">
+            <div className="relative flex flex-col gap-6 p-8 md:flex-row md:items-center md:justify-between">
+              <div className="flex-1">
+                <h2 className="text-xl font-bold text-white mb-2">
+                  System Specifications
+                </h2>
+                <p className="text-sm text-slate-400 leading-relaxed max-w-xl">
+                  Request the technical data sheets for the Mexel®432 emulsion and the Dosing Unit skid layout.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-3 text-sm flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white shadow-sm transition-all hover:bg-emerald-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2 cta-pulse"
+                  className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white shadow-sm transition-all hover:bg-emerald-500 hover:shadow-md border border-transparent"
                 >
-                  Request a Pilot Study
+                  Request Data Sheets
                 </Link>
-                <Link
-                  href="/mexel432"
-                  className="inline-flex items-center justify-center gap-1 font-semibold text-emerald-700 transition-colors hover:text-emerald-900"
+                {/* WHATSAPP SAFETY NET */}
+                <a
+                  href="https://wa.me/27794648298"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-lg border border-slate-600 bg-transparent px-6 py-3 font-semibold text-white hover:bg-slate-700"
                 >
-                  View Chemistry Specs
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
+                  Talk to Engineering
+                </a>
               </div>
             </div>
           </div>
