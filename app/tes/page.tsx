@@ -6,7 +6,7 @@ import SystemHeader from "../../components/SystemHeader";
 import Tooltip from "../../components/Tooltip";
 
 // Lazy load heavy interactive components
-const ProcessSteps = dynamic(() => import("../../components/ProcessSteps"), {
+const ModernProcess = dynamic(() => import("../../components/ModernProcess"), {
   loading: () => <div className="h-96 bg-white animate-pulse" />,
 });
 
@@ -157,23 +157,8 @@ export default function TesPage() {
         </div>
       </section>
 
-      {/* Implementation workflow - Renamed to "Deployment" */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Deployment Methodology
-            </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
-              Standard engineering installation process.
-            </p>
-          </FadeIn>
-          <div className="mt-10">
-            {/* We reuse the ProcessSteps but it's now framed as Deployment, not "Service" */}
-            <ProcessSteps variant="tes-system" />
-          </div>
-        </div>
-      </section>
+      {/* 4. Deployment Methodology */}
+      <ModernProcess />
 
       {/* Target Sectors - CLEANED (No Food/Ag) */}
       <section className="border-b bg-white">
