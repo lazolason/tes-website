@@ -22,7 +22,7 @@ export default function IndustriesPage() {
 
   // STRATEGY: Filter specifically for the "Big Budget" sectors.
   // We match keywords to find the right cards from your data file.
-  const TARGET_KEYWORDS = ['Power', 'Mining', 'Heavy', 'Metals'];
+  const TARGET_KEYWORDS = ['Power', 'Mining', 'HVAC', 'Data', 'Heavy'];
 
   const strategicIndustries = INDUSTRIES_DATA.filter(industry =>
     TARGET_KEYWORDS.some(keyword => industry.title.includes(keyword))

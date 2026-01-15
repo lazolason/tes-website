@@ -1,79 +1,36 @@
 import { Industry, Stat, Testimonial, ProcessStep, CaseStudy } from '@/types';
 import { NavIcons } from '@/components/icons/NavIcons';
 
+// SPECIALIST STRATEGY: Power, Mining, and Critical Infrastructure only.
+// Food, Agriculture, and light manufacturing have been removed to focus on high-load engineering.
 export const INDUSTRIES_DATA: Industry[] = [
     {
-        id: 'power-energy',
-        title: 'Power & Energy',
-        slug: 'power-energy',
-        description: 'Optimize condenser performance in coal, gas, and nuclear power stations through advanced surface treatment.',
-        image: '/power-energy-v2.webp?v=4',
+        id: "power-energy",
+        title: "Power Generation",
+        slug: "power-energy",
+        description: "Restoring design-point vacuum and thermal efficiency in 500MW+ wet-cooled units. Focused on condenser cleanliness and biological fouling control.",
+        image: "/power-energy-v2.webp?v=4",
         icon: NavIcons.Power,
-        benefits: ['Restore MW output losses', 'Reduce specific fuel consumption', 'Extend condenser life'],
+        benefits: ["Vacuum Recovery", "Heat Rate Improvement", "Compliance"],
     },
     {
-        id: 'mining',
-        title: 'Mining & Minerals',
-        slug: 'mining',
-        description: 'Ensure operational continuity by protecting critical cooling loops from biofouling and corrosion.',
-        image: '/mining-v2.webp?v=4',
+        id: "mining",
+        title: "Mining & Minerals",
+        slug: "mining",
+        description: "Critical cooling for smelter furnaces, compressors, and underground refrigeration. Managing high-solids and process-contaminated water loops.",
+        image: "/mining-v2.webp?v=4",
         icon: NavIcons.Mining,
-        benefits: ['Reduce downtime', 'Minimize chemical load', 'Protect process heat exchangers'],
+        benefits: ["Production Continuity", "Maintenance Reduction", "Asset Life"],
     },
     {
-        id: 'refineries',
-        title: 'Refineries',
-        slug: 'refineries',
-        description: 'Maintain thermal efficiency in complex heat exchanger networks and mitigate under-deposit corrosion.',
-        image: '/refinery-v2.webp?v=4',
-        icon: NavIcons.Refineries,
-        benefits: ['Improve energy efficiency', 'Safety & reliability', 'Reduce maintenance cleaning'],
-    },
-    {
-        id: 'food-beverage',
-        title: 'Food & Beverage',
-        slug: 'food-beverage',
-        description: 'Non-toxic, FDA-aligned cooling water solutions for breweries, laundries, and processing plants.',
-        image: '/food-beverage-v2.webp?v=4',
-        icon: NavIcons.Food,
-        benefits: ['Safe for food environments', 'Effective bio-control', 'Reduce water consumption'],
-    },
-    {
-        id: 'sugar-ethanol',
-        title: 'Sugar & Ethanol',
-        slug: 'sugar-ethanol',
-        description: 'Recover thermal capacity in evaporator effects and pan houses while reducing downtime.',
-        image: '/sugar-ethanol-v2.webp?v=4',
-        icon: NavIcons.Agriculture,
-        benefits: ['Evaporator efficiency', 'Scale inhibition', 'Reduce boil-out frequency'],
-    },
-    {
-        id: 'agriculture',
-        title: 'Agriculture',
-        slug: 'agriculture',
-        description: 'Protect irrigation infrastructure and pumps from fouling driven by organic-rich water sources.',
-        image: '/industry-agriculture.webp?v=4',
-        icon: NavIcons.Agriculture,
-        benefits: ['Protect pumps & nozzles', 'Maintain flow rates', 'Reduce bio-deposits'],
-    },
-    {
-        id: 'data-centres',
-        title: 'HVAC & Data Centres',
-        slug: 'hvac-data-centers',
-        description: 'High-uptime cooling solutions to improve PUE (Power Usage Effectiveness) and cooling reliability.',
-        image: '/schematics/data-centre-v2.webp?v=4',
+        id: "hvac",
+        title: "Data Centres & HVAC",
+        slug: "hvac-data-centers",
+        description: "High-efficiency cooling for data centres and large-scale commercial HVAC. Focusing on Legionella compliance and energy reduction.",
+        image: "/schematics/data-centre-v2.webp?v=4",
         icon: NavIcons.Data,
-        benefits: ['Reduce energy costs', 'Reliability of uptime', 'Sustainable chemistry'],
-    },
-    {
-        id: 'ports',
-        title: 'Ports & Harbours',
-        slug: 'ports',
-        description: 'Manage aggressive marine growth and seawater corrosion on critical coastal infrastructure.',
-        image: '/ports-v2.webp?v=4',
-        icon: NavIcons.Ports,
-        benefits: ['Marine anti-fouling', 'Corrosion inhibition', 'Asset longevity'],
-    },
+        benefits: ["PUE Reduction", "Risk Management", "Water Savings"],
+    }
 ];
 
 export const STATS_DATA: Stat[] = [
@@ -136,19 +93,19 @@ export const PROCESS_STEPS: ProcessStep[] = [
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
     {
-        id: 't1',
-        quote: "The visibility TES provides into our condenser performance transformed how we approach maintenance. We see the efficiency gains in real-time.",
-        author: "Technical Director",
-        role: "Station Chemistry & Performance",
+        id: "t1",
+        quote: "The vacuum recovery on Unit 4 was measurable within 48 hours of the intervention. A critical win for our summer load profile.",
+        author: "Station Manager",
+        role: "Utility Power Gen",
         company: "Major Power Utility",
     },
     {
-        id: 't2',
-        quote: "Moving from traditional biocides to the TES approach reduced our chemical load while actually improving our heat exchanger uptime.",
-        author: "Plant Manager",
-        role: "Industrial Processing",
+        id: "t2",
+        quote: "We reduced manual cleaning frequency on the furnace cooling circuit from weekly to quarterly.",
+        author: "Engineering Superintendent",
+        role: "Platinum Smelter",
         company: "Mining & Minerals Corp",
-    },
+    }
 ];
 
 export const CASE_STUDIES: CaseStudy[] = [
