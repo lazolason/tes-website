@@ -90,28 +90,60 @@ export default function PremiumHero() {
                         </div>
                     </div>
 
-                    {/* RIGHT COLUMN: The Evidence (Static Container) */}
-                    <div className="relative lg:ml-auto w-full max-w-[600px]">
-                        <div className="relative z-10 w-full aspect-[4/5] rounded-[2rem] overflow-hidden shadow-xl border border-slate-200 bg-slate-100">
-                            <BeforeAfterSlider
-                                className="absolute inset-0"
-                                beforeImage="/images/hero/before-fouled-tubes-v3.webp"
-                                afterImage="/images/hero/after-clean-tubes-v3.webp"
-                                beforeLabel="FOULED (High Back Pressure)"
-                                afterLabel="CLEAN (Design Vacuum)"
-                                captionTitle="VACUUM RECOVERY"
-                                caption="Micro-fouling removal restores heat transfer coefficient (U-Value) to design spec."
-                                beforeAlt="Fouled condenser tubes causing high back pressure"
-                                afterAlt="Clean condenser tubes restoring vacuum"
-                            />
-                        </div>
+                    {/* RIGHT SIDE: The Visual Proof (Simplified) */}
+                    <div className="relative mt-16 lg:mt-0 lg:col-span-6 xl:col-span-6 lg:flex lg:items-center">
+                        <div className="relative w-full rounded-2xl border border-slate-800 bg-slate-900/80 p-8 backdrop-blur-xl shadow-2xl">
 
-                        {/* Hard Data Badge (Static) */}
-                        <div className="absolute -bottom-6 -left-6 z-20 bg-white rounded-xl p-6 shadow-lg border border-slate-200 max-w-[200px]">
-                            <div className="text-3xl font-bold text-emerald-700">40%</div>
-                            <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mt-1">
-                                Improvement in Heat Transfer
+                            {/* Header for the Data Card */}
+                            <div className="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
+                                <div>
+                                    <h3 className="text-lg font-semibold text-white">Performance Delta</h3>
+                                    <p className="text-sm text-slate-400">Typical validated recovery</p>
+                                </div>
+                                <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                             </div>
+
+                            {/* The Two Killer Metrics */}
+                            <div className="grid grid-cols-2 gap-8">
+                                <div>
+                                    <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
+                                        Vacuum Gain
+                                    </div>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                                            4.5
+                                        </span>
+                                        <span className="text-lg font-medium text-emerald-400">kPa</span>
+                                    </div>
+                                    <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                                        Restored back-pressure to design spec.
+                                    </p>
+                                </div>
+
+                                <div className="border-l border-slate-800 pl-8">
+                                    <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
+                                        Payback Period
+                                    </div>
+                                    <div className="flex items-baseline gap-2">
+                                        <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
+                                            &lt;12
+                                        </span>
+                                        <span className="text-lg font-medium text-emerald-400">Months</span>
+                                    </div>
+                                    <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                                        Self-funding via fuel efficiency gains.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {/* Footer Verification Note */}
+                            <div className="mt-8 pt-6 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
+                                <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                                Verified via ASME PTC 12.2 Methodology
+                            </div>
+
                         </div>
                     </div>
                 </div>
