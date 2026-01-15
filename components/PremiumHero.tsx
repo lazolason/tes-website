@@ -1,8 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-// We are pointing to the 'ui' folder based on your file structure
-import BeforeAfterSlider from './ui/BeforeAfterSlider';
 
 export default function PremiumHero() {
     return (
@@ -90,11 +88,11 @@ export default function PremiumHero() {
                         </div>
                     </div>
 
-                    {/* RIGHT SIDE: The Visual Proof (Simplified) */}
+                    {/* RIGHT SIDE: The Engineering Minimalist Layout */}
                     <div className="relative mt-16 lg:mt-0 lg:col-span-6 xl:col-span-6 lg:flex lg:items-center">
                         <div className="relative w-full rounded-2xl border border-slate-800 bg-slate-900/80 p-8 backdrop-blur-xl shadow-2xl">
 
-                            {/* Header for the Data Card */}
+                            {/* Header */}
                             <div className="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
                                 <div>
                                     <h3 className="text-lg font-semibold text-white">Performance Delta</h3>
@@ -103,8 +101,9 @@ export default function PremiumHero() {
                                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                             </div>
 
-                            {/* The Two Killer Metrics */}
+                            {/* Two Killer Metrics */}
                             <div className="grid grid-cols-2 gap-8">
+                                {/* Metric 1 */}
                                 <div>
                                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
                                         Vacuum Gain
@@ -120,6 +119,7 @@ export default function PremiumHero() {
                                     </p>
                                 </div>
 
+                                {/* Metric 2 */}
                                 <div className="border-l border-slate-800 pl-8">
                                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
                                         Payback Period
@@ -136,14 +136,13 @@ export default function PremiumHero() {
                                 </div>
                             </div>
 
-                            {/* Footer Verification Note */}
+                            {/* Footer Verification */}
                             <div className="mt-8 pt-6 border-t border-slate-800 flex items-center gap-2 text-xs text-slate-400">
                                 <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
                                 Verified via ASME PTC 12.2 Methodology
                             </div>
-
                         </div>
                     </div>
                 </div>
