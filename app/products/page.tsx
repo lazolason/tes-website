@@ -1,12 +1,10 @@
 import Link from "next/link";
-import Image from "next/image";
 import FadeIn from "../../components/FadeIn";
 import SystemHeader from "../../components/SystemHeader";
-import Tooltip from "../../components/Tooltip";
 import Button from "../../components/ui/Button";
 import type { Metadata } from "next";
 
-// INLINE ICONS (Robust & Technical)
+// INLINE ICONS
 const Icons = {
   Biofouling: (props: any) => (
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
@@ -31,13 +29,13 @@ const Icons = {
 };
 
 export const metadata: Metadata = {
-  title: "Products | Mexel®432 & MexSteam 100",
+  title: "Products | Mexel®432",
   description:
-    "Product catalog: Mexel®432 (Cooling Water Emulsion) and MexSteam 100 (Boiler Film-Forming Amine). Technical specifications for power and heavy industry.",
+    "Product catalog: Mexel®432 (Cooling Water Emulsion). The core consumable for TES vacuum recovery systems.",
   openGraph: {
     title: "Product Catalog | Mexel Energy Sustain",
     description:
-      "Filming amine commodities for cooling-water and steam generation systems.",
+      "Filming amine commodity for cooling-water systems.",
   },
 };
 
@@ -46,8 +44,8 @@ export default function ProductsPage() {
     <main className="min-h-screen bg-white">
       <SystemHeader
         tag="PRODUCT CATALOG"
-        title="Commodity Chemistry Solutions."
-        description="We supply two core proprietary emulsions: Mexel®432 for cooling-water circuits (condenser protection) and MexSteam 100 for high-pressure boiler systems. Both technologies utilize film-forming amine mechanisms to isolate metal surfaces from corrosive fluids."
+        title="Commodity Chemistry."
+        description="We supply Mexel®432, a proprietary emulsion for cooling-water circuits. It utilizes a film-forming amine mechanism to isolate metal surfaces from fouling and corrosion."
         continuity="Available in IBCs (1000L) or Bulk Supply."
         currentLabel="Catalog"
       />
@@ -57,7 +55,7 @@ export default function ProductsPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              1. Mexel®432 (Cooling Water)
+              Mexel®432 (Cooling Water)
             </h2>
             <p className="mt-3 max-w-3xl text-base text-slate-600">
               The core consumable of the TES system. A filming polyamine emulsion designed to maintain condenser vacuum and cleanliness.
@@ -139,75 +137,15 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      {/* MexSteam 100 – Boiler Product */}
-      <section id="mexsteam" className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              2. MexSteam 100 (Boiler System)
-            </h2>
-            <p className="mt-3 max-w-3xl text-base text-slate-600">
-              High-temperature film-forming amine for boiler feedwater, condensate return, and steam circuits.
-            </p>
-          </FadeIn>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-slate-100 rounded-lg">
-                  <Icons.Corrosion className="w-6 h-6 text-slate-700" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">Application Scope</h3>
-              </div>
-              <p className="text-sm text-slate-700 leading-relaxed mb-4">
-                MexSteam 100 is designed for high-pressure environments where traditional treatments struggle. It provides comprehensive protection across the steam cycle:
-              </p>
-              <ul className="space-y-2 text-xs text-slate-600">
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                  <strong>Feedwater:</strong> Protects pumps and heaters from oxygen pitting.
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                  <strong>Boiler Internal:</strong> Prevents magnetite layer disruption.
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-                  <strong>Condensate:</strong> Neutralizes carbonic acid in return lines.
-                </li>
-              </ul>
-            </div>
-
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-slate-100 rounded-lg">
-                  <Icons.Scaling className="w-6 h-6 text-slate-700" />
-                </div>
-                <h3 className="text-lg font-bold text-slate-900">Strategic Fit</h3>
-              </div>
-              <p className="text-sm text-slate-700 leading-relaxed mb-4">
-                While Mexel®432 handles the "Cold End" (Cooling Water), MexSteam 100 handles the "Hot End" (Steam Generation).
-              </p>
-              <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
-                <p className="text-xs text-amber-900 font-medium">
-                  <strong>Verification Note:</strong> MexSteam 100 is supplied as a standalone chemical commodity. It falls outside the specific TES Vacuum Recovery verification protocols used for cooling water.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA - Procurement Focus */}
       <section className="bg-slate-900 py-16">
         <div className="mx-auto max-w-6xl px-4 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">Procurement & Supply</h2>
           <p className="text-slate-400 mb-10 max-w-2xl mx-auto">
-            We maintain strategic stock levels of both emulsions to ensure uninterrupted site operations.
+            We maintain strategic stock levels of Mexel®432 to ensure uninterrupted site operations.
           </p>
 
           <div className="flex flex-wrap justify-center gap-6">
-            {/* Primary CTA */}
             <Link
               href="/contact"
               className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white hover:bg-emerald-500 transition-all border border-transparent"
@@ -216,7 +154,6 @@ export default function ProductsPage() {
               Request Price List
             </Link>
 
-            {/* WhatsApp Safety Net */}
             <a
               href="https://wa.me/27794648298"
               target="_blank"
