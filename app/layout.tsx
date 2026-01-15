@@ -96,8 +96,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
-      {/* suppressHydrationWarning: Browser extensions may inject classes (e.g., antigravity-scroll-lock) */}
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
+      {/* suppressHydrationWarning: Browser extensions/agent tools may inject classes (e.g., antigravity-scroll-lock) */}
       <body className="bg-white text-slate-900 antialiased font-sans">
         {/* Skip to main content link for keyboard accessibility */}
         <a href="#main-content" className="skip-link">
