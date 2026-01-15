@@ -49,7 +49,7 @@ export default function DataCentresPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
-                Request a Pilot Study
+                Engineering Enquiry
               </Button>
             </div>
           </div>

@@ -48,7 +48,7 @@ export default function MiningPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
-                Request a Pilot Study
+                Engineering Enquiry
               </Button>
             </div>
           </div>
@@ -126,40 +126,29 @@ export default function MiningPage() {
         </div>
       </section>
 
-      {/* Strategic Complement: MexSteam 100 */}
-      <section className="py-20 lg:py-32">
+      {/* 5. Minerals Processing Alignment */}
+      <section className="py-24 lg:py-32 bg-slate-50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-slate-900 rounded-[2.5rem] overflow-hidden relative">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.1),transparent_50%)]" />
-            <div className="relative p-12 lg:p-20 grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <span className="text-emerald-400 font-bold text-xs uppercase tracking-widest mb-6 block">Strategic Complement</span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-white mb-6">MexSteam 100 for Boiler-Side Efficiency.</h2>
-                <p className="text-slate-400 text-lg leading-relaxed mb-8">
-                  Mining operations with process steam or heating systems face unique
-                  boiler feedwater challenges. MexSteam 100 provides film-forming
-                  corrosion protection where traditional treatments struggle.
-                </p>
-                <Link
-                  href="/products#mexsteam"
-                  className="inline-flex items-center gap-2 text-emerald-400 font-bold hover:text-emerald-300 transition-colors"
-                >
-                  View Product Details
-                  <ArrowRightIcon className="w-4 h-4" />
-                </Link>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  "Process Steam HP Boilers",
-                  "Mv-TDS Management",
-                  "Condensate Return Stability",
-                  "Evaporator Protection"
-                ].map((tag) => (
-                  <div key={tag} className="bg-white/5 border border-white/10 rounded-xl p-4 text-xs font-bold text-white uppercase tracking-tight">
-                    {tag}
-                  </div>
-                ))}
-              </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">High-Load Minerals Processing.</h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                In smelting and minerals processing, cooling is often the constraint on production
+                throughput. By protecting heat-transfer surfaces with Mexel®432, we ensure that
+                fouling rates do not force unscheduled furnace de-ratings or refrigeration outages.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                "Smelter Cooling",
+                "Furnace Integrity",
+                "Compressor Uptime",
+                "Mine Refrigeration"
+              ].map((tag) => (
+                <div key={tag} className="bg-slate-900 text-white rounded-xl p-6 text-xs font-bold uppercase tracking-tight shadow-lg">
+                  {tag}
+                </div>
+              ))}
             </div>
           </div>
         </div>

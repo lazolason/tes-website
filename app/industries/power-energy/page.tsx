@@ -22,16 +22,16 @@ export default function PowerEnergyPage() {
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
       <section className="relative py-24 lg:py-32 overflow-hidden">
-                  <div className="absolute inset-0 bg-slate-900 z-0">
-                    <Image
-                      src="/power-energy-v2.webp?v=4"
-                      alt="Power generation facility"
-                      fill
-                      className="object-cover opacity-40"
-                      priority
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
-                  </div>
+        <div className="absolute inset-0 bg-slate-900 z-0">
+          <Image
+            src="/power-energy-v2.webp?v=4"
+            alt="Power generation facility"
+            fill
+            className="object-cover opacity-40"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent" />
+        </div>
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <span className="inline-block px-3 py-1 text-xs font-bold uppercase tracking-widest text-emerald-400 bg-emerald-500/10 rounded-full mb-6 border border-emerald-500/20">
@@ -48,7 +48,7 @@ export default function PowerEnergyPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
-                Request a Pilot Study
+                Engineering Enquiry
               </Button>
               <Link
                 href="/knowledge-hub/case-studies/kriel"
@@ -111,33 +111,25 @@ export default function PowerEnergyPage() {
         </div>
       </section>
 
-      {/* Strategic Complement: MexSteam 100 */}
-      <section className="py-20 lg:py-32 bg-slate-50">
+      {/* 5. Production Continuity */}
+      <section className="py-24 lg:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-[2.5rem] p-12 lg:p-20 shadow-xl border border-slate-100 grid lg:grid-cols-2 gap-12 items-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-50 rounded-full -mr-32 -mt-32 opacity-50" />
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="text-emerald-600 font-bold text-xs uppercase tracking-widest mb-6 block">Strategic Complement</span>
-              <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-6">MexSteam 100 for Boiler-Side Stability.</h2>
-              <p className="text-slate-600 text-lg leading-relaxed mb-8">
-                While TES manages the cold end, MexSteam 100 protects the high-pressure
-                boiler and steam circuit. In large power blocks, this means reduced tube
-                failures and maintained heat-transfer in economiser and evaporator sections.
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Uninterrupted MW Generation.</h2>
+              <p className="text-slate-600 text-lg leading-relaxed">
+                By maintaining the surface interface with Mexel®432, we prevent the biological
+                blanketing that causes the secondary baseline to drift from design capacity.
+                This ensures that your unit can meet its full load profile throughout the summer peak
+                without requiring manual condenser cleaning outages.
               </p>
-              <Link
-                href="/products#mexsteam"
-                className="inline-flex items-center gap-2 text-emerald-600 font-bold hover:gap-3 transition-all"
-              >
-                View Steam-Side Solutions
-                <ArrowRightIcon className="w-4 h-4" />
-              </Link>
             </div>
-            <div className="grid grid-cols-2 gap-4 relative z-10">
+            <div className="grid grid-cols-2 gap-4">
               {[
-                "HP Boiler Protection",
-                "Condensate Stability",
-                "Tube Failure Reduction",
-                "Evaporator Integrity"
+                "Vacuum Stability",
+                "Fouling Prevention",
+                "Thermal Recovery",
+                "Design Compliance"
               ].map((tag) => (
                 <div key={tag} className="bg-slate-900 text-white rounded-xl p-6 text-xs font-bold uppercase tracking-tight shadow-lg">
                   {tag}
