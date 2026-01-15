@@ -1,306 +1,194 @@
-import Link from "next/link";
-import Image from "next/image";
-import dynamic from "next/dynamic";
-import FadeIn from "../../components/FadeIn";
-import Tooltip from "../../components/Tooltip";
-import { BiofoulingIcon, CorrosionIcon, ScalingIcon } from "../../components/BenefitIcons";
 import type { Metadata } from "next";
+import Link from "next/link";
+import FadeIn from "../../components/FadeIn";
+import SystemHeader from "../../components/SystemHeader";
+
+// INLINE ICONS (Robust & Technical)
+const Icons = {
+  Molecule: (props: any) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+    </svg>
+  ),
+  Eco: (props: any) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  ),
+  Download: (props: any) => (
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" />
+    </svg>
+  )
+};
 
 export const metadata: Metadata = {
-  title: "Mexel®432",
+  title: "Mexel®432 Product Specifications",
   description:
-    "Mexel®432: Non-oxidant emulsion chemistry for cooling-water treatment. Detaches biofilm, prevents fouling, inhibits corrosion in condensers and heat exchangers.",
+    "Technical Data Sheet for Mexel®432: A filming polyamine emulsion for biofouling control, corrosion inhibition, and scale prevention in cooling water systems.",
   openGraph: {
-    title: "Mexel®432 Chemistry | Mexel Energy Sustain",
+    title: "Mexel®432 | Technical Data Sheet",
     description:
-      "Surface-active cooling-water treatment that replaces multiple chemicals with a single molecular film approach.",
+      "Filming amine emulsion specifications, dosing parameters, and eco-toxicity profile.",
   },
 };
 
-export default function Mexel432Page() {
+export default function MexelProductPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero with Infographic */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-4 py-16 lg:py-24">
-          <div className="text-center mb-8">
-            <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700">
-              Mexel®432
-            </p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-5xl">
-              Restoring Thermal Efficiency: The Mexel®432 Solution
-            </h1>
-            <p className="mt-5 max-w-3xl mx-auto text-base leading-relaxed text-slate-600">
-              A non-oxidant, surface-active emulsion that detaches existing biofilm, prevents regrowth, and maintains condenser cleanliness with a protective molecular film.
-            </p>
-          </div>
+      <SystemHeader
+        tag="PRODUCT DATA SHEET"
+        title="Mexel®432 Performance Emulsion."
+        description="Mexel®432 is a proprietary filming polyamine that acts as a surface-active agent (surfactant). Unlike bulk water treatments, it functions by adsorbing onto system surfaces to create a monomolecular barrier against biofouling, corrosion, and scale."
+        continuity="Technical specifications and application data."
+        currentLabel="Mexel®432 Specs"
+      />
 
-          {/* Technical Infographic */}
-          <div className="mt-10 relative h-96 md:h-[32rem] lg:h-[40rem]">
-            <Image
-              src="/before-after-tubes.webp"
-              alt="Before: Heavily fouled condenser tubes vs After: Restored tubes with Mexel432 treatment"
-              fill
-              className="object-contain"
-              priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 90vw, 80vw"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* What is Mexel®432 */}
-      <section className="border-b border-slate-200/70 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
-            <FadeIn>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-                What is Mexel®432?
-              </h2>
-              <div className="mt-6 space-y-4">
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  Mexel®432 is a <span className="font-semibold">long-chain alkyl amine emulsion</span> designed for cooling-water service in condensers, heat exchangers and cooling towers. Unlike oxidising biocides or traditional multi-chemical programs, Mexel®432 works through a surface-active mechanism.
-                </p>
-                <p className="text-sm text-slate-700 leading-relaxed">
-                  It forms a <span className="font-semibold">protective molecular film</span> on wetted metal surfaces. This single treatment replaces separate biocides, anti-scalants, dispersants and corrosion inhibitors, helping stations burn less coal or fuel per net MWh.
-                </p>
-                <div className="mt-6 flex flex-wrap gap-2">
-                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                    Non-oxidant
-                  </span>
-                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                    Biodegradable
-                  </span>
-                  <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
-                    Surface-active
-                  </span>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                <h3 className="text-sm font-semibold text-slate-900">Key characteristics</h3>
-                <ul className="mt-4 space-y-3 text-sm text-slate-700">
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">•</span>
-                    <span>No chlorine, bromine or peroxide required.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">•</span>
-                    <span>Effective across variable water quality and pH ranges.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">•</span>
-                    <span>Single-product replacement for multi-chemical dosing.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-emerald-600 font-bold">•</span>
-                    <span>Minimal environmental footprint compared to oxidants.</span>
-                  </li>
-                </ul>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      {/* Detailed Functions */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
+      {/* Mode of Action - The "Science" bit */}
+      <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Technical Functions
+              Mechanism of Action
             </h2>
-            <p className="mt-3 text-base text-slate-600">
-              The four primary mechanisms through which Mexel®432 protects cooling-water infrastructure.
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              Mexel®432 operates via <strong>Surface Interface Activity</strong> rather than bulk water chemistry modification.
+
             </p>
           </FadeIn>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+          <div className="mt-10 grid gap-6 md:grid-cols-3">
             {[
               {
-                icon: <BiofoulingIcon className="w-6 h-6" />,
-                title: "Film-forming layer",
-                description: "Creates a protective molecular film on wetted surfaces, making it harder for deposits to attach.",
-                tooltip: "Film-Forming Amines (FFA) create a hydrophobic molecular layer that modifies surface energy, reducing adhesion of biological and mineral deposits.",
+                title: "Dispersant Action",
+                desc: "Prevents suspended solids and biological matter from adhering to tube surfaces/plates.",
+                icon: Icons.Molecule,
               },
               {
-                icon: <BiofoulingIcon className="w-6 h-6" />,
-                title: "Biofouling control",
-                description: "Detaches and controls biofilm, algae and organic deposits in condenser tubes.",
-                tooltip: "Biofouling is the accumulation of microorganisms on cooling surfaces. Mexel®432 disrupts biofilm attachment without traditional oxidizing biocides.",
+                title: "Corrosion Inhibition",
+                desc: "Forms a hydrophobic film (migrating to the cathode) that isolates metal from oxygen/water contact.",
+                icon: Icons.Molecule,
               },
               {
-                icon: <CorrosionIcon className="w-6 h-6" />,
-                title: "Corrosion inhibitor",
-                description: "Reduces corrosion on carbon steel by forming a barrier between metal and water.",
-                tooltip: "Corrosion inhibition works by creating a protective film that isolates the metal surface from dissolved oxygen and corrosive ions.",
-              },
-              {
-                icon: <ScalingIcon className="w-6 h-6" />,
-                title: "Scaling control",
-                description: "Interferes with scale formation on heat-transfer surfaces.",
-                tooltip: "Scaling occurs when minerals precipitate onto hot surfaces. Mexel®432 modifies crystal growth and keeps particles dispersed.",
+                title: "Scale Prevention",
+                desc: "Distorts crystal lattice formation, preventing hard calcite/silica deposits from bonding.",
+                icon: Icons.Molecule,
               },
             ].map((item, index) => (
               <FadeIn key={item.title} delay={index * 100}>
-                <div className="group rounded-xl border border-slate-200 bg-white p-6 transition-all duration-200 hover:border-emerald-300 hover:shadow-md hover:-translate-y-1">
-                  <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-full bg-emerald-50 text-emerald-600 transition-colors group-hover:bg-emerald-600 group-hover:text-white">
-                    {item.icon}
+                <div className="h-full rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-emerald-700 mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.desc}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Specifications Table */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+
+            {/* Table */}
+            <FadeIn>
+              <h2 className="text-xl font-bold text-slate-900 mb-6">Physical Properties</h2>
+              <div className="overflow-hidden rounded-lg border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200">
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {[
+                      { prop: "Appearance", val: "Cream/White Emulsion" },
+                      { prop: "Active Ingredient", val: "Alkylamine fatty polyamines" },
+                      { prop: "Density (20°C)", val: "0.98 - 1.02 g/cm³" },
+                      { prop: "pH (Pure)", val: "7.5 - 9.0" },
+                      { prop: "Solubility", val: "Dispersible in water" },
+                      { prop: "Flash Point", val: "> 100°C (Non-flammable)" },
+                      { prop: "Shelf Life", val: "12 months (stored 5-35°C)" },
+                    ].map((row) => (
+                      <tr key={row.prop}>
+                        <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 bg-slate-50 w-1/3">
+                          {row.prop}
+                        </td>
+                        <td className="whitespace-nowrap px-6 py-4 text-sm text-slate-600 font-mono">
+                          {row.val}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </FadeIn>
+
+            {/* Eco/Regulatory */}
+            <FadeIn delay={200}>
+              <h2 className="text-xl font-bold text-slate-900 mb-6">Environmental Profile</h2>
+              <div className="rounded-xl border border-emerald-100 bg-emerald-50/50 p-6 space-y-6">
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    <Icons.Eco className="w-6 h-6 text-emerald-600" />
                   </div>
-                  <h3 className="text-sm font-semibold text-slate-900">
-                    <Tooltip content={item.tooltip}>
-                      <span>{item.title}</span>
-                    </Tooltip>
-                  </h3>
-                  <p className="mt-2 text-xs text-slate-600 leading-relaxed">
-                    {item.description}
+                  <div>
+                    <h3 className="font-semibold text-slate-900">Biodegradability</h3>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Mexel®432 is readily biodegradable. It naturally degrades in the water column within 24-48 hours, leaving no persistent residue.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 mt-1">
+                    <Icons.Eco className="w-6 h-6 text-emerald-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold text-slate-900">Toxicity (LC50)</h3>
+                    <p className="text-sm text-slate-600 mt-1">
+                      At recommended dosing concentrations (e.g., 5ppm for 30 mins/day), the discharge load is significantly below acute toxicity thresholds for aquatic life.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="border-t border-emerald-200 pt-4 mt-2">
+                  <p className="text-xs text-emerald-800 italic">
+                    *Always refer to the latest Safety Data Sheet (SDS) for site-specific compliance.
                   </p>
                 </div>
-              </FadeIn>
-            ))}
+              </div>
+            </FadeIn>
+
           </div>
         </div>
       </section>
 
-      {/* Role in TES and Boundaries */}
-      <section className="border-b border-slate-200/70 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <div className="grid gap-8 md:grid-cols-2">
-            <FadeIn>
-              <div className="rounded-xl border border-emerald-100 bg-emerald-50/30 p-8 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">Role within TES</h3>
-                <p className="mt-4 text-sm text-slate-700 leading-relaxed">
-                  Within the TES system architecture, Mexel®432 is the primary technical intervention. The IoT dosing, predictive data view, and verification framework are built specifically to demonstrate the product&apos;s impact on condenser cleanliness.
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <Link href="/tes" className="text-xs font-bold text-emerald-700 hover:text-emerald-900">
-                    View TES Architecture →
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
-            <FadeIn delay={150}>
-              <div className="rounded-xl border border-slate-200 bg-slate-50 p-8 shadow-sm">
-                <h3 className="text-lg font-semibold text-slate-900">Verification boundary</h3>
-                <p className="mt-4 text-sm text-slate-700 leading-relaxed">
-                  TES verification is explicitly defined around Mexel®432 in cooling-water service, using restricted baseline protocols. Other chemicals are kept outside the TES efficiency claims unless a separate methodology is developed.
-                </p>
-                <div className="mt-6 flex items-center gap-4">
-                  <Link href="/knowledge-hub/engineering-playbook/protocol" className="text-xs font-bold text-slate-700 hover:text-emerald-700">
-                    View Protocol Details →
-                  </Link>
-                </div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+      {/* Supply & Logistics */}
+      <section className="bg-slate-900 py-16">
+        <div className="mx-auto max-w-6xl px-4 text-center">
+          <h2 className="text-2xl font-bold text-white mb-4">Supply Specifications</h2>
+          <p className="text-slate-400 mb-10 max-w-2xl mx-auto">
+            Mexel®432 is a strategic consumable. We manage the supply chain to ensure consistent site availability.
+          </p>
 
-      {/* Evidence */}
-      <section className="border-b border-slate-200/70 bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Evidence and Case Studies
-            </h2>
-            <p className="mt-3 text-base text-slate-600">
-              Documented performance gains across utility and industrial sectors.
-            </p>
-          </FadeIn>
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <FadeIn delay={100}>
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-sm font-semibold text-slate-900 underline decoration-emerald-500 decoration-2 underline-offset-4">Kriel Power Station (South Africa)</h3>
-                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                  Mexel®432 application at Kriel showed <span className="font-semibold text-slate-900 font-medium">40% performance improvement</span> on Unit 6, with significant temperature rise improvement demonstrated over a 90-day trial period.
-                </p>
-                <p className="mt-3 text-xs text-slate-500 italic">
-                  Documented by Eskom RT&D with station data showing measurable condenser efficiency gains.
-                </p>
-              </div>
-            </FadeIn>
-            <FadeIn delay={200}>
-              <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="text-sm font-semibold text-slate-900 underline decoration-emerald-500 decoration-2 underline-offset-4">International References</h3>
-                <p className="mt-4 text-sm text-slate-600 leading-relaxed">
-                  Mexel®432 has been applied in thermal and nuclear power plants, refineries, and petrochemical facilities across France, USA, UAE, Japan, Brazil and India.
-                </p>
-                <p className="mt-3 text-xs text-slate-500 italic">
-                  Common results: improved condenser cleanliness, reduced corrosion, measurable heat-rate improvements.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-
-          <div className="mt-8">
+          <div className="flex flex-wrap justify-center gap-6">
+            {/* Download CTA */}
             <Link
-              href="/knowledge-hub/case-studies"
-              className="inline-flex items-center text-sm font-semibold text-emerald-700 hover:underline"
+              href="/contact"
+              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white hover:bg-emerald-500 transition-all"
             >
-              See detailed case studies →
+              <Icons.Download className="w-5 h-5" />
+              Request SDS & TDS
             </Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Typical Applications */}
-      <section className="border-b border-slate-200/70 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
-          <FadeIn>
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Typical Applications
-            </h2>
-          </FadeIn>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {[
-              "Wet-cooled coal-fired units",
-              "Nuclear power cooling circuits",
-              "Refineries & Steel plants",
-              "Mining process water",
-              "Food & Beverage processing",
-              "Seawater intake systems",
-            ].map((app, index) => (
-              <FadeIn key={app} delay={index * 50}>
-                <div className="flex items-center gap-3 rounded-lg border border-slate-100 p-4 shadow-sm hover:border-emerald-200">
-                  <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                  <span className="text-sm font-medium text-slate-700">{app}</span>
-                </div>
-              </FadeIn>
-            ))}
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/27794648298"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg border border-slate-600 px-6 py-3 font-semibold text-white hover:bg-slate-800 transition-all"
+            >
+              Check Stock Availability
+            </a>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-emerald-600/10 skew-x-12 translate-x-1/2" />
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-20 relative z-10">
-          <FadeIn>
-            <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-              <div className="max-w-xl">
-                <h2 className="text-3xl font-bold tracking-tight">
-                  Interested in Mexel®432 for your site?
-                </h2>
-                <p className="mt-4 text-slate-300 leading-relaxed">
-                  We prefer to start with your specific cooling-water context. A short technical discussion is usually enough to see if Mexel®432 makes sense for your infrastructure.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-8 py-4 font-semibold text-white shadow-lg transition-transform hover:scale-105 active:scale-95"
-                >
-                  Contact Technical Team
-                </Link>
-                <Link
-                  href="/tes"
-                  className="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-8 py-4 font-semibold text-white backdrop-blur-sm transition-colors hover:bg-white/10"
-                >
-                  Learn about TES
-                </Link>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
     </main>
