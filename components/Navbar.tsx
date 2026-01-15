@@ -41,7 +41,7 @@ const navItems = [
     ]
   },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Request a Pilot Study", cta: true },
+  { href: "/contact", label: "Contact Engineering", cta: true },
 ];
 
 export default function Navbar() {

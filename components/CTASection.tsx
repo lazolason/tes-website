@@ -19,7 +19,7 @@ export default function CTASection() {
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <Button href="/contact" variant="outline" size="md">
-                Request a Pilot Study
+                Contact Engineering
               </Button>
               <Button href="/knowledge-hub/case-studies" variant="ghost" size="md" className="text-white hover:bg-white/10">
                 View Case Studies

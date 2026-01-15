@@ -93,11 +93,11 @@ export default function ContactPage() {
   return (
     <main className="min-h-screen bg-white">
       <SystemHeader
-        tag="PILOT REQUEST"
-        title="Request a TES pilot study."
+        tag="ENGINEERING ENQUIRY"
+        title="Start an Engineering Enquiry."
         description="We scope requests against condenser indicators (TR, TTD, vacuum) and a baseline → review method to confirm fit."
         continuity="Start a technical conversation aligned to measured outcomes."
-        currentLabel="Request"
+        currentLabel="Contact"
         activeSteps={[3]}
       />
 
@@ -164,8 +164,8 @@ export default function ContactPage() {
                         value={formData.name}
                         onChange={handleChange}
                         className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${errors.name
-                            ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                            : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
+                          ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                          : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
                           }`}
                         placeholder="Your name"
                       />
@@ -198,8 +198,8 @@ export default function ContactPage() {
                         value={formData.email}
                         onChange={handleChange}
                         className={`mt-1 w-full rounded-md border px-3 py-2.5 text-sm text-slate-900 focus:outline-none focus:ring-1 ${errors.email
-                            ? "border-red-300 focus:border-red-500 focus:ring-red-500"
-                            : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
+                          ? "border-red-300 focus:border-red-500 focus:ring-red-500"
+                          : "border-slate-300 focus:border-emerald-600 focus:ring-emerald-600"
                           }`}
                         placeholder="you@example.com"
                       />
