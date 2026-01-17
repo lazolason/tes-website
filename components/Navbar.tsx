@@ -1,245 +1,180 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { usePathname } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import React, { useState } from 'react';
+import { ChevronDown, ChartColumn, Wind, Droplets, Gauge, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
-// DEFINING ICONS INLINE TO PREVENT IMPORT ERRORS
-const Icons = {
-  ChevronDown: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clipRule="evenodd" />
-    </svg>
-  ),
-  Menu: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z" clipRule="evenodd" />
-    </svg>
-  ),
-  Close: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M5.47 5.47a.75.75 0 011.06 0L12 10.94l5.47-5.47a.75.75 0 111.06 1.06L13.06 12l5.47 5.47a.75.75 0 11-1.06 1.06L12 13.06l-5.47 5.47a.75.75 0 01-1.06-1.06L10.94 12 5.47 6.53a.75.75 0 010-1.06z" clipRule="evenodd" />
-    </svg>
-  ),
-  Power: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M14.615 1.595a.75.75 0 01.359.852L12.982 9.75h7.268a.75.75 0 01.548 1.262l-10.5 11.25a.75.75 0 01-1.272-.71l1.992-7.302H3.75a.75.75 0 01-.548-1.262l10.5-11.25a.75.75 0 01.913-.143z" clipRule="evenodd" />
-    </svg>
-  ),
-  Mining: ({ className }: { className?: string }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
-      <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm0 8.625a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25zM15.375 12a1.125 1.125 0 112.25 0 1.125 1.125 0 01-2.25 0zM7.5 10.875a1.125 1.125 0 100 2.25 1.125 1.125 0 000-2.25z" clipRule="evenodd" />
-    </svg>
-  )
-};
-
-const navItems = [
-  { href: "/", label: "Home" },
+const solutions = [
   {
-    href: "/tes",
-    label: "Solutions",
-    type: "dropdown",
+    category: "Thermal Efficiency (TES)",
     items: [
-      { href: "/tes", label: "TES System Overview" },
-      { href: "/mexel432", label: "Mexel®432 Product" },
-      { href: "/products", label: "Technical Specs" },
-      { href: "/applications", label: "Applications" },
+      { name: 'Condenser Performance', href: '/solutions/condenser-performance', desc: 'Vacuum recovery & heat rate optimization.', icon: Gauge },
+      { name: 'ROI Verification', href: '/solutions/roi-verification', desc: 'ASME PTC 12.2 methodology & auditing.', icon: ChartColumn },
     ]
   },
   {
-    href: "/industries",
-    label: "Industries",
-    type: "mega",
+    category: "Industrial Systems",
     items: [
-      // HARDCODED FILTER: Only Power and Mining are listed here.
-      { href: "/industries/power-energy", label: "Power & Energy", icon: Icons.Power, desc: "Improve condenser performance." },
-      { href: "/industries/mining", label: "Mining & Minerals", icon: Icons.Mining, desc: "Critical cooling for operations." },
+      { name: 'Cooling Water', href: '/solutions/cooling-water', desc: 'Scale, corrosion & bio-fouling control.', icon: Wind },
+      { name: 'Boiler Water', href: '/solutions/boiler-water', desc: 'Integrity & fuel efficiency solutions.', icon: Droplets },
     ]
-  },
-  {
-    href: "/knowledge-hub",
-    label: "Knowledge Hub",
-    type: "dropdown",
-    items: [
-      { href: "/knowledge-hub", label: "Methodology" },
-      { href: "/knowledge-hub/case-studies", label: "Case Studies" },
-      { href: "/knowledge-hub/resources", label: "Resources" },
-    ]
-  },
-  { href: "/contact", label: "Contact Engineering", cta: true },
+  }
 ];
 
 export default function Navbar() {
-  const pathname = usePathname();
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname?.startsWith(href);
-  };
-  const [hoveredItem, setHoveredItem] = useState<string | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  const handleMouseEnter = (label: string) => {
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    setHoveredItem(label);
-  };
-
-  const handleMouseLeave = () => {
-    timeoutRef.current = setTimeout(() => {
-      setHoveredItem(null);
-    }, 150);
-  };
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 lg:py-4">
-        {/* Brand */}
-        <Link href="/" className="flex items-center pl-2 lg:pl-0">
-          <div className="relative h-16 w-56 flex-shrink-0">
-            {/* Logo Image */}
-            <Image
-              src="/logo.png"
-              alt="Mexel Energy Sustain logo"
-              fill
-              className="object-contain object-left"
-              priority
-            />
+    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-900/95 backdrop-blur-md">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between">
+
+          {/* Logo Section */}
+          <div className="flex items-center">
+            <Link href="/" className="flex-shrink-0" onClick={() => setIsOpen(false)}>
+              <img
+                src="/logonew.png"
+                alt="Mexel Energy Sustain"
+                className="h-12 w-auto object-contain"
+              />
+            </Link>
           </div>
-        </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
-          {navItems.map((item) => (
-            <div
-              key={item.label}
-              onMouseEnter={() => handleMouseEnter(item.label)}
-              onMouseLeave={handleMouseLeave}
-              className="relative"
-            >
-              <Link
-                href={item.href}
-                className={`px-3 py-2 text-sm font-medium rounded-md transition-colors focus-ring flex items-center gap-1 ${item.cta
-                  ? "bg-emerald-600 text-white hover:bg-emerald-700 cta-pulse"
-                  : isActive(item.href)
-                    ? "bg-emerald-50 text-emerald-700"
-                    : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
-                  }`}
-                aria-haspopup={item.items ? "true" : undefined}
-                aria-expanded={item.items && hoveredItem === item.label ? "true" : "false"}
-              >
-                {item.label}
-                {item.items && !item.cta && (
-                  <Icons.ChevronDown className="w-3 h-3 text-slate-500" />
-                )}
-              </Link>
+          {/* Desktop Navigation */}
+          <div className="hidden md:block">
+            <div className="flex items-baseline space-x-8">
+              <Link href="/" className="text-sm font-medium text-white hover:text-emerald-400">Home</Link>
 
-              {/* Mega Menu / Dropdown Logic */}
-              {hoveredItem === item.label && item.items && (
-                <div
-                  className={`absolute top-full pt-2 ${item.type === 'mega' ? 'left-1/2 -translate-x-1/2 w-[600px] max-w-[90vw]' : 'left-0 w-56'
-                    }`}
-                  role="menu"
-                  aria-label={`${item.label} submenu`}
-                >
-                  <div className="bg-white border border-slate-200 rounded-xl shadow-xl overflow-hidden ring-1 ring-black/5 p-1 dropdown-enter">
-                    {item.type === 'mega' ? (
-                      <div className="grid grid-cols-2 gap-2 p-2">
-                        {item.items.map((subItem: any) => (
-                          <Link
-                            key={subItem.label}
-                            href={subItem.href}
-                            className="flex items-start gap-3 p-3 rounded-lg hover:bg-slate-50 transition-colors group focus-ring"
-                          >
-                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-emerald-600/10 flex items-center justify-center text-emerald-700 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                              {subItem.icon && <subItem.icon className="w-4 h-4" />}
-                            </div>
-                            <div>
-                              <div className="text-sm font-semibold text-slate-900">{subItem.label}</div>
-                              {subItem.desc && (
-                                <div className="text-xs text-slate-600 mt-0.5 line-clamp-1">{subItem.desc}</div>
-                              )}
-                            </div>
-                          </Link>
-                        ))}
+              {/* Mega Menu Trigger */}
+              <div className="relative group">
+                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
+                  Solutions <ChevronDown className="h-4 w-4" />
+                </button>
+
+                {/* Mega Menu Panel */}
+                <div className="absolute -left-48 top-full w-[600px] origin-top-left scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                  <div className="mt-2 grid grid-cols-2 gap-8 rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
+                    {solutions.map((col) => (
+                      <div key={col.category}>
+                        <h3 className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-4">
+                          {col.category}
+                        </h3>
+                        <div className="space-y-6">
+                          {col.items.map((item) => (
+                            <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
+                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800 group-hover/item:bg-emerald-500/20 transition-colors">
+                                <item.icon className="h-5 w-5 text-emerald-500" />
+                              </div>
+                              <div>
+                                <p className="text-sm font-semibold text-white group-hover/item:text-emerald-400">
+                                  {item.name}
+                                </p>
+                                <p className="text-xs text-slate-400 mt-1 line-clamp-1">
+                                  {item.desc}
+                                </p>
+                              </div>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    ) : (
-                      <div className="flex flex-col">
-                        {item.items.map((subItem: any) => (
-                          <Link
-                            key={subItem.label}
-                            href={subItem.href}
-                            className="px-4 py-2.5 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 focus-ring rounded-md"
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
-        </nav>
-
-        {/* Mobile menu button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 text-slate-600 hover:bg-slate-100 rounded-md focus-ring"
-        >
-          <span className="sr-only">Open menu</span>
-          {mobileOpen ? (
-            <Icons.Close className="w-6 h-6" />
-          ) : (
-            <Icons.Menu className="w-6 h-6" />
-          )}
-        </button>
-      </div>
-
-      {/* Mobile Nav */}
-      {mobileOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white dropdown-enter">
-          <nav className="flex flex-col p-4 space-y-1" role="navigation" aria-label="Mobile navigation">
-            {navItems.map((item) => (
-              <div key={item.label}>
-                <Link
-                  href={item.href}
-                  onClick={() => !item.items && setMobileOpen(false)}
-                  className={`flex items-center justify-between px-3 py-2 text-base font-medium rounded-md focus-ring ${item.cta
-                    ? "bg-emerald-600 text-white text-center mt-4 justify-center"
-                    : isActive(item.href)
-                      ? "bg-emerald-50 text-emerald-700"
-                      : "text-slate-900 hover:bg-slate-50"
-                    }`}
-                  aria-haspopup={item.items ? "true" : undefined}
-                  aria-expanded={item.items ? "true" : undefined}
-                >
-                  <span>{item.label}</span>
-                  {item.items && !item.cta && (
-                    <Icons.ChevronDown className="w-4 h-4 text-slate-500" />
-                  )}
-                </Link>
-                {item.items && (
-                  <div className="pl-6 space-y-1 mt-1 border-l-2 border-slate-200 ml-3" role="menu" aria-label={`${item.label} submenu`}>
-                    {item.items.map((subItem: any) => (
-                      <Link
-                        key={subItem.label}
-                        href={subItem.href}
-                        onClick={() => setMobileOpen(false)}
-                        className="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-700 rounded-md focus-ring"
-                        role="menuitem"
-                      >
-                        {subItem.label}
-                      </Link>
                     ))}
                   </div>
-                )}
+                </div>
               </div>
-            ))}
-          </nav>
+
+              <Link href="/knowledge-hub/case-studies" className="text-sm font-medium text-slate-300 hover:text-white">Case Studies</Link>
+              <Link href="/contact" className="text-sm font-medium text-slate-300 hover:text-white">Contact</Link>
+            </div>
+          </div>
+
+          {/* Desktop Action Button */}
+          <div className="hidden md:block">
+            <Link href="/contact" className="rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
+              Request Technical Audit
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <div className="-mr-2 flex md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              className="inline-flex items-center justify-center rounded-md p-2 text-slate-400 hover:bg-slate-800 hover:text-white focus:outline-none"
+              aria-controls="mobile-menu"
+              aria-expanded={isOpen}
+            >
+              <span className="sr-only">Open main menu</span>
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu Panel */}
+      {isOpen && (
+        <div className="md:hidden bg-slate-900 border-t border-slate-800" id="mobile-menu">
+          <div className="space-y-1 px-4 pb-3 pt-2">
+            <Link
+              href="/"
+              className="block rounded-md px-3 py-2 text-base font-medium text-white hover:bg-slate-800"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+
+            {/* Mobile Solutions Section */}
+            <div className="px-3 py-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">Solutions</div>
+              {solutions.map((group) => (
+                <div key={group.category} className="mb-4 last:mb-0 pl-2 border-l border-slate-800">
+                   <div className="text-xs text-slate-400 mb-2 font-medium">{group.category}</div>
+                   <div className="space-y-2">
+                      {group.items.map((item) => (
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <item.icon className="h-4 w-4 text-emerald-500" />
+                          {item.name}
+                        </Link>
+                      ))}
+                   </div>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="/knowledge-hub/case-studies"
+              className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              Case Studies
+            </Link>
+            <Link
+              href="/contact"
+              className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white"
+              onClick={() => setIsOpen(false)}
+            >
+              Contact
+            </Link>
+            
+            <div className="mt-4 px-3">
+                 <Link href="/contact" 
+                    className="flex w-full items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-500 transition-all shadow-lg"
+                    onClick={() => setIsOpen(false)}
+                 >
+                    Request Technical Audit
+                 </Link>
+            </div>
+          </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }

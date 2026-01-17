@@ -1,74 +1,124 @@
-import Link from "next/link";
-import Image from "next/image";
+import React from 'react';
+import Link from 'next/link';
+
+const navigation = {
+  thermal: [
+    { name: 'Condenser Performance', href: '/solutions/condenser-performance' },
+    { name: 'ROI Verification', href: '/solutions/roi-verification' },
+  ],
+  industrial: [
+    { name: 'Cooling Water', href: '/solutions/cooling-water' },
+    { name: 'Boiler Water', href: '/solutions/boiler-water' },
+  ],
+  company: [
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+    { name: 'Privacy', href: '/legal' },
+  ],
+  social: [
+    {
+      name: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/mexel-energy-sustain/',
+      icon: (props: any) => (
+        <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
+          <path
+            fillRule="evenodd"
+            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+            clipRule="evenodd"
+          />
+        </svg>
+      ),
+    },
+  ],
+};
 
 export default function Footer() {
-  const year = new Date().getFullYear();
-
   return (
-    <footer className="bg-slate-900 border-t border-slate-800">
-      <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-        <div className="grid gap-12 md:grid-cols-3">
-          <div className="space-y-6">
-            {/* Logo mark */}
-            <Image
-              src="/logo.png"
-              alt="Mexel Energy Sustain"
-              width={140}
-              height={44}
-              className="h-10 w-auto brightness-0 invert opacity-90"
-            />
-            <div className="space-y-2">
-              <p className="text-sm font-bold tracking-tight text-white">
-                Mexel Energy Sustain (Pty) Ltd
-              </p>
-              <p className="text-sm text-slate-400 max-w-xs leading-relaxed">
-                Transforming cooling-water systems from hidden bottlenecks into efficiency drivers using Mexel®432 technology.
-              </p>
-              <p className="text-xs text-slate-500">
-                VAT: 4550274700
-              </p>
+    <footer className="bg-slate-900" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" className="sr-only">
+        Footer
+      </h2>
+      <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
+        <div className="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div className="space-y-8">
+            {/* BRAND CONSISTENCY: Logo Image */}
+            <div className="flex items-center">
+              <img 
+                src="/logonew.png" 
+                alt="Mexel Energy Sustain" 
+                className="h-14 w-auto object-contain" 
+              />
+            </div>
+            <p className="text-sm leading-6 text-slate-300">
+              Engineering thermal efficiency. Validated via ASME PTC 12.2.
+            </p>
+            <div className="flex space-x-6">
+              {navigation.social.map((item) => (
+                <a 
+                  key={item.name} 
+                  href={item.href} 
+                  className="text-slate-400 hover:text-emerald-500"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <span className="sr-only">{item.name}</span>
+                  <item.icon className="h-6 w-6" aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
 
-          {/* Solutions Navigation */}
-          <div className="space-y-3">
-            <p className="text-sm font-bold text-white uppercase tracking-wider">Solutions</p>
-            <nav className="flex flex-col gap-2 text-sm text-slate-400">
-              <Link href="/tes" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">TES System</Link>
-              <Link href="/mexel432" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Mexel®432</Link>
-              <Link href="/industries" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Industries</Link>
-              <Link href="/knowledge-hub" className="hover:text-emerald-400 transition-colors focus-ring rounded-sm">Knowledge Hub</Link>
-            </nav>
-          </div>
-
-          <div className="flex flex-col items-start gap-6 md:items-end md:text-right">
-            <div className="space-y-2">
-              <p className="text-sm font-bold text-white uppercase tracking-wider">Technical contact</p>
-              <p>
-                <a
-                  href="mailto:info@mexelenergysustain.com"
-                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors focus-ring rounded-sm"
-                >
-                  info@mexelenergysustain.com
-                </a>
-              </p>
-              <p>
-                <a
-                  href="tel:+27794648298"
-                  className="text-lg font-semibold text-emerald-500 hover:text-emerald-400 transition-colors focus-ring rounded-sm"
-                >
-                  +27 79 464 8298
-                </a>
-              </p>
+          {/* NAVIGATION COLUMNS */}
+          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              {/* Column 1: Thermal Efficiency */}
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-white">Thermal Efficiency</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.thermal.map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm leading-6 text-slate-300 hover:text-white">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {/* Column 2: Industrial Systems */}
+              <div className="mt-10 md:mt-0">
+                <h3 className="text-sm font-semibold leading-6 text-white">Industrial Systems</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.industrial.map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm leading-6 text-slate-300 hover:text-white">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <div className="space-y-2 text-[11px] text-slate-500 md:max-w-sm">
-              <p>© {year} Mexel Energy Sustain (Pty) Ltd. All rights reserved.</p>
-              <p>
-                This site is for technical and informational use. It does not replace
-                station-specific protocols, safety procedures or engineering judgement.
-              </p>
+            <div className="md:grid md:grid-cols-2 md:gap-8">
+              {/* Column 3: Company (Standard) */}
+              <div>
+                <h3 className="text-sm font-semibold leading-6 text-white">Company</h3>
+                <ul role="list" className="mt-6 space-y-4">
+                  {navigation.company.map((item) => (
+                    <li key={item.name}>
+                      <Link href={item.href} className="text-sm leading-6 text-slate-300 hover:text-white">
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
+        </div>
+        <div className="mt-16 border-t border-white/10 pt-8 sm:mt-20 lg:mt-24">
+          <p className="text-xs leading-5 text-slate-400">
+            &copy; {new Date().getFullYear()} Mexel Energy Sustain Pty Ltd. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
