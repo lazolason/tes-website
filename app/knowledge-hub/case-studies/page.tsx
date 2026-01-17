@@ -192,8 +192,8 @@ export default function CaseStudiesPage() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  TES dosing system installed and RT&D Testing Protocol Rev08
-                  issued. Pilot progress constrained by on-the-ground conditions
+                  TES dosing system installed. Validated via ASME PTC 12.2.
+                  Pilot progress constrained by on-the-ground conditions
                   including dam status, water configuration and induction scheduling.
                   Full case study to follow once baseline and intervention data
                   collection is complete.
@@ -234,7 +234,7 @@ export default function CaseStudiesPage() {
                     Established protocols
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
-                    RT&amp;D&apos;s Testing Protocol Rev08 provides a rigorous,
+                    Validated via ASME PTC 12.2, providing a rigorous,
                     transparent framework for baseline → intervention → review
                     assessment.
                   </p>

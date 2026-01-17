@@ -176,11 +176,11 @@ export default function AboutPage() {
 
             {/* Tutuka Protocol */}
             <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Tutuka Protocol</p>
-              <h3 className="mt-2 text-sm font-semibold text-slate-900">RT&amp;D Testing Protocol Rev08</h3>
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Verification Standard</p>
+              <h3 className="mt-2 text-sm font-semibold text-slate-900">ASME PTC 12.2 Aligned</h3>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Eskom RT&amp;D issued the Tutuka Surfactant (FFA) Testing Protocol Rev08,
-                defining baseline → intervention → post-intervention methodology for TES verification.
+                Performance gains are validated using ASME PTC 12.2 methodology,
+                defining baseline → intervention → post-intervention steps for rigorous TES verification.
               </p>
             </div>
 
