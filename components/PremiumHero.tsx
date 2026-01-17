@@ -20,19 +20,21 @@ export default function PremiumHero() {
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
                             </span>
                             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
-                                Emulsion Technology &bull; Cooling Water
+                                Mexel®432 Emulsion &bull; Cooling Water
                             </span>
                         </div>
 
                         {/* 2. THE HEADLINE (Outcome Focused) */}
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05] mb-8">
-                            Restore Condenser <br />
-                            <span className="text-emerald-700">Vacuum.</span> <br />
-                            Verify the MW Gain.
+                            Mexel®432 restores <br />
+                            condenser <span className="text-emerald-700">vacuum.</span> <br />
+                            Verify the MW gain.
                         </h1>
 
                         {/* 3. THE SUB-HEAD (No estimates, No RT&D name-dropping) */}
                         <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-xl mb-10 font-medium">
+                            Mexel®432 is the core chemistry. It cleans condenser tubes while the unit runs and restores heat transfer performance.
+                            <br /><br />
                             Move beyond guesswork. We use measurable <strong>thermodynamic baselines</strong> to verify condenser performance.
                             <br /><br />
                             No estimates. No "managed service" contracts. Just raw data and a solution that cleans the tubes while the unit runs.
@@ -42,10 +44,10 @@ export default function PremiumHero() {
                         <div className="flex flex-wrap gap-4 mb-12">
                             {/* Primary Button */}
                             <Link
-                                href="/contact"
+                                href="/mexel432"
                                 className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors"
                             >
-                                Request Specs
+                                Mexel®432 Data Sheet
                             </Link>
 
                             {/* WhatsApp Button: Bypasses the broken Email Server */}
@@ -95,7 +97,7 @@ export default function PremiumHero() {
                             {/* Header */}
                             <div className="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
                                 <div>
-                                    <h3 className="text-lg font-semibold text-white">Performance Delta</h3>
+                                    <h3 className="text-lg font-semibold text-white">Mexel®432 Performance Delta</h3>
                                     <p className="text-sm text-slate-400">Typical validated recovery</p>
                                 </div>
                                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />

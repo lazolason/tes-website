@@ -6,17 +6,24 @@ import Link from 'next/link';
 
 const solutions = [
   {
-    category: "Thermal Efficiency (TES)",
+    category: "Core Product",
     items: [
-      { name: 'Condenser Performance', href: '/solutions/condenser-performance', desc: 'Vacuum recovery & heat rate optimization.', icon: Gauge },
-      { name: 'ROI Verification', href: '/solutions/roi-verification', desc: 'ASME PTC 12.2 methodology & auditing.', icon: ChartColumn },
+      { name: 'Mexel®432', href: '/mexel432', desc: 'Film-forming emulsion for online condenser tube cleaning.', icon: Droplets },
     ]
   },
   {
-    category: "Industrial Systems",
+    category: "Industries",
     items: [
-      { name: 'Cooling Water', href: '/solutions/cooling-water', desc: 'Scale, corrosion & bio-fouling control.', icon: Wind },
-      { name: 'Boiler Water', href: '/solutions/boiler-water', desc: 'Integrity & fuel efficiency solutions.', icon: Droplets },
+      { name: 'Power & Energy', href: '/industries/power-energy', desc: 'Vacuum recovery & heat rate optimization.', icon: Gauge },
+      { name: 'Mining & Smelters', href: '/industries/mining', desc: 'Process cooling continuity solutions.', icon: ChartColumn },
+      { name: 'HVAC & Data Centers', href: '/industries/hvac-data-centers', desc: 'Efficiency & risk mitigation.', icon: Wind },
+    ]
+  },
+  {
+    category: "Knowledge Hub",
+    items: [
+      { name: 'Case Studies', href: '/knowledge-hub/case-studies', desc: 'Real-world performance verification.', icon: ChartColumn },
+      { name: 'Engineering Playbook', href: '/knowledge-hub/engineering-playbook', desc: 'Technical protocols & standards.', icon: Droplets },
     ]
   }
 ];
@@ -44,6 +51,7 @@ export default function Navbar() {
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-8">
               <Link href="/" className="text-sm font-medium text-white hover:text-emerald-400">Home</Link>
+              <Link href="/mexel432" className="text-sm font-semibold text-emerald-300 hover:text-emerald-200">Mexel®432</Link>
 
               {/* Mega Menu Trigger */}
               <div className="relative group">
@@ -82,7 +90,6 @@ export default function Navbar() {
                 </div>
               </div>
 
-              <Link href="/knowledge-hub/case-studies" className="text-sm font-medium text-slate-300 hover:text-white">Case Studies</Link>
               <Link href="/contact" className="text-sm font-medium text-slate-300 hover:text-white">Contact</Link>
             </div>
           </div>
@@ -125,6 +132,13 @@ export default function Navbar() {
             >
               Home
             </Link>
+            <Link
+              href="/mexel432"
+              className="block rounded-md px-3 py-2 text-base font-medium text-emerald-200 hover:bg-slate-800 hover:text-emerald-100"
+              onClick={() => setIsOpen(false)}
+            >
+              Mexel®432
+            </Link>
 
             {/* Mobile Solutions Section */}
             <div className="px-3 py-2">
@@ -149,13 +163,6 @@ export default function Navbar() {
               ))}
             </div>
 
-            <Link
-              href="/knowledge-hub/case-studies"
-              className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white"
-              onClick={() => setIsOpen(false)}
-            >
-              Case Studies
-            </Link>
             <Link
               href="/contact"
               className="block rounded-md px-3 py-2 text-base font-medium text-slate-300 hover:bg-slate-800 hover:text-white"
