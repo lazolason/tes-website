@@ -87,7 +87,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
         number: '04',
         title: 'M&V Protocol',
         subtitle: 'Verified Results',
-        detail: 'Audit-ready reporting using RT&D-aligned baseline vs. intervention methodology.',
+        detail: 'Audit-ready reporting validated via ASME PTC 12.2.',
     },
 ];
 
