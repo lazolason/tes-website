@@ -1,32 +1,9 @@
 "use client";
 
 import React, { useState } from 'react';
-import { ChevronDown, ChartColumn, Wind, Droplets, Gauge, Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
-
-const solutions = [
-  {
-    category: "Core Product",
-    items: [
-      { name: 'Mexel®432', href: '/mexel432', desc: 'Film-forming emulsion for online condenser tube cleaning.', icon: Droplets },
-    ]
-  },
-  {
-    category: "Industries",
-    items: [
-      { name: 'Power & Energy', href: '/industries/power-energy', desc: 'Vacuum recovery & heat rate optimization.', icon: Gauge },
-      { name: 'Mining & Smelters', href: '/industries/mining', desc: 'Process cooling continuity solutions.', icon: ChartColumn },
-      { name: 'HVAC & Data Centers', href: '/industries/hvac-data-centers', desc: 'Efficiency & risk mitigation.', icon: Wind },
-    ]
-  },
-  {
-    category: "Knowledge Hub",
-    items: [
-      { name: 'Case Studies', href: '/knowledge-hub/case-studies', desc: 'Real-world performance verification.', icon: ChartColumn },
-      { name: 'Engineering Playbook', href: '/knowledge-hub/engineering-playbook', desc: 'Technical protocols & standards.', icon: Droplets },
-    ]
-  }
-];
+import { solutions } from '../lib/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -145,20 +122,20 @@ export default function Navbar() {
               <div className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">Solutions</div>
               {solutions.map((group) => (
                 <div key={group.category} className="mb-4 last:mb-0 pl-2 border-l border-slate-800">
-                   <div className="text-xs text-slate-400 mb-2 font-medium">{group.category}</div>
-                   <div className="space-y-2">
-                      {group.items.map((item) => (
-                        <Link
-                          key={item.name}
-                          href={item.href}
-                          className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
-                          onClick={() => setIsOpen(false)}
-                        >
-                          <item.icon className="h-4 w-4 text-emerald-500" />
-                          {item.name}
-                        </Link>
-                      ))}
-                   </div>
+                  <div className="text-xs text-slate-400 mb-2 font-medium">{group.category}</div>
+                  <div className="space-y-2">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <item.icon className="h-4 w-4 text-emerald-500" />
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
@@ -170,14 +147,14 @@ export default function Navbar() {
             >
               Contact
             </Link>
-            
+
             <div className="mt-4 px-3">
-                 <Link href="/contact" 
-                    className="flex w-full items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-500 transition-all shadow-lg"
-                    onClick={() => setIsOpen(false)}
-                 >
-                    Request Technical Audit
-                 </Link>
+              <Link href="/contact"
+                className="flex w-full items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-500 transition-all shadow-lg"
+                onClick={() => setIsOpen(false)}
+              >
+                Request Technical Audit
+              </Link>
             </div>
           </div>
         </div>

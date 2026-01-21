@@ -1,55 +1,53 @@
-import Link from "next/link";
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import * as React from "react"
+import { cva, type VariantProps } from "class-variance-authority"
+import { cn } from "../../lib/utils"
 
-function cn(...inputs: ClassValue[]) {
-    return twMerge(clsx(inputs));
-}
-
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: "primary" | "secondary" | "ghost" | "outline";
-    size?: "sm" | "md" | "lg";
-    href?: string;
-    className?: string;
-    children: React.ReactNode;
-}
-
-export default function Button({
-    variant = "primary",
-    size = "md",
-    href,
-    className,
-    children,
-    ...props
-}: ButtonProps) {
-    const baseStyles = "inline-flex items-center justify-center rounded-xl font-bold transition-all focus-ring disabled:opacity-50 disabled:pointer-events-none";
-
-    const variants = {
-        primary: "bg-emerald-600 text-white shadow-xl shadow-emerald-900/20 hover:bg-emerald-700 hover:-translate-y-0.5 active:translate-y-0",
-        secondary: "bg-slate-900 text-white shadow-xl shadow-slate-900/10 hover:bg-slate-800 hover:-translate-y-0.5 active:translate-y-0",
-        outline: "bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300",
-        ghost: "bg-transparent text-emerald-600 hover:bg-emerald-50",
-    };
-
-    const sizes = {
-        sm: "px-4 py-2 text-xs",
-        md: "px-6 py-3 text-sm",
-        lg: "px-10 py-5 text-base",
-    };
-
-    const combinedClassName = cn(baseStyles, variants[variant], sizes[size], className);
-
-    if (href) {
-        return (
-            <Link href={href} className={combinedClassName}>
-                {children}
-            </Link>
-        );
+const buttonVariants = cva(
+    "inline-flex items-center justify-center rounded-full text-sm font-bold transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-600 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
+    {
+        variants: {
+            variant: {
+                default: "bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-900/20",
+                destructive:
+                    "bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600",
+                outline:
+                    "border border-slate-200 bg-transparent hover:bg-slate-100 text-slate-900",
+                secondary:
+                    "bg-slate-100 text-slate-900 hover:bg-slate-200",
+                ghost: "hover:bg-slate-100 hover:text-slate-900 text-slate-600",
+                link: "underline-offset-4 hover:underline text-emerald-600",
+            },
+            size: {
+                default: "px-6 py-2.5",
+                sm: "h-9 px-3 rounded-md",
+                lg: "h-11 px-8 rounded-md",
+                icon: "h-10 w-10",
+            },
+        },
+        defaultVariants: {
+            variant: "default",
+            size: "default",
+        },
     }
+)
 
-    return (
-        <button className={combinedClassName} {...props}>
-            {children}
-        </button>
-    );
+export interface ButtonProps
+    extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+    asChild?: boolean
 }
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+    ({ className, variant, size, asChild = false, ...props }, ref) => {
+        return (
+            <button
+                className={cn(buttonVariants({ variant, size, className }))}
+                ref={ref}
+                {...props}
+            />
+        )
+    }
+)
+Button.displayName = "Button"
+
+export { Button, buttonVariants }

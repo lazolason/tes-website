@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import FadeIn from "./FadeIn";
-import Button from "./ui/Button";
+import { buttonVariants } from "./ui/Button";
+import { cn } from "../lib/utils";
 
 export default function CTASection() {
   return (
@@ -18,12 +19,12 @@ export default function CTASection() {
               verification-ready reporting.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Button href="/contact" variant="outline" size="md">
+              <Link href="/contact" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "bg-emerald-700 text-white border-transparent hover:bg-emerald-800")}>
                 Contact Engineering
-              </Button>
-              <Button href="/knowledge-hub/case-studies" variant="ghost" size="md" className="text-white hover:bg-white/10">
+              </Link>
+              <Link href="/knowledge-hub/case-studies" className={cn(buttonVariants({ variant: "ghost", size: "lg" }), "text-emerald-100 hover:text-white hover:bg-emerald-500/20")}>
                 View Case Studies
-              </Button>
+              </Link>
             </div>
           </FadeIn>
         </div>

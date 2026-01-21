@@ -1,0 +1,25 @@
+{
+    "defaults": {
+        "timeout": 30000,
+        "wait": 1000,
+        "chromeLaunchConfig": {
+            "args": [
+                "--no-sandbox",
+                "--disable-setuid-sandbox"
+            ]
+        },
+        "runners": [
+            "axe",
+            "htmlcs"
+        ],
+        "standard": "WCAG2AA"
+    },
+    "urls": [
+        "http://localhost:3000/",
+        "http://localhost:3000/about",
+        "http://localhost:3000/solutions/condenser-performance",
+        "http://localhost:3000/solutions/roi-verification",
+        "http://localhost:3000/solutions/cooling-water",
+        "http://localhost:3000/solutions/boiler-water"
+    ]
+}

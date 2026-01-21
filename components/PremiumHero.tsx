@@ -1,6 +1,8 @@
 'use client';
 
 import Link from 'next/link';
+import { cn } from '../lib/utils';
+import { buttonVariants } from './ui/Button';
 
 export default function PremiumHero() {
     return (
@@ -20,20 +22,20 @@ export default function PremiumHero() {
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
                             </span>
                             <span className="text-[10px] font-bold uppercase tracking-widest text-slate-700">
-                                Mexel®432 Emulsion &bull; Cooling Water
+                                TES: Thermal Efficiency Solution &bull; Mexel®432
                             </span>
                         </div>
 
                         {/* 2. THE HEADLINE (Outcome Focused) */}
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05] mb-8">
-                            Mexel®432 restores <br />
-                            condenser <span className="text-emerald-700">vacuum.</span> <br />
+                            Thermal Efficiency <br />
+                            restored by <span className="text-emerald-700">TES.</span> <br />
                             Verify the MW gain.
                         </h1>
 
                         {/* 3. THE SUB-HEAD (No estimates, No RT&D name-dropping) */}
                         <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-xl mb-10 font-medium">
-                            Mexel®432 is the core chemistry. It cleans condenser tubes while the unit runs and restores heat transfer performance.
+                            Our Thermal Efficiency Solution (TES) combines Mexel®432 emulsion with automated dosing and raw data to clean condenser tubes while the unit runs.
                             <br /><br />
                             Move beyond guesswork. We use measurable <strong>thermodynamic baselines</strong> to verify condenser performance.
                             <br /><br />
@@ -45,7 +47,7 @@ export default function PremiumHero() {
                             {/* Primary Button */}
                             <Link
                                 href="/mexel432"
-                                className="inline-flex items-center justify-center rounded-lg bg-slate-900 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-slate-800 transition-colors"
+                                className={cn(buttonVariants({ variant: "default", size: "lg" }), "bg-slate-900 hover:bg-slate-800 shadow-sm")}
                             >
                                 Mexel®432 Data Sheet
                             </Link>
@@ -55,7 +57,7 @@ export default function PremiumHero() {
                                 href="https://wa.me/27794648298"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center rounded-lg border border-emerald-600 px-8 py-4 text-sm font-semibold text-emerald-700 hover:bg-emerald-50 transition-colors"
+                                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-emerald-600 text-emerald-700 hover:bg-emerald-50")}
                             >
                                 <span className="mr-2">⚡</span> Talk to Engineering
                             </a>

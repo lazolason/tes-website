@@ -4,7 +4,9 @@ import PremiumHero from "../components/PremiumHero";
 import {
   // TrustedBySkeleton,
   IndustryGridSkeleton,
-  ProcessSkeleton
+  ProcessSkeleton,
+  DashboardSkeleton,
+  CTASkeleton
 } from "../components/skeletons/HomeSkeletons";
 
 // Lazy load below-the-fold components for better initial page load
@@ -13,7 +15,7 @@ import {
 // });
 
 const LiveDashboard = dynamic(() => import("../components/LiveDashboard"), {
-  loading: () => <div className="h-96 bg-slate-900 animate-pulse rounded-3xl" />,
+  loading: () => <DashboardSkeleton />,
 });
 
 const VisualIndustryGrid = dynamic(() => import("../components/VisualIndustryGrid"), {
@@ -25,7 +27,7 @@ const ModernProcess = dynamic(() => import("../components/ModernProcess"), {
 });
 
 const CTASection = dynamic(() => import("../components/CTASection"), {
-  loading: () => <div className="h-64 bg-emerald-600 animate-pulse" />,
+  loading: () => <CTASkeleton />,
 });
 
 export const metadata: Metadata = {

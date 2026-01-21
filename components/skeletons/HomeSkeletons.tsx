@@ -74,3 +74,26 @@ export function TestimonialsSkeleton() {
         </div>
     )
 }
+
+export function DashboardSkeleton() {
+    return (
+        <div className="mx-auto max-w-6xl w-full h-[500px] rounded-3xl bg-slate-100 border border-slate-200 animate-pulse overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-full h-16 bg-slate-200" />
+            <div className="absolute bottom-8 left-8 right-8 h-64 bg-slate-200 rounded-xl" />
+        </div>
+    );
+}
+
+export function CTASkeleton() {
+    return (
+        <section className="relative py-24 overflow-hidden bg-emerald-600">
+            <div className="mx-auto max-w-7xl px-6 lg:px-8 relative z-10 animate-pulse">
+                <div className="mx-auto max-w-2xl text-center">
+                    <div className="h-10 w-3/4 mx-auto bg-emerald-500/50 rounded-lg mb-6" />
+                    <div className="h-6 w-full mx-auto bg-emerald-500/50 rounded-lg mb-10" />
+                    <div className="h-12 w-48 mx-auto bg-emerald-400 rounded-full" />
+                </div>
+            </div>
+        </section>
+    );
+}
