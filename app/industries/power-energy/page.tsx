@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
 import { ArrowRightIcon } from "@/components/icons/NavIcons";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Power & Energy | Industries",
@@ -47,8 +47,10 @@ export default function PowerEnergyPage() {
               to restore MW capacity lost to condenser fouling.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
-                Engineering Enquiry
+              <Button asChild size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                <Link href="/contact">
+                  Engineering Enquiry
+                </Link>
               </Button>
               <Link
                 href="/knowledge-hub/case-studies/kriel"
@@ -151,11 +153,15 @@ export default function PowerEnergyPage() {
             Connect with our engineering team to begin the process.
           </p>
           <div className="flex flex-wrap justify-center gap-6">
-            <Button href="/contact" size="lg">
-              Contact Power Engineering
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Contact Power Engineering
+              </Link>
             </Button>
-            <Button href="/knowledge-hub/engineering-playbook" variant="outline" size="lg">
-              Explore Engineering Playbook
+            <Button asChild variant="outline" size="lg">
+              <Link href="/knowledge-hub/engineering-playbook">
+                Explore Engineering Playbook
+              </Link>
             </Button>
           </div>
         </div>

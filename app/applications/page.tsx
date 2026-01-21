@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import SystemHeader from "../../components/SystemHeader";
-import Button from "../../components/ui/Button";
+import { Button } from "../../components/ui/Button";
 
 export const metadata: Metadata = {
   title: "TES Applications",
@@ -81,18 +81,17 @@ export default function ApplicationsPage() {
 
               <div>
                 <h2 className="text-xl font-semibold text-slate-900">
-                  TES for industrial cooling-water users
+                  TES for Industrial Cooling Tower Preservation
                 </h2>
                 <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                  Outside the utility sector, many industrial plants operate cooling-water
-                  systems that are just as critical as a condenser in a power station.
-                  TES principles – Mexel®432 chemistry, smart dosing and targeted data –
-                  translate directly into these environments.
+                  Outside the utility sector, cooling towers are critical production assets.
+                  TES protects these structures by preventing heavy biofouling in the fill
+                  pack—avoiding collapse risks, weight gain, and airflow restriction.
                 </p>
                 <ul className="mt-3 space-y-2 text-sm text-slate-700">
+                  <li>• Preservation of tower fill efficiency and structural integrity.</li>
                   <li>• Mines and concentrators with large open cooling circuits.</li>
                   <li>• Refineries, petrochemical and steel plants.</li>
-                  <li>• Breweries, food &amp; beverage and laundries with constant cooling duty.</li>
                   <li>• Sites dealing with high-solids or blended mine / process waters.</li>
                 </ul>
               </div>
@@ -255,8 +254,10 @@ export default function ApplicationsPage() {
               </p>
             </div>
             <div className="flex flex-col gap-2 text-xs">
-              <Button href="/contact">
-                Request a Pilot Study
+              <Button asChild>
+                <Link href="/contact">
+                  Request a Pilot Study
+                </Link>
               </Button>
               <Link
                 href="/tes"

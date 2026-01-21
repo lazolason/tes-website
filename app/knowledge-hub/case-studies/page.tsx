@@ -161,7 +161,7 @@ export default function CaseStudiesPage() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="rounded-md bg-gray-100 px-2 py-1 text-[10px] font-medium text-gray-700">
-                    RT&D Protocol
+                    Verification Protocol
                   </span>
                   <span className="rounded-md bg-gray-100 px-2 py-1 text-[10px] font-medium text-gray-700">
                     Condenser efficiency
@@ -200,7 +200,7 @@ export default function CaseStudiesPage() {
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="rounded-md bg-gray-200 px-2 py-1 text-[10px] font-medium text-gray-600">
-                    RT&D Protocol Rev08
+                    Verification Protocol
                   </span>
                   <span className="rounded-md bg-gray-200 px-2 py-1 text-[10px] font-medium text-gray-600">
                     WRC referee
@@ -548,7 +548,7 @@ export default function CaseStudiesPage() {
                 of field application. TES holds the exclusive distribution rights
                 for Mexel®432 in Southern Africa and applies the same proven
                 chemistry within the structured TES approach (IoT dosing, data
-                integration and RT&D protocol verification).
+                integration and verification protocol).
               </p>
               <p className="mt-2 text-xs text-gray-700 leading-relaxed">
                 Detailed technical documentation, site reports and performance data
@@ -573,7 +573,7 @@ export default function CaseStudiesPage() {
                   <p className="mt-3 text-sm text-gray-600 leading-relaxed">
                     We maintain detailed technical documentation, site reports and
                     performance data for all international Mexel®432 deployments.
-                    For Eskom stations, we can share RT&D protocol documentation
+                    For Eskom stations, we can share verification protocol documentation
                     and discuss how the same approach could apply to your site.
                   </p>
                   <div className="mt-4 space-y-2 text-xs text-gray-700">

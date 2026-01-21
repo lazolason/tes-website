@@ -129,7 +129,7 @@ export default function KnowledgeHubPage() {
             </h2>
             <p className="mt-3 text-base text-slate-700 leading-relaxed">
               <strong>Baseline → Intervention → Review.</strong> Every TES deployment follows a strict,
-              repeatable, engineering-centred process aligned with Eskom RT&D protocols.
+              repeatable, engineering-centred process aligned with Eskom verification protocols.
             </p>
           </FadeIn>
 
@@ -192,7 +192,7 @@ export default function KnowledgeHubPage() {
                         <li>• Quantify fouling as a <em>variable</em>, not background noise</li>
                         <li>• Understand TR/TTD behaviour relative to load</li>
                         <li>• Confirm operational stability before intervention</li>
-                        <li>• Build a defendable dataset for GM/RT&D decision-making</li>
+                        <li>• Build a defendable dataset for GM/engineering decision-making</li>
                       </ul>
                     </div>
                   </div>
@@ -310,11 +310,229 @@ export default function KnowledgeHubPage() {
                       <p className="mt-2 text-sm text-emerald-800">
                         Measurable improvement in condenser performance, validated against baseline data
                         with full transparency of dosing events and operational conditions. All findings
-                        are audit-ready and suitable for RT&D/GM review.
+                        are audit-ready and suitable for engineering/GM review.
                       </p>
                     </div>
                   </div>
                 </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* B. Engineer FAQ */}
+      <section id="faq" className="border-b">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              B. Engineer FAQ
+            </h2>
+            <p className="mt-3 text-base text-slate-700 leading-relaxed">
+              Common technical questions regarding implementation, compatibility, and operations.
+            </p>
+          </FadeIn>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            <FadeIn delay={100}>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-slate-900">Does TES require plant shutdown for installation?</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    No. The dosing skid involves a simple tap-in to the cooling water inlet line.
+                    Installation can be performed while the unit is online or during a short outage.
+                    The cleaning process itself happens entirely while the unit runs.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">How does it affect my existing chemistry program?</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Mexel®432 is a &quot;single-product&quot; replacement for biocides and dispersants in
+                    the condenser circuit. You typically stop dosing your previous biocide
+                    during the TES intervention. It is compatible with most anti-scalants if required,
+                    though usually Mexel®432 replaces them.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">Is it safe for condenser tube metallurgy?</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Yes. Mexel®432 serves as a corrosion inhibitor by forming a molecular film
+                    on the metal surface. It is compatible with Admiralty Brass, Titanium,
+                    Stainless Steel, and Copper-Nickel alloys.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="space-y-6">
+                <div>
+                  <h3 className="font-semibold text-slate-900">What about high-solids or high-turbidity water?</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    TES is designed for variable water quality. The emulsion prevents suspended
+                    solids from settling and adhering to tube walls. However, it does not dissolve
+                    large physical debris (rocks, wood); primary screening is still required.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">How do we verify the results?</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    We use the ASME PTC 12.2 methodology. We track TTD (Terminal Temperature Difference)
+                    and condenser particulate fouling at matched loads. Success is defined by
+                    a measurable, sustained reduction in TTD toward design specifications.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold text-slate-900">Is the dosing automated?</h3>
+                  <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                    Yes. The TES skid is IoT-enabled, controlling dosage timing and volume
+                    precisely. Dosing events are logged to the cloud for full transparency and
+                    compliance reporting.
+                  </p>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* C. Standards & Evidence */}
+      <section id="evidence" className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-start">
+            <div className="flex-1">
+              <FadeIn>
+                <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                  C. Industry Standards & Compliance
+                </h2>
+                <p className="mt-3 text-base text-slate-700 leading-relaxed">
+                  The TES approach is built on rigorous engineering standards to ensure
+                  safety, verifiability, and regulatory compliance.
+                </p>
+
+                <div className="mt-8 space-y-6">
+                  <div className="rounded-lg border border-slate-200 bg-white p-5">
+                    <h3 className="font-semibold text-slate-900 flex items-center gap-2">
+                      <span className="text-emerald-600">ASME PTC 12.2</span>
+                      <span className="text-xs font-normal text-slate-500 uppercase tracking-wide border border-slate-200 rounded px-1.5 py-0.5">Methodology</span>
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                      &quot;Steam Surface Condensers&quot; Performance Test Code. We adhere to
+                      Section 5 for data collection and result computation, ensuring
+                      our &quot;Lost Megawatts&quot; calculations are engineering-grade, not estimates.
+                    </p>
+                  </div>
+
+                  <div className="rounded-lg border border-slate-200 bg-white p-5">
+                    <h3 className="font-semibold text-slate-900 flex items-center gap-2">
+                      <span className="text-emerald-600">Environmental & SDS</span>
+                      <span className="text-xs font-normal text-slate-500 uppercase tracking-wide border border-slate-200 rounded px-1.5 py-0.5">Compliance</span>
+                    </h3>
+                    <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                      Mexel®432 is biodegradable and non-bioaccumulating. It reduces the
+                      plant&#39;s overall chemical footprint by replacing multiple hazardous
+                      compounds (chlorine gas, acids) with a single safe emulsion.
+                      Safety Data Sheets (SDS) are available in the Resources section.
+                    </p>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+
+            <div className="lg:w-1/3">
+              <FadeIn delay={200}>
+                <div className="rounded-xl bg-slate-900 p-6 text-white shadow-lg">
+                  <h3 className="font-semibold text-lg text-emerald-400 mb-4">
+                    Evidence Library
+                  </h3>
+                  <p className="text-sm text-slate-300 mb-6">
+                    Request access to our detailed compliance documentation.
+                  </p>
+                  <ul className="space-y-4 text-sm">
+                    <li className="flex items-start gap-3">
+                      <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
+                      <span>Verification Protocol (Tutuka/Kriel)</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
+                      <span>WRC Independent Reports</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
+                      <span>Full Toxicology Reports</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
+                      <span>Corrosion Inhibition Studies</span>
+                    </li>
+                  </ul>
+                  <div className="mt-8 pt-6 border-t border-slate-700">
+                    <Link href="/contact" className="text-sm font-bold text-white hover:text-emerald-400 flex items-center gap-2">
+                      Request access <span aria-hidden="true">&rarr;</span>
+                    </Link>
+                  </div>
+                </div>
+              </FadeIn>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* D. Advanced Technical Guidance */}
+      <section id="advanced" className="border-b">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              D. Advanced Technical Guidance
+            </h2>
+            <p className="mt-3 text-base text-slate-700 leading-relaxed">
+              Deeper integration details for station chemists and systems engineers.
+            </p>
+          </FadeIn>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <FadeIn delay={100}>
+              <div className="p-6 rounded-lg bg-slate-50 border border-slate-100 h-full">
+                <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center mb-4 text-emerald-600">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.384-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Dosing Logic</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  TES uses a pulsed dosing strategy (e.g., 20 mins per day) rather than
+                  continuous feed. This targets the surface interface specifically, reducing
+                  chemical usage by up to 90% compared to traditional oxidizing biocides.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <div className="p-6 rounded-lg bg-slate-50 border border-slate-100 h-full">
+                <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center mb-4 text-blue-600">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">IoT Integration</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  The Thingy:91 dosing skid operates autonomously but can integrate
+                  with plant DCS via SCADA/Modbus if required. Note: We prefer
+                  independent cloud logging for audit-trail verification.
+                </p>
+              </div>
+            </FadeIn>
+            <FadeIn delay={300}>
+              <div className="p-6 rounded-lg bg-slate-50 border border-slate-100 h-full">
+                <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center mb-4 text-amber-600">
+                  <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                  </svg>
+                </div>
+                <h3 className="font-semibold text-slate-900 mb-2">Troubleshooting</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  High TTD is not always fouling. Our protocol helps distinguish between
+                  fouling, air ingress, and passing valves. The baseline phase is critical
+                  to rule out non-fouling mechanical issues before dosing begins.
+                </p>
               </div>
             </FadeIn>
           </div>

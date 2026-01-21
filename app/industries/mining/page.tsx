@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
 import { ArrowRightIcon } from "@/components/icons/NavIcons";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Mining & Minerals | Industries",
@@ -47,8 +47,10 @@ export default function MiningPage() {
               TES provides the operational discipline needed to maintain heat transfer on critical process loops.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
-                Engineering Enquiry
+              <Button asChild size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                <Link href="/contact">
+                  Engineering Enquiry
+                </Link>
               </Button>
             </div>
           </div>
@@ -164,11 +166,15 @@ export default function MiningPage() {
             centered
           />
           <div className="flex flex-wrap justify-center gap-4">
-            <Button href="/contact" size="md">
-              Contact Engineering Team
+            <Button asChild size="lg">
+              <Link href="/contact">
+                Contact Engineering Team
+              </Link>
             </Button>
-            <Button href="/knowledge-hub/case-studies" variant="outline" size="md">
-              View Case Studies
+            <Button asChild variant="outline" size="lg">
+              <Link href="/knowledge-hub/case-studies">
+                View Case Studies
+              </Link>
             </Button>
           </div>
         </div>

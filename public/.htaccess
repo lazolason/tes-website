@@ -1,0 +1,18 @@
+<IfModule mod_headers.c>
+  # Security Headers
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header set X-XSS-Protection "1; mode=block"
+</IfModule>
+
+# Handle clean URLs if necessary (Next.js static export usually generates .html files)
+# This part is optional but good for ensuring .html extensions are hidden if the server supports it
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+</IfModule>

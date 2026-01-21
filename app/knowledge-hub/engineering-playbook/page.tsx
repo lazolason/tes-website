@@ -28,7 +28,7 @@ const sections = [
     href: "/knowledge-hub/engineering-playbook/protocol",
     status: "Overview",
     description:
-      "Verification methodology aligned with Eskom RT&D Rev08. Full protocol pack available on request.",
+      "Verification methodology aligned with Eskom verification protocols. Full protocol pack available on request.",
   },
   {
     title: "IoT Dosing (Overview)",

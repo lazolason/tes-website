@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { solutions } from '../lib/navigation';
+import { solutions, industries, knowledgeHub } from '../lib/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,39 +30,86 @@ export default function Navbar() {
               <Link href="/" className="text-sm font-medium text-white hover:text-emerald-400">Home</Link>
               <Link href="/mexel432" className="text-sm font-semibold text-emerald-300 hover:text-emerald-200">Mexel®432</Link>
 
-              {/* Mega Menu Trigger */}
+              {/* Solutions Dropdown */}
               <div className="relative group">
                 <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
                   Solutions <ChevronDown className="h-4 w-4" />
                 </button>
+                <div className="absolute left-0 top-full w-[320px] origin-top scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                  <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+                    <div className="space-y-4">
+                      {solutions.map((item) => (
+                        <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800 group-hover/item:bg-emerald-500/20 transition-colors">
+                            <item.icon className="h-5 w-5 text-emerald-500" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-white group-hover/item:text-emerald-400">
+                              {item.name}
+                            </p>
+                            <p className="text-xs text-slate-400 mt-1">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-                {/* Mega Menu Panel */}
-                <div className="absolute -left-48 top-full w-[600px] origin-top-left scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
-                  <div className="mt-2 grid grid-cols-2 gap-8 rounded-2xl border border-slate-800 bg-slate-900 p-8 shadow-2xl">
-                    {solutions.map((col) => (
-                      <div key={col.category}>
-                        <h3 className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-4">
-                          {col.category}
-                        </h3>
-                        <div className="space-y-6">
-                          {col.items.map((item) => (
-                            <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
-                              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800 group-hover/item:bg-emerald-500/20 transition-colors">
-                                <item.icon className="h-5 w-5 text-emerald-500" />
-                              </div>
-                              <div>
-                                <p className="text-sm font-semibold text-white group-hover/item:text-emerald-400">
-                                  {item.name}
-                                </p>
-                                <p className="text-xs text-slate-400 mt-1 line-clamp-1">
-                                  {item.desc}
-                                </p>
-                              </div>
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
+              {/* Industries Dropdown */}
+              <div className="relative group">
+                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
+                  Industries <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="absolute left-0 top-full w-[320px] origin-top scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                  <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+                    <div className="space-y-4">
+                      {industries.map((item) => (
+                        <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800 group-hover/item:bg-emerald-500/20 transition-colors">
+                            <item.icon className="h-5 w-5 text-emerald-500" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-white group-hover/item:text-emerald-400">
+                              {item.name}
+                            </p>
+                            <p className="text-xs text-slate-400 mt-1">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Knowledge Hub Dropdown */}
+              <div className="relative group">
+                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
+                  Knowledge Hub <ChevronDown className="h-4 w-4" />
+                </button>
+                <div className="absolute left-0 top-full w-[320px] origin-top scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                  <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+                    <div className="space-y-4">
+                      {knowledgeHub.map((item) => (
+                        <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
+                          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-slate-800 group-hover/item:bg-emerald-500/20 transition-colors">
+                            <item.icon className="h-5 w-5 text-emerald-500" />
+                          </div>
+                          <div>
+                            <p className="text-sm font-semibold text-white group-hover/item:text-emerald-400">
+                              {item.name}
+                            </p>
+                            <p className="text-xs text-slate-400 mt-1">
+                              {item.desc}
+                            </p>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -120,24 +167,55 @@ export default function Navbar() {
             {/* Mobile Solutions Section */}
             <div className="px-3 py-2">
               <div className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">Solutions</div>
-              {solutions.map((group) => (
-                <div key={group.category} className="mb-4 last:mb-0 pl-2 border-l border-slate-800">
-                  <div className="text-xs text-slate-400 mb-2 font-medium">{group.category}</div>
-                  <div className="space-y-2">
-                    {group.items.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        <item.icon className="h-4 w-4 text-emerald-500" />
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              ))}
+              <div className="space-y-2 pl-2 border-l border-slate-800">
+                {solutions.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <item.icon className="h-4 w-4 text-emerald-500" />
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Industries Section */}
+            <div className="px-3 py-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">Industries</div>
+              <div className="space-y-2 pl-2 border-l border-slate-800">
+                {industries.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <item.icon className="h-4 w-4 text-emerald-500" />
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Knowledge Hub Section */}
+            <div className="px-3 py-2">
+              <div className="text-xs font-bold uppercase tracking-widest text-emerald-500 mb-2">Knowledge Hub</div>
+              <div className="space-y-2 pl-2 border-l border-slate-800">
+                {knowledgeHub.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="flex items-center gap-3 rounded-md p-2 text-sm text-slate-300 hover:bg-slate-800 hover:text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    <item.icon className="h-4 w-4 text-emerald-500" />
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
             </div>
 
             <Link

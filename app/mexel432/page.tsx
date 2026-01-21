@@ -86,6 +86,107 @@ export default function MexelProductPage() {
         </div>
       </section>
 
+      {/* Application & Dosing Protocols */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Application & Dosing Protocols
+            </h2>
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              Mexel®432 is applied via <strong>pulsed dosing</strong> rather than continuous feed,
+              targeting the surface interface specifically while minimizing chemical consumption.
+            </p>
+          </FadeIn>
+
+          <div className="mt-10 grid gap-8 lg:grid-cols-2">
+            {/* Dosing Rates Table */}
+            <FadeIn delay={100}>
+              <h3 className="text-lg font-bold text-slate-900 mb-4">Typical Dosing Parameters</h3>
+              <div className="overflow-hidden rounded-lg border border-slate-200">
+                <table className="min-w-full divide-y divide-slate-200">
+                  <thead className="bg-slate-50">
+                    <tr>
+                      <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-700">
+                        System Type
+                      </th>
+                      <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-700">
+                        Dosing Rate
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-200 bg-white">
+                    {[
+                      { system: "Once-Through (Power Station)", rate: "3-5 ppm, 20-30 min/day" },
+                      { system: "Recirculating Cooling Tower", rate: "5-8 ppm, 2-3 pulses/day" },
+                      { system: "Closed Loop (HVAC)", rate: "10-15 ppm, weekly maintenance" },
+                    ].map((row) => (
+                      <tr key={row.system}>
+                        <td className="px-6 py-4 text-sm font-medium text-slate-900">
+                          {row.system}
+                        </td>
+                        <td className="px-6 py-4 text-sm text-slate-600 font-mono">
+                          {row.rate}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </FadeIn>
+
+            {/* TES Integration */}
+            <FadeIn delay={200}>
+              <h3 className="text-lg font-bold text-slate-900 mb-4">TES IoT Integration</h3>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-6 space-y-4">
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                      <span className="text-emerald-600 font-bold text-sm">1</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Automated Dosing Skid</h4>
+                    <p className="text-sm text-slate-600 mt-1">
+                      TES Thingy:91 skid controls dosing timing and volume precisely,
+                      logging all events to the cloud for compliance.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                      <span className="text-emerald-600 font-bold text-sm">2</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Compatibility</h4>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Can be integrated with existing anti-scalants if required,
+                      though Mexel®432 typically replaces multi-product programs.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <div className="flex-shrink-0 mt-1">
+                    <div className="w-8 h-8 rounded-lg bg-emerald-100 flex items-center justify-center">
+                      <span className="text-emerald-600 font-bold text-sm">3</span>
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">No Shutdown Required</h4>
+                    <p className="text-sm text-slate-600 mt-1">
+                      Installation is a simple tap-in to the cooling water inlet.
+                      Cleaning happens entirely while the unit runs.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Specifications Table */}
       <section className="border-b bg-white">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
@@ -157,6 +258,301 @@ export default function MexelProductPage() {
               </div>
             </FadeIn>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Performance Validation Data */}
+      <section className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Performance Validation Data
+            </h2>
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              Mexel®432 performance is validated using <strong>ASME PTC 12.2</strong> methodology,
+              ensuring that MW gains are engineering-grade measurements, not estimates.
+            </p>
+          </FadeIn>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-3">
+            {/* Key Metrics */}
+            <FadeIn delay={100}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-100 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-slate-900">TTD Reduction</h3>
+                </div>
+                <p className="text-2xl font-bold text-emerald-600 mb-2">2-4°C</p>
+                <p className="text-sm text-slate-600">
+                  Typical Terminal Temperature Difference improvement during intervention phase
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={200}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-slate-900">Vacuum Improvement</h3>
+                </div>
+                <p className="text-2xl font-bold text-blue-600 mb-2">5-15 kPa</p>
+                <p className="text-sm text-slate-600">
+                  Condenser back-pressure reduction at matched load conditions
+                </p>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={300}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-10 h-10 rounded-lg bg-amber-100 flex items-center justify-center">
+                    <svg className="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-slate-900">Heat Rate Recovery</h3>
+                </div>
+                <p className="text-2xl font-bold text-amber-600 mb-2">1-3%</p>
+                <p className="text-sm text-slate-600">
+                  Station heat rate improvement translating to MW capacity restoration
+                </p>
+              </div>
+            </FadeIn>
+          </div>
+
+          {/* Case Study Links */}
+          <FadeIn delay={400}>
+            <div className="mt-10 rounded-xl border border-slate-200 bg-white p-8">
+              <h3 className="text-lg font-bold text-slate-900 mb-4">Validation Documentation</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Link
+                  href="/Lost_Megawatts_Restored.pdf"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 transition-all group"
+                >
+                  <div className="flex-shrink-0">
+                    <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 group-hover:text-emerald-700">Lost Megawatts Restored</h4>
+                    <p className="text-sm text-slate-600 mt-1">15-page technical overview of TES methodology and ASME PTC 12.2 application</p>
+                  </div>
+                </Link>
+
+                <Link
+                  href="/knowledge-hub/case-studies/kriel"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 transition-all group"
+                >
+                  <div className="flex-shrink-0">
+                    <svg className="w-8 h-8 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900 group-hover:text-emerald-700">Kriel Power Station Case Study</h4>
+                    <p className="text-sm text-slate-600 mt-1">Full pilot documentation with baseline, intervention, and measured results</p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Comparative Analysis */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Why Mexel®432 vs. Traditional Chemicals
+            </h2>
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              Mexel®432 represents a fundamental shift from &quot;slash and burn&quot; oxidizing biocides
+              to a surface-active, film-forming approach.
+            </p>
+          </FadeIn>
+
+          <div className="mt-10 overflow-hidden rounded-lg border border-slate-200">
+            <table className="min-w-full divide-y divide-slate-200">
+              <thead className="bg-slate-50">
+                <tr>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-700">
+                    Criteria
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-emerald-700">
+                    Mexel®432 (TES)
+                  </th>
+                  <th className="px-6 py-3 text-left text-xs font-bold uppercase tracking-wider text-slate-500">
+                    Traditional Biocides
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 bg-white">
+                {[
+                  {
+                    criteria: "Dosing Frequency",
+                    mexel: "Pulsed (20-30 min/day)",
+                    traditional: "Continuous or frequent shock"
+                  },
+                  {
+                    criteria: "Chemical Consumption",
+                    mexel: "90% reduction vs. continuous",
+                    traditional: "High volume required"
+                  },
+                  {
+                    criteria: "Environmental Impact",
+                    mexel: "Biodegradable, non-toxic",
+                    traditional: "Persistent, aquatic toxicity"
+                  },
+                  {
+                    criteria: "Corrosion Protection",
+                    mexel: "Active film-forming inhibitor",
+                    traditional: "None (can accelerate corrosion)"
+                  },
+                  {
+                    criteria: "Scale Prevention",
+                    mexel: "Crystal lattice distortion",
+                    traditional: "Requires separate anti-scalant"
+                  },
+                ].map((row) => (
+                  <tr key={row.criteria}>
+                    <td className="px-6 py-4 text-sm font-medium text-slate-900 bg-slate-50">
+                      {row.criteria}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-emerald-700 font-medium">
+                      {row.mexel}
+                    </td>
+                    <td className="px-6 py-4 text-sm text-slate-500">
+                      {row.traditional}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Safety & Handling */}
+      <section className="border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Safety & Handling
+            </h2>
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              Mexel®432 is classified as non-hazardous under standard transport regulations.
+            </p>
+          </FadeIn>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-2">
+            <FadeIn delay={100}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Storage Requirements</h3>
+                <ul className="space-y-3 text-sm text-slate-600">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>Temperature:</strong> Store between 5-35°C. Avoid freezing.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>Container:</strong> Keep in original sealed containers. Compatible with HDPE/PP.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-emerald-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>Shelf Life:</strong> 12 months from manufacture date when stored correctly.</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={200}>
+              <div className="rounded-xl border border-slate-200 bg-white p-6">
+                <h3 className="text-lg font-bold text-slate-900 mb-4">Handling Precautions</h3>
+                <ul className="space-y-3 text-sm text-slate-600">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>PPE:</strong> Use gloves and safety glasses during handling.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>First Aid:</strong> In case of skin contact, rinse with water. If swallowed, seek medical advice.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span><strong>Full SDS:</strong> Always consult the Safety Data Sheet for complete safety information.</span>
+                  </li>
+                </ul>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical FAQ */}
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              Technical FAQ
+            </h2>
+            <p className="mt-4 text-slate-600 max-w-3xl">
+              Common questions from station engineers and chemists.
+            </p>
+          </FadeIn>
+
+          <div className="mt-10 space-y-6">
+            {[
+              {
+                q: "Does Mexel®432 work with seawater?",
+                a: "Yes. Mexel®432 has been successfully deployed in seawater cooling systems (desalination, coastal power stations). It prevents marine fouling without environmental harm."
+              },
+              {
+                q: "Is it compatible with Admiralty Brass tubes?",
+                a: "Yes. Mexel®432 is compatible with all common condenser tube metallurgies including Admiralty Brass, Titanium, Stainless Steel, and Copper-Nickel alloys."
+              },
+              {
+                q: "What if TTD doesn't improve after dosing?",
+                a: "High TTD is not always fouling. Our verification protocol includes a baseline phase to rule out non-fouling issues (air ingress, passing valves, mechanical problems) before dosing begins."
+              },
+              {
+                q: "Can I use it alongside my existing anti-scalant?",
+                a: "Mexel®432 typically replaces both biocides and anti-scalants. However, it can be integrated with certain programs if required. Contact our engineering team for compatibility assessment."
+              },
+              {
+                q: "How quickly will I see results?",
+                a: "Measurable TTD improvement typically appears within 2-4 weeks of intervention. The full cleaning effect depends on the severity of existing fouling."
+              },
+            ].map((faq, index) => (
+              <FadeIn key={index} delay={index * 50}>
+                <div className="rounded-lg border border-slate-200 bg-slate-50 p-6">
+                  <h3 className="font-bold text-slate-900 mb-2">{faq.q}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{faq.a}</p>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>

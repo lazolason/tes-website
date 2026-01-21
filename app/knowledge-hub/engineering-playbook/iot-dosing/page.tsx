@@ -74,7 +74,7 @@ export default function IoTDosingOverviewPage() {
                 <h3 className="text-lg font-semibold text-gray-900">Data custody</h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                   Operators retain data ownership. TES supports exportable logs for station
-                  archives and RT&D review.
+                  archives and engineering review.
                 </p>
               </div>
             </FadeIn>

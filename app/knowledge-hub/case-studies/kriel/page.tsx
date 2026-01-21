@@ -33,8 +33,8 @@ export default function KrielCaseStudyPage() {
             Kriel Power Station
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-            Mexel®432 was applied at Kriel Power Station as part of Eskom
-            RT&D&apos;s evaluation of film-forming amine chemistry for
+            Mexel®432 was applied at Kriel Power Station as part of Eskom&apos;s
+            evaluation of film-forming amine chemistry for
             cooling-water treatment. Station data showed improved condenser
             performance during the treatment period.
           </p>
@@ -131,7 +131,7 @@ export default function KrielCaseStudyPage() {
                   multiple fouling mechanisms at once.
                 </p>
                 <p className="mt-3 text-sm text-gray-700 leading-relaxed">
-                  The evaluation was conducted through Eskom RT&D to ensure a
+                  The evaluation was conducted through Eskom engineering to ensure a
                   structured, protocol-based approach rather than an ad-hoc trial.
                 </p>
               </div>
@@ -310,7 +310,7 @@ export default function KrielCaseStudyPage() {
                   </h3>
                   <p className="mt-1 text-sm text-gray-700 leading-relaxed">
                     Without clear baseline data, it is difficult to demonstrate
-                    improvement. The RT&D protocol structure (baseline →
+                    improvement. The verification protocol structure (baseline →
                     intervention → post-intervention) is essential for credible
                     evaluation.
                   </p>
@@ -369,7 +369,7 @@ export default function KrielCaseStudyPage() {
             </p>
             <p className="mt-3 text-sm text-gray-700 leading-relaxed max-w-3xl">
               TES now incorporates IoT-enabled dosing (Thingy:91X), a cooling-water
-              performance view and alignment with Eskom RT&D&apos;s Tutuka
+              performance view and alignment with Eskom&apos;s Tutuka
               protocol — all designed to make future pilots more rigorous and
               their results more defensible.
             </p>

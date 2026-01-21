@@ -5,7 +5,7 @@ import FadeIn from "./FadeIn";
 
 const pillars = [
   {
-    title: "Eskom RT&D Protocol",
+    title: "Eskom Verification Protocol",
     description:
       "Verification follows the Tutuka Rev08 baseline → intervention → review structure to ensure comparable results.",
     icon: (

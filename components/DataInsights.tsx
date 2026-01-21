@@ -71,7 +71,7 @@ export default function DataInsights() {
                                 <span className="text-emerald-400">Recovery Results.</span>
                             </h2>
                             <p className="text-slate-400 text-lg md:text-xl leading-relaxed mb-10 max-w-xl">
-                                TES doesn't rely on chemical projections. We verify impact through normalized
+                                TES doesn&#39;t rely on chemical projections. We verify impact through normalized
                                 heat rate delta, vacuum stability, and TTD trends—traceable to source data.
                             </p>
 
@@ -82,7 +82,7 @@ export default function DataInsights() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                         </svg>
                                     </div>
-                                    <span className="text-sm font-semibold text-white">RT&D Protocol Aligned</span>
+                                    <span className="text-sm font-semibold text-white">Verification Protocol Aligned</span>
                                 </div>
                                 <div className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl p-4 pr-6 transition-all duration-300 hover:bg-white/10 hover:border-white/20">
                                     <div className="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
@@ -112,7 +112,9 @@ export default function DataInsights() {
     );
 }
 
-function StatCard({ stat, index, trigger }: { stat: any, index: number, trigger: boolean }) {
+import { Stat } from '@/types';
+
+function StatCard({ stat, index, trigger }: { stat: Stat, index: number, trigger: boolean }) {
     const count = useCountUp(stat.value, 2000, trigger);
 
     return (

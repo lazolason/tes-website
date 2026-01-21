@@ -51,15 +51,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log the submission (in production, send email here)
-    console.log("=== NEW CONTACT FORM SUBMISSION ===");
-    console.log("Name:", data.name);
-    console.log("Email:", data.email);
-    console.log("Organisation:", data.organisation || "Not provided");
-    console.log("Interest:", data.interest || "Not selected");
-    console.log("Description:", data.description || "Not provided");
-    console.log("Timestamp:", new Date().toISOString());
-    console.log("===================================");
+    // Log the submission (in production, use a proper logger)
+    console.log(`Contact form submission: ${data.email} (${data.interest || 'General'})`);
 
     // TODO: Integrate with email service
     // Example with Resend:

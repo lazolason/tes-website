@@ -19,8 +19,8 @@ export default function ModernProcess() {
                         A Disciplined Loop of Efficiency.
                     </h2>
                     <p className="text-slate-600 text-lg">
-                        Our 4-step integration ensures that thermal recovery isn't just a
-                        chemical dosing event—it's a verifiable system of performance.
+                        Our 4-step integration ensures that thermal recovery isn&#39;t just a
+                        chemical dosing event—it&#39;s a verifiable system of performance.
                     </p>
                 </div>
 

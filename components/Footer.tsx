@@ -19,7 +19,7 @@ const navigation = {
     {
       name: 'LinkedIn',
       href: 'https://www.linkedin.com/company/mexel-energy-sustain/',
-      icon: (props: any) => (
+      icon: (props: React.SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
             fillRule="evenodd"
@@ -43,10 +43,10 @@ export default function Footer() {
           <div className="space-y-8">
             {/* BRAND CONSISTENCY: Logo Image */}
             <div className="flex items-center">
-              <img 
-                src="/logonew.png" 
-                alt="Mexel Energy Sustain" 
-                className="h-14 w-auto object-contain" 
+              <img
+                src="/logonew.png"
+                alt="Mexel Energy Sustain"
+                className="h-14 w-auto object-contain"
               />
             </div>
             <p className="text-sm leading-6 text-slate-300">
@@ -54,9 +54,9 @@ export default function Footer() {
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
-                <a 
-                  key={item.name} 
-                  href={item.href} 
+                <a
+                  key={item.name}
+                  href={item.href}
                   className="text-slate-400 hover:text-emerald-500"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // We are removing "Sugar", "Food", "Agriculture", and "Ports" to focus on Power & Mining.
   const routes = [
     "",
+    "/mexel432",
     "/tes",
     "/products",
     "/applications",
@@ -21,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge-hub/case-studies",
     "/knowledge-hub/case-studies/kriel",
     "/knowledge-hub/resources",
+    "/knowledge-hub/engineering-playbook",
     "/about",
     "/contact",
   ];
@@ -29,6 +31,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${siteUrl}${route}`,
     lastModified,
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : route === "/tes" ? 0.9 : 0.8,
+    priority: route === "" ? 1 : route === "/tes" || route === "/mexel432" ? 0.9 : 0.8,
   }));
 }

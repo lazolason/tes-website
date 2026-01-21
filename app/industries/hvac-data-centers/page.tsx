@@ -4,7 +4,7 @@ import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
 import { ArrowRightIcon } from "@/components/icons/NavIcons";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "HVAC & Data Centres | Industries",
@@ -48,8 +48,10 @@ export default function DataCentresPage() {
               aggressive PUE targets.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button href="/contact" size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
-                Engineering Enquiry
+              <Button asChild size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
+                <Link href="/contact">
+                  Engineering Enquiry
+                </Link>
               </Button>
             </div>
           </div>
@@ -135,11 +137,15 @@ export default function DataCentresPage() {
             centered
           />
           <div className="flex flex-wrap justify-center gap-6">
-            <Button href="/contact" variant="secondary" size="lg">
-              Contact HVAC/DC Team
+            <Button asChild variant="secondary" size="lg">
+              <Link href="/contact">
+                Contact HVAC/DC Team
+              </Link>
             </Button>
-            <Button href="/knowledge-hub" variant="outline" size="lg">
-              Explore Knowledge Hub
+            <Button asChild variant="outline" size="lg">
+              <Link href="/knowledge-hub">
+                Explore Knowledge Hub
+              </Link>
             </Button>
           </div>
         </div>

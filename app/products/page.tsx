@@ -1,7 +1,8 @@
 import Link from "next/link";
 import FadeIn from "../../components/FadeIn";
 import SystemHeader from "../../components/SystemHeader";
-import Button from "../../components/ui/Button";
+import { Button, buttonVariants } from "@/components/ui/Button";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 
 // INLINE ICONS
@@ -88,9 +89,12 @@ export default function ProductsPage() {
               </div>
 
               <div className="mt-8">
-                <Button href="/mexel432" variant="outline" className="w-full sm:w-auto">
+                <Link
+                  href="/mexel432"
+                  className={cn(buttonVariants({ variant: "outline" }), "w-full sm:w-auto")}
+                >
                   View Technical Data Sheet
-                </Button>
+                </Link>
               </div>
             </div>
 

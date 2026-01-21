@@ -3,7 +3,7 @@
  * Import all reusable UI components from this file
  */
 
-export { default as Button } from './Button';
+export { Button } from './Button';
 export {
     Skeleton,
     CardSkeleton,

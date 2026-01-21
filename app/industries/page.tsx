@@ -5,7 +5,7 @@ import { INDUSTRIES_DATA } from "@/lib/data";
 // REMOVED: FadeIn (Too flashy)
 import SectionHeading from "@/components/ui/SectionHeading";
 // REMOVED: NavIcons import (Using inline SVG for safety)
-import Button from "@/components/ui/Button";
+import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Core Industries",
@@ -95,12 +95,14 @@ export default function IndustriesPage() {
                     ))}
                   </div>
 
-                  <Button href={`/industries/${industry.slug}`} variant="secondary" className="border-slate-200 hover:bg-slate-50">
-                    Technical Specifications
-                    {/* Inline SVG Arrow */}
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 ml-2 text-emerald-600">
-                      <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
-                    </svg>
+                  <Button asChild variant="secondary" className="border-slate-200 hover:bg-slate-50">
+                    <Link href={`/industries/${industry.slug}`}>
+                      Technical Specifications
+                      {/* Inline SVG Arrow */}
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 ml-2 text-emerald-600">
+                        <path fillRule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clipRule="evenodd" />
+                      </svg>
+                    </Link>
                   </Button>
                 </div>
               </div>
@@ -120,8 +122,10 @@ export default function IndustriesPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             {/* Primary: Request Specs */}
-            <Button href="/contact" size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white border-none">
-              Request Specifications
+            <Button asChild size="lg" className="bg-emerald-600 hover:bg-emerald-500 text-white border-none">
+              <Link href="/contact">
+                Request Specifications
+              </Link>
             </Button>
 
             {/* Secondary: WhatsApp Safety Net */}

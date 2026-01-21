@@ -8,11 +8,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Protocol Overview | Engineering Playbook",
   description:
-    "Overview of TES verification methodology aligned with Eskom RT&D Rev08. Full protocol pack available on request.",
+    "Overview of TES verification methodology aligned with Eskom verification protocols. Full protocol pack available on request.",
   openGraph: {
     title: "Protocol Overview | Engineering Playbook",
     description:
-      "Overview of TES verification methodology aligned with Eskom RT&D Rev08. Full protocol pack available on request.",
+      "Overview of TES verification methodology aligned with Eskom verification protocols. Full protocol pack available on request.",
   },
 };
 
@@ -26,7 +26,7 @@ export default function ProtocolOverviewPage() {
             Protocol Overview
           </p>
           <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.5rem] lg:leading-[1.15]">
-            Verification workflow (aligned with Eskom RT&D Rev08).
+            Verification workflow (aligned with Eskom verification protocols).
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
             This is an overview only. The full protocol pack includes detailed measurement
@@ -105,7 +105,7 @@ export default function ProtocolOverviewPage() {
         <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
           <ProtocolCTA
             title="Protocol Pack"
-            description="Request the full RT&D-aligned protocol pack, including templates, data requirements, and reporting guidance."
+            description="Request the full verification protocol pack, including templates, data requirements, and reporting guidance."
             topic="Protocol Pack"
             buttonLabel="Request protocol pack"
           />

@@ -33,13 +33,13 @@ export default function PremiumHero() {
                             Verify the MW gain.
                         </h1>
 
-                        {/* 3. THE SUB-HEAD (No estimates, No RT&D name-dropping) */}
+                        {/* 3. THE SUB-HEAD (No estimates, focused on verification) */}
                         <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-xl mb-10 font-medium">
                             Our Thermal Efficiency Solution (TES) combines Mexel®432 emulsion with automated dosing and raw data to clean condenser tubes while the unit runs.
                             <br /><br />
                             Move beyond guesswork. We use measurable <strong>thermodynamic baselines</strong> to verify condenser performance.
                             <br /><br />
-                            No estimates. No "managed service" contracts. Just raw data and a solution that cleans the tubes while the unit runs.
+                            No estimates. No &quot;managed service&quot; contracts. Just raw data and a solution that cleans the tubes while the unit runs.
                         </p>
 
                         {/* 4. THE CALL TO ACTION (Direct Line for Emergencies) */}

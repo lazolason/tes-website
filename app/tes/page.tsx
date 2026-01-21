@@ -113,7 +113,7 @@ export default function TesPage() {
                   Thermodynamic Verification
                 </h2>
                 <p className="mt-3 text-base text-slate-600">
-                  The system is validated by physical indicators, not theoretical models. We track the recovery of the condenser's design parameters.
+                  The system is validated by physical indicators, not theoretical models. We track the recovery of the condenser&#39;s design parameters.
                 </p>
               </FadeIn>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
