@@ -1,0 +1,32 @@
+name: "CI — Lighthouse (PR)"
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Start server (background)
+        run: |
+          npm run start -- --port 3000 &
+          n=0; until curl -sSf http://localhost:3000/ >/dev/null || [ $n -ge 30 ]; do n=$((n+1)); sleep 1; done
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.10.x
+      - name: Run Lighthouse CI
+        run: |
+          lhci collect --url=http://localhost:3000 --settings.chromeFlags="--no-sandbox" --numberOfRuns=3
+        env:
+          CI: true
+      - name: Stop background servers
+        if: always()
+        run: pkill -f "node" || true

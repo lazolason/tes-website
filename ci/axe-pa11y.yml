@@ -1,0 +1,30 @@
+name: "CI — Accessibility (pa11y + axe)"
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Start server (background)
+        run: |
+          npm run start -- --port 3000 &
+          n=0; until curl -sSf http://localhost:3000/ >/dev/null || [ $n -ge 30 ]; do n=$((n+1)); sleep 1; done
+      - name: Install pa11y-ci
+        run: npm install -g pa11y-ci@5
+      - name: Run pa11y-ci
+        run: |
+          pa11y-ci --reporter html --output ./pa11y-report.html http://localhost:3000/ || true
+      - name: Stop background servers
+        if: always()
+        run: pkill -f "node" || true
