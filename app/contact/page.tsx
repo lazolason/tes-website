@@ -313,7 +313,7 @@ export default function ContactPage() {
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-800">
 
                 <p className="font-semibold text-slate-900">Mexel Energy Sustain (Pty) Ltd</p>
-                <p className="text-xs text-slate-500 mb-2">B-BBEE Level 1 Contributor</p>
+
 
                 <p className="mt-3 font-medium">Technical Director: Lazola Sonqishe</p>
 
