@@ -34,8 +34,33 @@ export const metadata: Metadata = {
 };
 
 export default function MexelProductPage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mexelenergysustain.com";
+
   return (
     <main className="min-h-screen bg-white">
+      {/* JSON-LD Structured Data for Product */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Mexel®432",
+            description: "A filming polyamine emulsion for biofouling control, corrosion inhibition, and scale prevention in cooling water systems.",
+            brand: {
+              "@type": "Brand",
+              name: "Mexel Energy Sustain",
+            },
+            manufacturer: {
+              "@type": "Organization",
+              name: "Mexel Energy Sustain",
+              url: siteUrl,
+            },
+            category: "Industrial Chemicals",
+            url: `${siteUrl}/mexel432`,
+          }),
+        }}
+      />
       <SystemHeader
         tag="PRODUCT DATA SHEET"
         title="Mexel®432 Performance Emulsion."

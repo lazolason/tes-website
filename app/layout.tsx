@@ -97,6 +97,31 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        {/* JSON-LD Structured Data for Organization */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "Mexel Energy Sustain",
+              url: siteUrl,
+              logo: `${siteUrl}/logo.png`,
+              description: "Thermal Efficiency Solutions for Power Generation & Heavy Industry using Mexel®432 technology.",
+              address: {
+                "@type": "PostalAddress",
+                addressCountry: "ZA",
+              },
+              contactPoint: {
+                "@type": "ContactPoint",
+                contactType: "sales",
+                url: `${siteUrl}/contact`,
+              },
+            }),
+          }}
+        />
+      </head>
       {/* suppressHydrationWarning: Browser extensions/agent tools may inject classes (e.g., antigravity-scroll-lock) */}
       <body className="bg-white text-slate-900 antialiased font-sans" suppressHydrationWarning>
         {/* Skip to main content link for keyboard accessibility */}
