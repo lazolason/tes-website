@@ -19,3 +19,9 @@ public/_backup_images/
 # Playwright MCP artifacts
 .playwright-mcp/
 .codex-dev.pid
+
+# Anti-Gravity
+.tmp/
+.env
+execution/
+

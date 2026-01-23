@@ -2,8 +2,8 @@ import { ChartColumn, Wind, Droplets, Gauge, ShieldCheck } from 'lucide-react';
 
 // Technical Solutions dropdown
 export const solutions = [
-    { name: 'Condenser Efficiency', href: '/applications', desc: 'Optimize heat transfer rates.', icon: Gauge },
-    { name: 'Cooling Tower Preservation', href: '/applications', desc: 'Extend asset lifespan.', icon: ShieldCheck },
+    { name: 'Condenser Efficiency', href: '/applications#condenser', desc: 'Optimize heat transfer rates.', icon: Gauge },
+    { name: 'Cooling Tower Preservation', href: '/applications#cooling-towers', desc: 'Extend asset lifespan.', icon: ShieldCheck },
 ];
 
 // Industries dropdown

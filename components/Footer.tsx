@@ -2,18 +2,19 @@ import React from 'react';
 import Link from 'next/link';
 
 const navigation = {
-  thermal: [
-    { name: 'Condenser Performance', href: '/solutions/condenser-performance' },
-    { name: 'ROI Verification', href: '/solutions/roi-verification' },
+  solutions: [
+    { name: 'Condenser Efficiency', href: '/applications#condenser' },
+    { name: 'Cooling Tower Preservation', href: '/applications#cooling-towers' },
   ],
-  industrial: [
-    { name: 'Cooling Water', href: '/solutions/cooling-water' },
-    { name: 'Boiler Water', href: '/solutions/boiler-water' },
+  industries: [
+    { name: 'Power & Energy', href: '/industries/power-energy' },
+    { name: 'Mining & Smelters', href: '/industries/mining' },
+    { name: 'HVAC & Data Centers', href: '/industries/hvac-data-centers' },
   ],
   company: [
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Privacy', href: '/legal' },
+    { name: 'Privacy & Legal', href: '/legal' },
   ],
   social: [
     {
@@ -71,11 +72,11 @@ export default function Footer() {
           {/* NAVIGATION COLUMNS */}
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
-              {/* Column 1: Thermal Efficiency */}
+              {/* Column 1: Solutions */}
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Thermal Efficiency</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Solutions</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.thermal.map((item) => (
+                  {navigation.solutions.map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm leading-6 text-slate-300 hover:text-white">
                         {item.name}
@@ -84,11 +85,11 @@ export default function Footer() {
                   ))}
                 </ul>
               </div>
-              {/* Column 2: Industrial Systems */}
+              {/* Column 2: Industries */}
               <div className="mt-10 md:mt-0">
-                <h3 className="text-sm font-semibold leading-6 text-white">Industrial Systems</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Industries</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {navigation.industrial.map((item) => (
+                  {navigation.industries.map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm leading-6 text-slate-300 hover:text-white">
                         {item.name}

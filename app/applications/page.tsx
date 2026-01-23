@@ -27,73 +27,108 @@ export default function ApplicationsPage() {
         activeSteps={[2, 3]}
       />
 
-      {/* Two main tracks: Eskom vs Industry */}
-      <section className="border-b">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <div className="grid gap-8 md:grid-cols-2">
-            {/* Eskom wet-cooled applications */}
-            <div className="flex flex-col gap-4">
-              {/* Power station image */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/cooling-tower.webp"
-                  alt="Wet-cooled power station cooling tower"
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+      {/* SECTION 1: Condenser Efficiency (Eskom) */}
+      <section id="condenser" className="scroll-mt-20 border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="flex flex-col gap-6">
+              <div className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 w-fit">
+                UTILITY SECTOR
               </div>
-
-              <div>
-                <h2 className="text-xl font-semibold text-slate-900">
-                  TES for Eskom wet-cooled coal stations
-                </h2>
-                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                  At wet-cooled stations, TES focuses on the condenser and cooling-water
-                  system as a distinct performance node. It is suited to units at stations
-                  such as Tutuka, Matla, Kriel, Kendal and similar plants where raw-water
-                  quality, biofouling, scaling and corrosion have historically been
-                  difficult to manage with multi-chemical programs.
-                </p>
-                <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                  <li>• Units with persistent condenser fouling and unstable TR / TTD.</li>
-                  <li>• Stations using dam, river or mine water with variable quality.</li>
-                  <li>• Sites where the cooling-water system is the dominant raw-water user.</li>
-                  <li>• Stations that already track performance but lack a clear “cooling-water KPI”.</li>
-                </ul>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Condenser Efficiency <br className="hidden sm:block" /> for Power Generation.
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                At wet-cooled stations, TES focuses on the condenser as a critical performance node.
+                We restore MW output lost to back-pressure decay by maintaining a clean, film-protected surface.
+              </p>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Vacuum Recovery</h4>
+                    <p className="text-sm text-slate-500">Restore design kPa and heat transfer rates.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Station Fitment</h4>
+                    <p className="text-sm text-slate-500">Ideally suited for Tutuka, Matla, Kriel, and Kendal units.</p>
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl lg:aspect-square">
+              <Image
+                src="/power-station-clean.png"
+                alt="Wet-cooled power station cooling tower"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Industrial applications */}
-            <div className="flex flex-col gap-4">
-              {/* Industrial plant image */}
-              <div className="relative h-32 w-full overflow-hidden rounded-lg">
-                <Image
-                  src="/industrial-plant.webp"
-                  alt="Industrial cooling water system"
-                  fill
-                  className="object-cover"
-                  loading="lazy"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
+      {/* SECTION 2: Cooling Tower Preservation (Industrial) */}
+      <section id="cooling-towers" className="scroll-mt-20 border-b bg-slate-50">
+        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="relative order-last lg:order-first aspect-video overflow-hidden rounded-2xl shadow-2xl lg:aspect-square">
+              <Image
+                src="/industrial-plant.webp"
+                alt="Industrial cooling water system"
+                fill
+                className="object-cover"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent" />
+            </div>
+            <div className="flex flex-col gap-6">
+              <div className="inline-flex items-center rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700 w-fit">
+                INDUSTRIAL SECTOR
               </div>
-
-              <div>
-                <h2 className="text-xl font-semibold text-slate-900">
-                  TES for Industrial Cooling Tower Preservation
-                </h2>
-                <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                  Outside the utility sector, cooling towers are critical production assets.
-                  TES protects these structures by preventing heavy biofouling in the fill
-                  pack—avoiding collapse risks, weight gain, and airflow restriction.
-                </p>
-                <ul className="mt-3 space-y-2 text-sm text-slate-700">
-                  <li>• Preservation of tower fill efficiency and structural integrity.</li>
-                  <li>• Mines and concentrators with large open cooling circuits.</li>
-                  <li>• Refineries, petrochemical and steel plants.</li>
-                  <li>• Sites dealing with high-solids or blended mine / process waters.</li>
-                </ul>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                Cooling Tower Preservation <br className="hidden sm:block" /> & Asset Integrity.
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Outside the utility sector, cooling towers are critical production assets.
+                TES prevents structural collapse and airflow restriction by stoping bio-mass accumulation in the fill pack.
+              </p>
+              <div className="space-y-4">
+                <div className="flex gap-4">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Structural Protection</h4>
+                    <p className="text-sm text-slate-500">Prevent fill collapse and weight gain risks.</p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+                    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-slate-900">Heavy Industry Focus</h4>
+                    <p className="text-sm text-slate-500">Designed for mines, refineries, and petrochemical plants.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

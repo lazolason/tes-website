@@ -1,7 +1,6 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import FloatingCTA from '../components/FloatingCTA'
 import type { Metadata } from 'next'
 // import { Inter, Space_Grotesk } from 'next/font/google'
 
@@ -96,7 +95,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* JSON-LD Structured Data for Organization */}
         <script
@@ -131,7 +130,6 @@ export default function RootLayout({
         <Navbar />
         <main id="main-content" className="min-h-screen">{children}</main>
         <Footer />
-        <FloatingCTA />
       </body>
     </html>
   )
