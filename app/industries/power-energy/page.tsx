@@ -139,6 +139,35 @@ export default function PowerEnergyPage() {
               ))}
             </div>
           </div>
+
+          {/* Carbon Credit Opportunity Callout */}
+          <div className="mt-16 rounded-2xl border-2 border-emerald-200 bg-gradient-to-br from-emerald-50 to-white p-8 shadow-lg">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-emerald-600 flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Carbon Credit Revenue Opportunity</h3>
+                <p className="text-sm text-slate-700 leading-relaxed mb-3">
+                  Efficiency improvements at wet-cooled power stations deliver measurable emissions reductions.
+                  Working with{" "}
+                  <a
+                    href="https://www.brundtland.co.za"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-emerald-700 hover:text-emerald-900 underline"
+                  >
+                    Brundtland Consulting
+                  </a>, we help clients navigate VCS methodology and develop carbon credit projects from verified thermal efficiency gains.
+                </p>
+                <p className="text-xs text-slate-600 italic">
+                  ASME PTC 12.2 verification provides the audit-grade documentation required for carbon credit registration under South African (DFFE) and international (VCS) frameworks.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

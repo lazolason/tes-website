@@ -1,6 +1,7 @@
 import './globals.css'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import FloatingCTA from '../components/FloatingCTA'
 import type { Metadata } from 'next'
 // import { Inter, Space_Grotesk } from 'next/font/google'
 
@@ -129,6 +130,7 @@ export default function RootLayout({
         </a>
         <Navbar />
         <main id="main-content" className="min-h-screen">{children}</main>
+        <FloatingCTA />
         <Footer />
       </body>
     </html>

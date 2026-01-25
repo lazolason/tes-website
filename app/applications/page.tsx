@@ -229,7 +229,7 @@ export default function ApplicationsPage() {
                 Verification framework
               </h3>
               <p className="mt-1 text-xs text-slate-700 leading-relaxed">
-                Built on Eskom RT&amp;D’s Tutuka protocol for stations, and adapted
+                Built on ASME PTC 12.2 methodology for stations, and adapted
                 to industrial sites with clear baselines, interventions and reviews.
               </p>
             </div>

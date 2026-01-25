@@ -130,7 +130,7 @@ export default function AboutPage() {
           <div className="mt-5 grid gap-8 md:grid-cols-2">
             <div>
               <p className="text-base text-slate-600 leading-relaxed">
-                Mexel®432 has been through Eskom&apos;s RT&amp;D processes, including
+                Mexel®432 has been through rigorous independent technical evaluation, including
                 application at Kriel and a formal testing protocol for Tutuka. We
                 understand the realities of working on live stations: water-quality
                 constraints, operational risk, safety, and the need to align with
@@ -144,7 +144,7 @@ export default function AboutPage() {
                   help stations stabilise condenser performance, not replace maintenance
                   or plant disciplines.
                 </span>{" "}
-                TES is structured so that station teams, RT&amp;D and independent
+                TES is structured so that station teams, engineering and independent
                 referees can see the same data and draw their own technical conclusions.
               </p>
             </div>
@@ -159,7 +159,7 @@ export default function AboutPage() {
             Evidence and verification timeline
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600">
-            TES is built on documented work with Eskom RT&amp;D, independent referees and
+            TES is built on documented work with ASME PTC 12.2 standards, independent referees and
             structured verification. Key milestones:
           </p>
 
@@ -204,13 +204,26 @@ export default function AboutPage() {
               </p>
             </div>
 
-            {/* Carbon potential */}
-            <div className="rounded-lg border bg-white p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Future Potential</p>
-              <h3 className="mt-2 text-sm font-semibold text-slate-900">Emissions-intensity verification</h3>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Once cooling-water improvements are measured and repeatable, they can support
-                future carbon-credit methodologies through bodies such as Brundtland.
+            {/* Carbon Credit Development */}
+            <div className="rounded-lg border-2 border-emerald-200 bg-emerald-50 p-5 shadow-sm">
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Carbon Credit Development</p>
+              <h3 className="mt-2 text-sm font-semibold text-slate-900">Emissions reduction monetization</h3>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                Working with{" "}
+                <a
+                  href="https://www.brundtland.co.za"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-emerald-700 hover:text-emerald-900 underline"
+                >
+                  Brundtland Consulting
+                </a>, we develop VCS-compliant carbon credit methodologies from verified efficiency improvements.
+              </p>
+              <p className="mt-2 text-sm text-slate-700 leading-relaxed">
+                ASME PTC 12.2 verification provides the audit-grade documentation required for carbon credit registration under international standards (VCS) and South African frameworks (DFFE).
+              </p>
+              <p className="mt-3 text-xs text-slate-600 italic border-t border-emerald-200 pt-2">
+                Efficiency gains → Measurable emissions reduction → Carbon credit revenue
               </p>
             </div>
 
@@ -226,7 +239,7 @@ export default function AboutPage() {
           </div>
 
           <p className="mt-6 text-xs text-slate-700">
-            Documentation including the TES Master Evidence Pack, RT&amp;D protocol and JET correspondence
+            Documentation including the TES Master Evidence Pack and engineering protocol
             is available for qualified enquiries.
           </p>
         </div>
