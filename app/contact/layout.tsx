@@ -1,13 +1,27 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact Us - Start Your TES Enquiry",
   description:
-    "Contact Mexel Energy Sustain to discuss TES pilots, Mexel®432 for cooling-water treatment, or MexSteam 100 for boiler protection. Direct technical contact with Lazola Sonqishe.",
+    "Contact Mexel Energy Sustain to discuss TES pilots, Mexel®432 cooling-water treatment, and efficiency solutions for power stations and industrial facilities. Direct technical contact available.",
+  keywords: [
+    "contact Mexel",
+    "TES enquiry",
+    "cooling water treatment contact",
+    "power station efficiency",
+    "Mexel432 contact",
+    "technical audit request"
+  ],
   openGraph: {
-    title: "Contact Mexel Energy Sustain",
+    title: "Contact Mexel Energy Sustain | TES Technical Enquiry",
     description:
-      "Discuss TES pilots and cooling-water efficiency solutions.",
+      "Start a technical conversation about TES cooling-water efficiency solutions, Mexel®432 performance emulsions, and condenser optimization for your facility.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Contact Mexel Energy Sustain",
+    description: "Technical enquiries for TES cooling-water efficiency solutions",
   },
 };
 

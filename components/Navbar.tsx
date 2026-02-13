@@ -3,10 +3,16 @@
 import React, { useState } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { solutions, industries, knowledgeHub } from '../lib/navigation';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const toggleDropdown = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
 
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-900/95 backdrop-blur-md">
@@ -16,9 +22,12 @@ export default function Navbar() {
           {/* Logo Section */}
           <div className="flex items-center">
             <Link href="/" className="flex-shrink-0" onClick={() => setIsOpen(false)}>
-              <img
+              <Image
                 src="/logonew.png"
-                alt="Mexel Energy Sustain"
+                alt="Mexel Energy Sustain - TES Cooling Water Efficiency Solutions"
+                width={180}
+                height={48}
+                priority
                 className="h-12 w-auto object-contain"
               />
             </Link>
@@ -32,10 +41,23 @@ export default function Navbar() {
 
               {/* Solutions Dropdown */}
               <div className="relative group">
-                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
+                <button
+                  onClick={() => toggleDropdown('solutions')}
+                  onMouseEnter={() => setActiveDropdown('solutions')}
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none"
+                  aria-expanded={activeDropdown === 'solutions'}
+                  aria-haspopup="true"
+                >
                   Solutions <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute left-0 top-full w-[320px] origin-top scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                <div
+                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-200 ease-out ${
+                    activeDropdown === 'solutions'
+                      ? 'visible scale-100 opacity-100'
+                      : 'invisible scale-95 opacity-0'
+                  }`}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
                     <div className="space-y-4">
                       {solutions.map((item) => (
@@ -60,10 +82,23 @@ export default function Navbar() {
 
               {/* Industries Dropdown */}
               <div className="relative group">
-                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
+                <button
+                  onClick={() => toggleDropdown('industries')}
+                  onMouseEnter={() => setActiveDropdown('industries')}
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none"
+                  aria-expanded={activeDropdown === 'industries'}
+                  aria-haspopup="true"
+                >
                   Industries <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute left-0 top-full w-[320px] origin-top scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                <div
+                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-200 ease-out ${
+                    activeDropdown === 'industries'
+                      ? 'visible scale-100 opacity-100'
+                      : 'invisible scale-95 opacity-0'
+                  }`}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
                     <div className="space-y-4">
                       {industries.map((item) => (
@@ -88,10 +123,23 @@ export default function Navbar() {
 
               {/* Knowledge Hub Dropdown */}
               <div className="relative group">
-                <button className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none">
+                <button
+                  onClick={() => toggleDropdown('knowledge')}
+                  onMouseEnter={() => setActiveDropdown('knowledge')}
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none"
+                  aria-expanded={activeDropdown === 'knowledge'}
+                  aria-haspopup="true"
+                >
                   Knowledge Hub <ChevronDown className="h-4 w-4" />
                 </button>
-                <div className="absolute left-0 top-full w-[320px] origin-top scale-95 opacity-0 invisible group-hover:visible group-hover:scale-100 group-hover:opacity-100 transition-all duration-200 ease-out">
+                <div
+                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-200 ease-out ${
+                    activeDropdown === 'knowledge'
+                      ? 'visible scale-100 opacity-100'
+                      : 'invisible scale-95 opacity-0'
+                  }`}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
                   <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
                     <div className="space-y-4">
                       {knowledgeHub.map((item) => (
