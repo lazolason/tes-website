@@ -6,7 +6,7 @@ import { buttonVariants } from './ui/Button';
 
 export default function PremiumHero() {
     return (
-        <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 overflow-hidden bg-white">
+        <section className="relative min-h-[90vh] flex items-center pt-14 sm:pt-16 md:pt-20 pb-16 overflow-hidden bg-white">
             {/* CLEAN BACKGROUND (No Blurs/Distractions) */}
             <div className="absolute top-0 right-0 w-1/2 h-full bg-slate-50 -skew-x-12 transform translate-x-1/4 pointer-events-none z-0" />
 
@@ -28,18 +28,18 @@ export default function PremiumHero() {
 
                         {/* 2. THE HEADLINE (Outcome Focused) */}
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[1.05] mb-8">
-                            Thermal Efficiency <br />
-                            restored by <span className="text-emerald-700">TES.</span> <br />
-                            Verify the MW gain.
+                            Industrial Cooling <br />
+                            Efficiency <span className="text-emerald-700">Restored.</span> <br />
+                            Across All Sectors.
                         </h1>
 
                         {/* 3. THE SUB-HEAD (No estimates, focused on verification) */}
                         <p className="text-lg md:text-xl text-slate-700 leading-relaxed max-w-xl mb-10 font-medium">
-                            Our Thermal Efficiency Solution (TES) combines Mexel®432 emulsion with automated dosing and raw data to clean condenser tubes while the unit runs.
+                            TES combines Mexel®432 chemistry with IoT-enabled dosing and real-time performance tracking—preventing fouling across power plants, mining operations, data centres, and HVAC systems.
                             <br /><br />
-                            Move beyond guesswork. We use measurable <strong>thermodynamic baselines</strong> to verify condenser performance.
+                            Move beyond guesswork. We use measurable <strong>thermodynamic baselines</strong> to verify cooling performance.
                             <br /><br />
-                            No estimates. No &quot;managed service&quot; contracts. Just raw data and a solution that cleans the tubes while the unit runs.
+                            No estimates. No &quot;managed service&quot; contracts. Just raw data and verified efficiency gains.
                         </p>
 
                         {/* 4. THE CALL TO ACTION (Direct Line for Emergencies) */}
@@ -110,32 +110,32 @@ export default function PremiumHero() {
                                 {/* Metric 1 */}
                                 <div>
                                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
-                                        Vacuum Gain
+                                        Efficiency Recovery
                                     </div>
                                     <div className="flex items-baseline gap-2">
                                         <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                                            4.5
+                                            4-8
                                         </span>
-                                        <span className="text-lg font-medium text-emerald-400">kPa</span>
+                                        <span className="text-lg font-medium text-emerald-400">%</span>
                                     </div>
                                     <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                                        Restored back-pressure to design spec.
+                                        Measured thermal performance gains.
                                     </p>
                                 </div>
 
                                 {/* Metric 2 */}
                                 <div className="border-l border-slate-800 pl-8">
                                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
-                                        Payback Period
+                                        CO₂ Reduction
                                     </div>
                                     <div className="flex items-baseline gap-2">
-                                        <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                                            &lt;12
+                                        <span className="text-3xl lg:text-4xl font-bold text-emerald-700 tracking-tight">
+                                            Verified
                                         </span>
-                                        <span className="text-lg font-medium text-emerald-400">Months</span>
+                                        <span className="text-lg font-medium text-emerald-400">Carbon Impact</span>
                                     </div>
                                     <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                                        Self-funding via fuel efficiency gains.
+                                        Quantified emissions reduction via fuel efficiency gains.
                                     </p>
                                 </div>
                             </div>

@@ -37,16 +37,16 @@ export const STATS_DATA: Stat[] = [
     {
         id: 'mw-recovered',
         value: 50,
-        suffix: 'MW+',
-        label: 'Annual Capacity Recovered',
-        description: 'Recovered across industrial and utility basins.',
+        suffix: 'MW',
+        label: 'Efficiency Restored',
+        description: 'Combined thermal efficiency gains across power, mining, and industrial sectors.',
     },
     {
         id: 'efficiency-gain',
         value: 15,
         suffix: '%',
         label: 'Average Efficiency Gain',
-        description: 'Verified improvement in heat rate and vacuum.',
+        description: 'Verified improvement across all cooling applications.',
     },
     {
         id: 'dosing-accuracy',

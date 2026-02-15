@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "analyze": "ANALYZE=true next build",
-    "optimize-images": "node scripts/optimize-images.js"
+    "analyze": "ANALYZE=true next build"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

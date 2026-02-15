@@ -3,6 +3,25 @@ import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import FloatingCTA from '../components/FloatingCTA'
 import type { Metadata } from 'next'
+// import { Inter, Space_Grotesk } from 'next/font/google'
+
+// Optimize font loading with next/font for better performance
+// const inter = Inter({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-inter',
+//   preload: true,
+//   fallback: ['-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+// })
+
+// Display font for headlines - technical and distinctive
+// const spaceGrotesk = Space_Grotesk({
+//   subsets: ['latin'],
+//   display: 'swap',
+//   variable: '--font-display',
+//   weight: ['500', '600', '700'],
+//   preload: true,
+// })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://mexelenergysustain.com';
 

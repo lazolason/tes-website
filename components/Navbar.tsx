@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -9,26 +9,44 @@ import { solutions, industries, knowledgeHub } from '../lib/navigation';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   const toggleDropdown = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 z-50 w-full border-b border-white/10 bg-slate-900/95 backdrop-blur-md">
+    <nav className={`fixed top-0 z-50 w-full border-b transition-all duration-300 ${
+      scrolled
+        ? 'border-white/20 bg-slate-900/98 backdrop-blur-lg shadow-lg shadow-slate-900/50'
+        : 'border-white/10 bg-slate-900/95 backdrop-blur-md'
+    }`}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-14 sm:h-16 md:h-20 items-center justify-between">
 
           {/* Logo Section */}
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0" onClick={() => setIsOpen(false)}>
+            <Link
+              href="/"
+              className="flex-shrink-0 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
+              onClick={() => setIsOpen(false)}
+            >
               <Image
-                src="/logonew.png"
+                src="/logonew.svg"
                 alt="Mexel Energy Sustain - TES Cooling Water Efficiency Solutions"
-                width={180}
-                height={48}
+                width={320}
+                height={80}
                 priority
-                className="h-12 w-auto object-contain"
+                className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-opacity hover:opacity-90"
               />
             </Link>
           </div>
@@ -44,14 +62,14 @@ export default function Navbar() {
                 <button
                   onClick={() => toggleDropdown('solutions')}
                   onMouseEnter={() => setActiveDropdown('solutions')}
-                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none"
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white focus:outline-none transition-colors duration-150"
                   aria-expanded={activeDropdown === 'solutions'}
                   aria-haspopup="true"
                 >
                   Solutions <ChevronDown className="h-4 w-4" />
                 </button>
                 <div
-                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-200 ease-out ${
+                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-150 ease-out ${
                     activeDropdown === 'solutions'
                       ? 'visible scale-100 opacity-100'
                       : 'invisible scale-95 opacity-0'
@@ -85,14 +103,14 @@ export default function Navbar() {
                 <button
                   onClick={() => toggleDropdown('industries')}
                   onMouseEnter={() => setActiveDropdown('industries')}
-                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none"
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white focus:outline-none transition-colors duration-150"
                   aria-expanded={activeDropdown === 'industries'}
                   aria-haspopup="true"
                 >
                   Industries <ChevronDown className="h-4 w-4" />
                 </button>
                 <div
-                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-200 ease-out ${
+                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-150 ease-out ${
                     activeDropdown === 'industries'
                       ? 'visible scale-100 opacity-100'
                       : 'invisible scale-95 opacity-0'
@@ -126,14 +144,14 @@ export default function Navbar() {
                 <button
                   onClick={() => toggleDropdown('knowledge')}
                   onMouseEnter={() => setActiveDropdown('knowledge')}
-                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white py-8 focus:outline-none"
+                  className="flex items-center gap-1 text-sm font-medium text-slate-300 hover:text-white focus:outline-none transition-colors duration-150"
                   aria-expanded={activeDropdown === 'knowledge'}
                   aria-haspopup="true"
                 >
                   Knowledge Hub <ChevronDown className="h-4 w-4" />
                 </button>
                 <div
-                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-200 ease-out ${
+                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-150 ease-out ${
                     activeDropdown === 'knowledge'
                       ? 'visible scale-100 opacity-100'
                       : 'invisible scale-95 opacity-0'

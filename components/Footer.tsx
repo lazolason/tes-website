@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 
 const navigation = {
   solutions: [
@@ -45,11 +44,9 @@ export default function Footer() {
           <div className="space-y-8">
             {/* BRAND CONSISTENCY: Logo Image */}
             <div className="flex items-center">
-              <Image
+              <img
                 src="/logonew.png"
-                alt="Mexel Energy Sustain - TES Cooling Water Treatment Solutions"
-                width={196}
-                height={56}
+                alt="Mexel Energy Sustain"
                 className="h-14 w-auto object-contain"
               />
             </div>

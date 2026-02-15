@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import FadeIn from './FadeIn';
 
 const industries = [
@@ -54,12 +53,10 @@ export default function VisualIndustryGrid() {
                             <div className="group relative flex flex-col items-start">
                                 {/* Image Container - FIXED 4:5 ASPECT RATIO */}
                                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl bg-slate-100 shadow-lg">
-                                    <Image
+                                    <img
                                         src={industry.image}
-                                        alt={`${industry.title} - ${industry.description}`}
-                                        fill
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                        alt={industry.title}
+                                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     {/* Branding Overlay */}
                                     <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-90" />
