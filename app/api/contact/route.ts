@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { logger } from "@/lib/logger";
 
 // Contact form API route
 // For production, integrate with Resend, SendGrid, or similar email service
@@ -51,8 +52,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Log the submission (in production, use a proper logger)
-    console.log(`Contact form submission: ${data.email} (${data.interest || 'General'})`);
+    // Log the submission
+    logger.info('Contact form submission received', {
+      email: data.email,
+      interest: data.interest || 'General',
+      hasOrganisation: !!data.organisation,
+      hasDescription: !!data.description,
+    });
 
     // TODO: Integrate with email service
     // Example with Resend:
@@ -69,7 +75,7 @@ export async function POST(request: NextRequest) {
       message: "Thank you for your enquiry. We will respond within 1-2 business days.",
     });
   } catch (error) {
-    console.error("Contact form error:", error);
+    logger.error("Contact form submission failed", error);
     return NextResponse.json(
       { success: false, errors: ["Something went wrong. Please try again."] },
       { status: 500 }

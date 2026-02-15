@@ -61,6 +61,14 @@ export default function PremiumHero() {
                             >
                                 <span className="mr-2">⚡</span> Talk to Engineering
                             </a>
+
+                            {/* Company Profile */}
+                            <Link
+                                href="/profile"
+                                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-slate-300 text-slate-600 hover:bg-slate-50")}
+                            >
+                                Company Profile
+                            </Link>
                         </div>
 
                         {/* 5. THE TRUST SIGNALS (Compliance & Data) */}

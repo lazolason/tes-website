@@ -4,6 +4,9 @@ import { useState } from "react";
 import Link from "next/link";
 import SystemHeader from "../../components/SystemHeader";
 
+// Note: Metadata export must be in a separate server component file
+// See app/contact/layout.tsx for page metadata
+
 interface FormErrors {
   name?: string;
   email?: string;
@@ -307,29 +310,14 @@ export default function ContactPage() {
             {/* Direct contact */}
             <div className="space-y-4 order-first">
               <h2 className="text-lg font-semibold text-slate-900">
-                Direct contact
+                Contact information
               </h2>
 
               <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-800">
-
                 <p className="font-semibold text-slate-900">Mexel Energy Sustain (Pty) Ltd</p>
 
-
-                <p className="mt-3 font-medium">Technical Director: Lazola Sonqishe</p>
-
-                {/* 1. EMAIL (Fixed Domain) */}
-                <p className="mt-2">
-                  <span className="font-semibold">Email:</span>{" "}
-                  <a
-                    href="mailto:lazola@mexelenergysustain.com"
-                    className="text-emerald-700 hover:text-emerald-900 underline"
-                  >
-                    lazola@mexelenergysustain.com
-                  </a>
-                </p>
-
-                {/* 2. MOBILE (Existing) */}
-                <p className="mt-2">
+                {/* MOBILE */}
+                <p className="mt-3">
                   <span className="font-semibold">Mobile:</span>{" "}
                   <a
                     href="tel:+27794648298"
@@ -339,8 +327,8 @@ export default function ContactPage() {
                   </a>
                 </p>
 
-                {/* 3. WHATSAPP (New Safety Net) */}
-                <p className="mt-1">
+                {/* WHATSAPP */}
+                <p className="mt-2">
                   <span className="font-semibold text-emerald-600">WhatsApp:</span>{" "}
                   <a
                     href="https://wa.me/27794648298"
@@ -352,7 +340,7 @@ export default function ContactPage() {
                   </a>
                 </p>
 
-                {/* 4. GENERAL ENQUIRIES (Fixed Domain) */}
+                {/* GENERAL ENQUIRIES */}
                 <p className="mt-4 border-t border-slate-200 pt-2">
                   <span className="font-semibold">General enquiries:</span>{" "}
                   <a
@@ -363,17 +351,9 @@ export default function ContactPage() {
                   </a>
                 </p>
               </div>
-
-
             </div>
           </div>
-          <div className="mt-12">
-            <h2 className="text-lg font-semibold text-slate-900">Additional note</h2>
-            <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-              For any technical questions, please contact Lazola Sonqishe directly
-              using the details above.
-            </p>
-          </div>
+
 
 
         </div>

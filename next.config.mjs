@@ -6,10 +6,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  // Removed 'output: export' to enable API routes and server features
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    // Image optimization now enabled (removed unoptimized: true)
+    formats: ['image/webp', 'image/avif'],
     localPatterns: [
       {
         pathname: '/**',
