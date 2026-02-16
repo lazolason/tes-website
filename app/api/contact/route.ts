@@ -2,7 +2,10 @@ import { NextRequest, NextResponse } from "next/server";
 import { logger } from "@/lib/logger";
 
 // Contact form API route
-// For production, integrate with Resend, SendGrid, or similar email service
+// NOTE: This API route is NOT available in static export builds (Afrihost deployment)
+// The contact form will display but submissions won't work until integrated with
+// an external service like Formspree or Web3Forms
+// For production, integrate with Resend, SendGrid, Formspree, or similar email service
 // For now, this validates and logs the submission
 
 interface ContactFormData {

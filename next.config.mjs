@@ -6,16 +6,11 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Removed 'output: export' to enable API routes and server features
+  output: 'export', // Enable static HTML export for Afrihost deployment
+  trailingSlash: true, // Add trailing slashes for Apache compatibility
   reactStrictMode: true,
   images: {
-    // Image optimization now enabled (removed unoptimized: true)
-    formats: ['image/webp', 'image/avif'],
-    localPatterns: [
-      {
-        pathname: '/**',
-      },
-    ],
+    unoptimized: true, // Required for static export
   },
 }
 
