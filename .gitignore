@@ -10,11 +10,15 @@ package-lock.json
 # macOS
 .DS_Store
 
-# Archives
+# Archives & documents
 *.zip
+*.pdf
 .vercel
 .env*.local
 public/_backup_images/
+
+# Stale build outputs
+out*/
 
 # Playwright MCP artifacts
 .playwright-mcp/

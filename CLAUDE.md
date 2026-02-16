@@ -112,4 +112,3 @@ Menu items are defined in `navItems` array in [components/Navbar.tsx](components
 ## Related Documentation
 
 - [GEMINI.md](GEMINI.md) - Project context guide for Gemini (contains detailed sprint history and architecture notes)
-- [docs/mcp-client-codex.md](docs/mcp-client-codex.md) - Docker-based MCP CLI setup instructions
