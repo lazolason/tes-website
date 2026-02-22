@@ -1,14 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import FadeIn from "../../components/FadeIn";
-import SystemHeader from "../../components/SystemHeader";
-import TechnicalDosingSpec from "../../components/TechnicalDosingSpec";
+import FadeIn from "@/components/FadeIn";
+import SystemHeader from "@/components/SystemHeader";
+import TechnicalDosingSpec from "@/components/TechnicalDosingSpec";
+import { buttonVariants } from "@/components/ui/Button";
+import type { IconProps } from '@/types';
 
-// INLINE ICONS (Robust & Technical)
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  className?: string;
-}
-
+// Inline icons for this page (specific to product specs)
 const Icons = {
   Molecule: (props: IconProps) => (
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" {...props}>
@@ -602,7 +600,7 @@ export default function MexelProductPage() {
             {/* Download CTA */}
             <Link
               href="/contact"
-              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white hover:bg-emerald-500 transition-all"
+              className={buttonVariants({ variant: "default", className: "flex items-center gap-2 rounded-lg py-3" })}
             >
               <Icons.Download className="w-5 h-5" />
               Request SDS & TDS

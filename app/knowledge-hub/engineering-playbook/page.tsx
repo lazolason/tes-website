@@ -1,7 +1,7 @@
 import Link from "next/link";
-import FadeIn from "../../../components/FadeIn";
-import PlaybookBreadcrumbs from "../../../components/PlaybookBreadcrumbs";
-import PlaybookNavigation from "../../../components/PlaybookNavigation";
+import FadeIn from "@/components/FadeIn";
+import PlaybookBreadcrumbs from "@/components/PlaybookBreadcrumbs";
+import PlaybookNavigation from "@/components/PlaybookNavigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

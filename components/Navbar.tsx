@@ -4,7 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { solutions, industries, knowledgeHub } from '../lib/navigation';
+import { solutions, industries, knowledgeHub } from '@/lib/navigation';
+import { buttonVariants } from '@/components/ui/Button';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -186,7 +187,7 @@ export default function Navbar() {
 
           {/* Desktop Action Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className="rounded-full bg-emerald-600 px-6 py-2.5 text-sm font-bold text-white hover:bg-emerald-500 transition-all shadow-lg shadow-emerald-900/20">
+            <Link href="/contact" className={buttonVariants({ variant: "default" })}>
               Request Technical Audit
             </Link>
           </div>
@@ -294,7 +295,7 @@ export default function Navbar() {
 
             <div className="mt-4 px-3">
               <Link href="/contact"
-                className="flex w-full items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-bold text-white hover:bg-emerald-500 transition-all shadow-lg"
+                className={buttonVariants({ variant: "default", className: "flex w-full items-center justify-center py-3" })}
                 onClick={() => setIsOpen(false)}
               >
                 Request Technical Audit

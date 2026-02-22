@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import FadeIn from "../../components/FadeIn";
-import SystemHeader from "../../components/SystemHeader";
-import Tooltip from "../../components/Tooltip";
+import FadeIn from "@/components/FadeIn";
+import SystemHeader from "@/components/SystemHeader";
+import Tooltip from "@/components/Tooltip";
+import { buttonVariants } from "@/components/ui/Button";
 
 // Lazy load heavy interactive components
 const ModernProcess = dynamic(() => import("../../components/ModernProcess"), {
@@ -221,7 +222,7 @@ export default function TesPage() {
               <div className="flex flex-col sm:flex-row gap-3 text-sm flex-shrink-0">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white shadow-sm transition-all hover:bg-emerald-500 hover:shadow-md border border-transparent"
+                  className={buttonVariants({ variant: "default", className: "inline-flex items-center justify-center rounded-lg py-3" })}
                 >
                   Request Data Sheets
                 </Link>

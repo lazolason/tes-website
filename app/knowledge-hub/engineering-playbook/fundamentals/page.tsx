@@ -1,8 +1,8 @@
 import Image from "next/image";
-import FadeIn from "../../../../components/FadeIn";
-import CoolingSchematic from "../../../../components/CoolingSchematic";
-import PlaybookBreadcrumbs from "../../../../components/PlaybookBreadcrumbs";
-import PlaybookNavigation from "../../../../components/PlaybookNavigation";
+import FadeIn from "@/components/FadeIn";
+import CoolingSchematic from "@/components/CoolingSchematic";
+import PlaybookBreadcrumbs from "@/components/PlaybookBreadcrumbs";
+import PlaybookNavigation from "@/components/PlaybookNavigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {

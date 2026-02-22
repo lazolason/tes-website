@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import FadeIn from "../../components/FadeIn";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
   title: "Corporate Governance | Mexel Energy Sustain",

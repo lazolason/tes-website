@@ -1,15 +1,12 @@
 import Link from "next/link";
-import FadeIn from "../../components/FadeIn";
-import SystemHeader from "../../components/SystemHeader";
+import FadeIn from "@/components/FadeIn";
+import SystemHeader from "@/components/SystemHeader";
 import { Button, buttonVariants } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
+import type { IconProps } from '@/types';
 
-// INLINE ICONS
-interface IconProps extends React.SVGProps<SVGSVGElement> {
-  className?: string;
-}
-
+// Inline icons for this page (specific to products)
 const Icons = {
   Biofouling: (props: IconProps) => (
     <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5} {...props}>
@@ -156,7 +153,7 @@ export default function ProductsPage() {
           <div className="flex flex-wrap justify-center gap-6">
             <Link
               href="/contact"
-              className="flex items-center gap-2 rounded-lg bg-emerald-600 px-6 py-3 font-semibold text-white hover:bg-emerald-500 transition-all border border-transparent"
+              className={buttonVariants({ variant: "default", className: "flex items-center gap-2 rounded-lg py-3" })}
             >
               <Icons.Download className="w-5 h-5" />
               Request Price List

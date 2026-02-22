@@ -1,7 +1,7 @@
-import FadeIn from "../../../../components/FadeIn";
-import PlaybookBreadcrumbs from "../../../../components/PlaybookBreadcrumbs";
-import PlaybookNavigation from "../../../../components/PlaybookNavigation";
-import ProtocolCTA from "../../../../components/ProtocolCTA";
+import FadeIn from "@/components/FadeIn";
+import PlaybookBreadcrumbs from "@/components/PlaybookBreadcrumbs";
+import PlaybookNavigation from "@/components/PlaybookNavigation";
+import ProtocolCTA from "@/components/ProtocolCTA";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
