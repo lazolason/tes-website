@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/knowledge-hub/resources",
     "/knowledge-hub/engineering-playbook",
     "/about",
+    "/company-profile",
     "/contact",
   ];
 

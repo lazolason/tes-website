@@ -2,6 +2,13 @@ import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import type { Metadata } from "next";
 
+const caseStudiesSocialImage = {
+  url: "/og/case-studies.png",
+  width: 1200,
+  height: 630,
+  alt: "Mexel Energy Sustain case studies social preview",
+};
+
 export const metadata: Metadata = {
   title: "Case Studies | TES",
   description:
@@ -10,6 +17,14 @@ export const metadata: Metadata = {
     title: "TES Case Studies | Mexel Energy Sustain",
     description:
       "Real-world evidence from TES pilots at Eskom stations and 30+ years of Mexel®432 deployments across power generation, refining and desalination worldwide.",
+    images: [caseStudiesSocialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TES Case Studies | Mexel Energy Sustain",
+    description:
+      "Real-world evidence from TES pilots at Eskom stations and 30+ years of Mexel®432 deployments across power generation, refining and desalination worldwide.",
+    images: [caseStudiesSocialImage.url],
   },
 };
 
@@ -17,21 +32,23 @@ export default function CaseStudiesPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-gray-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
+      <section className="relative overflow-hidden bg-slate-900 pt-24 pb-20 text-white">
+        <div className="absolute inset-0 bg-[url('/power-gen.webp')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/90 to-transparent" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">
             Case Studies
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 max-w-3xl leading-[1.1]">
             TES in practice: evidence from the field.
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
+          <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mb-6">
             These case studies document where TES and Mexel®432 have been applied,
             what was measured and what results were observed. They are written to
             give station engineers and decision-makers a clear, honest picture of
             what TES can deliver — and what it cannot.
           </p>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-gray-700">
+          <p className="text-lg text-slate-400 leading-relaxed max-w-2xl">
             Each case study follows a consistent structure: baseline conditions,
             intervention approach, observed results and lessons learned. Where
             independent verification was conducted, we include the referee&apos;s
@@ -192,7 +209,8 @@ export default function CaseStudiesPage() {
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  TES dosing system installed. Validated via ASME PTC 12.2.
+                  TES dosing system installed. Heat rate being validated via ASME PTC 12.2
+                  (TTD/TR baseline methodology).
                   Pilot progress constrained by on-the-ground conditions
                   including dam status, water configuration and induction scheduling.
                   Full case study to follow once baseline and intervention data
@@ -234,7 +252,8 @@ export default function CaseStudiesPage() {
                     Established protocols
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
-                    Validated via ASME PTC 12.2, providing a rigorous,
+                    Heat rate performance is measured using ASME PTC 12.2
+                    (TTD/TR methodology), providing a rigorous,
                     transparent framework for baseline → intervention → review
                     assessment.
                   </p>

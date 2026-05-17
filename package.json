@@ -6,8 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build",
+    "preview:export": "npm run build && npm run preview:export:serve",
+    "preview:export:serve": "node scripts/preview-export.mjs",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "assets:inventory": "node scripts/generate-asset-inventory.mjs",
+    "test:smoke": "node scripts/smoke/run-regression-suite.mjs",
     "analyze": "ANALYZE=true next build",
     "optimize-images": "node scripts/optimize-images.js"
   },

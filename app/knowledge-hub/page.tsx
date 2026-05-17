@@ -3,12 +3,26 @@ import Link from 'next/link';
 import FadeIn from '@/components/FadeIn';
 import type { IconProps } from '@/types';
 
+const knowledgeHubSocialImage = {
+  url: "/og/knowledge-hub.png",
+  width: 1200,
+  height: 630,
+  alt: "Mexel Energy Sustain knowledge hub social preview",
+};
+
 export const metadata: Metadata = {
   title: 'Knowledge Hub | Mexel Energy Sustain',
   description: 'TES Knowledge Base: methodology, engineering FAQ, evidence library, and advanced technical guidance for wet-cooled power stations and industrial cooling systems.',
   openGraph: {
     title: 'Knowledge Hub | Mexel Energy Sustain',
     description: 'Central reference for engineers evaluating TES: methodology, FAQ, case studies and advanced technical guidance.',
+    images: [knowledgeHubSocialImage],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Knowledge Hub | Mexel Energy Sustain',
+    description: 'Central reference for engineers evaluating TES: methodology, FAQ, case studies and advanced technical guidance.',
+    images: [knowledgeHubSocialImage.url],
   },
 };
 
@@ -48,15 +62,17 @@ export default function KnowledgeHubPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-16 lg:py-24">
-          <p className="text-xs font-semibold uppercase tracking-widest text-emerald-600">
+      <section className="relative overflow-hidden bg-slate-900 pt-24 pb-20 text-white">
+        <div className="absolute inset-0 bg-[url('/power-gen.webp')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/90 to-transparent" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">
             Knowledge Hub
           </p>
-          <h1 className="mt-3 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl lg:text-[2.75rem] lg:leading-[1.15]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 max-w-3xl leading-[1.1]">
             TES Knowledge Base
           </h1>
-          <p className="mt-5 max-w-3xl text-base leading-relaxed text-slate-600">
+          <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
             A central reference for engineers, chemistry teams, operations staff, and station
             leadership evaluating the Thermal Efficiency Solution (TES) for wet-cooled units.
             Everything you need to understand, deploy, and verify TES performance.

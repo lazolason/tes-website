@@ -17,39 +17,85 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero */}
-      <section className="border-b bg-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
-          <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
+      {/* Hero — dark, image-backed */}
+      <section className="relative overflow-hidden bg-slate-900 pt-24 pb-20 text-white">
+        <div className="absolute inset-0 bg-[url('/power-gen.webp')] bg-cover bg-center opacity-20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-900/90 to-transparent" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">About</p>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white mb-6 max-w-3xl leading-[1.1]">
+            Engineering-led thermal efficiency.
+          </h1>
+          <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
+            Mexel Energy Sustain (Pty) Ltd is a South African company combining Mexel®432
+            chemistry, IoT dosing and data-driven verification to restore MW capacity lost to
+            cold-end fouling.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <span className="rounded-full bg-emerald-500/20 border border-emerald-500/30 px-4 py-1.5 text-xs font-semibold text-emerald-300 uppercase tracking-wider">
+              Mexel®432 Chemistry
+            </span>
+            <span className="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-semibold text-white/80 uppercase tracking-wider">
+              IoT Dosing
+            </span>
+            <span className="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-semibold text-white/80 uppercase tracking-wider">
+              ASME PTC 12.2 Aligned
+            </span>
+            <span className="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-semibold text-white/80 uppercase tracking-wider">
+              WRC Verified
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats band */}
+      <section className="bg-emerald-600 text-white py-10">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-emerald-600">
-                About
-              </p>
-              <h1 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                About Mexel Energy Sustain.
-              </h1>
-              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-slate-700">
-                Mexel Energy Sustain (Pty) Ltd is a South African company focused on{" "}
-                <span className="font-semibold">cooling-water and thermal efficiency</span>.
-                We combine Mexel chemistry with IoT dosing, data and verification to help
-                large energy and industrial users reduce cold-end losses in a disciplined,
-                engineering-led way.
-              </p>
-              <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-700">
-                Our work sits at the intersection of energy efficiency, water treatment and
-                system performance. TES is our practical framework for applying this at
-                wet-cooled coal units and industrial cooling-water systems.
-              </p>
+              <p className="text-3xl font-bold">69%</p>
+              <p className="text-emerald-100 text-sm mt-1">Cleanliness factor recovery<br/><span className="text-xs opacity-75">(Kriel Unit 6, 2018 — within 3 days)</span></p>
             </div>
-            <div className="relative h-56 overflow-hidden rounded-xl shadow-lg lg:h-64">
-              <Image
-                src="/control-room.webp"
-                alt="Power station control room"
-                fill
-                className="object-cover"
-                loading="lazy"
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+            <div>
+              <p className="text-3xl font-bold">30%</p>
+              <p className="text-emerald-100 text-sm mt-1">Fouling reduction<br/><span className="text-xs opacity-75">(Verified, Eskom RT&amp;D Report RTD/ACM/18/240)</span></p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold">5ppm</p>
+              <p className="text-emerald-100 text-sm mt-1">Daily dose only<br/><span className="text-xs opacity-75">(30 min/day microdosing protocol)</span></p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold">93%</p>
+              <p className="text-emerald-100 text-sm mt-1">Aerobic bacteria kill<br/><span className="text-xs opacity-75">(Lab biocide comparison, Eskom 2017)</span></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Compliance & Registration */}
+      <section className="border-b bg-slate-50 py-8">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest shrink-0">
+              International Registrations & Compliance
+            </p>
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4">
+              <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                US EPA
+              </span>
+              <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                EU BPR
+              </span>
+              <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                OSPAR Marine
+              </span>
+              <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
+                <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                APVMA (Aus)
+              </span>
             </div>
           </div>
         </div>
@@ -159,7 +205,7 @@ export default function AboutPage() {
             Evidence and verification timeline
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600">
-            TES is built on documented work with ASME PTC 12.2 standards, independent referees and
+            TES is built on documented work using ASME PTC 12.2 heat rate verification standards, independent referees and
             structured verification. Key milestones:
           </p>
 
@@ -180,7 +226,8 @@ export default function AboutPage() {
               <h3 className="mt-2 text-sm font-semibold text-slate-900">ASME PTC 12.2 Aligned</h3>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Performance gains are validated using ASME PTC 12.2 methodology,
-                defining baseline → intervention → post-intervention steps for rigorous TES verification.
+                which measures condenser heat rate (TTD/TR). CO₂ reduction figures
+                are then derived from those verified heat rate improvements.
               </p>
             </div>
 
@@ -220,7 +267,7 @@ export default function AboutPage() {
                 </a>, we develop VCS-compliant carbon credit methodologies from verified efficiency improvements.
               </p>
               <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                ASME PTC 12.2 verification provides the audit-grade documentation required for carbon credit registration under international standards (VCS) and South African frameworks (DFFE).
+                ASME PTC 12.2 heat rate verification provides the audit-grade documentation required for carbon credit registration. CO₂ reduction is derived from those verified thermal efficiency gains, under international (VCS) and South African (DFFE) frameworks.
               </p>
               <p className="mt-3 text-xs text-slate-600 italic border-t border-emerald-200 pt-2">
                 Efficiency gains → Measurable emissions reduction → Carbon credit revenue
@@ -274,32 +321,30 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section>
-        <div className="mx-auto max-w-6xl px-4 py-10 lg:py-12">
-          <div className="flex flex-col gap-4 rounded-lg border bg-white p-6 shadow-sm md:flex-row md:items-center md:justify-between">
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">
-                Talk to us about your cooling-water or TES questions.
-              </h2>
-              <p className="mt-2 text-xs text-slate-700 leading-relaxed">
-                If you are responsible for a wet-cooled unit or a critical industrial
-                cooling-water system, we are happy to explore whether TES and
-                Mexel®432 are a good fit. A short, technical discussion is usually
-                enough to see if there is a realistic path.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 text-xs">
+      <section className="bg-slate-50 py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-slate-900 rounded-2xl p-10 sm:p-14 text-center shadow-xl">
+            <p className="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4">Talk to us</p>
+            <h2 className="text-3xl font-bold text-white mb-4">
+              Is TES right for your station?
+            </h2>
+            <p className="text-slate-300 mb-10 max-w-xl mx-auto leading-relaxed">
+              If you manage a wet-cooled unit or industrial cooling-water system,
+              a short technical discussion is usually enough to see if there is a
+              realistic path to efficiency recovery.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-emerald-600 px-5 py-2.5 font-semibold text-white shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-600 focus:ring-offset-2"
+                className="inline-flex justify-center items-center rounded-xl bg-emerald-500 px-8 py-4 text-sm font-bold text-white shadow-lg shadow-emerald-900/40 hover:bg-emerald-400 transition-colors"
               >
-                Contact Mexel Energy Sustain
+                Contact Engineering
               </Link>
               <Link
                 href="/tes"
-                className="inline-flex items-center justify-center font-semibold text-emerald-600 hover:text-emerald-800"
+                className="inline-flex justify-center items-center rounded-xl bg-white/10 px-8 py-4 text-sm font-bold text-white border border-white/20 hover:bg-white/20 transition-colors"
               >
-                Revisit the TES system overview →
+                TES System Overview
               </Link>
             </div>
           </div>

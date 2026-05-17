@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import PremiumHero from "../components/PremiumHero";
 import {
-  // TrustedBySkeleton,
+  TrustedBySkeleton,
   IndustryGridSkeleton,
   ProcessSkeleton,
   DashboardSkeleton,
@@ -10,9 +10,9 @@ import {
 } from "../components/skeletons/HomeSkeletons";
 
 // Lazy load below-the-fold components for better initial page load
-// const TrustedBy = dynamic(() => import("../components/TrustedBy"), {
-//   loading: () => <TrustedBySkeleton />,
-// });
+const TrustedBy = dynamic(() => import("../components/TrustedBy"), {
+  loading: () => <TrustedBySkeleton />,
+});
 
 const LiveDashboard = dynamic(() => import("../components/LiveDashboard"), {
   loading: () => <DashboardSkeleton />,
@@ -30,10 +30,30 @@ const CTASection = dynamic(() => import("../components/CTASection"), {
   loading: () => <CTASkeleton />,
 });
 
+const homeSocialImage = {
+  url: "/og/home.png",
+  width: 1200,
+  height: 630,
+  alt: "Mexel Energy Sustain homepage social preview",
+};
+
 export const metadata: Metadata = {
   title: "Mexel®432 | Cooling-Water Efficiency Solutions",
   description:
     "Mexel®432 restores condenser performance and cooling-water efficiency with verified thermodynamic baselines.",
+  openGraph: {
+    title: "Mexel®432 | Cooling-Water Efficiency Solutions",
+    description:
+      "Mexel®432 restores condenser performance and cooling-water efficiency with verified thermodynamic baselines.",
+    images: [homeSocialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mexel®432 | Cooling-Water Efficiency Solutions",
+    description:
+      "Mexel®432 restores condenser performance and cooling-water efficiency with verified thermodynamic baselines.",
+    images: [homeSocialImage.url],
+  },
 };
 
 export default function Home() {
@@ -42,8 +62,8 @@ export default function Home() {
       {/* 1. HOOK: Flagship Hero with Problem/Solution Visuals */}
       <PremiumHero />
 
-      {/* 2. SOCIAL PROOF: Trusted Industry Leaders */}
-      {/* <TrustedBy /> */}
+      {/* 1.5 SOCIAL PROOF: Trusted Industry Leaders */}
+      <TrustedBy />
 
       {/* 2. CONTEXT: Visual Industry Solutions */}
       <VisualIndustryGrid />

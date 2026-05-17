@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
 
+const contactSocialImage = {
+  url: "/og/contact.png",
+  width: 1200,
+  height: 630,
+  alt: "Mexel Energy Sustain contact page social preview",
+};
+
 export const metadata: Metadata = {
   title: "Contact Us - Start Your TES Enquiry",
   description:
@@ -17,11 +24,13 @@ export const metadata: Metadata = {
     description:
       "Start a technical conversation about TES cooling-water efficiency solutions, Mexel®432 performance emulsions, and condenser optimization for your facility.",
     type: "website",
+    images: [contactSocialImage],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Contact Mexel Energy Sustain",
     description: "Technical enquiries for TES cooling-water efficiency solutions",
+    images: [contactSocialImage.url],
   },
 };
 

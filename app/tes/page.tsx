@@ -50,8 +50,24 @@ export const metadata: Metadata = {
 };
 
 export default function TesPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "TES (Thermal Efficiency Solution)",
+    "description": "Integrated hardware and emulsion system combining Mexel®432, automated dosing, and thermodynamic monitoring for condenser efficiency.",
+    "brand": {
+      "@type": "Brand",
+      "name": "Mexel Energy Sustain"
+    },
+    "category": "Industrial Equipment"
+  };
+
   return (
     <main className="min-h-screen bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <SystemHeader
         tag="TECHNOLOGY STACK"
         title="Integrated Hardware & Emulsion System."

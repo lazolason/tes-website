@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
+import { useEffect, useState } from "react";
+import Script from "next/script";
 import SystemHeader from "../../components/SystemHeader";
+import { trackContactFormError, trackContactFormSuccess } from "@/lib/analytics";
 
 // Note: Metadata export must be in a separate server component file
 // See app/contact/layout.tsx for page metadata
@@ -11,20 +12,60 @@ interface FormErrors {
   name?: string;
   email?: string;
   general?: string;
+  recaptcha?: string;
 }
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+const FORM_POST_ACTION = "/forms/contact.php";
+const CONTACT_ENDPOINT =
+  process.env.NODE_ENV === "development" ? "/api/contact" : FORM_POST_ACTION;
+const RECAPTCHA_SITE_KEY =
+  process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY?.trim() ?? "";
+
+function resetRecaptchaWidget(): void {
+  if (typeof window === "undefined") {
+    return;
+  }
+
+  const maybeWindow = window as Window & {
+    grecaptcha?: {
+      reset?: () => void;
+    };
+  };
+
+  maybeWindow.grecaptcha?.reset?.();
+}
+
 export default function ContactPage() {
+  const [topic, setTopic] = useState("");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     organisation: "",
     interest: "",
     description: "",
+    topic: "",
+    website: "",
   });
   const [errors, setErrors] = useState<FormErrors>({});
   const [status, setStatus] = useState<FormStatus>("idle");
+
+  useEffect(() => {
+    const nextTopic = new URLSearchParams(window.location.search).get("topic")?.trim() ?? "";
+    setTopic(nextTopic);
+
+    setFormData((prev) => {
+      if (prev.topic === nextTopic) {
+        return prev;
+      }
+
+      return {
+        ...prev,
+        topic: nextTopic,
+      };
+    });
+  }, []);
 
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -45,39 +86,73 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validateForm()) {
       return;
     }
 
+    const browserFormData = new FormData(e.currentTarget);
+    const recaptchaField = browserFormData.get("g-recaptcha-response");
+    const recaptchaResponse =
+      typeof recaptchaField === "string" ? recaptchaField.trim() : "";
+
+    if (RECAPTCHA_SITE_KEY && !recaptchaResponse) {
+      setErrors({ recaptcha: "Please complete the security check." });
+      return;
+    }
+
     setStatus("submitting");
     setErrors({});
+    const submissionTopic = formData.topic || topic || formData.interest || "Unspecified";
+    const payload = {
+      ...formData,
+      recaptcha_required: RECAPTCHA_SITE_KEY ? "1" : "",
+      recaptchaResponse,
+    };
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(CONTACT_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+          "X-Requested-With": "XMLHttpRequest",
+        },
+        body: JSON.stringify(payload),
       });
 
-      const result = await response.json();
+      const result = await response.json().catch(() => ({
+        success: false,
+        errors: ["The contact service returned an unexpected response."],
+      }));
 
-      if (result.success) {
+      if (response.ok && result.success) {
+        trackContactFormSuccess(submissionTopic);
         setStatus("success");
+        resetRecaptchaWidget();
         setFormData({
           name: "",
           email: "",
           organisation: "",
           interest: "",
           description: "",
+          topic,
+          website: "",
         });
       } else {
+        trackContactFormError(
+          submissionTopic,
+          response.ok ? "application_error" : `http_${response.status}`
+        );
+        resetRecaptchaWidget();
         setStatus("error");
         setErrors({ general: result.errors?.[0] || "Something went wrong" });
       }
     } catch {
+      trackContactFormError(submissionTopic, "network_error");
+      resetRecaptchaWidget();
       setStatus("error");
       setErrors({ general: "Failed to send. Please try emailing us directly." });
     }
@@ -95,6 +170,12 @@ export default function ContactPage() {
   };
   return (
     <main className="min-h-screen bg-white">
+      {RECAPTCHA_SITE_KEY && (
+        <Script
+          src="https://www.google.com/recaptcha/api.js"
+          strategy="afterInteractive"
+        />
+      )}
       <SystemHeader
         tag="ENGINEERING ENQUIRY"
         title="Start an Engineering Enquiry."
@@ -150,13 +231,53 @@ export default function ContactPage() {
                     Please fill in the details below and we will get back to you as soon as possible.
                   </p>
 
+                  {formData.topic && (
+                    <div className="mt-4 rounded-md border border-emerald-200 bg-emerald-50 p-3">
+                      <p className="text-sm text-emerald-900">
+                        This enquiry is preloaded for{" "}
+                        <span className="font-semibold">{formData.topic}</span>.
+                        You can adjust the details below before sending.
+                      </p>
+                    </div>
+                  )}
+
                   {errors.general && (
                     <div className="mt-4 rounded-md bg-red-50 p-3">
                       <p className="text-sm text-red-700">{errors.general}</p>
                     </div>
                   )}
 
-                  <form className="mt-5 space-y-4" onSubmit={handleSubmit}>
+                  <form
+                    className="mt-5 space-y-4"
+                    action={FORM_POST_ACTION}
+                    method="post"
+                    acceptCharset="UTF-8"
+                    onSubmit={handleSubmit}
+                  >
+                    <input type="hidden" name="topic" value={formData.topic} readOnly />
+                    <input
+                      type="hidden"
+                      name="recaptcha_required"
+                      value={RECAPTCHA_SITE_KEY ? "1" : ""}
+                      readOnly
+                    />
+                    <div>
+                      <label className="sr-only" htmlFor="website">
+                        Website
+                      </label>
+                      <input
+                        id="website"
+                        type="text"
+                        name="website"
+                        value={formData.website}
+                        onChange={handleChange}
+                        className="hidden"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                      />
+                    </div>
+
                     <div>
                       <label className="block text-xs font-semibold text-slate-800">
                         Name <span className="text-red-500">*</span>
@@ -253,6 +374,18 @@ export default function ContactPage() {
                         placeholder="Please provide a brief description of your operational context and what you would like to explore."
                       />
                     </div>
+
+                    {RECAPTCHA_SITE_KEY && (
+                      <div>
+                        <div
+                          className="g-recaptcha"
+                          data-sitekey={RECAPTCHA_SITE_KEY}
+                        />
+                        {errors.recaptcha && (
+                          <p className="mt-1 text-xs text-red-600">{errors.recaptcha}</p>
+                        )}
+                      </div>
+                    )}
 
                     <button
                       type="submit"

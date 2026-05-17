@@ -11,6 +11,15 @@
 # This part is optional but good for ensuring .html extensions are hidden if the server supports it
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+  # Next.js static export uses */index.txt as internal App Router flight data.
+  # If a browser lands on that URL directly, send it back to the page URL while
+  # still allowing real RSC fetches through via the RSC request header.
+  RewriteCond %{HTTP:RSC} !=1
+  RewriteRule ^(.*/)?index\.txt$ /$1 [L,R=302]
+
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f

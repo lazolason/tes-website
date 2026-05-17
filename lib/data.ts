@@ -87,7 +87,7 @@ export const PROCESS_STEPS: ProcessStep[] = [
         number: '04',
         title: 'M&V Protocol',
         subtitle: 'Verified Results',
-        detail: 'Audit-ready reporting validated via ASME PTC 12.2.',
+        detail: 'Audit-ready heat rate reporting using ASME PTC 12.2 (TTD/TR methodology). CO₂ impact derived from verified efficiency gains.',
     },
 ];
 

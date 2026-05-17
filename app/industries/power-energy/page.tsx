@@ -163,7 +163,7 @@ export default function PowerEnergyPage() {
                   </a>, we help clients navigate VCS methodology and develop carbon credit projects from verified thermal efficiency gains.
                 </p>
                 <p className="text-xs text-slate-600 italic">
-                  ASME PTC 12.2 verification provides the audit-grade documentation required for carbon credit registration under South African (DFFE) and international (VCS) frameworks.
+                  ASME PTC 12.2 verifies heat rate (via TTD/TR). CO₂ reduction is then derived from those verified thermal efficiency gains — providing the audit-grade basis for carbon credit registration under DFFE and VCS frameworks.
                 </p>
               </div>
             </div>

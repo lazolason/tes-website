@@ -52,9 +52,8 @@ export default function ResourcesPage() {
 
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             <FadeIn delay={100}>
-              <a
-                href="/Lost_Megawatts_Restored.pdf"
-                download
+              <Link
+                href="/knowledge-hub/case-studies/kriel"
                 className="group block rounded-lg border bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
               >
                 <div className="flex items-start justify-between">
@@ -69,7 +68,7 @@ export default function ResourcesPage() {
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
+                        d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
                       />
                     </svg>
                   </div>
@@ -83,25 +82,23 @@ export default function ResourcesPage() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                      d="M9 5l7 7-7 7"
                     />
                   </svg>
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-gray-900 group-hover:text-brand-500">
-                  Lost Megawatts Restored
+                  Kriel Power Station Report
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Unlocking hidden performance: A systemic approach to cooling
-                  efficiency in South Africa&apos;s coal fleet. Technical overview
-                  of TES applications and measured results.
+                  Detailed technical overview with baseline data, intervention methodology, and measured results. Read the full case study online.
                 </p>
                 <div className="mt-4 flex items-center gap-3 text-xs text-gray-500">
-                  <span className="rounded-full bg-gray-100 px-2.5 py-1 font-medium">
-                    PDF
+                  <span className="rounded-full bg-emerald-100 px-2.5 py-1 font-medium text-emerald-800">
+                    Web Article
                   </span>
-                  <span>15 pages</span>
+                  <span>Verified Data</span>
                 </div>
-              </a>
+              </Link>
             </FadeIn>
 
             <FadeIn delay={200}>

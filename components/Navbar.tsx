@@ -6,11 +6,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { solutions, industries, knowledgeHub } from '@/lib/navigation';
 import { buttonVariants } from '@/components/ui/Button';
+import { trackTechnicalAuditClick } from '@/lib/analytics';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const technicalAuditHref = '/contact?topic=Technical%20Audit';
 
   const toggleDropdown = (dropdown: string) => {
     setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
@@ -59,7 +61,7 @@ export default function Navbar() {
               <Link href="/mexel432" className="text-sm font-semibold text-emerald-300 hover:text-emerald-200">Mexel®432</Link>
 
               {/* Solutions Dropdown */}
-              <div className="relative group">
+              <div className="relative group" onMouseLeave={() => setActiveDropdown(null)}>
                 <button
                   onClick={() => toggleDropdown('solutions')}
                   onMouseEnter={() => setActiveDropdown('solutions')}
@@ -70,14 +72,13 @@ export default function Navbar() {
                   Solutions <ChevronDown className="h-4 w-4" />
                 </button>
                 <div
-                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-150 ease-out ${
+                  className={`absolute left-0 top-full pt-3 w-[320px] origin-top transition-all duration-150 ease-out ${
                     activeDropdown === 'solutions'
                       ? 'visible scale-100 opacity-100'
                       : 'invisible scale-95 opacity-0'
                   }`}
-                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+                  <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
                     <div className="space-y-4">
                       {solutions.map((item) => (
                         <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
@@ -100,7 +101,7 @@ export default function Navbar() {
               </div>
 
               {/* Industries Dropdown */}
-              <div className="relative group">
+              <div className="relative group" onMouseLeave={() => setActiveDropdown(null)}>
                 <button
                   onClick={() => toggleDropdown('industries')}
                   onMouseEnter={() => setActiveDropdown('industries')}
@@ -111,14 +112,13 @@ export default function Navbar() {
                   Industries <ChevronDown className="h-4 w-4" />
                 </button>
                 <div
-                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-150 ease-out ${
+                  className={`absolute left-0 top-full pt-3 w-[320px] origin-top transition-all duration-150 ease-out ${
                     activeDropdown === 'industries'
                       ? 'visible scale-100 opacity-100'
                       : 'invisible scale-95 opacity-0'
                   }`}
-                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+                  <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
                     <div className="space-y-4">
                       {industries.map((item) => (
                         <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
@@ -141,7 +141,7 @@ export default function Navbar() {
               </div>
 
               {/* Knowledge Hub Dropdown */}
-              <div className="relative group">
+              <div className="relative group" onMouseLeave={() => setActiveDropdown(null)}>
                 <button
                   onClick={() => toggleDropdown('knowledge')}
                   onMouseEnter={() => setActiveDropdown('knowledge')}
@@ -152,14 +152,13 @@ export default function Navbar() {
                   Knowledge Hub <ChevronDown className="h-4 w-4" />
                 </button>
                 <div
-                  className={`absolute left-0 top-full w-[320px] origin-top transition-all duration-150 ease-out ${
+                  className={`absolute left-0 top-full pt-3 w-[320px] origin-top transition-all duration-150 ease-out ${
                     activeDropdown === 'knowledge'
                       ? 'visible scale-100 opacity-100'
                       : 'invisible scale-95 opacity-0'
                   }`}
-                  onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <div className="mt-2 rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
+                  <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 shadow-2xl">
                     <div className="space-y-4">
                       {knowledgeHub.map((item) => (
                         <Link key={item.name} href={item.href} className="group/item flex items-start gap-4">
@@ -187,7 +186,11 @@ export default function Navbar() {
 
           {/* Desktop Action Button */}
           <div className="hidden md:block">
-            <Link href="/contact" className={buttonVariants({ variant: "default" })}>
+            <Link
+              href={technicalAuditHref}
+              className={buttonVariants({ variant: "default" })}
+              onClick={() => trackTechnicalAuditClick('navbar_desktop')}
+            >
               Request Technical Audit
             </Link>
           </div>
@@ -294,9 +297,12 @@ export default function Navbar() {
             </Link>
 
             <div className="mt-4 px-3">
-              <Link href="/contact"
+              <Link href={technicalAuditHref}
                 className={buttonVariants({ variant: "default", className: "flex w-full items-center justify-center py-3" })}
-                onClick={() => setIsOpen(false)}
+                onClick={() => {
+                  trackTechnicalAuditClick('navbar_mobile');
+                  setIsOpen(false);
+                }}
               >
                 Request Technical Audit
               </Link>

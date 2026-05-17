@@ -108,7 +108,3 @@ Menu items are defined in `navItems` array in [components/Navbar.tsx](components
 - **Images**: Stored in `public/` directory
 - **Reference**: Use Next.js `<Image>` component with relative paths (e.g., `/logo.png`)
 - **Icons**: Inline SVG icons defined directly in components (see Navbar Icons)
-
-## Related Documentation
-
-- [GEMINI.md](GEMINI.md) - Project context guide for Gemini (contains detailed sprint history and architecture notes)

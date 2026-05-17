@@ -25,6 +25,13 @@ const Icons = {
   )
 };
 
+const mexelProductSocialImage = {
+  url: "/og/mexel432.png",
+  width: 1200,
+  height: 630,
+  alt: "Mexel 432 product data sheet social preview",
+};
+
 export const metadata: Metadata = {
   title: "Mexel®432 Product Specifications",
   description:
@@ -33,6 +40,14 @@ export const metadata: Metadata = {
     title: "Mexel®432 | Technical Data Sheet",
     description:
       "Filming amine emulsion specifications, dosing parameters, and eco-toxicity profile.",
+    images: [mexelProductSocialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mexel®432 | Technical Data Sheet",
+    description:
+      "Filming amine emulsion specifications, dosing parameters, and eco-toxicity profile.",
+    images: [mexelProductSocialImage.url],
   },
 };
 
@@ -301,8 +316,9 @@ export default function MexelProductPage() {
               Performance Validation Data
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
-              Mexel®432 performance is validated using <strong>ASME PTC 12.2</strong> methodology,
-              ensuring that MW gains are engineering-grade measurements, not estimates.
+              Mexel®432 performance is validated using <strong>ASME PTC 12.2</strong> methodology
+              to measure condenser heat rate via TTD and TR baselines — ensuring that MW gains
+              are derived from engineering-grade heat rate measurements, not estimates.
             </p>
           </FadeIn>
 
@@ -366,17 +382,17 @@ export default function MexelProductPage() {
               <h3 className="text-lg font-bold text-slate-900 mb-4">Validation Documentation</h3>
               <div className="grid md:grid-cols-2 gap-6">
                 <Link
-                  href="/Lost_Megawatts_Restored.pdf"
+                  href="/knowledge-hub/engineering-playbook"
                   className="flex items-start gap-4 p-4 rounded-lg border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 transition-all group"
                 >
                   <div className="flex-shrink-0">
-                    <svg className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clipRule="evenodd" />
+                    <svg className="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900 group-hover:text-emerald-700">Lost Megawatts Restored</h4>
-                    <p className="text-sm text-slate-600 mt-1">15-page technical overview of TES methodology and ASME PTC 12.2 application</p>
+                    <h4 className="font-semibold text-slate-900 group-hover:text-emerald-700">Engineering Playbook</h4>
+                    <p className="text-sm text-slate-600 mt-1">Structured, engineering-first guide covering TES fundamentals and deployment</p>
                   </div>
                 </Link>
 

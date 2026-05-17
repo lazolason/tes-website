@@ -2,16 +2,27 @@
 
 import { useEffect } from 'react'
 import Link from 'next/link'
+import { trackCompanyProfileOpen } from '@/lib/analytics'
 
-const PROFILE_URL = '/company-profile'
+const PROFILE_URL = '/company-profile-static/index.html'
 
-export default function ProfilePage() {
+export default function CompanyProfilePage() {
   useEffect(() => {
+    const redirectTimer = window.setTimeout(() => {
+      try {
+        window.location.replace(PROFILE_URL)
+      } catch (e) {
+        console.error('Company profile redirect failed:', e)
+      }
+    }, 150)
+
     try {
-      window.location.replace(PROFILE_URL)
+      trackCompanyProfileOpen('company_profile_route')
     } catch (e) {
-      console.error('Profile redirect failed:', e)
+      console.error('Company profile tracking failed:', e)
     }
+
+    return () => window.clearTimeout(redirectTimer)
   }, [])
 
   return (

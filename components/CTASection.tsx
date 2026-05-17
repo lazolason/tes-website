@@ -4,8 +4,11 @@ import Link from "next/link";
 import FadeIn from "./FadeIn";
 import { buttonVariants } from "./ui/Button";
 import { cn } from "../lib/utils";
+import { trackEvent, trackTechnicalAuditClick } from "@/lib/analytics";
 
 export default function CTASection() {
+  const technicalAuditHref = "/contact?topic=Technical%20Audit";
+
   return (
     <section className="border-t border-slate-200 bg-white py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -19,10 +22,24 @@ export default function CTASection() {
               verification-ready reporting.
             </p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
-              <Link href="/contact" className={cn(buttonVariants({ variant: "outline", size: "lg" }), "bg-emerald-700 text-white border-transparent hover:bg-emerald-800")}>
+              <Link
+                href={technicalAuditHref}
+                className={cn(buttonVariants({ variant: "default", size: "lg" }), "bg-white text-emerald-600 hover:bg-emerald-50 shadow-md")}
+                onClick={() => trackTechnicalAuditClick("cta_section")}
+              >
                 Contact Engineering
               </Link>
-              <Link href="/knowledge-hub/case-studies" className={cn(buttonVariants({ variant: "ghost", size: "lg" }), "text-emerald-100 hover:text-white hover:bg-emerald-500/20")}>
+              <Link
+                href="/knowledge-hub/case-studies"
+                className={cn(buttonVariants({ variant: "outline", size: "lg" }), "border-white text-white hover:bg-emerald-500/20")}
+                onClick={() =>
+                  trackEvent("case_studies_click", {
+                    event_category: "engagement",
+                    cta_location: "cta_section",
+                    destination: "/knowledge-hub/case-studies",
+                  })
+                }
+              >
                 View Case Studies
               </Link>
             </div>
@@ -34,7 +51,19 @@ export default function CTASection() {
             <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            <span className="text-sm font-medium">info@mexelenergysustain.com</span>
+            <a
+              href="mailto:info@mexelenergysustain.com"
+              className="text-sm font-medium hover:text-emerald-700"
+              onClick={() =>
+                trackEvent("email_click", {
+                  event_category: "engagement",
+                  cta_location: "cta_section",
+                  destination: "mailto:info@mexelenergysustain.com",
+                })
+              }
+            >
+              info@mexelenergysustain.com
+            </a>
           </div>
           <div className="flex items-center gap-2">
             <svg className="h-5 w-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">

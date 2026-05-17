@@ -46,7 +46,7 @@ export default function Footer() {
             {/* BRAND CONSISTENCY: Logo Image */}
             <div className="flex items-center">
               <Image
-                src="/logonew.png"
+                src="/logonew.svg"
                 alt="Mexel Energy Sustain - TES Cooling Water Treatment Solutions"
                 width={196}
                 height={56}
@@ -54,7 +54,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm leading-6 text-slate-300">
-              Engineering thermal efficiency. Validated via ASME PTC 12.2.
+              Engineering thermal efficiency. Heat rate verified via ASME PTC 12.2.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (
