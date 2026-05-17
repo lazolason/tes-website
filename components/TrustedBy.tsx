@@ -8,12 +8,12 @@ export default function TrustedBy() {
       name: 'Eskom', 
       desc: 'Power Generation',
       logo: (
-        <div className="relative w-44 h-16 sm:w-52 sm:h-20 bg-white rounded-xl p-3 shadow-md shadow-black/20 group-hover:shadow-lg group-hover:shadow-emerald-500/10 group-hover:scale-105 transition-all duration-500">
+        <div className="relative h-28 w-64 overflow-hidden rounded-xl transition-all duration-500 group-hover:scale-105 sm:h-32 sm:w-80 lg:h-36 lg:w-96">
           <Image 
             src="/logos/eskom-logo.jpeg" 
             alt="Eskom Logo" 
             fill
-            className="object-contain p-3" 
+            className="object-cover opacity-50 mix-blend-screen invert grayscale contrast-150 brightness-125 transition-all duration-500 group-hover:opacity-100 group-hover:drop-shadow-[0_0_18px_rgba(16,185,129,0.55)]" 
           />
         </div>
       )
@@ -22,12 +22,12 @@ export default function TrustedBy() {
       name: 'WRC', 
       desc: 'Water Research Commission',
       logo: (
-        <div className="relative w-36 h-16 sm:w-44 sm:h-20 bg-white rounded-xl p-3 shadow-md shadow-black/20 group-hover:shadow-lg group-hover:shadow-emerald-500/10 group-hover:scale-105 transition-all duration-500">
+        <div className="relative h-24 w-56 overflow-hidden rounded-xl transition-all duration-500 group-hover:scale-105 sm:h-28 sm:w-72 lg:h-32 lg:w-80">
           <Image 
             src="/logos/wrc-logo.jpeg" 
             alt="WRC Logo" 
             fill
-            className="object-contain p-3" 
+            className="object-cover opacity-50 mix-blend-screen invert grayscale contrast-150 brightness-125 transition-all duration-500 group-hover:opacity-100 group-hover:drop-shadow-[0_0_18px_rgba(16,185,129,0.55)]" 
           />
         </div>
       )
@@ -36,8 +36,8 @@ export default function TrustedBy() {
       name: 'BRUNDTLAND', 
       desc: 'Advisory Partners',
       logo: (
-        <div className="flex items-center justify-center w-44 h-16 sm:w-52 sm:h-20 bg-white/5 border border-white/10 rounded-xl group-hover:border-emerald-500/30 group-hover:bg-white/10 group-hover:scale-105 transition-all duration-500">
-          <svg className="h-5 sm:h-6 text-slate-400 group-hover:text-white transition-colors duration-500" viewBox="0 0 240 30" fill="currentColor">
+        <div className="flex h-24 w-56 items-center justify-center rounded-xl border border-white/10 bg-white/5 transition-all duration-500 group-hover:scale-105 group-hover:border-white/20 group-hover:bg-white/10 group-hover:shadow-[0_0_24px_rgba(255,255,255,0.12)] sm:h-28 sm:w-72 lg:h-32 lg:w-80">
+          <svg className="h-5 text-slate-400 transition-colors duration-500 group-hover:text-white sm:h-6" viewBox="0 0 240 30" fill="currentColor">
             <path d="M10 5 L25 5 L17 25 Z" fill="none" stroke="currentColor" strokeWidth="3"/>
             <text x="40" y="22" fontSize="16" fontWeight="300" fontFamily="sans-serif" letterSpacing="6">BRUNDTLAND</text>
           </svg>
@@ -53,9 +53,9 @@ export default function TrustedBy() {
           Trusted by engineering & advisory leaders
         </p>
         
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 items-center justify-items-center">
+        <div className="grid grid-cols-1 items-center justify-items-center gap-10 md:grid-cols-3">
           {partners.map((partner) => (
-            <div key={partner.name} className="flex flex-col items-center justify-center group cursor-default">
+            <div key={partner.name} className="group flex cursor-default flex-col items-center justify-center">
               {partner.logo}
               <span className="text-[10px] font-medium uppercase tracking-widest text-emerald-500 mt-4 opacity-0 -translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500">
                 {partner.desc}

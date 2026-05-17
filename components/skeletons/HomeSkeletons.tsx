@@ -1,11 +1,12 @@
 
 export function TrustedBySkeleton() {
     return (
-        <div className="border-y border-slate-100 bg-slate-50 py-12">
+        <div className="border-b border-slate-800 bg-slate-950 py-14 sm:py-20">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5 animate-pulse">
-                    {[1, 2, 3, 4, 5].map((i) => (
-                        <div key={i} className="h-12 w-full rounded-lg bg-slate-200/50" />
+                <div className="mb-14 h-3 w-72 max-w-full rounded bg-slate-800 mx-auto animate-pulse" />
+                <div className="grid grid-cols-1 items-center justify-items-center gap-10 md:grid-cols-3 animate-pulse">
+                    {[1, 2, 3].map((i) => (
+                        <div key={i} className="h-28 w-64 rounded-xl bg-slate-900 sm:h-32 sm:w-80" />
                     ))}
                 </div>
             </div>

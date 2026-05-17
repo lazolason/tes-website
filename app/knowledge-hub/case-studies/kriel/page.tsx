@@ -81,7 +81,7 @@ export default function KrielCaseStudyPage() {
           
           <h2>1. The Challenge: Baseline Conditions</h2>
           <p>
-            Prior to the intervention in May 2018, Unit 6 at Kriel Power Station was experiencing significant performance degradation due to condenser tube fouling. Baseline readings indicated poor heat transfer efficiency, severely impacting the unit's thermal performance.
+            Prior to the intervention in May 2018, Unit 6 at Kriel Power Station was experiencing significant performance degradation due to condenser tube fouling. Baseline readings indicated poor heat transfer efficiency, severely impacting the unit&apos;s thermal performance.
           </p>
           <ul>
             <li><strong>Initial TTD (Terminal Temperature Difference):</strong> Averaged 13°C against a design target of 1.7°C.</li>
@@ -153,7 +153,7 @@ export default function KrielCaseStudyPage() {
           <div className="bg-brand-50 border-l-4 border-brand-500 p-6 my-10 rounded-r-lg">
             <h4 className="text-brand-800 font-bold mt-0 mb-2">Eskom RT&amp;D Conclusion (Excerpt)</h4>
             <p className="text-brand-900 text-sm italic m-0">
-              "The seemingly perceptible observations made showed an improvement of approximately 30% for condenser cleanliness factor within 3 days of application. This shows the dispensation effect of Mexel®432 on the formed scale/fouling. Another observation showed an improvement in terminal temperature difference (TTD) for unit 6 based on the condenser efficiency analysis."
+              &quot;The seemingly perceptible observations made showed an improvement of approximately 30% for condenser cleanliness factor within 3 days of application. This shows the dispensation effect of Mexel®432 on the formed scale/fouling. Another observation showed an improvement in terminal temperature difference (TTD) for unit 6 based on the condenser efficiency analysis.&quot;
             </p>
             <p className="text-brand-700 text-xs mt-3 mb-0">
               — Official Report RTD/ACM/18/240-142764661
@@ -165,7 +165,7 @@ export default function KrielCaseStudyPage() {
             While ASME PTC 12.2 protocols verify the direct thermal and thermodynamic recovery (TTD/TR), these metrics directly correlate to improved station heat rate. A cleaner condenser allows the turbine to exhaust at a lower backpressure, extracting more mechanical work per ton of coal combusted.
           </p>
           <p>
-            By reducing the backpressure deviation from 2.08 kPa down to 0.6 kPa, Unit 6 demonstrated the capacity to significantly reduce its derived CO₂ emissions per MWh generated, aligning with Eskom's strategic operational and environmental targets.
+            By reducing the backpressure deviation from 2.08 kPa down to 0.6 kPa, Unit 6 demonstrated the capacity to significantly reduce its derived CO₂ emissions per MWh generated, aligning with Eskom&apos;s strategic operational and environmental targets.
           </p>
 
         </div>

@@ -11,8 +11,6 @@ export default function FloatingCTA() {
   const pathname = usePathname();
   const enquiryHref = "/contact?topic=General%20Enquiry";
 
-  if (pathname === "/contact") return null;
-
   useEffect(() => {
     let ticking = false;
 
@@ -29,6 +27,8 @@ export default function FloatingCTA() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  if (pathname === "/contact") return null;
 
   return (
     <div
