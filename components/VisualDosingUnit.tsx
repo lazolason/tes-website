@@ -49,7 +49,7 @@ export default function VisualDosingUnit({
             {/* We add a gentle 'breathing' animation to the machine to make it feel alive */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/cooling-loop-schematic.png"
+                    src="/cooling-loop-schematic.webp"
                     alt="Digital Twin Cooling Circuit"
                     fill
                     className="object-cover opacity-90 transition-transform duration-[10s] ease-in-out group-hover:scale-110"
@@ -64,7 +64,7 @@ export default function VisualDosingUnit({
                 style={{ opacity: biofilmOpacity }}
             >
                 <Image
-                    src="/biofilm-texture.png"
+                    src="/biofilm-texture.webp"
                     alt="Biofouling Layer"
                     fill
                     className="object-cover"

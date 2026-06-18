@@ -70,7 +70,7 @@ export default function ApplicationsPage() {
             </div>
             <div className="relative aspect-video overflow-hidden rounded-2xl shadow-2xl lg:aspect-square">
               <Image
-                src="/power-station-clean.png"
+                src="/power-station-clean.webp"
                 alt="Wet-cooled power station cooling tower"
                 fill
                 className="object-cover"

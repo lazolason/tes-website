@@ -2,6 +2,7 @@
 .next/
 out/
 *.log
+tsconfig.tsbuildinfo
 node_modules/
 
 # Dependencies
@@ -16,6 +17,7 @@ package-lock.json
 .vercel
 .env*.local
 public/_backup_images/
+deploy/
 
 # Stale build outputs
 out*/

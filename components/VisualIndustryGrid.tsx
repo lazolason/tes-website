@@ -1,27 +1,31 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import FadeIn from './FadeIn';
 
 const industries = [
     {
         title: "Power Generation",
         subtitle: "Vacuum Recovery & Heat Rate",
-        // Using the new, premium vertical asset
         image: "/power-gen.webp",
+        href: "/knowledge-hub/case-studies/kriel",
+        ctaLabel: "View Case Study",
         description: "Specialized in 500MW+ condenser circuits. Reviewing back-pressure, TTD and fouling indicators through targeted filming amine intervention."
     },
     {
         title: "Mining & Smelters",
         subtitle: "Process Cooling Continuity",
-        // Using the new, premium vertical asset
         image: "/mining-vertical.webp",
+        href: "/industries/mining",
+        ctaLabel: "Explore Mining",
         description: "Managing high-heat furnace cooling and compressor loops. Reviewing scale and fouling risk in harsh, high-solids environments."
     },
     {
         title: "Critical HVAC",
         subtitle: "Efficiency & Risk Mitigation",
-        // Using the new, premium vertical asset
         image: "/hvac-vertical.webp",
+        href: "/industries/hvac-data-centers",
+        ctaLabel: "Explore HVAC",
         description: "Data centres and large-scale commercial cooling. Focus on water-hygiene compliance and efficiency review."
     }
 ];
@@ -79,12 +83,15 @@ export default function VisualIndustryGrid() {
                                     {industry.description}
                                 </p>
 
-                                <div className="mt-4 flex items-center gap-2 text-sm font-bold text-emerald-700 cursor-pointer hover:text-emerald-600 transition-colors">
-                                    View Case Study
+                                <Link
+                                    href={industry.href}
+                                    className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-brand-700 hover:text-brand-900 transition-colors"
+                                >
+                                    {industry.ctaLabel}
                                     <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
-                                </div>
+                                </Link>
                             </div>
                         </FadeIn>
                     ))}
