@@ -41,11 +41,11 @@ const Icons = {
 export const metadata: Metadata = {
   title: "TES Integrated System",
   description:
-    "TES is a hardware and consumable system combining Mexel®432 emulsions, automated dosing units, and thermodynamic monitoring for condenser efficiency.",
+    "TES combines Mexel®432 emulsion, controlled dosing hardware, and thermodynamic monitoring for cooling-water performance review.",
   openGraph: {
     title: "TES Integrated System | Mexel Energy Sustain",
     description:
-      "Supply and installation of automated dosing units and Mexel®432 performance emulsions.",
+      "Controlled dosing units, Mexel®432 emulsion, and cooling-water performance monitoring.",
   },
 };
 
@@ -54,7 +54,7 @@ export default function TesPage() {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "TES (Thermal Efficiency Solution)",
-    "description": "Integrated hardware and emulsion system combining Mexel®432, automated dosing, and thermodynamic monitoring for condenser efficiency.",
+    "description": "Integrated hardware and emulsion system combining Mexel®432, controlled dosing, and thermodynamic monitoring for cooling-water performance review.",
     "brand": {
       "@type": "Brand",
       "name": "Mexel Energy Sustain"
@@ -71,12 +71,12 @@ export default function TesPage() {
       <SystemHeader
         tag="TECHNOLOGY STACK"
         title="Integrated Hardware & Emulsion System."
-        description="TES is not a service contract. It is a proprietary system comprising automated dosing units, the Mexel®432 consumable emulsion, and telemetry integration. The system mechanically injects surfactant at specific intervals to maintain condenser vacuum and thermodynamic transfer."
+        description="TES is a system comprising controlled dosing units, the Mexel®432 consumable emulsion, and telemetry integration. The system doses at defined intervals so station data can be reviewed against baseline conditions."
         continuity="System specifications and component breakdown."
         currentLabel="System Architecture"
       />
 
-      {/* The "Product" Definition - Critical for PFMA */}
+      {/* The product definition supports procurement and technical scoping. */}
       <section className="border-b bg-slate-50">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
@@ -84,7 +84,7 @@ export default function TesPage() {
               System Components (Supply & Install)
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
-              The TES solution is delivered as a turnkey technical installation consisting of three integrated components.
+              The TES solution is delivered as a scoped technical installation consisting of three integrated components.
             </p>
           </FadeIn>
 
@@ -93,19 +93,19 @@ export default function TesPage() {
               {
                 title: "1. The Hardware",
                 subtitle: "Automated Dosing Unit",
-                desc: "Skid-mounted injection system with programmable logic controllers (PLC) and variable speed drives. Installed directly into the CW intake lines.",
+                desc: "Skid-mounted injection system with programmable controls. The dosing point is confirmed during site scoping.",
                 icon: Icons.Hardware,
               },
               {
                 title: "2. The Consumable",
                 subtitle: "Mexel®432 Emulsion",
-                desc: "A filming polyamine surfactant supplied in bulk IBCs. It acts as a dispersant and corrosion inhibitor, forming a micron-thin barrier on tube surfaces.",
+                desc: "A filming polyamine surfactant supplied in bulk IBCs. It is assessed against the site chemistry program and materials list.",
                 icon: Icons.Chemistry,
               },
               {
                 title: "3. The Telemetry",
                 subtitle: "Performance Monitoring",
-                desc: "Integration with plant Scada to track Vacuum, TR, and TTD in real-time. Provides verification of system performance against guarantees.",
+                desc: "Integration options for plant data such as vacuum, TR and TTD. Provides records needed to review performance against agreed baselines.",
                 icon: Icons.Data,
               },
             ].map((item) => (
@@ -134,26 +134,26 @@ export default function TesPage() {
                   Thermodynamic Verification
                 </h2>
                 <p className="mt-3 text-base text-slate-600">
-                  The system is validated by physical indicators, not theoretical models. We track the recovery of the condenser&#39;s design parameters.
+                  The system is reviewed through physical indicators, not generic savings models. We compare condenser indicators against agreed baselines.
                 </p>
               </FadeIn>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {[
                   {
                     title: "TR (Temp Rise)",
-                    detail: "Restoring the Delta-T across the condenser (Heat Absorption).",
+                    detail: "Reviewing Delta-T across the condenser under comparable conditions.",
                   },
                   {
                     title: "TTD (Temp Diff)",
-                    detail: "Minimizing the gap between Steam Temp and Outlet Water Temp.",
+                    detail: "Tracking the gap between steam temperature and outlet water temperature.",
                   },
                   {
                     title: "Back Pressure",
-                    detail: "Reducing kPa to design specifications (Vacuum Recovery).",
+                    detail: "Comparing kPa trends against design targets and baseline behaviour.",
                   },
                   {
                     title: "Tube Cleanliness",
-                    detail: "Physical reduction in fouling factor (Rf) and biological film.",
+                    detail: "Reviewing fouling indicators, inspections and available cleanliness data.",
                   },
                 ].map((item) => (
                   <div
@@ -199,8 +199,8 @@ export default function TesPage() {
                   <h3 className="text-lg font-bold text-slate-900">Power Generation (Utilities)</h3>
                 </div>
                 <p className="text-sm text-slate-700 leading-relaxed">
-                  Engineered for 500MW+ wet-cooled units (coal/nuclear) using river or mine-water.
-                  Focus on restoring MW output lost to back-pressure/vacuum decay.
+                  Scoped for 500MW+ wet-cooled units using river, dam or mine-water.
+                  Focus on measured condenser-performance improvement where back-pressure or vacuum decay is linked to fouling.
                 </p>
               </div>
             </FadeIn>
@@ -214,7 +214,7 @@ export default function TesPage() {
                 </div>
                 <p className="text-sm text-slate-700 leading-relaxed">
                   Critical cooling for smelter furnaces, compressors, and underground refrigeration.
-                  Focus on preventing heat-exchanger fouling in high-solids water loops.
+                  Focus on heat-exchanger fouling risk in high-solids water loops.
                 </p>
               </div>
             </FadeIn>

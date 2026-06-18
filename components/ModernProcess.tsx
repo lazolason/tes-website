@@ -16,11 +16,11 @@ export default function ModernProcess() {
                         Our Methodology
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-slate-900 mb-6">
-                        A Disciplined Loop of Efficiency.
+                        A Disciplined Review Loop.
                     </h2>
                     <p className="text-slate-600 text-lg">
-                        Our 4-step integration ensures that thermal recovery isn&#39;t just a
-                        chemical dosing event—it&#39;s a verifiable system of performance.
+                        Our 4-step integration keeps a cooling-water intervention tied to
+                        baseline data, dosing records and measured performance indicators.
                     </p>
                 </div>
 
@@ -66,9 +66,9 @@ export default function ModernProcess() {
                     </div>
 
                     {/* Visual Representation */}
-                    <div className="relative">
+                    <div className="relative px-6 sm:px-0">
                         <FadeIn>
-                            <div className="relative aspect-square max-w-[500px] mx-auto">
+                            <div className="relative mx-auto aspect-square w-full max-w-[500px]">
                                 {/* Circular visualization */}
                                 <div className="absolute inset-0 rounded-full border-2 border-dashed border-slate-200 animate-[spin_60s_linear_infinite]" />
 

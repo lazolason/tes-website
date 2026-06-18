@@ -2,13 +2,13 @@ import { ChartColumn, Wind, Droplets, Gauge, ShieldCheck } from 'lucide-react';
 
 // Technical Solutions dropdown
 export const solutions = [
-    { name: 'Condenser Efficiency', href: '/applications#condenser', desc: 'Optimize heat transfer rates.', icon: Gauge },
-    { name: 'Cooling Tower Preservation', href: '/applications#cooling-towers', desc: 'Extend asset lifespan.', icon: ShieldCheck },
+    { name: 'Condenser Efficiency', href: '/applications#condenser', desc: 'Review heat-transfer performance.', icon: Gauge },
+    { name: 'Cooling Tower Preservation', href: '/applications#cooling-towers', desc: 'Manage asset condition.', icon: ShieldCheck },
 ];
 
 // Industries dropdown
 export const industries = [
-    { name: 'Power & Energy', href: '/industries/power-energy', desc: 'Vacuum recovery & heat rate optimization.', icon: Gauge },
+    { name: 'Power & Energy', href: '/industries/power-energy', desc: 'Vacuum and heat-rate review.', icon: Gauge },
     { name: 'Mining & Smelters', href: '/industries/mining', desc: 'Process cooling continuity solutions.', icon: ChartColumn },
     { name: 'HVAC & Data Centers', href: '/industries/hvac-data-centers', desc: 'Efficiency & risk mitigation.', icon: Wind },
 ];

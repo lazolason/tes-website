@@ -44,7 +44,7 @@ export default function PowerEnergyPage() {
             <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-2xl mb-10">
               Wet-cooled power stations are where TES was born. We bridge the gap
               between complex chemistry and station-ready performance metrics
-              to restore MW capacity lost to condenser fouling.
+              to evaluate MW capacity losses linked to condenser fouling.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button asChild size="lg" className="shadow-xl shadow-emerald-900/40 hover:-translate-y-1">
@@ -77,7 +77,7 @@ export default function PowerEnergyPage() {
                 {[
                   { title: "Condenser Performance", desc: "Stabilise TR and TTD values by keeping condenser tubes free of biofouling and scale." },
                   { title: "Make-up Integrity", desc: "Maintain system efficiency even as make-up water quality (dam/mine water) fluctuates." },
-                  { title: "MW Restoration", desc: "Directly link cleaner surfaces to measurable improvements in unit heat rate." }
+                  { title: "MW Impact Review", desc: "Review whether cleaner surfaces correspond with measurable improvements in unit heat rate." }
                 ].map((item, i) => (
                   <FadeIn key={i} delay={i * 100}>
                     <div className="flex gap-4">
@@ -118,12 +118,12 @@ export default function PowerEnergyPage() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Uninterrupted MW Generation.</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Stable Cold-End Performance.</h2>
               <p className="text-slate-600 text-lg leading-relaxed">
-                By maintaining the surface interface with Mexel®432, we prevent the biological
+                By maintaining the surface interface with Mexel®432, TES is intended to reduce the biological
                 blanketing that causes the secondary baseline to drift from design capacity.
-                This ensures that your unit can meet its full load profile throughout the summer peak
-                without requiring manual condenser cleaning outages.
+                The operational value is reviewed against matched-load data, inspection evidence
+                and the site&apos;s existing condenser-cleaning regime.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -149,9 +149,9 @@ export default function PowerEnergyPage() {
                 </svg>
               </div>
               <div className="flex-1">
-                <h3 className="text-lg font-bold text-slate-900 mb-2">Carbon Credit Revenue Opportunity</h3>
+                <h3 className="text-lg font-bold text-slate-900 mb-2">Emissions Methodology Review</h3>
                 <p className="text-sm text-slate-700 leading-relaxed mb-3">
-                  Efficiency improvements at wet-cooled power stations deliver measurable emissions reductions.
+                  Efficiency improvements at wet-cooled power stations may support derived emissions calculations.
                   Working with{" "}
                   <a
                     href="https://www.brundtland.co.za"
@@ -160,10 +160,10 @@ export default function PowerEnergyPage() {
                     className="font-semibold text-emerald-700 hover:text-emerald-900 underline"
                   >
                     Brundtland Consulting
-                  </a>, we help clients navigate VCS methodology and develop carbon credit projects from verified thermal efficiency gains.
+                  </a>, we can help clients assess whether verified thermal-efficiency data is suitable for a later VCS or DFFE methodology pathway.
                 </p>
                 <p className="text-xs text-slate-600 italic">
-                  ASME PTC 12.2 verifies heat rate (via TTD/TR). CO₂ reduction is then derived from those verified thermal efficiency gains — providing the audit-grade basis for carbon credit registration under DFFE and VCS frameworks.
+                  ASME PTC 12.2-aligned analysis can review heat-rate impact via TTD/TR. CO₂ impact remains a derived, project-specific calculation requiring separate validation.
                 </p>
               </div>
             </div>

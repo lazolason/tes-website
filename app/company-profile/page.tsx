@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect } from 'react'
-import Link from 'next/link'
 import { trackCompanyProfileOpen } from '@/lib/analytics'
 
 const PROFILE_URL = '/company-profile-static/index.html'
@@ -34,7 +33,7 @@ export default function CompanyProfilePage() {
           Redirecting you to the interactive company profile.
         </p>
         <p className="text-sm text-slate-600">
-          If you are not redirected automatically, <Link href={PROFILE_URL} className="text-emerald-600 hover:underline font-semibold">click here</Link>.
+          If you are not redirected automatically, <a href={PROFILE_URL} className="text-emerald-600 hover:underline font-semibold">click here</a>.
         </p>
         <noscript>
           <p className="mt-4 text-sm text-slate-600">

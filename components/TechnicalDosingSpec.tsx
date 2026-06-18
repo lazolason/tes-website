@@ -148,18 +148,18 @@ export default function TechnicalDosingSpec() {
                     </h2>
                     <p className="text-lg text-slate-400">
                         Precision control is the difference between &quot;chemical dumping&quot; and engineering.
-                        Our skid-mounted systems use active feedback loops to maintain exact concentrations,
-                        minimizing chemical use while guaranteeing performance.
+                        Our skid-mounted systems use logged dosing events and configurable controls,
+                        reducing unnecessary chemical use while keeping performance claims tied to site data.
                     </p>
                 </div>
 
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div className="grid min-w-0 gap-16 lg:grid-cols-2 items-start">
 
                     {/* LEFT: The Hardware Visuals */}
-                    <FadeIn>
-                        <div className="space-y-6">
+                    <FadeIn className="min-w-0">
+                        <div className="min-w-0 space-y-6">
                             {/* Primary Image: Controller Internals */}
-                            <div className="relative rounded-2xl border border-slate-700 bg-slate-800/50 overflow-hidden shadow-2xl group">
+                            <div className="relative min-w-0 overflow-hidden rounded-2xl border border-slate-700 bg-slate-800/50 shadow-2xl group">
                                 <div className="aspect-[4/3] relative">
                                     <Image
                                         src="/dosing-controller-internal.jpg"
@@ -168,8 +168,8 @@ export default function TechnicalDosingSpec() {
                                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                                     />
                                     {/* Technical Overlay Badges */}
-                                    <div className="absolute bottom-4 left-4 flex gap-2">
-                                        <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md rounded-full text-xs font-mono text-emerald-400">
+                                    <div className="absolute bottom-4 left-4 right-4 flex gap-2">
+                                        <div className="max-w-full truncate px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 backdrop-blur-md rounded-full text-xs font-mono text-emerald-400">
                                             RPI_4B_CORE :: SQL_LOGGING
                                         </div>
                                     </div>
@@ -207,8 +207,8 @@ export default function TechnicalDosingSpec() {
                     </FadeIn>
 
                     {/* RIGHT: The Live Simulator (Graph) */}
-                    <FadeIn delay={0.2}>
-                        <div className="rounded-2xl border border-slate-800 bg-slate-950 p-8 shadow-inner ring-1 ring-slate-800">
+                    <FadeIn delay={0.2} className="min-w-0">
+                        <div className="min-w-0 rounded-2xl border border-slate-800 bg-slate-950 p-5 shadow-inner ring-1 ring-slate-800 sm:p-8">
 
 
                             {/* Visual Digital Twin Container */}
@@ -221,8 +221,8 @@ export default function TechnicalDosingSpec() {
                                 />
                             </div>
 
-                            <div className="mt-6 pt-6 border-t border-slate-800 flex items-center justify-between">
-                                <div className="flex items-center gap-4">
+                            <div className="mt-6 flex flex-col gap-4 border-t border-slate-800 pt-6 sm:flex-row sm:items-center sm:justify-between">
+                                <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
                                     <Button
                                         variant="default"
                                         size="sm"
@@ -236,7 +236,7 @@ export default function TechnicalDosingSpec() {
                                         {isGuided ? "Simulation Running..." : "Run Guided Simulation"}
                                     </Button>
                                     <div className="h-6 w-px bg-slate-800"></div>
-                                    <div className="flex items-center gap-3">
+                                    <div className="flex flex-wrap items-center gap-3">
                                         <div className="text-xs uppercase tracking-wider text-slate-500">Pump Status:</div>
                                         <div className={`px-3 py-1 rounded-full text-xs font-bold border ${pumpStatus === "INJECTING"
                                             ? "bg-emerald-500/20 border-emerald-500/50 text-emerald-400 animate-pulse"

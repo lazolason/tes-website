@@ -200,10 +200,10 @@ export default function AdvancedEngineeringPage() {
               <div className="rounded-lg border border-green-200 bg-green-50 p-6">
                 <h3 className="text-lg font-semibold text-green-900">Compatible with</h3>
                 <ul className="mt-3 text-sm text-green-800 space-y-2 list-disc pl-5">
-                  <li>Scale inhibitors</li>
-                  <li>Dispersants</li>
-                  <li>Low-dose oxidants (spaced out)</li>
-                  <li>Coagulants in raw-water treatment</li>
+                  <li>Scale inhibitors, subject to compatibility review</li>
+                  <li>Dispersants, subject to compatibility review</li>
+                  <li>Low-dose oxidants when dosing is separated and approved</li>
+                  <li>Raw-water coagulants outside the treated circuit</li>
                 </ul>
               </div>
             </FadeIn>
@@ -219,7 +219,7 @@ export default function AdvancedEngineeringPage() {
                   <li>Polymer overdosing</li>
                 </ul>
                 <p className="mt-3 text-xs text-red-700 font-semibold">
-                  Reason: These can degrade the film prematurely.
+                  Reason: these can interfere with film formation or complicate interpretation.
                 </p>
               </div>
             </FadeIn>
@@ -313,9 +313,9 @@ export default function AdvancedEngineeringPage() {
                   Distinguish TES vs. system constraints
                 </h3>
                 <ul className="mt-4 text-sm text-gray-700 space-y-3 list-disc pl-5">
-                  <li>Partial response suggests TES is active but constrained.</li>
-                  <li>No response usually indicates a dominant mechanical constraint.</li>
-                  <li>Improvement then decline can indicate mobilisation exceeding capacity.</li>
+                  <li>Partial response may indicate TES activity with a limiting site constraint.</li>
+                  <li>No response should trigger a review of dosing, instrumentation, and mechanical constraints.</li>
+                  <li>Improvement then decline can indicate mobilisation, load effects, or hydraulic limits.</li>
                 </ul>
               </div>
             </FadeIn>

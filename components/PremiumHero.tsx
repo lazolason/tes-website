@@ -42,17 +42,17 @@ export default function PremiumHero() {
                         {/* 2. THE HEADLINE (Outcome Focused) */}
                         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-[1.05] mb-8 animate-fade-in" style={{animationDelay:'100ms'}}>
                             Industrial Cooling <br />
-                            Efficiency <span className="text-emerald-400">Restored.</span> <br />
-                            Across All Sectors.
+                            Performance <span className="text-emerald-400">Reviewed.</span> <br />
+                            Evidence First.
                         </h1>
 
-                        {/* 3. THE SUB-HEAD (No estimates, focused on verification) */}
+                        {/* 3. THE SUB-HEAD (focused on verification) */}
                         <p className="text-lg md:text-xl text-slate-300 leading-relaxed max-w-xl mb-10 font-medium animate-fade-in" style={{animationDelay:'200ms'}}>
-                            TES combines Mexel®432 chemistry with IoT-enabled dosing and real-time performance tracking—preventing fouling across power plants, mining operations, data centres, and HVAC systems.
+                            TES combines Mexel®432 chemistry with IoT-enabled dosing and performance tracking for condenser and cooling-water systems in power generation, mining, data-centre and HVAC environments.
                             <br /><br />
-                            Move beyond guesswork. We use measurable <strong className="text-white">thermodynamic baselines</strong> to verify cooling performance.
+                            Move beyond generic chemical claims. We use measurable <strong className="text-white">thermodynamic baselines</strong> to review cooling performance.
                             <br /><br />
-                            No estimates. No &quot;managed service&quot; contracts. Just raw data and verified efficiency gains.
+                            Prior Eskom RT&amp;D work at Kriel is treated as technical evidence, with future deployments subject to site-specific verification.
                         </p>
 
                         {/* 4. THE CALL TO ACTION (Direct Line for Emergencies) */}
@@ -95,8 +95,8 @@ export default function PremiumHero() {
                                     </svg>
                                 </div>
                                 <div>
-                                    <div className="text-xs font-bold text-white uppercase tracking-wider">PFMA Compliant</div>
-                                    <div className="text-xs text-slate-400 mt-1">Fixed-Cost Supply</div>
+                                    <div className="text-xs font-bold text-white uppercase tracking-wider">Structured Review</div>
+                                    <div className="text-xs text-slate-400 mt-1">Baseline-led scope</div>
                                 </div>
                             </div>
                             <div className="flex gap-4">
@@ -121,8 +121,8 @@ export default function PremiumHero() {
                             {/* Header */}
                             <div className="flex items-center justify-between border-b border-slate-800 pb-6 mb-6">
                                 <div>
-                                    <h3 className="text-lg font-semibold text-white">Mexel®432 Performance Delta</h3>
-                                    <p className="text-sm text-slate-400">Kriel Power Station — 2024 Pilot</p>
+                                    <h3 className="text-lg font-semibold text-white">Mexel®432 Evidence Pathway</h3>
+                                    <p className="text-sm text-slate-400">Kriel Power Station — 2018 RT&amp;D evidence</p>
                                 </div>
                                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                             </div>
@@ -132,32 +132,32 @@ export default function PremiumHero() {
                                 {/* Metric 1 */}
                                 <div>
                                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
-                                        Efficiency Recovery
+                                        Kriel Cleanliness Factor
                                     </div>
                                     <div className="flex items-baseline gap-2">
                                         <span className="text-4xl lg:text-5xl font-bold text-white tracking-tight">
-                                            4-8
+                                            Approx. 30
                                         </span>
                                         <span className="text-lg font-medium text-emerald-400">%</span>
                                     </div>
                                     <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                                        Measured thermal performance gains.
+                                        Report conclusion: improvement within 3 days of application.
                                     </p>
                                 </div>
 
                                 {/* Metric 2 */}
                                 <div className="border-l border-slate-800 pl-8">
                                     <div className="text-sm font-medium text-slate-500 uppercase tracking-wider mb-1">
-                                        Derived CO₂ Impact
+                                        Review Output
                                     </div>
                                     <div className="flex items-baseline gap-2">
                                         <span className="text-3xl lg:text-4xl font-bold text-emerald-700 tracking-tight">
-                                            Quantified
+                                            Site
                                         </span>
-                                        <span className="text-lg font-medium text-emerald-400">Carbon Impact</span>
+                                        <span className="text-lg font-medium text-emerald-400">Specific</span>
                                     </div>
                                     <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                                        CO₂ reduction derived from verified heat rate improvements.
+                                        Heat-rate, fuel or emissions impact requires verified plant data.
                                     </p>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ export default function PremiumHero() {
                                 <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
-                                Heat rate verified via ASME PTC 12.2 — CO₂ impact derived
+                                ASME PTC 12.2-aligned review where station data supports it
                             </div>
                         </div>
                     </div>

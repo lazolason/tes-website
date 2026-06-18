@@ -12,18 +12,18 @@ const caseStudiesSocialImage = {
 export const metadata: Metadata = {
   title: "Case Studies | TES",
   description:
-    "TES case studies: Mexel®432 cooling-water treatment at Eskom power stations and international deployments in nuclear, refinery, desalination and petrochemical industries worldwide.",
+    "TES case studies and technical references for Mexel®432 cooling-water treatment, including prior Eskom RT&D evidence and international deployment references.",
   openGraph: {
     title: "TES Case Studies | Mexel Energy Sustain",
     description:
-      "Real-world evidence from TES pilots at Eskom stations and 30+ years of Mexel®432 deployments across power generation, refining and desalination worldwide.",
+      "Evidence-led references for engineers reviewing TES, Kriel RT&D observations and international Mexel®432 deployments.",
     images: [caseStudiesSocialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "TES Case Studies | Mexel Energy Sustain",
     description:
-      "Real-world evidence from TES pilots at Eskom stations and 30+ years of Mexel®432 deployments across power generation, refining and desalination worldwide.",
+      "Evidence-led references for engineers reviewing TES, Kriel RT&D observations and international Mexel®432 deployments.",
     images: [caseStudiesSocialImage.url],
   },
 };
@@ -147,8 +147,8 @@ export default function CaseStudiesPage() {
             TES has focused its initial deployments at South African coal-fired
             power stations where cooling-water challenges are acute. These sites
             face variable raw-water quality, high solids loading, biofouling and
-            corrosion—conditions that make them ideal testing grounds for the TES
-            approach.
+            corrosion, making them relevant environments for structured technical
+            evaluation of the TES approach.
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">
@@ -167,7 +167,7 @@ export default function CaseStudiesPage() {
                     </h3>
                   </div>
                   <span className="rounded-full bg-green-100 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-green-800">
-                    Completed
+                    RT&amp;D Evidence
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
@@ -205,16 +205,13 @@ export default function CaseStudiesPage() {
                     </h3>
                   </div>
                   <span className="rounded-full bg-amber-100 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800">
-                    In Progress
+                    Protocol Pathway
                   </span>
                 </div>
                 <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                  TES dosing system installed. Heat rate being validated via ASME PTC 12.2
-                  (TTD/TR baseline methodology).
-                  Pilot progress constrained by on-the-ground conditions
-                  including dam status, water configuration and induction scheduling.
-                  Full case study to follow once baseline and intervention data
-                  collection is complete.
+                  Tutuka is referenced as evidence that Eskom had a structured technical
+                  pathway for baseline, intervention and review. It should not be read as
+                  an approved rollout or completed performance case study.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   <span className="rounded-md bg-gray-200 px-2 py-1 text-[10px] font-medium text-gray-600">
@@ -225,7 +222,7 @@ export default function CaseStudiesPage() {
                   </span>
                 </div>
                 <p className="mt-4 text-xs font-medium text-gray-500">
-                  Expected completion: Subject to station conditions
+                  Status: protocol and procurement history only
                 </p>
               </div>
             </FadeIn>
@@ -243,8 +240,8 @@ export default function CaseStudiesPage() {
                   </p>
                   <p className="mt-1 text-xs text-gray-600 leading-relaxed">
                     Eskom stations face challenging raw-water quality with high
-                    TDS, variable pH and seasonal biofouling—perfect for
-                    validating Mexel®432 performance.
+                    TDS, variable pH and seasonal biofouling, making them suitable
+                    for disciplined, site-specific evaluation.
                   </p>
                 </div>
                 <div>
@@ -273,306 +270,84 @@ export default function CaseStudiesPage() {
         </div>
       </section>
 
-      {/* International case studies */}
+      {/* International references */}
       <section className="border-b">
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <p className="text-xs font-semibold uppercase tracking-widest text-brand-500">
             International
           </p>
           <h2 className="mt-2 text-2xl font-bold text-gray-900">
-            Global Mexel®432 installations
+            International reference library
           </h2>
           <p className="mt-3 max-w-2xl text-sm text-gray-600 leading-relaxed">
-            Mexel®432 has a 30+ year track record across power generation, refining,
-            petrochemical, desalination and marine industries worldwide. These
-            reference cases demonstrate the product&apos;s proven performance in diverse
-            cooling-water environments and validate the chemistry underlying the TES
-            approach.
+            Mexel®432 has been used in multiple industrial cooling-water contexts outside
+            Southern Africa. We keep public claims on this site limited to broad application
+            areas unless a site report is cleared for sharing.
           </p>
 
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             <FadeIn>
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🇫🇷</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
-                    France
-                  </p>
-                </div>
                 <h3 className="mt-3 text-base font-semibold text-gray-900">
-                  EDF Nuclear Power Stations
+                  Power generation
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Multiple EDF nuclear plants use Mexel®432 for condenser and
-                  cooling-system protection. Long-term deployments (10+ years in
-                  some cases) with consistent biofouling control and improved heat
-                  transfer performance.
+                  Condenser and cooling-system references are available for qualified
+                  engineering review where disclosure permits.
                 </p>
-                <div className="mt-4 space-y-1 text-xs">
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Reduced mussel/barnacle fouling
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Extended cleaning intervals
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Corrosion inhibition
-                  </p>
-                </div>
                 <p className="mt-4 text-xs text-gray-500 border-t pt-3">
-                  <strong>Industry:</strong> Nuclear power<br />
-                  <strong>Application:</strong> Condenser protection
+                  Typical review material: operating context, dosing approach, and available
+                  thermal-performance indicators.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🇺🇸</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
-                    United States
-                  </p>
-                </div>
                 <h3 className="mt-3 text-base font-semibold text-gray-900">
-                  Refinery cooling towers
+                  Refining and petrochemical
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  US refineries have deployed Mexel®432 to manage biofilm and
-                  Legionella risk in recirculating cooling water systems while
-                  reducing overall chemical load. Replaces multi-product programs
-                  with single-chemistry approach.
+                  Recirculating cooling-water and process heat-exchanger references can be
+                  discussed under an appropriate technical-review process.
                 </p>
-                <div className="mt-4 space-y-1 text-xs">
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Biofilm control
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Legionella risk reduction
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Lower chemical footprint
-                  </p>
-                </div>
                 <p className="mt-4 text-xs text-gray-500 border-t pt-3">
-                  <strong>Industry:</strong> Oil & gas<br />
-                  <strong>Application:</strong> Cooling towers
+                  Public summaries avoid health, shutdown-reduction, or cost-saving claims
+                  unless supported by a cleared site document.
                 </p>
               </div>
             </FadeIn>
 
             <FadeIn delay={200}>
               <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🇦🇪</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
-                    Middle East
-                  </p>
-                </div>
                 <h3 className="mt-3 text-base font-semibold text-gray-900">
-                  Desalination plants
+                  Seawater and desalination
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Mexel®432 protects intake systems and heat exchangers in
-                  seawater desalination facilities, preventing marine fouling
-                  without environmental harm. Critical for maintaining thermal
-                  efficiency in high-salinity environments.
+                  Seawater applications are handled through local environmental approvals,
+                  discharge limits and site-specific operating records.
                 </p>
-                <div className="mt-4 space-y-1 text-xs">
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Marine fouling prevention
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Heat exchanger protection
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Environmental compliance
-                  </p>
-                </div>
                 <p className="mt-4 text-xs text-gray-500 border-t pt-3">
-                  <strong>Industry:</strong> Desalination<br />
-                  <strong>Application:</strong> Marine fouling control
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={300}>
-              <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🇯🇵</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
-                    Japan
-                  </p>
-                </div>
-                <h3 className="mt-3 text-base font-semibold text-gray-900">
-                  Coastal power stations
-                </h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Japanese thermal power stations using seawater cooling have
-                  applied Mexel®432 to control mussel and barnacle fouling in
-                  intake tunnels and condensers. Demonstrated efficacy in challenging
-                  marine environments with high biofouling pressure.
-                </p>
-                <div className="mt-4 space-y-1 text-xs">
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Mussel/barnacle control
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Intake tunnel protection
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Seawater compatibility
-                  </p>
-                </div>
-                <p className="mt-4 text-xs text-gray-500 border-t pt-3">
-                  <strong>Industry:</strong> Thermal power<br />
-                  <strong>Application:</strong> Seawater cooling
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={400}>
-              <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🇧🇷</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
-                    Brazil
-                  </p>
-                </div>
-                <h3 className="mt-3 text-base font-semibold text-gray-900">
-                  Petrochemical complexes
-                </h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Brazilian petrochemical facilities have used Mexel®432 for
-                  heat exchanger protection across multiple process units,
-                  reducing unplanned shutdowns and maintenance costs. Proven
-                  integration with existing treatment programs.
-                </p>
-                <div className="mt-4 space-y-1 text-xs">
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Reduced maintenance shutdowns
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Multi-unit application
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Cost efficiency
-                  </p>
-                </div>
-                <p className="mt-4 text-xs text-gray-500 border-t pt-3">
-                  <strong>Industry:</strong> Petrochemical<br />
-                  <strong>Application:</strong> Heat exchangers
-                </p>
-              </div>
-            </FadeIn>
-
-            <FadeIn delay={500}>
-              <div className="rounded-lg border bg-white p-5 shadow-sm hover:shadow-md transition-shadow">
-                <div className="flex items-center gap-2">
-                  <span className="text-lg">🇮🇳</span>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-brand-500">
-                    India
-                  </p>
-                </div>
-                <h3 className="mt-3 text-base font-semibold text-gray-900">
-                  Steel & manufacturing
-                </h3>
-                <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Indian steel plants and heavy manufacturing sites have deployed
-                  Mexel®432 to protect process cooling systems from scale and
-                  biofouling buildup. Effective in high-temperature, high-solids
-                  industrial cooling-water environments.
-                </p>
-                <div className="mt-4 space-y-1 text-xs">
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Scale control
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    High-solids tolerance
-                  </p>
-                  <p className="flex items-center gap-1.5 text-gray-700">
-                    <svg className="h-3.5 w-3.5 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                    </svg>
-                    Process reliability
-                  </p>
-                </div>
-                <p className="mt-4 text-xs text-gray-500 border-t pt-3">
-                  <strong>Industry:</strong> Steel & manufacturing<br />
-                  <strong>Application:</strong> Process cooling
+                  Relevant documents are shared only when they match the client&#39;s use case
+                  and disclosure requirements.
                 </p>
               </div>
             </FadeIn>
           </div>
 
-          <FadeIn delay={600}>
+          <FadeIn delay={300}>
             <div className="mt-8 rounded-lg border-l-4 border-sky-700 bg-brand-50 p-5">
               <h3 className="text-sm font-semibold text-gray-900">
                 About international references
               </h3>
               <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                These international case studies represent Mexel®432 deployments by
-                Mexel Industries (France) and its global partners across 30+ years
-                of field application. TES holds the exclusive distribution rights
-                for Mexel®432 in Southern Africa and applies the same proven
-                chemistry within the structured TES approach (IoT dosing, data
-                integration and verification protocol).
+                TES can discuss international Mexel®432 application history during qualified
+                technical enquiries. Public summaries are intentionally conservative until
+                supporting documents are cleared for release.
               </p>
               <p className="mt-2 text-xs text-gray-700 leading-relaxed">
-                Detailed technical documentation, site reports and performance data
-                are available on request for qualified enquiries. Contact us to
-                discuss specific industry applications relevant to your operation.
+                The Southern Africa TES approach remains based on site scoping, traceable dosing,
+                and baseline-to-review verification rather than generic global performance claims.
               </p>
             </div>
           </FadeIn>
@@ -590,10 +365,9 @@ export default function CaseStudiesPage() {
                     Want more detail on these case studies?
                   </h2>
                   <p className="mt-3 text-sm text-gray-600 leading-relaxed">
-                    We maintain detailed technical documentation, site reports and
-                    performance data for all international Mexel®432 deployments.
-                    For Eskom stations, we can share verification protocol documentation
-                    and discuss how the same approach could apply to your site.
+                    We can share available documentation where disclosure allows. For Eskom
+                    stations, we can discuss verification protocol documentation and how a
+                    structured baseline-to-review approach could apply to your site.
                   </p>
                   <div className="mt-4 space-y-2 text-xs text-gray-700">
                     <p className="flex items-center gap-2">

@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import PremiumHero from "../components/PremiumHero";
 import {
-  TrustedBySkeleton,
   IndustryGridSkeleton,
   ProcessSkeleton,
   DashboardSkeleton,
@@ -10,10 +9,6 @@ import {
 } from "../components/skeletons/HomeSkeletons";
 
 // Lazy load below-the-fold components for better initial page load
-const TrustedBy = dynamic(() => import("../components/TrustedBy"), {
-  loading: () => <TrustedBySkeleton />,
-});
-
 const LiveDashboard = dynamic(() => import("../components/LiveDashboard"), {
   loading: () => <DashboardSkeleton />,
 });
@@ -40,18 +35,23 @@ const homeSocialImage = {
 export const metadata: Metadata = {
   title: "Mexel®432 | Cooling-Water Efficiency Solutions",
   description:
-    "Mexel®432 restores condenser performance and cooling-water efficiency with verified thermodynamic baselines.",
+    "Mexel®432 supports evidence-led condenser-performance and cooling-water efficiency reviews using thermodynamic baselines.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
+    type: "website",
+    url: "/",
     title: "Mexel®432 | Cooling-Water Efficiency Solutions",
     description:
-      "Mexel®432 restores condenser performance and cooling-water efficiency with verified thermodynamic baselines.",
+      "Mexel®432 supports evidence-led condenser-performance and cooling-water efficiency reviews using thermodynamic baselines.",
     images: [homeSocialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mexel®432 | Cooling-Water Efficiency Solutions",
     description:
-      "Mexel®432 restores condenser performance and cooling-water efficiency with verified thermodynamic baselines.",
+      "Mexel®432 supports evidence-led condenser-performance and cooling-water efficiency reviews using thermodynamic baselines.",
     images: [homeSocialImage.url],
   },
 };
@@ -61,9 +61,6 @@ export default function Home() {
     <main className="flex flex-col">
       {/* 1. HOOK: Flagship Hero with Problem/Solution Visuals */}
       <PremiumHero />
-
-      {/* 1.5 SOCIAL PROOF: Trusted Industry Leaders */}
-      <TrustedBy />
 
       {/* 2. CONTEXT: Visual Industry Solutions */}
       <VisualIndustryGrid />
@@ -79,8 +76,8 @@ export default function Home() {
               See TES in Action
             </h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Live visualization of thermal efficiency recovery. Watch how TR and TTD improve
-              over an 8-week intervention based on verified station data.
+              Demonstration view of how TR and TTD can be tracked through a baseline,
+              intervention and review window using station data.
             </p>
           </div>
           <LiveDashboard />

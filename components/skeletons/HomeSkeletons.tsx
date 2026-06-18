@@ -1,19 +1,4 @@
 
-export function TrustedBySkeleton() {
-    return (
-        <div className="border-b border-slate-800 bg-slate-950 py-14 sm:py-20">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mb-14 h-3 w-72 max-w-full rounded bg-slate-800 mx-auto animate-pulse" />
-                <div className="grid grid-cols-1 items-center justify-items-center gap-10 md:grid-cols-3 animate-pulse">
-                    {[1, 2, 3].map((i) => (
-                        <div key={i} className="h-28 w-64 rounded-xl bg-slate-900 sm:h-32 sm:w-80" />
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-}
-
 export function IndustryGridSkeleton() {
     return (
         <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
@@ -44,36 +29,6 @@ export function ProcessSkeleton() {
             </div>
         </div>
     );
-}
-
-export function StatsSkeleton() {
-    return (
-        <div className="bg-slate-900 py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8 animate-pulse">
-                <div className="h-8 w-64 rounded bg-slate-800 mb-12" />
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                    {[1, 2, 3, 4].map(i => (
-                        <div key={i} className="h-32 rounded-xl bg-slate-800" />
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
-}
-
-export function TestimonialsSkeleton() {
-    return (
-        <div className="bg-slate-50 py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8 animate-pulse">
-                <div className="h-10 w-1/2 mx-auto rounded bg-slate-200 mb-16" />
-                <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                    {[1, 2, 3].map(i => (
-                        <div key={i} className="h-64 rounded-2xl bg-white border border-slate-200" />
-                    ))}
-                </div>
-            </div>
-        </div>
-    )
 }
 
 export function DashboardSkeleton() {

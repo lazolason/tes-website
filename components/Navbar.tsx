@@ -49,7 +49,8 @@ export default function Navbar() {
                 width={320}
                 height={80}
                 priority
-                className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-opacity hover:opacity-90"
+                className="h-10 w-auto object-contain transition-opacity hover:opacity-90 sm:h-12 md:h-14"
+                style={{ width: 'auto' }}
               />
             </Link>
           </div>

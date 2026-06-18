@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "Contact Us - Start Your TES Enquiry",
   description:
     "Contact Mexel Energy Sustain to discuss TES pilots, Mexel®432 cooling-water treatment, and efficiency solutions for power stations and industrial facilities. Direct technical contact available.",
+  alternates: {
+    canonical: "/contact/",
+  },
   keywords: [
     "contact Mexel",
     "TES enquiry",
@@ -21,6 +24,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Contact Mexel Energy Sustain | TES Technical Enquiry",
+    url: "/contact/",
     description:
       "Start a technical conversation about TES cooling-water efficiency solutions, Mexel®432 performance emulsions, and condenser optimization for your facility.",
     type: "website",

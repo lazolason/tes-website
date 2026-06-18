@@ -30,14 +30,34 @@ const Icons = {
   )
 };
 
+const productSocialImage = {
+  url: "/og/mexel432.png",
+  width: 1200,
+  height: 630,
+  alt: "Mexel 432 product catalog social preview",
+};
+
 export const metadata: Metadata = {
   title: "Products | Mexel®432",
   description:
-    "Product catalog: Mexel®432 (Cooling Water Emulsion). The core consumable for TES vacuum recovery systems.",
+    "Product catalog for Mexel®432 cooling-water emulsion, the TES consumable used with controlled dosing and traceable engineering review.",
+  alternates: {
+    canonical: "/products/",
+  },
   openGraph: {
-    title: "Product Catalog | Mexel Energy Sustain",
+    type: "website",
+    url: "/products/",
+    title: "Products | Mexel Energy Sustain",
     description:
-      "Filming amine commodity for cooling-water systems.",
+      "Mexel®432 cooling-water emulsion supply, dosing context, and product documentation for TES deployments.",
+    images: [productSocialImage],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Products | Mexel®432",
+    description:
+      "Mexel®432 cooling-water emulsion supply, dosing context, and product documentation for TES deployments.",
+    images: [productSocialImage.url],
   },
 };
 
@@ -106,17 +126,17 @@ export default function ProductsPage() {
                   {
                     icon: <Icons.Biofouling className="w-5 h-5" />,
                     title: "Biofouling Control",
-                    description: "Disrupts biofilm attachment mechanism, causing slime layers to detach from tubes.",
+                    description: "Helps reduce biofilm adhesion on heat-transfer surfaces.",
                   },
                   {
                     icon: <Icons.Corrosion className="w-5 h-5" />,
                     title: "Corrosion Inhibition",
-                    description: "Isolates carbon steel/admiralty brass from dissolved oxygen and chlorides.",
+                    description: "Film-forming chemistry assessed against the site materials list.",
                   },
                   {
                     icon: <Icons.Scaling className="w-5 h-5" />,
-                    title: "Scale Prevention",
-                    description: "Distorts crystal lattice formation, preventing hard calcite/silica deposits.",
+                    title: "Scale Control Review",
+                    description: "Assessed within the site chemistry program where scale risk is present.",
                   },
                 ].map((item, index) => (
                   <div

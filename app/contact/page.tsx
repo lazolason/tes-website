@@ -17,7 +17,7 @@ interface FormErrors {
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
-const FORM_POST_ACTION = "/forms/contact.php";
+const FORM_POST_ACTION = "/contact.php";
 const CONTACT_ENDPOINT =
   process.env.NODE_ENV === "development" ? "/api/contact" : FORM_POST_ACTION;
 const RECAPTCHA_SITE_KEY =
@@ -279,10 +279,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-800">
+                      <label htmlFor="name" className="block text-xs font-semibold text-slate-800">
                         Name <span className="text-red-500">*</span>
                       </label>
                       <input
+                        id="name"
                         type="text"
                         name="name"
                         value={formData.name}
@@ -299,10 +300,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-800">
+                      <label htmlFor="organisation" className="block text-xs font-semibold text-slate-800">
                         Organisation / Site
                       </label>
                       <input
+                        id="organisation"
                         type="text"
                         name="organisation"
                         value={formData.organisation}
@@ -313,10 +315,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-800">
+                      <label htmlFor="email" className="block text-xs font-semibold text-slate-800">
                         Your email <span className="text-red-500">*</span>
                       </label>
                       <input
+                        id="email"
                         type="email"
                         name="email"
                         value={formData.email}
@@ -333,10 +336,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-800">
+                      <label htmlFor="interest" className="block text-xs font-semibold text-slate-800">
                         Area of interest
                       </label>
                       <select
+                        id="interest"
                         name="interest"
                         value={formData.interest}
                         onChange={handleChange}
@@ -362,10 +366,11 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-800">
+                      <label htmlFor="description" className="block text-xs font-semibold text-slate-800">
                         Brief description
                       </label>
                       <textarea
+                        id="description"
                         name="description"
                         value={formData.description}
                         onChange={handleChange}
@@ -482,6 +487,11 @@ export default function ContactPage() {
                   >
                     info@mexelenergysustain.com
                   </a>
+                </p>
+                <p className="mt-3 text-xs leading-relaxed text-slate-600">
+                  Production form submissions are routed through the Afrihost mail server
+                  configured for this domain; direct email remains available if delivery
+                  confirmation is required.
                 </p>
               </div>
             </div>

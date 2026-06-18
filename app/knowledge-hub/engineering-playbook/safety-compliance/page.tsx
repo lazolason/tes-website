@@ -28,8 +28,8 @@ export default function SafetyCompliancePage() {
             Handling, ecotoxicology, and compliance references.
           </h1>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-gray-600">
-            TES chemistry is handled within standard industrial PPE and storage practices.
-            Always follow the approved safety data and local discharge regulations.
+            TES chemistry is handled according to the approved SDS, station procedures,
+            and local discharge regulations.
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function SafetyCompliancePage() {
             <FadeIn delay={100}>
               <div className="rounded-lg border bg-white p-6 shadow-sm">
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  • Non-oxidant chemistry with standard industrial PPE requirements.
+                  • Confirm PPE requirements from the latest approved SDS.
                 </p>
               </div>
             </FadeIn>
@@ -59,7 +59,7 @@ export default function SafetyCompliancePage() {
             <FadeIn delay={220}>
               <div className="rounded-lg border bg-white p-6 shadow-sm">
                 <p className="text-sm text-gray-700 leading-relaxed">
-                  • Avoid mixing with strong oxidants without defined spacing.
+                  • Avoid mixing with strong oxidants unless spacing and compatibility are approved.
                 </p>
               </div>
             </FadeIn>

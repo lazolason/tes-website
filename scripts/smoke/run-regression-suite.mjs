@@ -152,10 +152,14 @@ async function runNavigationAndContactSmoke() {
       contactPage.includes("Send a message"),
       "Contact page title is missing",
     );
-    assert(
-      contactPage.includes("Afrihost mail server"),
-      "Contact page deployment note is missing",
-    );
+  assert(
+    contactPage.includes("Afrihost mail server"),
+    "Contact page deployment note is missing",
+  );
+  assert(
+    contactPage.includes('action="/contact.php"'),
+    "Contact form is not configured to post to /contact.php",
+  );
 
     log("smoke", "Submitting valid contact payload");
     const validResponse = await fetch(`${baseUrl}/api/contact`, {
@@ -263,6 +267,82 @@ async function runBuildExportVerification() {
   }
 
   assert(referencesPhpHandler, "Export output does not reference /contact.php");
+
+  const exportedContactPage = await readText(
+    path.join(exportDir, "contact", "index.html"),
+  );
+  assert(
+    exportedContactPage.includes('action="/contact.php"'),
+    "Exported contact form does not post to /contact.php",
+  );
+  assert(
+    !exportedContactPage.includes('action="/api/contact"'),
+    "Exported contact form still posts to /api/contact",
+  );
+
+  const [robots, sitemap, homePage, productsPage, krielPage] =
+    await Promise.all([
+      readText(path.join(exportDir, "robots.txt")),
+      readText(path.join(exportDir, "sitemap.xml")),
+      readText(path.join(exportDir, "index.html")),
+      readText(path.join(exportDir, "products", "index.html")),
+      readText(
+        path.join(
+          exportDir,
+          "knowledge-hub",
+          "case-studies",
+          "kriel",
+          "index.html",
+        ),
+      ),
+    ]);
+
+  assert(
+    robots.includes("Disallow: /contact.php"),
+    "robots.txt does not disallow /contact.php",
+  );
+  assert(
+    robots.includes("Disallow: /forms/"),
+    "robots.txt does not disallow /forms/",
+  );
+  assert(
+    sitemap.includes("https://mexelenergysustain.com/contact/"),
+    "sitemap.xml is missing the contact URL",
+  );
+  assert(
+    sitemap.includes("https://mexelenergysustain.com/legal/"),
+    "sitemap.xml is missing the legal URL",
+  );
+  assert(
+    sitemap.includes(
+      "https://mexelenergysustain.com/knowledge-hub/engineering-playbook/safety-compliance/",
+    ),
+    "sitemap.xml is missing engineering playbook child URLs",
+  );
+  assert(
+    !sitemap.includes("<lastmod>"),
+    "sitemap.xml should not contain build-time-changing lastmod values",
+  );
+  assert(
+    homePage.includes('rel="canonical" href="https://mexelenergysustain.com/"'),
+    "Homepage canonical URL is missing",
+  );
+  assert(
+    productsPage.includes(
+      'rel="canonical" href="https://mexelenergysustain.com/products/"',
+    ),
+    "Products canonical URL is missing",
+  );
+  assert(
+    productsPage.includes('property="og:image" content="https://mexelenergysustain.com/og/mexel432.png"'),
+    "Products Open Graph image is missing",
+  );
+  assert(
+    krielPage.includes(
+      'rel="canonical" href="https://mexelenergysustain.com/knowledge-hub/case-studies/kriel/"',
+    ),
+    "Kriel case study canonical URL is missing",
+  );
 }
 
 async function runExportPreviewVerification() {

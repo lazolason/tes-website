@@ -66,24 +66,6 @@ export interface Industry {
     benefits?: string[];
 }
 
-export interface Testimonial {
-    id: string;
-    quote: string;
-    author: string;
-    role: string;
-    company: string;
-    image?: string;
-}
-
-export interface Stat {
-    id: string;
-    value: number;
-    suffix?: string;
-    prefix?: string;
-    label: string;
-    description?: string;
-}
-
 export interface ProcessStep {
     number: string;
     title: string;
@@ -111,23 +93,6 @@ export interface FormFieldProps {
     placeholder?: string;
     required?: boolean;
     error?: string;
-}
-
-// ============================================
-// Case Study Types
-// ============================================
-
-export interface CaseStudy {
-    id: string;
-    title: string;
-    slug: string;
-    industry: string;
-    client: string;
-    challenge: string;
-    solution: string;
-    results: string[];
-    image?: string;
-    publishedAt?: string;
 }
 
 // ============================================

@@ -28,8 +28,8 @@ export default function AboutPage() {
           </h1>
           <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
             Mexel Energy Sustain (Pty) Ltd is a South African company combining Mexel®432
-            chemistry, IoT dosing and data-driven verification to restore MW capacity lost to
-            cold-end fouling.
+            chemistry, IoT dosing and data-driven verification to address cold-end fouling
+            where site data shows a measurable condenser or cooling-water performance penalty.
           </p>
           <div className="flex flex-wrap gap-3">
             <span className="rounded-full bg-emerald-500/20 border border-emerald-500/30 px-4 py-1.5 text-xs font-semibold text-emerald-300 uppercase tracking-wider">
@@ -42,7 +42,7 @@ export default function AboutPage() {
               ASME PTC 12.2 Aligned
             </span>
             <span className="rounded-full bg-white/10 border border-white/20 px-4 py-1.5 text-xs font-semibold text-white/80 uppercase tracking-wider">
-              WRC Verified
+              Site-Specific Review
             </span>
           </div>
         </div>
@@ -53,48 +53,48 @@ export default function AboutPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
             <div>
-              <p className="text-3xl font-bold">69%</p>
-              <p className="text-emerald-100 text-sm mt-1">Cleanliness factor recovery<br/><span className="text-xs opacity-75">(Kriel Unit 6, 2018 — within 3 days)</span></p>
+              <p className="text-3xl font-bold">30%</p>
+              <p className="text-emerald-100 text-sm mt-1">Cleanliness-factor improvement<br/><span className="text-xs opacity-75">(Kriel Unit 6, report conclusion)</span></p>
             </div>
             <div>
-              <p className="text-3xl font-bold">30%</p>
-              <p className="text-emerald-100 text-sm mt-1">Fouling reduction<br/><span className="text-xs opacity-75">(Verified, Eskom RT&amp;D Report RTD/ACM/18/240)</span></p>
+              <p className="text-3xl font-bold">4.3°C</p>
+              <p className="text-emerald-100 text-sm mt-1">Later actual TTD<br/><span className="text-xs opacity-75">(Kriel Unit 6 report observation)</span></p>
             </div>
             <div>
               <p className="text-3xl font-bold">5ppm</p>
-              <p className="text-emerald-100 text-sm mt-1">Daily dose only<br/><span className="text-xs opacity-75">(30 min/day microdosing protocol)</span></p>
+              <p className="text-emerald-100 text-sm mt-1">Daily trial dose<br/><span className="text-xs opacity-75">(30 min/day Kriel protocol)</span></p>
             </div>
             <div>
               <p className="text-3xl font-bold">93%</p>
-              <p className="text-emerald-100 text-sm mt-1">Aerobic bacteria kill<br/><span className="text-xs opacity-75">(Lab biocide comparison, Eskom 2017)</span></p>
+              <p className="text-emerald-100 text-sm mt-1">Aerobic bacteria kill<br/><span className="text-xs opacity-75">(Lab biocide comparison, report p.14)</span></p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Compliance & Registration */}
+      {/* Evidence references */}
       <section className="border-b bg-slate-50 py-8">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <p className="text-sm font-semibold text-slate-500 uppercase tracking-widest shrink-0">
-              International Registrations & Compliance
+              Technical Documents Available On Request
             </p>
             <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-8 gap-y-4">
               <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
                 <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                US EPA
+                SDS/TDS
               </span>
               <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
                 <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                EU BPR
+                Kriel RT&amp;D Report
               </span>
               <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
                 <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                OSPAR Marine
+                Verification Protocol
               </span>
               <span className="flex items-center gap-2 text-sm font-medium text-slate-700">
                 <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                APVMA (Aus)
+                Environmental Review Docs
               </span>
             </div>
           </div>
@@ -176,8 +176,8 @@ export default function AboutPage() {
           <div className="mt-5 grid gap-8 md:grid-cols-2">
             <div>
               <p className="text-base text-slate-600 leading-relaxed">
-                Mexel®432 has been through rigorous independent technical evaluation, including
-                application at Kriel and a formal testing protocol for Tutuka. We
+                Mexel®432 has prior Eskom technical engagement history, including
+                RT&amp;D evaluation at Kriel and a structured testing protocol pathway for Tutuka. We
                 understand the realities of working on live stations: water-quality
                 constraints, operational risk, safety, and the need to align with
                 engineering, chemical services and station management.
@@ -205,8 +205,8 @@ export default function AboutPage() {
             Evidence and verification timeline
           </h2>
           <p className="mt-3 max-w-3xl text-base text-slate-600">
-            TES is built on documented work using ASME PTC 12.2 heat rate verification standards, independent referees and
-            structured verification. Key milestones:
+            TES is built on documented work using ASME PTC 12.2 heat-rate review concepts, independent referee options and
+            structured verification. Key evidence points:
           </p>
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -225,9 +225,9 @@ export default function AboutPage() {
               <p className="text-xs font-semibold uppercase tracking-wider text-emerald-600">Verification Standard</p>
               <h3 className="mt-2 text-sm font-semibold text-slate-900">ASME PTC 12.2 Aligned</h3>
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Performance gains are validated using ASME PTC 12.2 methodology,
-                which measures condenser heat rate (TTD/TR). CO₂ reduction figures
-                are then derived from those verified heat rate improvements.
+                Performance gains should be reviewed using ASME PTC 12.2-aligned methodology
+                where station data supports it. Any fuel or CO₂ figure is a derived calculation,
+                not a standalone product claim.
               </p>
             </div>
 
@@ -253,8 +253,8 @@ export default function AboutPage() {
 
             {/* Carbon Credit Development */}
             <div className="rounded-lg border-2 border-emerald-200 bg-emerald-50 p-5 shadow-sm">
-              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Carbon Credit Development</p>
-              <h3 className="mt-2 text-sm font-semibold text-slate-900">Emissions reduction monetization</h3>
+              <p className="text-xs font-semibold uppercase tracking-wider text-emerald-700">Emissions Methodology</p>
+              <h3 className="mt-2 text-sm font-semibold text-slate-900">Derived emissions review</h3>
               <p className="mt-2 text-sm text-slate-700 leading-relaxed">
                 Working with{" "}
                 <a
@@ -264,13 +264,13 @@ export default function AboutPage() {
                   className="font-semibold text-emerald-700 hover:text-emerald-900 underline"
                 >
                   Brundtland Consulting
-                </a>, we develop VCS-compliant carbon credit methodologies from verified efficiency improvements.
+                </a>, we can assess whether reviewed site data creates a credible basis for an emissions methodology.
               </p>
               <p className="mt-2 text-sm text-slate-700 leading-relaxed">
-                ASME PTC 12.2 heat rate verification provides the audit-grade documentation required for carbon credit registration. CO₂ reduction is derived from those verified thermal efficiency gains, under international (VCS) and South African (DFFE) frameworks.
+                ASME PTC 12.2-aligned heat-rate analysis can support documentation for later review under international (VCS) or South African (DFFE) frameworks, subject to project-specific validation.
               </p>
               <p className="mt-3 text-xs text-slate-600 italic border-t border-emerald-200 pt-2">
-                Efficiency gains → Measurable emissions reduction → Carbon credit revenue
+                Verified efficiency data → derived emissions estimate → project-specific methodology review
               </p>
             </div>
 

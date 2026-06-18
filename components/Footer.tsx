@@ -1,17 +1,11 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { industries, solutions } from '@/lib/navigation';
 
 const navigation = {
-  solutions: [
-    { name: 'Condenser Efficiency', href: '/applications#condenser' },
-    { name: 'Cooling Tower Preservation', href: '/applications#cooling-towers' },
-  ],
-  industries: [
-    { name: 'Power & Energy', href: '/industries/power-energy' },
-    { name: 'Mining & Smelters', href: '/industries/mining' },
-    { name: 'HVAC & Data Centers', href: '/industries/hvac-data-centers' },
-  ],
+  solutions,
+  industries,
   company: [
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
@@ -54,7 +48,7 @@ export default function Footer() {
               />
             </div>
             <p className="text-sm leading-6 text-slate-300">
-              Engineering thermal efficiency. Heat rate verified via ASME PTC 12.2.
+              Evidence-led cooling-water and condenser-performance improvement.
             </p>
             <div className="flex space-x-6">
               {navigation.social.map((item) => (

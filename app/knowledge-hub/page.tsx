@@ -75,7 +75,8 @@ export default function KnowledgeHubPage() {
           <p className="text-xl text-slate-300 leading-relaxed max-w-2xl mb-8">
             A central reference for engineers, chemistry teams, operations staff, and station
             leadership evaluating the Thermal Efficiency Solution (TES) for wet-cooled units.
-            Everything you need to understand, deploy, and verify TES performance.
+            This hub explains the method, data requirements, and evidence used to
+            review TES performance.
           </p>
         </div>
       </section>
@@ -95,7 +96,7 @@ export default function KnowledgeHubPage() {
                   </h2>
                   <p className="mt-3 text-sm text-slate-600 leading-relaxed">
                     A structured, engineering-first guide covering fundamentals, readiness,
-                    troubleshooting, and compliance. Built for audit-ready evaluation.
+                    troubleshooting, and compliance. Built for structured technical evaluation.
                   </p>
                 </div>
                 <Link
@@ -255,15 +256,15 @@ export default function KnowledgeHubPage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                        Existing biofilm, suspended solids, mud/ash loosen and detach
+                        Existing biofilm, suspended solids, mud/ash may loosen and detach
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                        Tube-side heat-transfer improves
+                        Tube-side heat-transfer indicators are monitored during dosing
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                        TR and TTD begin moving toward engineering targets
+                        TR and TTD are compared against the baseline trend
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
@@ -273,8 +274,8 @@ export default function KnowledgeHubPage() {
 
                     <div className="mt-4 rounded-lg bg-slate-100 p-4">
                       <p className="text-sm text-slate-700">
-                        <strong>Station involvement:</strong> minimal. TES does not interfere with turbine,
-                        boiler, chemistry program or operations.
+                        <strong>Station involvement:</strong> scoped before work starts. TES is planned
+                        around turbine, boiler, chemistry and operations constraints.
                       </p>
                     </div>
                   </div>
@@ -306,11 +307,11 @@ export default function KnowledgeHubPage() {
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                        TR/TTD improvement quantification
+                        TR/TTD trend review
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
-                        Heat rate and efficiency gain calculations
+                        Heat-rate or efficiency calculations where data quality supports them
                       </li>
                       <li className="flex items-start gap-2">
                         <CheckIcon className="h-4 w-4 shrink-0 text-emerald-600 mt-0.5" />
@@ -327,7 +328,7 @@ export default function KnowledgeHubPage() {
                       <p className="mt-2 text-sm text-emerald-800">
                         Measurable improvement in condenser performance, validated against baseline data
                         with full transparency of dosing events and operational conditions. All findings
-                        are audit-ready and suitable for engineering/GM review.
+                        are structured for engineering and management review.
                       </p>
                     </div>
                   </div>
@@ -356,26 +357,24 @@ export default function KnowledgeHubPage() {
                 <div>
                   <h3 className="font-semibold text-slate-900">Does TES require plant shutdown for installation?</h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    No. The dosing skid involves a simple tap-in to the cooling water inlet line.
-                    Installation can be performed while the unit is online or during a short outage.
-                    The cleaning process itself happens entirely while the unit runs.
+                    The preferred arrangement is an online dosing point on the cooling-water inlet
+                    line. Final installation timing is confirmed during station scoping.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900">How does it affect my existing chemistry program?</h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Mexel®432 is a &quot;single-product&quot; replacement for biocides and dispersants in
-                    the condenser circuit. You typically stop dosing your previous biocide
-                    during the TES intervention. It is compatible with most anti-scalants if required,
-                    though usually Mexel®432 replaces them.
+                    Mexel®432 can be assessed as an alternative to parts of an existing cooling-water
+                    program. Any change to biocide, dispersant or anti-scalant dosing is site-specific
+                    and should be agreed with the station chemistry team.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900">Is it safe for condenser tube metallurgy?</h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Yes. Mexel®432 serves as a corrosion inhibitor by forming a molecular film
-                    on the metal surface. It is compatible with Admiralty Brass, Titanium,
-                    Stainless Steel, and Copper-Nickel alloys.
+                    Metallurgy compatibility is checked against the relevant SDS/TDS and site
+                    materials list before dosing. The product is positioned as a film-forming
+                    chemistry, but final use remains site-specific.
                   </p>
                 </div>
               </div>
@@ -385,25 +384,24 @@ export default function KnowledgeHubPage() {
                 <div>
                   <h3 className="font-semibold text-slate-900">What about high-solids or high-turbidity water?</h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    TES is designed for variable water quality. The emulsion prevents suspended
-                    solids from settling and adhering to tube walls. However, it does not dissolve
-                    large physical debris (rocks, wood); primary screening is still required.
+                    TES is intended for cooling-water systems with variable quality, but high solids
+                    can mask the signal or exceed hydraulic capacity. Primary screening and stable
+                    operations remain important.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900">How do we verify the results?</h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    We use the ASME PTC 12.2 methodology. We track TTD (Terminal Temperature Difference)
-                    and condenser particulate fouling at matched loads. Success is defined by
-                    a measurable, sustained reduction in TTD toward design specifications.
+                    We reference ASME PTC 12.2 methodology where applicable. TTD, TR, condenser
+                    vacuum, chemistry and operating events are reviewed against comparable baseline
+                    conditions.
                   </p>
                 </div>
                 <div>
                   <h3 className="font-semibold text-slate-900">Is the dosing automated?</h3>
                   <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                    Yes. The TES skid is IoT-enabled, controlling dosage timing and volume
-                    precisely. Dosing events are logged to the cloud for full transparency and
-                    compliance reporting.
+                    The TES skid can be configured for traceable dosing. Dosing events are logged so
+                    they can be reconciled with station data during review.
                   </p>
                 </div>
               </div>
@@ -422,8 +420,8 @@ export default function KnowledgeHubPage() {
                   C. Industry Standards & Compliance
                 </h2>
                 <p className="mt-3 text-base text-slate-700 leading-relaxed">
-                  The TES approach is built on rigorous engineering standards to ensure
-                  safety, verifiability, and regulatory compliance.
+                  The TES approach is built around recognised engineering references, documented
+                  handling information, and site-specific compliance checks.
                 </p>
 
                 <div className="mt-8 space-y-6">
@@ -433,9 +431,9 @@ export default function KnowledgeHubPage() {
                       <span className="text-xs font-normal text-slate-500 uppercase tracking-wide border border-slate-200 rounded px-1.5 py-0.5">Methodology</span>
                     </h3>
                     <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                      &quot;Steam Surface Condensers&quot; Performance Test Code. We adhere to
-                      Section 5 for data collection and result computation, ensuring
-                      our &quot;Lost Megawatts&quot; calculations are engineering-grade, not estimates.
+                      &quot;Steam Surface Condensers&quot; Performance Test Code. It is used as a
+                      reference for condenser data collection and result interpretation where
+                      the available station data supports that level of review.
                     </p>
                   </div>
 
@@ -445,10 +443,9 @@ export default function KnowledgeHubPage() {
                       <span className="text-xs font-normal text-slate-500 uppercase tracking-wide border border-slate-200 rounded px-1.5 py-0.5">Compliance</span>
                     </h3>
                     <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                      Mexel®432 is biodegradable and non-bioaccumulating. It reduces the
-                      plant&#39;s overall chemical footprint by replacing multiple hazardous
-                      compounds (chlorine gas, acids) with a single safe emulsion.
-                      Safety Data Sheets (SDS) are available in the Resources section.
+                      SDS, TDS and supporting environmental documents are available for technical
+                      review. Local discharge limits and site permits determine how any chemistry
+                      change is implemented.
                     </p>
                   </div>
                 </div>
@@ -471,11 +468,11 @@ export default function KnowledgeHubPage() {
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
-                      <span>WRC Independent Reports</span>
+                      <span>Eskom/WRC-related technical references where available</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
-                      <span>Full Toxicology Reports</span>
+                      <span>SDS/TDS and toxicology documents</span>
                     </li>
                     <li className="flex items-start gap-3">
                       <div className="mt-0.5 h-1.5 w-1.5 rounded-full bg-emerald-500 flex-shrink-0"></div>
@@ -516,9 +513,9 @@ export default function KnowledgeHubPage() {
                 </div>
                 <h3 className="font-semibold text-slate-900 mb-2">Dosing Logic</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  TES uses a pulsed dosing strategy (e.g., 20 mins per day) rather than
-                  continuous feed. This targets the surface interface specifically, reducing
-                  chemical usage by up to 90% compared to traditional oxidizing biocides.
+                  TES uses a pulsed dosing strategy rather than default continuous feed. This
+                  targets the surface interface and allows chemical runtime and volume to be
+                  reviewed against the site&#39;s existing treatment program.
                 </p>
               </div>
             </FadeIn>

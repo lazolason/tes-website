@@ -8,21 +8,21 @@ const industries = [
         subtitle: "Vacuum Recovery & Heat Rate",
         // Using the new, premium vertical asset
         image: "/power-gen.webp",
-        description: "Specialized in 500MW+ condenser circuits. Restoring design-spec back pressure through targeted filming amine intervention."
+        description: "Specialized in 500MW+ condenser circuits. Reviewing back-pressure, TTD and fouling indicators through targeted filming amine intervention."
     },
     {
         title: "Mining & Smelters",
         subtitle: "Process Cooling Continuity",
         // Using the new, premium vertical asset
         image: "/mining-vertical.webp",
-        description: "Managing high-heat furnace cooling and compressor loops. Preventing scaling and fouling in harsh, high-solids environments."
+        description: "Managing high-heat furnace cooling and compressor loops. Reviewing scale and fouling risk in harsh, high-solids environments."
     },
     {
         title: "Critical HVAC",
         subtitle: "Efficiency & Risk Mitigation",
         // Using the new, premium vertical asset
         image: "/hvac-vertical.webp",
-        description: "Data centres and large-scale commercial cooling. Focus on PUE reduction and rigorous Legionella compliance."
+        description: "Data centres and large-scale commercial cooling. Focus on water-hygiene compliance and efficiency review."
     }
 ];
 
@@ -42,7 +42,7 @@ export default function VisualIndustryGrid() {
                         </h2>
                         <p className="mt-6 text-lg text-slate-600 leading-relaxed">
                             TES is built on engineering discipline. We establish comparable baselines,
-                            log every intervention event, and deliver audit-ready datasets for performance verification.
+                            log every intervention event, and deliver structured datasets for performance verification.
                         </p>
                     </div>
                 </FadeIn>

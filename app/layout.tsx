@@ -33,6 +33,9 @@ export const metadata: Metadata = {
   },
   description:
     'Thermal Efficiency Solutions for Power Generation & Heavy Industry. TES combines Mexel®432 technology, IoT dosing, and verification to improve condenser performance.',
+  alternates: {
+    canonical: '/',
+  },
   keywords: [
     'TES',
     'Thermal Efficiency Solution',
@@ -102,7 +105,7 @@ export default function RootLayout({
               name: "Mexel Energy Sustain",
               url: siteUrl,
               logo: `${siteUrl}/logo.png`,
-              description: "Thermal Efficiency Solutions for Power Generation & Heavy Industry using Mexel®432 technology.",
+              description: "Evidence-led cooling-water efficiency solutions for power generation and heavy industry using Mexel®432 technology, controlled dosing, and engineering verification.",
               address: {
                 "@type": "PostalAddress",
                 addressCountry: "ZA",
@@ -113,7 +116,7 @@ export default function RootLayout({
                 email: "info@mexelenergysustain.com",
                 telephone: "+27-79-464-8298",
                 areaServed: ["ZA"],
-                url: `${siteUrl}/contact`,
+                url: `${siteUrl}/contact/`,
               },
               sameAs: [
                 "https://www.linkedin.com/company/mexel-energy-sustain/",

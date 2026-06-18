@@ -84,7 +84,7 @@ export default function ProtocolOverviewPage() {
                 <h3 className="text-lg font-semibold text-gray-900">Data governance</h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
                   Dosing logs, operational constraints, and maintenance events must be
-                  recorded for audit-ready review.
+                  recorded for structured review.
                 </p>
               </div>
             </FadeIn>

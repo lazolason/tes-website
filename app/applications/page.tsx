@@ -7,11 +7,11 @@ import { Button } from "../../components/ui/Button";
 export const metadata: Metadata = {
   title: "TES Applications",
   description:
-    "TES applications at Eskom wet-cooled power stations (Tutuka, Kriel, Matla, Kendal) and industrial cooling-water systems. Structured pilots with baseline, intervention and verification.",
+    "TES applications for wet-cooled power stations and industrial cooling-water systems. Structured pilots use baseline, intervention and verification steps.",
   openGraph: {
     title: "TES Applications | Mexel Energy Sustain",
     description:
-      "Where TES fits: Eskom stations and industrial cooling-water users.",
+      "Where TES fits: power stations and industrial cooling-water users.",
   },
 };
 
@@ -40,7 +40,8 @@ export default function ApplicationsPage() {
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 At wet-cooled stations, TES focuses on the condenser as a critical performance node.
-                We restore MW output lost to back-pressure decay by maintaining a clean, film-protected surface.
+                We review output losses linked to back-pressure decay and test whether surface
+                condition improvements are visible in matched site data.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4">
@@ -50,8 +51,8 @@ export default function ApplicationsPage() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900">Vacuum Recovery</h4>
-                    <p className="text-sm text-slate-500">Restore design kPa and heat transfer rates.</p>
+                    <h4 className="font-semibold text-slate-900">Vacuum Review</h4>
+                    <p className="text-sm text-slate-500">Compare kPa and heat-transfer indicators against baseline data.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -62,7 +63,7 @@ export default function ApplicationsPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-slate-900">Station Fitment</h4>
-                    <p className="text-sm text-slate-500">Ideally suited for Tutuka, Matla, Kriel, and Kendal units.</p>
+                    <p className="text-sm text-slate-500">Relevant to wet-cooled units where baseline data shows condenser fouling or unstable TR/TTD.</p>
                   </div>
                 </div>
               </div>
@@ -104,7 +105,8 @@ export default function ApplicationsPage() {
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Outside the utility sector, cooling towers are critical production assets.
-                TES prevents structural collapse and airflow restriction by stoping bio-mass accumulation in the fill pack.
+                TES can be assessed where biomass accumulation in fill packs may contribute
+                to airflow restriction, weight gain or cleaning burden.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4">
@@ -114,8 +116,8 @@ export default function ApplicationsPage() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-900">Structural Protection</h4>
-                    <p className="text-sm text-slate-500">Prevent fill collapse and weight gain risks.</p>
+                    <h4 className="font-semibold text-slate-900">Asset Condition</h4>
+                    <p className="text-sm text-slate-500">Review fill condition, weight gain risk and cleaning burden.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
@@ -164,9 +166,9 @@ export default function ApplicationsPage() {
                 Mexel®432 chemistry
               </h3>
               <p className="mt-1 text-xs text-slate-700 leading-relaxed">
-                Applied to once-through and recirculating systems using river, dam, mine
-                or seawater. Focused on biofouling, corrosion, scaling and solids
-                dispersion at the cold end.
+                Assessed for once-through and recirculating systems using river, dam, mine
+                or seawater. Focused on site-specific biofouling, corrosion, scaling and
+                solids-dispersion risks at the cold end.
               </p>
             </div>
 
@@ -229,7 +231,7 @@ export default function ApplicationsPage() {
                 Verification framework
               </h3>
               <p className="mt-1 text-xs text-slate-700 leading-relaxed">
-                Built on ASME PTC 12.2 methodology for stations, and adapted
+                References ASME PTC 12.2 methodology for stations where applicable, and adapts
                 to industrial sites with clear baselines, interventions and reviews.
               </p>
             </div>
@@ -254,7 +256,7 @@ export default function ApplicationsPage() {
                 <li>• Collect baseline data using RT&amp;D protocol structure.</li>
                 <li>• Install TES dosing skid and start Mexel®432 treatment.</li>
                 <li>• Monitor performance and compare to baseline.</li>
-                <li>• Optional: WRC or other body as independent referee.</li>
+                <li>• Optional: independent technical review where required.</li>
               </ul>
             </div>
             <div className="rounded-lg border bg-white p-6 shadow-sm">
@@ -267,7 +269,7 @@ export default function ApplicationsPage() {
                 <li>• Establish a realistic baseline period.</li>
                 <li>• Apply Mexel®432 via a TES dosing skid under controlled conditions.</li>
                 <li>• Track performance, inspections and cleaning intervals.</li>
-                <li>• Decide on extension based on observed technical benefits.</li>
+                <li>• Decide on extension based on documented technical observations.</li>
               </ul>
             </div>
           </div>
@@ -283,7 +285,7 @@ export default function ApplicationsPage() {
                 Exploring TES for your station or plant.
               </h2>
               <p className="mt-2 text-xs text-slate-700 leading-relaxed">
-                We usually start with a short technical discussion: your current cooling-water
+                We start with a short technical discussion: your current cooling-water
                 configuration, constraints and data. From there we can propose a TES pilot
                 that is realistic for your site and aligned with your existing protocols.
               </p>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 import SystemHeader from "@/components/SystemHeader";
@@ -35,18 +36,23 @@ const mexelProductSocialImage = {
 export const metadata: Metadata = {
   title: "Mexel®432 Product Specifications",
   description:
-    "Technical Data Sheet for Mexel®432: A filming polyamine emulsion for biofouling control, corrosion inhibition, and scale prevention in cooling water systems.",
+    "Technical overview for Mexel®432: a filming polyamine emulsion used in industrial cooling-water treatment programs.",
+  alternates: {
+    canonical: "/mexel432/",
+  },
   openGraph: {
+    type: "website",
+    url: "/mexel432/",
     title: "Mexel®432 | Technical Data Sheet",
     description:
-      "Filming amine emulsion specifications, dosing parameters, and eco-toxicity profile.",
+      "Filming amine emulsion specifications, dosing parameters, and SDS/TDS review notes.",
     images: [mexelProductSocialImage],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mexel®432 | Technical Data Sheet",
     description:
-      "Filming amine emulsion specifications, dosing parameters, and eco-toxicity profile.",
+      "Filming amine emulsion specifications, dosing parameters, and SDS/TDS review notes.",
     images: [mexelProductSocialImage.url],
   },
 };
@@ -64,7 +70,7 @@ export default function MexelProductPage() {
             "@context": "https://schema.org",
             "@type": "Product",
             name: "Mexel®432",
-            description: "A filming polyamine emulsion for biofouling control, corrosion inhibition, and scale prevention in cooling water systems.",
+            description: "A filming polyamine emulsion used in industrial cooling-water treatment programs.",
             brand: {
               "@type": "Brand",
               name: "Mexel Energy Sustain",
@@ -82,10 +88,66 @@ export default function MexelProductPage() {
       <SystemHeader
         tag="PRODUCT DATA SHEET"
         title="Mexel®432 Performance Emulsion."
-        description="Mexel®432 is a proprietary filming polyamine that acts as a surface-active agent (surfactant). Unlike bulk water treatments, it functions by adsorbing onto system surfaces to create a monomolecular barrier against biofouling, corrosion, and scale."
+        description="Mexel®432 is a proprietary filming polyamine that acts as a surface-active agent. It is assessed for cooling-water systems where surface condition, fouling behaviour and site chemistry need a structured review."
         continuity="Technical specifications and application data."
         currentLabel="Mexel®432 Specs"
       />
+
+      <section className="border-b bg-white">
+        <div className="mx-auto max-w-6xl px-4 py-12 lg:py-16">
+          <FadeIn>
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+              What Stations Actually Buy
+            </h2>
+            <p className="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
+              Mexel®432 is supplied as part of a practical station package: the consumable
+              emulsion, a controlled dosing arrangement, and the records needed for baseline
+              review. Performance conclusions remain tied to site data, not generic savings claims.
+            </p>
+          </FadeIn>
+
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Cooling-water application context",
+                desc: "A station-specific review of condenser, cooling-tower or exchanger conditions before dosing scope is agreed.",
+                image: "/power-station-clean.webp",
+                alt: "Wet-cooled power station used as cooling-water application context",
+              },
+              {
+                title: "Mexel®432 consumable supply",
+                desc: "Bulk emulsion supply with dosing rates, storage notes and SDS/TDS documentation for the site team.",
+                image: "/dosing-skid.webp",
+                alt: "Dosing skid and consumable supply arrangement",
+              },
+              {
+                title: "Traceable dosing records",
+                desc: "Logged dosing events that can be compared with TR, TTD, vacuum and chemistry indicators during review.",
+                image: "/iot-dashboard.webp",
+                alt: "IoT dashboard for traceable dosing and performance records",
+              },
+            ].map((item, index) => (
+              <FadeIn key={item.title} delay={index * 100}>
+                <div className="h-full overflow-hidden rounded-xl border border-slate-200 bg-slate-50 shadow-sm">
+                  <div className="relative aspect-[4/3]">
+                    <Image
+                      src={item.image}
+                      alt={item.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="text-sm font-semibold text-slate-900">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-slate-600">{item.desc}</p>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Mode of Action - The "Science" bit */}
       <section className="border-b bg-slate-50">
@@ -95,7 +157,8 @@ export default function MexelProductPage() {
               Mechanism of Action
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
-              Mexel®432 operates via <strong>Surface Interface Activity</strong> rather than bulk water chemistry modification.
+              Mexel®432 is designed around <strong>surface interface activity</strong> rather than
+              default bulk-water dosing. Site results still need to be verified against baseline data.
 
             </p>
           </FadeIn>
@@ -104,17 +167,17 @@ export default function MexelProductPage() {
             {[
               {
                 title: "Dispersant Action",
-                desc: "Prevents suspended solids and biological matter from adhering to tube surfaces/plates.",
+                desc: "Helps reduce adhesion of suspended solids and biological matter on heat-transfer surfaces.",
                 icon: Icons.Molecule,
               },
               {
                 title: "Corrosion Inhibition",
-                desc: "Forms a hydrophobic film (migrating to the cathode) that isolates metal from oxygen/water contact.",
+                desc: "Forms a hydrophobic film intended to support corrosion-control objectives.",
                 icon: Icons.Molecule,
               },
               {
-                title: "Scale Prevention",
-                desc: "Distorts crystal lattice formation, preventing hard calcite/silica deposits from bonding.",
+                title: "Scale Control Review",
+                desc: "Can be assessed as part of a scale-control program where site chemistry supports the approach.",
                 icon: Icons.Molecule,
               },
             ].map((item, index) => (
@@ -141,7 +204,7 @@ export default function MexelProductPage() {
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
               Mexel®432 is applied via <strong>pulsed dosing</strong> rather than continuous feed,
-              targeting the surface interface specifically while minimizing chemical consumption.
+              targeting the surface interface while keeping dosing volume traceable for review.
             </p>
           </FadeIn>
 
@@ -195,7 +258,7 @@ export default function MexelProductPage() {
                     <h4 className="font-semibold text-slate-900">Automated Dosing Skid</h4>
                     <p className="text-sm text-slate-600 mt-1">
                       TES Thingy:91 skid controls dosing timing and volume precisely,
-                      logging all events to the cloud for compliance.
+                      logging all events for later review.
                     </p>
                   </div>
                 </div>
@@ -208,8 +271,8 @@ export default function MexelProductPage() {
                   <div>
                     <h4 className="font-semibold text-slate-900">Compatibility</h4>
                     <p className="text-sm text-slate-600 mt-1">
-                      Can be integrated with existing anti-scalants if required,
-                      though Mexel®432 typically replaces multi-product programs.
+                      Can be assessed alongside existing treatment programs where the station
+                      chemistry team requires compatibility review.
                     </p>
                   </div>
                 </div>
@@ -222,8 +285,8 @@ export default function MexelProductPage() {
                   <div>
                     <h4 className="font-semibold text-slate-900">No Shutdown Required</h4>
                     <p className="text-sm text-slate-600 mt-1">
-                      Installation is a simple tap-in to the cooling water inlet.
-                      Cleaning happens entirely while the unit runs.
+                      The preferred dosing point is reviewed during scoping. Online installation
+                      or a short outage depends on site access and operating constraints.
                     </p>
                   </div>
                 </div>
@@ -239,10 +302,10 @@ export default function MexelProductPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
 
             {/* Table */}
-            <FadeIn>
+            <FadeIn className="min-w-0">
               <h2 className="text-xl font-bold text-slate-900 mb-6">Physical Properties</h2>
-              <div className="overflow-hidden rounded-lg border border-slate-200">
-                <table className="min-w-full divide-y divide-slate-200">
+              <div className="overflow-x-auto rounded-lg border border-slate-200">
+                <table className="w-full divide-y divide-slate-200">
                   <tbody className="divide-y divide-slate-200 bg-white">
                     {[
                       { prop: "Appearance", val: "Cream/White Emulsion" },
@@ -254,10 +317,10 @@ export default function MexelProductPage() {
                       { prop: "Shelf Life", val: "12 months (stored 5-35°C)" },
                     ].map((row) => (
                       <tr key={row.prop}>
-                        <td className="whitespace-nowrap px-6 py-4 text-sm font-medium text-slate-900 bg-slate-50 w-1/3">
+                        <td className="w-1/3 px-4 py-4 text-sm font-medium text-slate-900 bg-slate-50 sm:px-6">
                           {row.prop}
                         </td>
-                        <td className="whitespace-nowrap px-6 py-4 text-sm text-slate-600 font-mono">
+                        <td className="px-4 py-4 text-sm text-slate-600 font-mono sm:px-6">
                           {row.val}
                         </td>
                       </tr>
@@ -279,7 +342,8 @@ export default function MexelProductPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900">Biodegradability</h3>
                     <p className="text-sm text-slate-600 mt-1">
-                      Mexel®432 is readily biodegradable. It naturally degrades in the water column within 24-48 hours, leaving no persistent residue.
+                      Supporting environmental documents are available for technical review.
+                      Site use must follow the latest SDS and local discharge requirements.
                     </p>
                   </div>
                 </div>
@@ -291,7 +355,8 @@ export default function MexelProductPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900">Toxicity (LC50)</h3>
                     <p className="text-sm text-slate-600 mt-1">
-                      At recommended dosing concentrations (e.g., 5ppm for 30 mins/day), the discharge load is significantly below acute toxicity thresholds for aquatic life.
+                      Toxicity and discharge implications must be checked against the latest
+                      SDS, dosing plan, and site-specific discharge limits.
                     </p>
                   </div>
                 </div>
@@ -316,9 +381,9 @@ export default function MexelProductPage() {
               Performance Validation Data
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
-              Mexel®432 performance is validated using <strong>ASME PTC 12.2</strong> methodology
-              to measure condenser heat rate via TTD and TR baselines — ensuring that MW gains
-              are derived from engineering-grade heat rate measurements, not estimates.
+              Mexel®432 performance is reviewed using <strong>ASME PTC 12.2</strong> methodology
+              where applicable. TTD, TR and back-pressure trends are compared against baseline
+              data before any heat-rate or MW impact is discussed.
             </p>
           </FadeIn>
 
@@ -334,9 +399,9 @@ export default function MexelProductPage() {
                   </div>
                   <h3 className="font-bold text-slate-900">TTD Reduction</h3>
                 </div>
-                <p className="text-2xl font-bold text-emerald-600 mb-2">2-4°C</p>
+                <p className="text-2xl font-bold text-emerald-600 mb-2">Site-specific</p>
                 <p className="text-sm text-slate-600">
-                  Typical Terminal Temperature Difference improvement during intervention phase
+                  Terminal Temperature Difference is reviewed against a baseline and matched operating conditions
                 </p>
               </div>
             </FadeIn>
@@ -351,9 +416,9 @@ export default function MexelProductPage() {
                   </div>
                   <h3 className="font-bold text-slate-900">Vacuum Improvement</h3>
                 </div>
-                <p className="text-2xl font-bold text-blue-600 mb-2">5-15 kPa</p>
+                <p className="text-2xl font-bold text-blue-600 mb-2">Measured</p>
                 <p className="text-sm text-slate-600">
-                  Condenser back-pressure reduction at matched load conditions
+                  Condenser back-pressure is assessed at matched load conditions where data quality allows
                 </p>
               </div>
             </FadeIn>
@@ -368,9 +433,9 @@ export default function MexelProductPage() {
                   </div>
                   <h3 className="font-bold text-slate-900">Heat Rate Recovery</h3>
                 </div>
-                <p className="text-2xl font-bold text-amber-600 mb-2">1-3%</p>
+                <p className="text-2xl font-bold text-amber-600 mb-2">Derived</p>
                 <p className="text-sm text-slate-600">
-                  Station heat rate improvement translating to MW capacity restoration
+                  Heat-rate or MW impact is calculated from verified thermodynamic indicators
                 </p>
               </div>
             </FadeIn>
@@ -421,11 +486,11 @@ export default function MexelProductPage() {
         <div className="mx-auto max-w-6xl px-4 py-14 lg:py-20">
           <FadeIn>
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              Why Mexel®432 vs. Traditional Chemicals
+              How Mexel®432 Differs From Conventional Programs
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
-              Mexel®432 represents a fundamental shift from &quot;slash and burn&quot; oxidizing biocides
-              to a surface-active, film-forming approach.
+              Mexel®432 is positioned as a surface-active, film-forming chemistry. Whether it
+              replaces or complements an existing program depends on site chemistry and permits.
             </p>
           </FadeIn>
 
@@ -453,23 +518,23 @@ export default function MexelProductPage() {
                   },
                   {
                     criteria: "Chemical Consumption",
-                    mexel: "90% reduction vs. continuous",
-                    traditional: "High volume required"
+                    mexel: "Lower-volume pulsed dosing",
+                    traditional: "Often continuous or frequent feed"
                   },
                   {
                     criteria: "Environmental Impact",
-                    mexel: "Biodegradable, non-toxic",
-                    traditional: "Persistent, aquatic toxicity"
+                    mexel: "Reviewed through SDS and environmental documentation",
+                    traditional: "Reviewed through product-specific SDS and permits"
                   },
                   {
                     criteria: "Corrosion Protection",
-                    mexel: "Active film-forming inhibitor",
-                    traditional: "None (can accelerate corrosion)"
+                    mexel: "Film-forming chemistry",
+                    traditional: "Program-specific"
                   },
                   {
-                    criteria: "Scale Prevention",
-                    mexel: "Crystal lattice distortion",
-                    traditional: "Requires separate anti-scalant"
+                    criteria: "Scale Control Review",
+                    mexel: "Assessed within the site chemistry program",
+                    traditional: "Often managed by a dedicated anti-scalant"
                   },
                 ].map((row) => (
                   <tr key={row.criteria}>
@@ -498,7 +563,7 @@ export default function MexelProductPage() {
               Safety & Handling
             </h2>
             <p className="mt-4 text-slate-600 max-w-3xl">
-              Mexel®432 is classified as non-hazardous under standard transport regulations.
+              Always refer to the latest SDS for handling, storage and transport classification.
             </p>
           </FadeIn>
 
@@ -574,11 +639,11 @@ export default function MexelProductPage() {
             {[
               {
                 q: "Does Mexel®432 work with seawater?",
-                a: "Yes. Mexel®432 has been successfully deployed in seawater cooling systems (desalination, coastal power stations). It prevents marine fouling without environmental harm."
+                a: "Mexel®432 can be assessed for seawater cooling applications. Site use must follow the relevant environmental approvals, discharge limits and SDS guidance."
               },
               {
                 q: "Is it compatible with Admiralty Brass tubes?",
-                a: "Yes. Mexel®432 is compatible with all common condenser tube metallurgies including Admiralty Brass, Titanium, Stainless Steel, and Copper-Nickel alloys."
+                a: "Compatibility should be confirmed against the latest TDS/SDS and the site materials list before dosing."
               },
               {
                 q: "What if TTD doesn't improve after dosing?",
@@ -586,11 +651,11 @@ export default function MexelProductPage() {
               },
               {
                 q: "Can I use it alongside my existing anti-scalant?",
-                a: "Mexel®432 typically replaces both biocides and anti-scalants. However, it can be integrated with certain programs if required. Contact our engineering team for compatibility assessment."
+                a: "Mexel®432 can be assessed as an alternative to parts of an existing program or integrated where compatibility allows. The station chemistry team should approve any change."
               },
               {
                 q: "How quickly will I see results?",
-                a: "Measurable TTD improvement typically appears within 2-4 weeks of intervention. The full cleaning effect depends on the severity of existing fouling."
+                a: "Timing depends on baseline stability, fouling severity, dosing access and operating conditions. Results should be judged from matched site data."
               },
             ].map((faq, index) => (
               <FadeIn key={index} delay={index * 50}>

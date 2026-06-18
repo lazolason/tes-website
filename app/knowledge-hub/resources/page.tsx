@@ -286,8 +286,8 @@ export default function ResourcesPage() {
                   Mexel®432 Safety Data Sheet (SDS)
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Comprehensive safety information including handling, storage,
-                  emergency measures, and toxicological data. Meeting Global Harmonized System (GHS) standards.
+                  Safety information including handling, storage, emergency measures,
+                  and toxicological data. Request the latest controlled SDS for site review.
                 </p>
                 <div className="mt-4">
                   <Link href="/contact" className="text-xs font-semibold text-brand-500 hover:text-brand-900">
@@ -313,8 +313,8 @@ export default function ResourcesPage() {
                   Regulatory Approvals
                 </h3>
                 <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                  Documentation of biodegradability (OECD 301D), non-bioaccumulation status,
-                  and approvals for discharge into aquatic environments.
+                  Supporting environmental and regulatory documents available for qualified
+                  review where relevant to the proposed application and local discharge limits.
                 </p>
                 <div className="mt-4">
                   <Link href="/contact" className="text-xs font-semibold text-brand-500 hover:text-brand-900">
@@ -350,8 +350,8 @@ export default function ResourcesPage() {
                   </div>
                   <h3 className="text-lg font-bold text-gray-900">Condenser Efficiency Calculator</h3>
                   <p className="mt-2 text-sm text-gray-600 leading-relaxed">
-                    Input your unit&#39;s current TTD, Vacuum, and MW Load to estimate the potential
-                    Heat Rate improvement and fuel savings. Based on ASME PTC 12.2 deviation curves.
+                    Input your unit&#39;s current TTD, vacuum, and MW load to support an initial
+                    heat-rate review. Any fuel-saving estimate requires site-specific validation.
                   </p>
                 </div>
                 <div className="flex flex-col justify-center gap-3 md:w-64">

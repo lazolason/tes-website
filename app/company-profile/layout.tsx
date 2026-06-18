@@ -11,8 +11,12 @@ export const metadata: Metadata = {
   title: "Company Profile | Mexel Energy Sustain",
   description:
     "Interactive company profile covering TES methodology, deployment model and the engineering case for Mexel(R)432 in heavy industry.",
+  alternates: {
+    canonical: "/company-profile/",
+  },
   openGraph: {
     title: "Company Profile | Mexel Energy Sustain",
+    url: "/company-profile/",
     description:
       "Explore the Mexel Energy Sustain company profile, including TES methodology, deployment model and engineering positioning.",
     type: "website",
