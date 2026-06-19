@@ -57,6 +57,34 @@ export const metadata: Metadata = {
   },
 };
 
+const comparisonRows = [
+  {
+    criteria: "Dosing Frequency",
+    mexel: "Pulsed (20-30 min/day)",
+    traditional: "Continuous or frequent shock",
+  },
+  {
+    criteria: "Chemical Consumption",
+    mexel: "Lower-volume pulsed dosing",
+    traditional: "Often continuous or frequent feed",
+  },
+  {
+    criteria: "Environmental Impact",
+    mexel: "Reviewed through SDS and environmental documentation",
+    traditional: "Reviewed through product-specific SDS and permits",
+  },
+  {
+    criteria: "Corrosion Protection",
+    mexel: "Film-forming chemistry",
+    traditional: "Program-specific",
+  },
+  {
+    criteria: "Scale Control Review",
+    mexel: "Assessed within the site chemistry program",
+    traditional: "Often managed by a dedicated anti-scalant",
+  },
+];
+
 export default function MexelProductPage() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mexelenergysustain.com";
 
@@ -494,7 +522,38 @@ export default function MexelProductPage() {
             </p>
           </FadeIn>
 
-          <div className="mt-10 overflow-hidden rounded-lg border border-slate-200">
+          <div className="mt-8 grid gap-4 md:hidden">
+            {comparisonRows.map((row) => (
+              <article
+                key={row.criteria}
+                className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm"
+              >
+                <h3 className="text-sm font-bold text-slate-900">
+                  {row.criteria}
+                </h3>
+                <dl className="mt-4 space-y-3">
+                  <div>
+                    <dt className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">
+                      Mexel®432 (TES)
+                    </dt>
+                    <dd className="mt-1 text-sm font-medium leading-6 text-emerald-800">
+                      {row.mexel}
+                    </dd>
+                  </div>
+                  <div className="border-t border-slate-100 pt-3">
+                    <dt className="text-[11px] font-bold uppercase tracking-wider text-slate-500">
+                      Traditional Biocides
+                    </dt>
+                    <dd className="mt-1 text-sm leading-6 text-slate-600">
+                      {row.traditional}
+                    </dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+
+          <div className="mt-10 hidden overflow-hidden rounded-lg border border-slate-200 md:block">
             <table className="min-w-full divide-y divide-slate-200">
               <thead className="bg-slate-50">
                 <tr>
@@ -510,33 +569,7 @@ export default function MexelProductPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 bg-white">
-                {[
-                  {
-                    criteria: "Dosing Frequency",
-                    mexel: "Pulsed (20-30 min/day)",
-                    traditional: "Continuous or frequent shock"
-                  },
-                  {
-                    criteria: "Chemical Consumption",
-                    mexel: "Lower-volume pulsed dosing",
-                    traditional: "Often continuous or frequent feed"
-                  },
-                  {
-                    criteria: "Environmental Impact",
-                    mexel: "Reviewed through SDS and environmental documentation",
-                    traditional: "Reviewed through product-specific SDS and permits"
-                  },
-                  {
-                    criteria: "Corrosion Protection",
-                    mexel: "Film-forming chemistry",
-                    traditional: "Program-specific"
-                  },
-                  {
-                    criteria: "Scale Control Review",
-                    mexel: "Assessed within the site chemistry program",
-                    traditional: "Often managed by a dedicated anti-scalant"
-                  },
-                ].map((row) => (
+                {comparisonRows.map((row) => (
                   <tr key={row.criteria}>
                     <td className="px-6 py-4 text-sm font-medium text-slate-900 bg-slate-50">
                       {row.criteria}
